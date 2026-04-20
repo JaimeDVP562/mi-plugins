@@ -12,6 +12,114 @@
     // Debug: indicate script loaded
     try { console.info('[automatorwp-sendpulse] script loaded', typeof automatorwp_sendpulse !== 'undefined' ? automatorwp_sendpulse : null); } catch(e){}
 
+    /**
+     * Force-populate underlying select with addressbooks via AJAX.
+     * Used as a fallback when the UI is hidden and Select2 measures 0x0.
+     */
+    function _forcePopulateAddressbooks(select, option_form, existingVal) {
+        try {
+            if (!select || !select.length) return;
+            // If there are already options (beyond placeholder), skip
+            if (select.find('option').length > 1) return;
+            $.post(_getAjaxUrl(), { action: 'automatorwp_sendpulse_list_addressbooks', nonce: automatorwp_sendpulse.nonce }, function(resp){
+                if (!resp || resp.success !== true) return;
+                var books = (resp.data && resp.data.addressbooks) ? resp.data.addressbooks : [];
+                var existing = {};
+                select.find('option').each(function(){ existing[$(this).val()] = true; });
+                books.forEach(function(b){
+                    if (!existing[b.id]) select.append($('<option>').attr('value', b.id).text(b.name));
+                });
+                if (existingVal) select.val(existingVal);
+                // Trigger change so Select2 updates its UI when options are added dynamically
+                try { select.trigger('change'); } catch(e){}
+                // Ensure AutomatorWP selector attributes and initialize Select2 after force-populate
+                try {
+                    if ( select && select.length ) {
+                        if ( ! select.attr('data-action') ) select.attr('data-action', 'automatorwp_sendpulse_list_addressbooks');
+                        if ( ! select.hasClass('automatorwp-ajax-selector') ) select.addClass('automatorwp-ajax-selector');
+                        try { select.removeAttr('data-select2-id'); } catch(e){}
+                        try { select.next('.select2').remove(); } catch(e){}
+                        if ( typeof automatorwp_ajax_selector === 'function' ) {
+                            try { automatorwp_ajax_selector( select ); } catch(e){}
+                        } else if ( typeof automatorwp_select2 === 'function' ) {
+                            try { automatorwp_select2( select ); } catch(e){}
+                        }
+                    }
+                } catch(e){}
+                // show load button if value present
+                try {
+                    var loadbtn = option_form && option_form.length ? option_form.find('.automatorwp-sendpulse-load-emails') : null;
+                    if (loadbtn && loadbtn.length && select.val()) loadbtn.show();
+                } catch(e){}
+                try { console.info('[automatorwp-sendpulse] forcePopulateAddressbooks completed; options:', select.find('option').length); } catch(e){}
+            });
+        } catch(e) { console.warn('[automatorwp-sendpulse] forcePopulateAddressbooks error', e); }
+    }
+
+        // Ensure an existing addressbook select is initialized with AutomatorWP Select2
+        function _ensureInitAddressbookSelect( select, option_form ) {
+            try {
+                if ( !select || !select.length ) return;
+                // mark it so we don't re-init unnecessarily
+                try { select.addClass('automatorwp-sendpulse-addressbook-select'); } catch(e){}
+                if ( ! select.attr('data-action') ) select.attr('data-action', 'automatorwp_sendpulse_list_addressbooks');
+                // Remove any stale Select2 instance
+                try { select.removeAttr('data-select2-id'); } catch(e){}
+                try { select.next('.select2').remove(); } catch(e){}
+                // Initialize AutomatorWP ajax selector if available
+                if ( typeof automatorwp_ajax_selector === 'function' ) {
+                    try { automatorwp_ajax_selector( select ); } catch(e){}
+                } else if ( typeof automatorwp_select2 === 'function' ) {
+                    try { automatorwp_select2( select ); } catch(e){}
+                } else {
+                    try { select.trigger('change'); } catch(e){}
+                    var sel = of.find('.automatorwp-sendpulse-addressbook-select'); 
+
+                // Keep a binding to sync value into any backing input field
+                try {
+                    var input = null;
+                    if ( option_form && option_form.length ) {
+                        input = option_form.find('input[data-option="addressbook_id"], input[name*="addressbook_id"], input[id*="addressbook_id"]').first();
+                    }
+                    if ( (!input || !input.length) && select && select.length ) {
+                        var item = select.closest('.automatorwp-automation-item');
+                        if ( item && item.length ) input = item.find('input[data-option="addressbook_id"], input[name*="addressbook_id"], input[id*="addressbook_id"]').first();
+                    }
+                    if ( input && input.length ) {
+                        select.off('change.automatorwp_sendpulse_sync').on('change.automatorwp_sendpulse_sync', function(){
+                            try { input.val( $(this).val() ); } catch(e){}
+                        });
+                    }
+                } catch(e){}
+
+            } catch(e) { try{ console.warn('[automatorwp-sendpulse] ensureInitAddressbookSelect error', e); }catch(ignore){} }
+        }
+
+    // Expose quick console hook for forcing population on demand
+    try {
+        if ( typeof window !== 'undefined' ) {
+            window.automatorwp_sendpulse_forcePopulateAddressbooks = function(option_form){
+                try {
+                    var of = option_form && option_form.length ? option_form : $('.automatorwp-option-form-container').first();
+                    var sel = of.find('.automatorwp-sendpulse-addressbook-select');
+                    // fallback: find any select rendered by CMB2 with data-option
+                    if ((!sel || !sel.length) && of && of.length) {
+                        sel = of.find('select[data-option="addressbook_id"], select[name*="addressbook_id"], select[id*="addressbook_id"]').first();
+                    }
+                    var existing = '';
+                    var inp = of.find('input[data-option="addressbook_id"], input[name*="addressbook_id"], input[id*="addressbook_id"]').first();
+                    if (inp && inp.length) existing = inp.val();
+                    // If sel is an input (rare), try to locate a select elsewhere in the item
+                    if ( sel && sel.length && sel.is('input') ) {
+                        var alt = of.find('select[data-option="addressbook_id"]').first();
+                        if (alt && alt.length) sel = alt;
+                    }
+                    _forcePopulateAddressbooks(sel, of, existing);
+                } catch(e) { console.warn('[automatorwp-sendpulse] automatorwp_sendpulse_forcePopulateAddressbooks error', e); }
+            };
+        }
+    } catch(e){}
+
     // On click authorize button
     $('body').on('click', '.automatorwp_settings #' + _prefix + 'authorize', function(e) {
         e.preventDefault();
@@ -111,6 +219,84 @@
             }
         }
 
+        // Extra robustness: if a CMB2-rendered select exists somewhere in the automation item,
+        // prefer initializing that existing select instead of creating a new one.
+        try {
+            var existing_global_sel = null;
+            var item = option_form.closest('.automatorwp-automation-item');
+            if ( option_form && option_form.length ) {
+                existing_global_sel = option_form.find('select[data-option="addressbook_id"]').first();
+            }
+            if ( (!existing_global_sel || !existing_global_sel.length) && item && item.length ) {
+                existing_global_sel = item.find('select[data-option="addressbook_id"]').first();
+            }
+            if ( existing_global_sel && existing_global_sel.length ) {
+                try { _ensureInitAddressbookSelect( existing_global_sel, option_form ); } catch(e){}
+                // Ensure a load button exists and is visible if value present
+                try {
+                    var row_for_sel = existing_global_sel.closest('.cmb-row, .cmb2-row, .cmb2-id, .form-field, .control-group');
+                    if ( !row_for_sel.length ) row_for_sel = existing_global_sel.parent();
+                    var loadBtn = row_for_sel.find('.automatorwp-sendpulse-load-emails');
+                    if ( !loadBtn.length ) {
+                        loadBtn = $('<button type="button" class="button automatorwp-sendpulse-load-emails" style="margin-left:8px;display:none">Load emails</button>');
+                        row_for_sel.append(loadBtn);
+                        // attach click handler similar to created select
+                        loadBtn.on('click', function(){
+                            var ab = existing_global_sel.val();
+                            var btn = $(this);
+                            if (!ab) return;
+                            btn.prop('disabled', true).text('Loading...');
+                            $.post( _getAjaxUrl(), { action: 'automatorwp_sendpulse_list_subscribers', nonce: automatorwp_sendpulse.nonce, addressbook_id: ab, page: 1, per_page: 100 }, function(resp){
+                                btn.prop('disabled', false).text('Load emails');
+                                if (!resp || resp.success !== true) {
+                                    alert('Failed to load subscribers: ' + (resp && resp.data && resp.data.message ? resp.data.message : 'unknown'));
+                                    return;
+                                }
+                                var data = (resp.data && resp.data.data) ? resp.data.data : (resp.data ? resp.data : []);
+                                var emailWrapper = option_form.find('.automatorwp-sendpulse-email-wrapper');
+                                if (!emailWrapper.length) {
+                                    var emailInput = option_form.find('input[type="email"]').first();
+                                    if (emailInput && emailInput.length) {
+                                        emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                                        emailInput.after(emailWrapper);
+                                    } else {
+                                        emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                                        row_for_sel.after(emailWrapper);
+                                    }
+                                } else {
+                                    emailWrapper.empty();
+                                }
+                                var sel = $('<select class="automatorwp-sendpulse-email-select" style="width:100%;"></select>');
+                                sel.append($('<option>').attr('value','').text('-- Select email --'));
+                                data.forEach(function(e){
+                                    var em = e.email || e.email_address || '';
+                                    if (!em) return;
+                                    sel.append($('<option>').attr('value', em).text(em + ' (' + (e.status_explain || e.status || '') + ')'));
+                                });
+                                emailWrapper.append(sel);
+                                sel.on('change', function(){
+                                    var v = $(this).val();
+                                    var emailInput = option_form.find('input[type="email"]').first();
+                                    if (emailInput && emailInput.length) {
+                                        emailInput.val(v);
+                                    } else {
+                                        var hidden = option_form.find('input[name="email"]');
+                                        if (!hidden.length) {
+                                            hidden = $('<input type="hidden" name="email">');
+                                            emailWrapper.after(hidden);
+                                        }
+                                        hidden.val(v);
+                                    }
+                                });
+                            }).fail(function(){ btn.prop('disabled', false).text('Load emails'); alert('Request failed'); });
+                        });
+                    }
+                    if ( existing_global_sel.val() ) loadBtn.show();
+                } catch(e){}
+                return;
+            }
+        } catch(e) { console.warn('[automatorwp-sendpulse] existing select check failed', e); }
+
         // As a last resort, search the whole automation item container (some markup is rendered outside the option_form)
         if ( (!row || !row.length) && option_form && option_form.length ) {
             var item = option_form.closest('.automatorwp-automation-item');
@@ -128,122 +314,104 @@
             return;
         }
 
-        // avoid initializing twice
-        if (row.find('select.automatorwp-sendpulse-addressbook-select').length) return;
-
+        // Prefer to use the existing CMB2 <select> and let AutomatorWP initialize it via its helper
         var existingVal = input && input.length ? input.val() : '';
 
-        // hide original input to preserve data backing
-        if (input && input.length) input.hide();
+        var select = null;
+        if ( input && input.length && input.is('select') ) {
+            select = input;
+        } else {
+            select = row.find('select[data-option="addressbook_id"], select[name*="addressbook_id"], select[id*="addressbook_id"]').first();
+        }
 
-        var select = $('<select class="automatorwp-sendpulse-addressbook-select" style="width:100%;"></select>');
-        select.append($('<option>').attr('value', '').text('-- Select addressbook --'));
-        row.append(select);
+        if ( !select || !select.length ) {
+            console.info('[automatorwp-sendpulse] no addressbook <select> found; skipping dynamic creation');
+            return;
+        }
 
-        var loader = $('<span class="automatorwp-sendpulse-loading" style="margin-left:8px;display:none">Loading…</span>');
-        row.append(loader);
+        try { select.addClass('automatorwp-sendpulse-addressbook-select'); } catch(e){}
+        try { if ( ! select.attr('data-action') ) select.attr('data-action', 'automatorwp_sendpulse_list_addressbooks'); } catch(e){}
+        try { if ( ! select.hasClass('automatorwp-ajax-selector') ) select.addClass('automatorwp-ajax-selector'); } catch(e){}
+        try { select.removeAttr('data-select2-id'); } catch(e){}
+        try { select.next('.select2').remove(); } catch(e){}
 
-        var loadBtn = $('<button type="button" class="button automatorwp-sendpulse-load-emails" style="margin-left:8px;display:none">Load emails</button>');
-        row.append(loadBtn);
+        if ( typeof automatorwp_ajax_selector === 'function' ) {
+            try { automatorwp_ajax_selector( select ); } catch(e){}
+        } else if ( typeof automatorwp_select2 === 'function' ) {
+            try { automatorwp_select2( select ); } catch(e){}
+        }
 
-        loader.show();
-        $.post( _getAjaxUrl(), { action: 'automatorwp_sendpulse_list_addressbooks', nonce: automatorwp_sendpulse.nonce }, function(resp){
-            loader.hide();
-            if (!resp || resp.success !== true) {
-                console.warn('Failed to load addressbooks', resp);
-                // Show inline error next to selector
-                var msg = (resp && resp.data && resp.data.message) ? resp.data.message : 'Failed to load addressbooks';
-                var err = row.find('.automatorwp-sendpulse-error');
-                if (!err.length) {
-                    err = $('<div class="automatorwp-sendpulse-error" style="color:#a00;margin-top:6px;"></div>');
-                    row.append(err);
-                }
-                err.text(msg);
-
-                // Add retry button
-                var retry = row.find('.automatorwp-sendpulse-retry');
-                if (!retry.length) {
-                    retry = $('<button type="button" class="button automatorwp-sendpulse-retry" style="margin-left:8px;">Retry</button>');
-                    row.append(retry);
-                    retry.on('click', function(){
-                        err.remove();
-                        retry.remove();
-                        initAddressbookSelector(option_form);
-                    });
-                }
-                return;
-            }
-            var books = (resp.data && resp.data.addressbooks) ? resp.data.addressbooks : [];
-            books.forEach(function(b){
-                select.append( $('<option>').attr('value', b.id).text(b.name) );
-            });
-            if (existingVal) select.val(existingVal);
-            // Auto-select first addressbook when requested
-            if ( ! existingVal && autoSelectFirst && books.length ) {
-                try { select.val( books[0].id ); } catch(e){}
-            }
-            if (select.val()) loadBtn.show();
-            // Optionally auto-load subscribers
-            if ( autoLoad && select.val() ) {
-                try { loadBtn.trigger('click'); } catch(e){}
-            }
-        }).fail(function(){ loader.hide(); });
-
-        select.on('change', function(){
-            var v = $(this).val();
-            if (input && input.length) input.val(v);
-            if (v) loadBtn.show(); else loadBtn.hide();
-        });
-
-        loadBtn.on('click', function(){
-            var ab = select.val();
-            var btn = $(this);
-            if (!ab) return;
-            btn.prop('disabled', true).text('Loading...');
-            $.post( _getAjaxUrl(), { action: 'automatorwp_sendpulse_list_subscribers', nonce: automatorwp_sendpulse.nonce, addressbook_id: ab, page: 1, per_page: 100 }, function(resp){
-                btn.prop('disabled', false).text('Load emails');
-                if (!resp || resp.success !== true) {
-                    alert('Failed to load subscribers: ' + (resp && resp.data && resp.data.message ? resp.data.message : 'unknown'));
-                    return;
-                }
-                var data = (resp.data && resp.data.data) ? resp.data.data : (resp.data ? resp.data : []);
-                var emailWrapper = option_form.find('.automatorwp-sendpulse-email-wrapper');
-                if (!emailWrapper.length) {
-                    var emailInput = option_form.find('input[type="email"]').first();
-                    if (emailInput && emailInput.length) {
-                        emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
-                        emailInput.after(emailWrapper);
-                    } else {
-                        emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
-                        row.after(emailWrapper);
+        // Ensure load emails button exists and works against the existing select
+        var row_for_sel = select.closest('.cmb-row, .cmb2-row, .cmb2-id, .form-field, .control-group');
+        if ( !row_for_sel.length ) row_for_sel = select.parent();
+        var loadBtn = row_for_sel.find('.automatorwp-sendpulse-load-emails');
+        if ( !loadBtn.length ) {
+            loadBtn = $('<button type="button" class="button automatorwp-sendpulse-load-emails" style="margin-left:8px;display:none">Load emails</button>');
+            row_for_sel.append(loadBtn);
+            loadBtn.on('click', function(){
+                var ab = select.val();
+                var btn = $(this);
+                if (!ab) return;
+                btn.prop('disabled', true).text('Loading...');
+                $.post( _getAjaxUrl(), { action: 'automatorwp_sendpulse_list_subscribers', nonce: automatorwp_sendpulse.nonce, addressbook_id: ab, page: 1, per_page: 100 }, function(resp){
+                    btn.prop('disabled', false).text('Load emails');
+                    if (!resp || resp.success !== true) {
+                        alert('Failed to load subscribers: ' + (resp && resp.data && resp.data.message ? resp.data.message : 'unknown'));
+                        return;
                     }
-                } else {
-                    emailWrapper.empty();
-                }
-                var sel = $('<select class="automatorwp-sendpulse-email-select" style="width:100%;"></select>');
-                sel.append($('<option>').attr('value','').text('-- Select email --'));
-                data.forEach(function(e){
-                    var em = e.email || e.email_address || '';
-                    if (!em) return;
-                    sel.append($('<option>').attr('value', em).text(em + ' (' + (e.status_explain || e.status || '') + ')'));
-                });
-                emailWrapper.append(sel);
-                sel.on('change', function(){
-                    var v = $(this).val();
-                    var emailInput = option_form.find('input[type="email"]').first();
-                    if (emailInput && emailInput.length) {
-                        emailInput.val(v);
-                    } else {
-                        var hidden = option_form.find('input[name="email"]');
-                        if (!hidden.length) {
-                            hidden = $('<input type="hidden" name="email">');
-                            emailWrapper.after(hidden);
+                    var data = (resp.data && resp.data.data) ? resp.data.data : (resp.data ? resp.data : []);
+                    var emailWrapper = option_form.find('.automatorwp-sendpulse-email-wrapper');
+                    if (!emailWrapper.length) {
+                        var emailInput = option_form.find('input[type="email"]').first();
+                        if (emailInput && emailInput.length) {
+                            emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                            emailInput.after(emailWrapper);
+                        } else {
+                            emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                            row_for_sel.after(emailWrapper);
                         }
-                        hidden.val(v);
+                    } else {
+                        emailWrapper.empty();
                     }
-                });
-            }).fail(function(){ btn.prop('disabled', false).text('Load emails'); alert('Request failed'); });
-        });
+                    var sel = $('<select class="automatorwp-sendpulse-email-select" style="width:100%;"></select>');
+                    sel.append($('<option>').attr('value','').text('-- Select email --'));
+                    data.forEach(function(e){
+                        var em = e.email || e.email_address || '';
+                        if (!em) return;
+                        sel.append($('<option>').attr('value', em).text(em + ' (' + (e.status_explain || e.status || '') + ')'));
+                    });
+                    emailWrapper.append(sel);
+                    sel.on('change', function(){
+                        var v = $(this).val();
+                        var emailInput = option_form.find('input[type="email"]').first();
+                        if (emailInput && emailInput.length) {
+                            emailInput.val(v);
+                        } else {
+                            var hidden = option_form.find('input[name="email"]');
+                            if (!hidden.length) {
+                                hidden = $('<input type="hidden" name="email">');
+                                emailWrapper.after(hidden);
+                            }
+                            hidden.val(v);
+                        }
+                    });
+                }).fail(function(){ btn.prop('disabled', false).text('Load emails'); alert('Request failed'); });
+            });
+        }
+        if ( select.val() ) loadBtn.show();
+
+        // Keep underlying input (if present) in sync with select value
+        try {
+            select.off('change.automatorwp_sendpulse_sync').on('change.automatorwp_sendpulse_sync', function(){
+                var v = $(this).val();
+                if (input && input.length && !input.is('select')) input.val(v);
+                if (v) loadBtn.show(); else loadBtn.hide();
+            });
+        } catch(e){}
+
+        if ( autoLoad && select.val() ) {
+            try { loadBtn.trigger('click'); } catch(e){}
+        }
 
     }
 
@@ -813,4 +981,67 @@
         });
     });
 
+})(jQuery);
+
+// Ensure addressbook selector is initialized in hidden/collapsed option forms
+(function($){
+    function _ensureInitAddressbookOnHiddenForms() {
+        var attempts = 0;
+        var maxAttempts = 20; // ~5s (20 * 250ms)
+        var interval = setInterval(function(){
+            attempts++;
+            $('.automatorwp-option-form-container').each(function(){
+                try {
+                    var of = $(this);
+                    // Only target SendPulse action items
+                    var parentItem = of.closest('.automatorwp-automation-item[class*="sendpulse"]');
+                    if (!parentItem.length) return;
+
+                    // If selector already present, skip
+                    if ( of.find('.automatorwp-sendpulse-addressbook-select').length ) return;
+
+                    // If there's an addressbook input/placeholder field, try to init
+                    var hasField = of.find('input[data-option="addressbook_id"], select[data-option="addressbook_id"], input[name*="addressbook_id"], select[name*="addressbook_id"], input[id*="addressbook_id"], select[id*="addressbook_id"]').length;
+                    if ( hasField ) {
+                        if ( typeof initAddressbookSelector === 'function' ) {
+                            initAddressbookSelector( of, { autoSelectFirst: true, autoLoad: true } );
+                        } else if ( typeof window !== 'undefined' && typeof window.automatorwp_sendpulse_initAddressbookSelector === 'function' ) {
+                            window.automatorwp_sendpulse_initAddressbookSelector( of, { autoSelectFirst: true, autoLoad: true } );
+                        }
+                    }
+                } catch(e) { try{ console.warn('[automatorwp-sendpulse] ensureInit error', e); }catch(ignore){} }
+            });
+            if ( attempts >= maxAttempts ) {
+                clearInterval(interval);
+            }
+        }, 250);
+    }
+
+    $(document).ready(function(){ _ensureInitAddressbookOnHiddenForms(); });
+})(jQuery);
+
+// Observe document for CMB2-rendered addressbook selects and initialize them
+(function($){
+    $(document).ready(function(){
+        try {
+            var mo = new MutationObserver(function(mutations){
+                mutations.forEach(function(m){
+                    if (m.addedNodes && m.addedNodes.length) {
+                        Array.prototype.forEach.call(m.addedNodes, function(node){
+                            try {
+                                if (!node || node.nodeType !== 1) return;
+                                if (node.matches && node.matches('select[data-option="addressbook_id"]')) {
+                                    try { _ensureInitAddressbookSelect( $(node), $(node).closest('.automatorwp-option-form-container') ); } catch(e){}
+                                } else if (node.querySelectorAll) {
+                                    var sels = node.querySelectorAll('select[data-option="addressbook_id"]');
+                                    Array.prototype.forEach.call(sels, function(s){ try { _ensureInitAddressbookSelect( $(s), $(s).closest('.automatorwp-option-form-container') ); } catch(e){} });
+                                }
+                            } catch(e){}
+                        });
+                    }
+                });
+            });
+            mo.observe(document.body || document.documentElement, { childList: true, subtree: true });
+        } catch(e){}
+    });
 })(jQuery);

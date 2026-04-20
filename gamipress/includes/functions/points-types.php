@@ -241,6 +241,10 @@ function gamipress_get_points_type_label_position( $points_type ) {
 
         // Get the points type label position (after or before)
         $label_position = gamipress_get_post_meta( $points_type_id, '_gamipress_label_position' );
+
+        if( $label_position === '' ) {
+            $label_position = 'after';
+        }
     }
 
     /**
@@ -307,6 +311,10 @@ function gamipress_get_points_type_html_display( $points_type ) {
 
         // Get the points type HTML display
         $html_display = gamipress_get_post_meta( $points_type_id, '_gamipress_html_display' );
+
+        if( $html_display === '' ) {
+            $html_display = 'label_image_after';
+        }
     }
 
     /**

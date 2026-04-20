@@ -43,18 +43,20 @@ class AutomatorWP_Sendpulse_Add_Subscriber extends AutomatorWP_Integration_Actio
                             'default'  => '',
                             'required' => false,
                         ),
+                        'addressbook_id' => automatorwp_utilities_ajax_selector_field( array(
+                            'name'       => __( 'Addressbook:', 'automatorwp-sendpulse' ),
+                            'desc'       => __( 'Select the addressbook in your SendPulse account.', 'automatorwp-sendpulse' ),
+                            'type'       => 'select',
+                            'field'      => 'addressbook_id',
+                            'action_cb'  => 'automatorwp_sendpulse_list_addressbooks',
+                            'options_cb' => 'automatorwp_sendpulse_options_cb_addressbook',
+                            'attributes' => array(
+                                'placeholder' => __( 'Select addressbook', 'automatorwp-sendpulse' ),
+                            ),
+                            'default'    => '',
+                        ) ),
                     ),
                 ),
-                'addressbook_id' => automatorwp_utilities_ajax_selector_option( array(
-                    'field'             => 'addressbook_id',
-                    'option_default'    => __( 'addressbook', 'automatorwp-sendpulse' ),
-                    'name'              => __( 'Addressbook:', 'automatorwp-sendpulse' ),
-                    'option_none'       => false,
-                    'action_cb'         => 'automatorwp_sendpulse_list_addressbooks',
-                    'options_cb'        => 'automatorwp_sendpulse_options_cb_addressbook',
-                    'placeholder'       => __( 'Select addressbook', 'automatorwp-sendpulse' ),
-                    'default'           => ''
-                ) ),
             ),
         ) );
 

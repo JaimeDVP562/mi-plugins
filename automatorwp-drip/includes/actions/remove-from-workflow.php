@@ -1,8 +1,8 @@
 <?php
 /**
- * Add Tag to Subscriber
+ * Remove Subscriber From Workflow
  *
- * @package     AutomatorWP\Integrations\Drip\Actions\Add_Tag_To_Subscriber
+ * @package     AutomatorWP\Integrations\Drip\Actions\Remove_From_Workflow
  * @author      AutomatorWP <contact@automatorwp.com>
  * @since       1.0.0
  */
@@ -10,10 +10,10 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Action {
+class AutomatorWP_Drip_Remove_From_Workflow extends AutomatorWP_Integration_Action {
 
     public $integration = 'drip';
-    public $action      = 'drip_add_tag_to_subscriber';
+    public $action      = 'drip_remove_from_workflow';
     public $result      = '';
 
     /**
@@ -25,33 +25,37 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
 
         automatorwp_register_action( $this->action, array(
             'integration'   => $this->integration,
-            'label'         => __( 'Add tag to subscriber', 'automatorwp-drip' ),
-            'select_option' => __( 'Add <strong>tag</strong> to <strong>subscriber</strong>', 'automatorwp-drip' ),
-            /* translators: %1$s: Tag. */
-            'edit_label'    => sprintf( __( 'Add %1$s to subscriber', 'automatorwp-drip' ), '{tag}' ) ?: '',
-            /* translators: %1$s: Tag. */
-            'log_label'     => sprintf( __( 'Add %1$s to subscriber', 'automatorwp-drip' ), '{tag}' ) ?: '',
+            'label'         => __( 'Remove subscriber from workflow', 'automatorwp-drip' ),
+            'select_option' => __( 'Remove <strong>subscriber</strong> from workflow', 'automatorwp-drip' ),
+            /* translators: %1$s: Email. */
+            'edit_label'    => sprintf( __( 'Remove %1$s from workflow', 'automatorwp-drip' ), '{email}' ),
+            /* translators: %1$s: Email. */
+            'log_label'     => sprintf( __( 'Remove %1$s from workflow', 'automatorwp-drip' ), '{email}' ),
             'options'       => array(
-                'tag' => array(
-                    'from'    => 'tag',
-                    'default' => __( 'tag', 'automatorwp-drip' ),
+                'email' => array(
+                    'from'    => 'email',
+                    'default' => __( 'subscriber', 'automatorwp-drip' ),
                     'fields'  => array(
                         'email' => array(
-                            'name'    => __( 'Email:', 'automatorwp-drip' ),
-                            'desc'    => __( 'Leave empty to use the email of the user who triggers the automation.', 'automatorwp-drip' ),
-                            'type'    => 'text',
-                            'default' => '',
-                        ),
-                        'tag' => automatorwp_utilities_ajax_selector_field( array(
-                            'name'       => __( 'Tags:', 'automatorwp-drip' ),
-                            'desc'       => __( 'Select tags in your Drip account.', 'automatorwp-drip' ),
-                            'type'       => 'select',
-                            'field'      => 'tag',
-                            'action_cb'  => 'automatorwp_drip_get_tags',
-                            'options_cb' => 'automatorwp_drip_options_cb_tag',
+                            'name'       => __( 'Email:', 'automatorwp-drip' ),
+                            'desc'       => __( 'Leave empty to use the email of the user who triggers the automation.', 'automatorwp-drip' ),
+                            'type'       => 'text',
                             'attributes' => array(
-                                'placeholder' => __( 'Select tags', 'automatorwp-drip' ),
+                                'placeholder' => __( 'sample@email.com or use the tag selector', 'automatorwp-drip' ),
                             ),
+                            'default'    => '',
+                        ),
+                        'workflow' => automatorwp_utilities_ajax_selector_field( array(
+                            'name'       => __( 'Workflow:', 'automatorwp-drip' ),
+                            'desc'       => __( 'Select the workflow to remove the subscriber from.', 'automatorwp-drip' ),
+                            'type'       => 'select',
+                            'field'      => 'workflow',
+                            'action_cb'  => 'automatorwp_drip_get_workflows',
+                            'options_cb' => 'automatorwp_drip_options_cb_workflow',
+                            'attributes' => array(
+                                'placeholder' => __( 'Select workflow', 'automatorwp-drip' ),
+                            ),
+                            'default'    => '',
                         ) ),
                     ),
                 ),
@@ -72,13 +76,11 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
      */
     public function execute( $action, $user_id, $action_options, $automation ) {
 
-        // Bail if Drip not configured
         if ( ! automatorwp_drip_get_api() ) {
-            $this->result = __( 'Drip integration not configured in AutomatorWP settings.', 'automatorwp-drip' );
+            $this->result = __( 'Drip integration not configured.', 'automatorwp-drip' );
             return;
         }
 
-        // Get Email (fallback to the user who triggers the automation)
         $email = isset( $action_options['email'] ) && ! empty( $action_options['email'] )
             ? sanitize_email( $action_options['email'] )
             : '';
@@ -88,20 +90,22 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
             $email = $user ? $user->user_email : '';
         }
 
-        $tag         = isset( $action_options['tag'] ) ? $action_options['tag'] : '';
-        $tag_to_send = is_array( $tag ) ? reset( $tag ) : $tag;
+        $workflow_id = isset( $action_options['workflow'] ) ? sanitize_text_field( $action_options['workflow'] ) : '';
 
-        if ( empty( $email ) || empty( $tag_to_send ) ) {
-            $this->result = __( 'No email or tag provided.', 'automatorwp-drip' );
+        if ( empty( $email ) || empty( $workflow_id ) ) {
+            $this->result = __( 'No email or workflow provided.', 'automatorwp-drip' );
             return;
         }
 
-        $response = automatorwp_drip_add_tag_subscriber( $email, $tag_to_send );
+        // automatorwp_drip_remove_from_workflow fetches the Drip subscriber ID internally
+        $response = automatorwp_drip_remove_from_workflow( $email, $workflow_id );
 
-        if ( $response['code'] === 201 || $response['code'] === 200 ) {
-            $this->result = sprintf( __( 'Tag "%1$s" added to %2$s.', 'automatorwp-drip' ), $tag_to_send, $email );
+        if ( $response['code'] === 204 || $response['code'] === 200 ) {
+            $this->result = sprintf( __( '%1$s removed from workflow %2$s.', 'automatorwp-drip' ), $email, $workflow_id );
+        } elseif ( $response['code'] === 404 ) {
+            $this->result = sprintf( __( 'Subscriber %s not found in Drip.', 'automatorwp-drip' ), $email );
         } else {
-            $this->result = sprintf( __( 'Error adding tag: HTTP %d', 'automatorwp-drip' ), $response['code'] );
+            $this->result = sprintf( __( 'Drip API error: HTTP %d', 'automatorwp-drip' ), $response['code'] );
         }
 
     }
@@ -126,8 +130,8 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
      *
      * @since 1.0.0
      *
-     * @param stdClass  $object     The trigger/action object
-     * @param string    $item_type  The object type (trigger|action)
+     * @param stdClass  $object
+     * @param string    $item_type
      */
     public function configuration_notice( $object, $item_type ) {
 
@@ -139,10 +143,6 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
                     __( 'You need to configure the <a href="%s" target="_blank">Drip settings</a> to get this action to work.', 'automatorwp-drip' ),
                     get_admin_url() . 'admin.php?page=automatorwp_settings&tab=opt-tab-drip'
                 ); ?>
-                <?php echo sprintf(
-                    __( '<a href="%s" target="_blank">Documentation</a>', 'automatorwp-drip' ),
-                    'https://automatorwp.com/docs/drip/'
-                ); ?>
             </div>
         <?php endif;
 
@@ -153,11 +153,11 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
      *
      * @since 1.0.0
      *
-     * @param array     $log_meta       Log meta data
-     * @param stdClass  $action         The action object
-     * @param int       $user_id        The user ID
-     * @param array     $action_options The action's stored options (with tags already passed)
-     * @param stdClass  $automation     The action's automation object
+     * @param array     $log_meta
+     * @param stdClass  $action
+     * @param int       $user_id
+     * @param array     $action_options
+     * @param stdClass  $automation
      *
      * @return array
      */
@@ -176,9 +176,9 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
      *
      * @since 1.0.0
      *
-     * @param array     $log_fields The log fields
-     * @param stdClass  $log        The log object
-     * @param stdClass  $object     The trigger/action/automation object attached to the log
+     * @param array     $log_fields
+     * @param stdClass  $log
+     * @param stdClass  $object
      *
      * @return array
      */
@@ -194,4 +194,4 @@ class AutomatorWP_Drip_Add_Tag_To_Subscriber extends AutomatorWP_Integration_Act
 
 }
 
-new AutomatorWP_Drip_Add_Tag_To_Subscriber();
+new AutomatorWP_Drip_Remove_From_Workflow();

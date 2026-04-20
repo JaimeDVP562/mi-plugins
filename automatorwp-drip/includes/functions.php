@@ -3,13 +3,15 @@
  * Functions
  *
  * @package     AutomatorWP\Drip\Functions
+ * @author      AutomatorWP <contact@automatorwp.com>
  * @since       1.0.0
  */
+
 // Exit if accessed directly
-if( !defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * Helper function to get the Drip url
+ * Helper function to get the Drip API base URL.
  *
  * @since 1.0.0
  *
@@ -17,12 +19,13 @@ if( !defined( 'ABSPATH' ) ) exit;
  */
 function automatorwp_drip_get_url() {
 
-    return ' https://api.getdrip.com';
+    return 'https://api.getdrip.com';
 
 }
 
 /**
- * Helper function to get the Drip API parameters
+ * Helper function to get the Drip API credentials from settings.
+ * Returns false if any required field is missing.
  *
  * @since 1.0.0
  *
@@ -30,408 +33,264 @@ function automatorwp_drip_get_url() {
  */
 function automatorwp_drip_get_api() {
 
-    $url = automatorwp_drip_get_url();
-    $id = automatorwp_drip_get_option( 'client_id' );
-    $secret = automatorwp_drip_get_option( 'client_secret' );
+    $id     = automatorwp_drip_get_option( 'key' );
+    $secret = automatorwp_drip_get_option( 'secret' );
 
-    if( empty( $id ) ) {
+    if ( empty( $id ) || empty( $secret ) ) {
         return false;
     }
 
     return array(
-        'url' => $url,
-        'token' => $id,
+        'url'    => automatorwp_drip_get_url(),
+        'token'  => $id,
         'secret' => $secret,
     );
 
 }
 
 /**
- * Helper function to check API key
+ * Unified HTTP request helper for the Drip REST API.
+ * All API calls go through this function to avoid duplicating auth headers.
+ *
+ * Returns an array with 'code' (HTTP status) and 'body' (decoded JSON) keys,
+ * following the same pattern as other AutomatorWP integrations (freshdesk, telegram).
  *
  * @since 1.0.0
- * 
- * @param string    $secret API key
  *
- * @return array|false
+ * @param string     $endpoint  Path relative to /v2/{account_id}/, e.g. 'subscribers'
+ * @param string     $method    HTTP method: GET, POST, PUT, DELETE
+ * @param array|null $body      Optional request body as PHP array
+ *
+ * @return array { code: int, body: array }
  */
-function automatorwp_drip_check_api_secret( $secret ) {
-
-    $return = false;
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth
-    );
-
-    $response = wp_remote_get( 'https://api.getdrip.com/v2/user', array(
-        'headers' => $headers
-    ) );
-
-	$status_code = wp_remote_retrieve_response_code( $response );
-
-	if ( 200 !== $status_code ) {
-        wp_send_json_error (array( 'message' => __( 'Please, check your API key', 'automatorwp-drip' ) ) );
-        return $return;
-	} else {
-        $return = true;
-    }
-
-    return $return;
-
-}
-
-/**
- * Helper function to check Account ID
- *
- * @since 1.0.0
- * 
- * @param string    $id Account ID
- * @param string    $secret API key
- *
- * @return array|false
- */
-function automatorwp_drip_check_api_key( ) {
-    $return = false;
+function automatorwp_drip_api_request( $endpoint, $method = 'GET', $body = null, $version = 'v2' ) {
 
     $api = automatorwp_drip_get_api();
 
-    $id = $api['token'];
-    $secret = $api['secret'];
+    if ( ! $api ) {
+        return array( 'code' => 0, 'body' => array() );
+    }
 
-    $base64_auth = base64_encode($secret . ':');
+    $base64_auth = base64_encode( $api['secret'] . ':' );
 
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth
+    $args = array(
+        'method'  => $method,
+        'headers' => array(
+            'Authorization' => 'Basic ' . $base64_auth,
+            'Content-Type'  => 'application/json',
+        ),
+        'timeout' => 30,
     );
 
-    $response = wp_remote_get( 'https://api.getdrip.com/v2/' . $id . '/subscribers', array(
-        'headers' => $headers
+    if ( ! is_null( $body ) ) {
+        $args['body'] = json_encode( $body );
+    }
+
+    $url      = $api['url'] . '/' . $version . '/' . $api['token'] . '/' . ltrim( $endpoint, '/' );
+    $response = wp_remote_request( $url, $args );
+
+    if ( is_wp_error( $response ) ) {
+        return array( 'code' => 0, 'body' => array() );
+    }
+
+    $code         = (int) wp_remote_retrieve_response_code( $response );
+    $decoded_body = json_decode( wp_remote_retrieve_body( $response ), true );
+
+    return array(
+        'code' => $code,
+        'body' => is_array( $decoded_body ) ? $decoded_body : array(),
+    );
+
+}
+
+// -------------------------------------------------------
+// Credential check (used by the Authorize AJAX handler)
+// -------------------------------------------------------
+
+/**
+ * Test a pair of credentials against the Drip API.
+ * Calls wp_send_json_error directly on failure (designed for AJAX context).
+ *
+ * @since 1.0.0
+ *
+ * @param string $key    Account ID
+ * @param string $secret API Key
+ *
+ * @return bool
+ */
+function automatorwp_drip_check_api_key( $key, $secret ) {
+
+    $base64_auth = base64_encode( $secret . ':' );
+
+    $response = wp_remote_get( automatorwp_drip_get_url() . '/v2/' . $key . '/subscribers', array(
+        'headers' => array( 'Authorization' => 'Basic ' . $base64_auth ),
+        'timeout' => 15,
     ) );
 
-	$status_code = wp_remote_retrieve_response_code( $response );
-
-	if ( 200 !== $status_code ) {
-        wp_send_json_error (array( 'message' => __( 'Please, check your Account ID', 'automatorwp-convertkit' ) ) );
-        return $return;
-	} else {
-        $return = true;
+    if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+        wp_send_json_error( array( 'message' => __( 'Please, check your Account ID and API Key', 'automatorwp-drip' ) ) );
+        return false;
     }
 
     return true;
 
 }
 
+// -------------------------------------------------------
+// Subscriber helpers
+// -------------------------------------------------------
+
 /**
- * Create/Update subscriber Drip
+ * Create or update a Drip subscriber.
  *
  * @since 1.0.0
- * 
- * @param array     $subscriber     The new subscriber data
+ *
+ * @param array $subscriber Subscriber data (email, first_name, last_name, tags)
+ *
+ * @return array { code: int, body: array }
  */
 function automatorwp_drip_create_update_subscriber( $subscriber ) {
 
-    $api = automatorwp_drip_get_api();
-
-    if( ! $api ) {
-        return;
-    }
-
-    $id = $api['token'];
-    $secret = $api['secret'];
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth,
-        'Content-Type'  => 'application/json',
-        'contentType'   => 'application/json',
-    );
-
-    $response = wp_remote_post( $api['url'] . '/v2/' . $id . '/subscribers', array(
-        'headers' => $headers,
-        'body' => json_encode( array(
-            'subscribers' => array(
-                array(
-                    'email'     => $subscriber['email'],
-                    'first_name'      => $subscriber['first_name'],
-                )
-            ),
-        ) )
-    ) );
-
-    return $response['response']['code'];
-}
-
-/**
- * Remove Subscriber
- *
- * @since 1.0.0
- * 
- * @param string     $subscriber_email     The subscriber email
- */
-function automatorwp_drip_remove_subscriber( $subscriber_email ) {
-
-    $api = automatorwp_drip_get_api();
-
-    if( ! $api ) {
-        return;
-    }
-
-    $id = $api['token'];
-    $secret = $api['secret'];
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth,
-    );
-
-    $response = wp_remote_request( $api['url'] . '/v2/' . $id . '/subscribers/' . $subscriber_email, array(
-        'headers' => $headers,
-        'method' => 'DELETE',
-    ) );
-
-    return $response['response']['code'];
-    
-}
-
-/**
- * Add tag to Subscriber
- *
- * @since 1.0.0
- * 
- * @param string     $subscriber_email     The subscriber email
- * @param int        $tag                  The tag name
- */
-function automatorwp_drip_add_tag_subscriber( $subscriber_email, $tag ) {
-
-    $api = automatorwp_drip_get_api();
-
-    if( ! $api ) {
-        return;
-    }
-
-    $id = $api['token'];
-    $secret = $api['secret'];
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth,
-        'Content-Type'  => 'application/json',
-        'contentType'   => 'application/json',
-    );
-
-    $response = wp_remote_post( $api['url'] . '/v2/' . $id . '/tags', array(
-        'headers' => $headers,
-        'body' => json_encode( array(
-            'tags' => array(
-                array(
-                    'email'     => $subscriber_email,
-                    'tag'      => $tag
-                )
-            ),
-        ) )
-    ) );
-
-    return $response['response']['code'];
-}
-
-/**
-* Get tags from Drip
-*
-* @since 1.0.0
-*
-* @param string $search
-* @param int $page
-*
-* @return array
-*/
-function automatorwp_drip_get_tags( ) {
-
-    $tags = array();
-
-    $api = automatorwp_drip_get_api();
-    
-    $id = $api['token'];
-    $secret = $api['secret'];
-
-    if( ! $api ) {
-        return array();
-    }
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth
-    );
-
-    $response = wp_remote_get( 'https://api.getdrip.com/v2/' . $id . '/tags', array(
-        'headers' => $headers
-    ) );
-
-    $response = json_decode( wp_remote_retrieve_body( $response ), true  );
-
-    $tags = $response['tags'];
-
-    return $tags;
+    return automatorwp_drip_api_request( 'subscribers', 'POST', array( 'subscribers' => array( $subscriber ) ) );
 
 }
 
 /**
- * Options callback for Drip tags selector
+ * Delete a Drip subscriber by email address.
  *
  * @since 1.0.0
  *
- * @param stdClass $field
+ * @param string $email
  *
- * @return array
+ * @return array { code: int, body: array }
  */
-function automatorwp_drip_options_cb_tags( $field ) {
+function automatorwp_drip_remove_subscriber( $email ) {
 
-    // Setup vars
-    $value = $field->escaped_value;
-    $none_value = 'any';
-    $none_label = __( 'any tag', 'automatorwp-drip' );
-    $options = automatorwp_options_cb_none_option( $field, $none_value, $none_label );
-
-    if( ! empty( $value ) ) {
-        if( ! is_array( $value ) ) {
-            $value = array( $value );
-        }
-
-        foreach( $value as $tag ) {
-
-            // Skip option none
-            if( $tag === $none_value ) {
-                continue;
-            }
-
-            $options[$tag] = $tag;
-
-        }
-    }
-
-    return $options;
+    return automatorwp_drip_api_request( 'subscribers/' . rawurlencode( $email ), 'DELETE' );
 
 }
 
 /**
- * Remove tag from Subscriber
+ * Fetch a Drip subscriber by email address.
+ * Used internally to resolve the Drip subscriber ID before workflow removal.
  *
  * @since 1.0.0
- * 
- * @param string     $subscriber_email     The subscriber email
- * @param int        $tag                  The tag name
+ *
+ * @param string $email
+ *
+ * @return array|false Subscriber data array or false on failure
  */
-function automatorwp_drip_remove_tag_subscriber( $subscriber_email, $tag ) {
+function automatorwp_drip_get_subscriber_by_email( $email ) {
 
-    $api = automatorwp_drip_get_api();
+    $response = automatorwp_drip_api_request( 'subscribers/' . rawurlencode( $email ) );
 
-    if( ! $api ) {
-        return;
-    }
+    return isset( $response['body']['subscribers'][0] ) ? $response['body']['subscribers'][0] : false;
 
-    $id = $api['token'];
-    $secret = $api['secret'];
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth,
-    );
-
-    $response = wp_remote_request( $api['url'] . '/v2/' . $id . '/subscribers/' . $subscriber_email . '/tags/' . $tag, array(
-        'headers' => $headers,
-        'method' => 'DELETE',
-    ) );
-
-    return $response['response']['code'];
-    
 }
 
 /**
-* Get campaigns from Drip
-*
-* @since 1.0.0
-*
-* @return array
-*/
+ * Unsubscribe a subscriber from a specific campaign (or all campaigns).
+ *
+ * @since 1.0.0
+ *
+ * @param string $email
+ * @param string $campaign_id Leave empty to remove from all campaigns
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_unsubscribe_from_campaign( $email, $campaign_id = '' ) {
+
+    $body = ! empty( $campaign_id ) ? array( 'campaign_id' => $campaign_id ) : array();
+
+    return automatorwp_drip_api_request( 'subscribers/' . rawurlencode( $email ) . '/campaign_unsubscribe', 'POST', $body );
+
+}
+
+/**
+ * Unsubscribe a subscriber from all Drip email marketing.
+ *
+ * @since 1.0.0
+ *
+ * @param string $email
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_unsubscribe_all( $email ) {
+
+    return automatorwp_drip_api_request( 'unsubscribes/batches', 'POST', array( 'batches' => array( array( 'subscribers' => array( array( 'email' => $email ) ) ) ) ) );
+
+}
+
+// -------------------------------------------------------
+// Tag helpers
+// -------------------------------------------------------
+
+/**
+ * Apply a tag to a Drip subscriber.
+ *
+ * @since 1.0.0
+ *
+ * @param string $email
+ * @param string $tag
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_add_tag_subscriber( $email, $tag ) {
+
+    return automatorwp_drip_api_request( 'tags', 'POST', array( 'tags' => array( array( 'email' => $email, 'tag' => $tag ) ) ) );
+
+}
+
+/**
+ * Get all tags from the Drip account.
+ *
+ * @since 1.0.0
+ *
+ * @return array Flat array of tag name strings
+ */
+function automatorwp_drip_get_tags() {
+
+    $response = automatorwp_drip_api_request( 'tags' );
+
+    return isset( $response['body']['tags'] ) && is_array( $response['body']['tags'] ) ? $response['body']['tags'] : array();
+
+}
+
+/**
+ * Remove a tag from a Drip subscriber.
+ *
+ * @since 1.0.0
+ *
+ * @param string $email
+ * @param string $tag
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_remove_tag_subscriber( $email, $tag ) {
+
+    return automatorwp_drip_api_request( 'subscribers/' . rawurlencode( $email ) . '/tags/' . rawurlencode( $tag ), 'DELETE' );
+
+}
+
+// -------------------------------------------------------
+// Campaign helpers
+// -------------------------------------------------------
+
+/**
+ * Get all campaigns from the Drip account.
+ *
+ * @since 1.0.0
+ *
+ * @return array Associative array of [ campaign_id => campaign_name ]
+ */
 function automatorwp_drip_get_campaigns() {
 
-    $api = automatorwp_drip_get_api();
-
-    if( ! $api ) {
-        return array();
-    }
-
-    $id = $api['token'];
-    $secret = $api['secret'];
-
-    $base64_auth = base64_encode($secret . ':');
-
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth
-    );
-
+    $response  = automatorwp_drip_api_request( 'campaigns?status=all' );
     $campaigns = array();
 
-    $response = wp_remote_get( 'https://api.getdrip.com/v2/' . $id . '/campaigns?status=all', array(
-        'headers' => $headers
-    ) );
-
-    if( ! is_wp_error( $response ) ) {
-        $response = json_decode( wp_remote_retrieve_body( $response ), true );
-
-        if( isset( $response['campaigns'] ) && is_array( $response['campaigns'] ) ) {
-            foreach( $response['campaigns'] as $campaign ) {
-                if( ! is_array( $campaign ) ) {
-                    continue;
-                }
-
-                if( empty( $campaign['id'] ) ) {
-                    continue;
-                }
-
-                $campaigns[] = array(
-                    'id' => $campaign['id'],
-                    'name' => isset( $campaign['name'] ) ? $campaign['name'] : $campaign['id'],
-                );
-            }
-        }
-    }
-
-    if( ! empty( $campaigns ) ) {
-        return $campaigns;
-    }
-
-    // Single Email Campaigns are exposed as broadcasts on some Drip accounts
-    $response = wp_remote_get( 'https://api.getdrip.com/v2/' . $id . '/broadcasts?status=all', array(
-        'headers' => $headers
-    ) );
-
-    if( is_wp_error( $response ) ) {
-        return array();
-    }
-
-    $response = json_decode( wp_remote_retrieve_body( $response ), true );
-
-    if( isset( $response['broadcasts'] ) && is_array( $response['broadcasts'] ) ) {
-        foreach( $response['broadcasts'] as $broadcast ) {
-            if( ! is_array( $broadcast ) ) {
-                continue;
-            }
-
-            if( empty( $broadcast['id'] ) ) {
-                continue;
-            }
-
-            $campaigns[] = array(
-                'id' => $broadcast['id'],
-                'name' => isset( $broadcast['name'] ) ? $broadcast['name'] : ( isset( $broadcast['subject'] ) ? $broadcast['subject'] : $broadcast['id'] ),
-            );
+    if ( isset( $response['body']['campaigns'] ) ) {
+        foreach ( $response['body']['campaigns'] as $campaign ) {
+            $campaigns[ $campaign['id'] ] = $campaign['name'];
         }
     }
 
@@ -440,98 +299,208 @@ function automatorwp_drip_get_campaigns() {
 }
 
 /**
- * Add subscriber to campaign
+ * Subscribe a subscriber to a Drip campaign.
  *
  * @since 1.0.0
  *
- * @param array     $subscriber     The subscriber data
- * @param int       $campaign_id    Campaign ID
+ * @param array  $subscriber_data email, first_name, last_name
+ * @param string $campaign_id
  *
- * @return int|null
+ * @return array { code: int, body: array }
  */
-function automatorwp_drip_add_subscriber_campaign( $subscriber, $campaign_id ) {
+function automatorwp_drip_add_subscriber_campaign( $subscriber_data, $campaign_id ) {
 
-    $api = automatorwp_drip_get_api();
+    return automatorwp_drip_api_request( 'campaigns/' . $campaign_id . '/subscribers', 'POST', array( 'subscribers' => array( $subscriber_data ) ) );
 
-    if( ! $api ) {
-        return;
-    }
+}
 
-    $id = $api['token'];
-    $secret = $api['secret'];
+// -------------------------------------------------------
+// Event helpers
+// -------------------------------------------------------
 
-    $base64_auth = base64_encode($secret . ':');
+/**
+ * Record a custom event for a Drip subscriber.
+ *
+ * @since 1.0.0
+ *
+ * @param string $email
+ * @param string $action_name  The event action name (e.g. "Logged in")
+ * @param array  $properties   Optional key-value pairs attached to the event
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_record_event( $email, $action_name, $properties = array() ) {
 
-    $headers = array(
-        'Authorization' => 'Basic ' . $base64_auth,
-        'Content-Type'  => 'application/json',
-        'contentType'   => 'application/json',
+    $event = array(
+        'email'  => $email,
+        'action' => $action_name,
     );
 
-    $subscriber_payload = array(
-        'email'         => $subscriber['email'],
-        'first_name'    => $subscriber['first_name'],
-    );
-
-    if( isset( $subscriber['last_name'] ) ) {
-        $subscriber_payload['last_name'] = $subscriber['last_name'];
+    if ( ! empty( $properties ) ) {
+        $event['properties'] = $properties;
     }
 
-    $subscriber_payload['campaigns'] = array(
-        array(
-            'id' => $campaign_id,
-        )
-    );
+    return automatorwp_drip_api_request( 'events', 'POST', array( 'events' => array( $event ) ) );
 
-    $response = wp_remote_post( $api['url'] . '/v2/' . $id . '/subscribers', array(
-        'headers' => $headers,
-        'body' => json_encode( array(
-            'subscribers' => array( $subscriber_payload ),
-        ) )
-    ) );
+}
 
-    if( is_wp_error( $response ) ) {
-        return;
+// -------------------------------------------------------
+// Workflow helpers
+// -------------------------------------------------------
+
+/**
+ * Get all workflows from the Drip account.
+ *
+ * @since 1.0.0
+ *
+ * @return array Associative array of [ workflow_id => workflow_name ]
+ */
+function automatorwp_drip_get_workflows() {
+
+    $response  = automatorwp_drip_api_request( 'workflows' );
+    $workflows = array();
+
+    if ( isset( $response['body']['workflows'] ) ) {
+        foreach ( $response['body']['workflows'] as $workflow ) {
+            $workflows[ $workflow['id'] ] = $workflow['name'];
+        }
     }
 
-    return $response['response']['code'];
+    return $workflows;
 
 }
 
 /**
- * Options callback for Drip campaigns selector
+ * Enroll a subscriber into a Drip workflow.
  *
  * @since 1.0.0
  *
- * @param stdClass $field
+ * @param string $email
+ * @param string $workflow_id
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_enroll_workflow( $email, $workflow_id ) {
+
+    return automatorwp_drip_api_request( 'workflows/' . $workflow_id . '/subscribers', 'POST', array( 'subscribers' => array( array( 'email' => $email ) ) ) );
+
+}
+
+/**
+ * Remove a subscriber from a Drip workflow.
+ * The Drip remove endpoint requires the subscriber's Drip ID, not their email,
+ * so this function fetches the ID internally before making the remove call.
+ *
+ * @since 1.0.0
+ *
+ * @param string $email
+ * @param string $workflow_id
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_remove_from_workflow( $email, $workflow_id ) {
+
+    $subscriber = automatorwp_drip_get_subscriber_by_email( $email );
+
+    if ( ! $subscriber || empty( $subscriber['id'] ) ) {
+        return array( 'code' => 404, 'body' => array() );
+    }
+
+    return automatorwp_drip_api_request( 'workflows/' . $workflow_id . '/subscribers/' . $subscriber['id'] . '/remove', 'POST' );
+
+}
+
+// -------------------------------------------------------
+// Shopper Activity API v3 helpers
+// -------------------------------------------------------
+
+/**
+ * Create or update an order via the Drip Shopper Activity API (v3).
+ *
+ * @since 1.0.0
+ *
+ * @param array $order Order data (email, action, order_id, grand_total, currency, etc.)
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_create_update_order( $order ) {
+
+    return automatorwp_drip_api_request( 'shopper_activity/order/batch', 'POST', array( 'orders' => array( $order ) ), 'v3' );
+
+}
+
+/**
+ * Create or update a cart via the Drip Shopper Activity API (v3).
+ *
+ * @since 1.0.0
+ *
+ * @param array $cart Cart data (email, action, cart_id, grand_total, currency, cart_url, etc.)
+ *
+ * @return array { code: int, body: array }
+ */
+function automatorwp_drip_create_update_cart( $cart ) {
+
+    return automatorwp_drip_api_request( 'shopper_activity/cart/batch', 'POST', array( 'carts' => array( $cart ) ), 'v3' );
+
+}
+
+// -------------------------------------------------------
+// Options callbacks (used by AJAX selector fields)
+// -------------------------------------------------------
+
+/**
+ * Options cb for campaigns selector — returns label for a stored campaign ID.
+ *
+ * @since 1.0.0
+ *
+ * @param string $value
  *
  * @return array
  */
-function automatorwp_drip_options_cb_campaign( $field ) {
+function automatorwp_drip_options_cb_campaign( $value ) {
 
-    // Setup vars
-    $value = $field->escaped_value;
-    $none_value = 'any';
-    $none_label = __( 'any campaign', 'automatorwp-drip' );
-    $options = automatorwp_options_cb_none_option( $field, $none_value, $none_label );
-
-    if( ! empty( $value ) ) {
-        if( ! is_array( $value ) ) {
-            $value = array( $value );
-        }
-
-        foreach( $value as $campaign ) {
-
-            // Skip option none
-            if( $campaign === $none_value ) {
-                continue;
-            }
-
-            $options[$campaign] = $campaign;
-
-        }
+    if ( empty( $value ) || ! is_scalar( $value ) ) {
+        return array();
     }
 
-    return $options;
+    return array( $value => $value );
+
+}
+
+/**
+ * Options cb for tags selector — returns label for a stored tag name.
+ *
+ * @since 1.0.0
+ *
+ * @param string $value
+ *
+ * @return array
+ */
+function automatorwp_drip_options_cb_tag( $value ) {
+
+    if ( empty( $value ) || ! is_scalar( $value ) ) {
+        return array();
+    }
+
+    return array( $value => $value );
+
+}
+
+/**
+ * Options cb for workflows selector — returns label for a stored workflow ID.
+ *
+ * @since 1.0.0
+ *
+ * @param string $value
+ *
+ * @return array
+ */
+function automatorwp_drip_options_cb_workflow( $value ) {
+
+    if ( empty( $value ) || ! is_scalar( $value ) ) {
+        return array();
+    }
+
+    return array( $value => $value );
 
 }

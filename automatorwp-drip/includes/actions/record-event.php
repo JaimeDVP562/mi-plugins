@@ -1,8 +1,8 @@
 <?php
 /**
- * Remove Subscriber
+ * Record Custom Event
  *
- * @package     AutomatorWP\Integrations\Drip\Actions\Remove_Subscriber
+ * @package     AutomatorWP\Integrations\Drip\Actions\Record_Event
  * @author      AutomatorWP <contact@automatorwp.com>
  * @since       1.0.0
  */
@@ -10,14 +10,14 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action {
+class AutomatorWP_Drip_Record_Event extends AutomatorWP_Integration_Action {
 
     public $integration = 'drip';
-    public $action      = 'drip_remove_subscriber';
+    public $action      = 'drip_record_event';
     public $result      = '';
 
     /**
-     * Register action
+     * Register the action
      *
      * @since 1.0.0
      */
@@ -25,16 +25,16 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
 
         automatorwp_register_action( $this->action, array(
             'integration'   => $this->integration,
-            'label'         => __( 'Remove subscriber', 'automatorwp-drip' ),
-            'select_option' => __( 'Remove <strong>subscriber</strong>', 'automatorwp-drip' ),
-            /* translators: %1$s: Email. */
-            'edit_label'    => sprintf( __( 'Remove %1$s', 'automatorwp-drip' ), '{email}' ) ?: '',
-            /* translators: %1$s: Email. */
-            'log_label'     => sprintf( __( 'Remove %1$s', 'automatorwp-drip' ), '{email}' ) ?: '',
+            'label'         => __( 'Record a custom event for a subscriber', 'automatorwp-drip' ),
+            'select_option' => __( 'Record a <strong>custom event</strong> for a subscriber', 'automatorwp-drip' ),
+            /* translators: %1$s: event. */
+            'edit_label'    => sprintf( __( 'Record event %1$s for subscriber', 'automatorwp-drip' ), '{event}' ),
+            /* translators: %1$s: event. */
+            'log_label'     => sprintf( __( 'Record event %1$s for subscriber', 'automatorwp-drip' ), '{event}' ),
             'options'       => array(
-                'email' => array(
-                    'from'    => 'email',
-                    'default' => __( 'subscriber', 'automatorwp-drip' ),
+                'event' => array(
+                    'from'    => 'event',
+                    'default' => __( 'event', 'automatorwp-drip' ),
                     'fields'  => array(
                         'email' => array(
                             'name'       => __( 'Email:', 'automatorwp-drip' ),
@@ -42,6 +42,16 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
                             'type'       => 'text',
                             'attributes' => array(
                                 'placeholder' => __( 'sample@email.com or use the tag selector', 'automatorwp-drip' ),
+                            ),
+                            'default'    => '',
+                        ),
+                        'event' => array(
+                            'name'       => __( 'Event Action:', 'automatorwp-drip' ),
+                            'desc'       => __( 'The name of the event to record (e.g. "Logged in", "Completed purchase").', 'automatorwp-drip' ),
+                            'type'       => 'text',
+                            'required'   => true,
+                            'attributes' => array(
+                                'placeholder' => __( 'e.g. Logged in', 'automatorwp-drip' ),
                             ),
                             'default'    => '',
                         ),
@@ -64,13 +74,11 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
      */
     public function execute( $action, $user_id, $action_options, $automation ) {
 
-        // Bail if Drip not configured
         if ( ! automatorwp_drip_get_api() ) {
-            $this->result = __( 'Drip integration not configured in AutomatorWP settings.', 'automatorwp-drip' );
+            $this->result = __( 'Drip integration not configured.', 'automatorwp-drip' );
             return;
         }
 
-        // Get Email (fallback to the user who triggers the automation)
         $email = isset( $action_options['email'] ) && ! empty( $action_options['email'] )
             ? sanitize_email( $action_options['email'] )
             : '';
@@ -80,17 +88,20 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
             $email = $user ? $user->user_email : '';
         }
 
-        if ( empty( $email ) ) {
-            $this->result = __( 'No email provided.', 'automatorwp-drip' );
+        $event_action = isset( $action_options['event'] ) ? sanitize_text_field( $action_options['event'] ) : '';
+
+        if ( empty( $email ) || empty( $event_action ) ) {
+            $this->result = __( 'No email or event action provided.', 'automatorwp-drip' );
             return;
         }
 
-        $response = automatorwp_drip_remove_subscriber( $email );
+        $response = automatorwp_drip_record_event( $email, $event_action );
 
-        if ( $response['code'] === 204 ) {
-            $this->result = sprintf( __( 'Subscriber %s removed from Drip.', 'automatorwp-drip' ), $email );
+        // Drip returns 204 No Content on success for events
+        if ( $response['code'] === 204 || $response['code'] === 200 ) {
+            $this->result = sprintf( __( 'Event "%1$s" recorded for %2$s.', 'automatorwp-drip' ), $event_action, $email );
         } else {
-            $this->result = sprintf( __( 'Error removing %1$s: HTTP %2$d', 'automatorwp-drip' ), $email, $response['code'] );
+            $this->result = sprintf( __( 'Drip API error: HTTP %d', 'automatorwp-drip' ), $response['code'] );
         }
 
     }
@@ -115,8 +126,8 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
      *
      * @since 1.0.0
      *
-     * @param stdClass  $object     The trigger/action object
-     * @param string    $item_type  The object type (trigger|action)
+     * @param stdClass  $object
+     * @param string    $item_type
      */
     public function configuration_notice( $object, $item_type ) {
 
@@ -128,10 +139,6 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
                     __( 'You need to configure the <a href="%s" target="_blank">Drip settings</a> to get this action to work.', 'automatorwp-drip' ),
                     get_admin_url() . 'admin.php?page=automatorwp_settings&tab=opt-tab-drip'
                 ); ?>
-                <?php echo sprintf(
-                    __( '<a href="%s" target="_blank">Documentation</a>', 'automatorwp-drip' ),
-                    'https://automatorwp.com/docs/drip/'
-                ); ?>
             </div>
         <?php endif;
 
@@ -142,11 +149,11 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
      *
      * @since 1.0.0
      *
-     * @param array     $log_meta       Log meta data
-     * @param stdClass  $action         The action object
-     * @param int       $user_id        The user ID
-     * @param array     $action_options The action's stored options (with tags already passed)
-     * @param stdClass  $automation     The action's automation object
+     * @param array     $log_meta
+     * @param stdClass  $action
+     * @param int       $user_id
+     * @param array     $action_options
+     * @param stdClass  $automation
      *
      * @return array
      */
@@ -165,9 +172,9 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
      *
      * @since 1.0.0
      *
-     * @param array     $log_fields The log fields
-     * @param stdClass  $log        The log object
-     * @param stdClass  $object     The trigger/action/automation object attached to the log
+     * @param array     $log_fields
+     * @param stdClass  $log
+     * @param stdClass  $object
      *
      * @return array
      */
@@ -183,4 +190,4 @@ class AutomatorWP_Drip_Remove_Subscriber extends AutomatorWP_Integration_Action 
 
 }
 
-new AutomatorWP_Drip_Remove_Subscriber();
+new AutomatorWP_Drip_Record_Event();
