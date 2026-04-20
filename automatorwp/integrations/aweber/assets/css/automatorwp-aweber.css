@@ -1,0 +1,25 @@
+.cmb2-id-automatorwp-aweber-authorize .automatorwp-notice-success,
+.cmb2-id-automatorwp-aweber-authorize .automatorwp-notice-error {
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+.automatorwp-aweber-refresh-token {
+    margin-bottom: 0;
+}
+
+.automatorwp-aweber-access-token strong,
+.automatorwp-aweber-refresh-token strong {
+    display: inline-block;
+    min-width: 85px;
+}
+
+.automatorwp-aweber-access-token input,
+.automatorwp-aweber-refresh-token input {
+    min-width: 300px;
+}
+
+.dashicons-aweber {
+    background-image: url('../img/aweber-dashicon.svg');
+    background-size: 100%;
+}

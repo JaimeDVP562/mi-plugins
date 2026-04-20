@@ -1,0 +1,17 @@
+.dashicons-deepseek {
+    background-image: url(../img/dashicon-deepseek.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.automatorwp-settings-section-icon-deepseek {
+    background-image: url(../img/dashicon-deepseek.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center
+}

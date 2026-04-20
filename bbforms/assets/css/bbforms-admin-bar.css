@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'BBForms';
+    src:  url('../fonts/bbforms.eot?6ncb0e');
+    src:  url('../fonts/bbforms.eot?6ncb0e#iefix') format('embedded-opentype'),
+    url('../fonts/bbforms.ttf?6ncb0e') format('truetype'),
+    url('../fonts/bbforms.woff?6ncb0e') format('woff'),
+    url('../fonts/bbforms.svg?6ncb0e#bbforms') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------------------------------------------
+	Admin Bar
+   ------------------------------------------- */
+
+#wpadminbar #wp-admin-bar-bbforms > .ab-item > .ab-icon {
+    font-family: 'BBForms' !important;
+}
+
+#wpadminbar #wp-admin-bar-bbforms > .ab-item > .ab-icon:before {
+    content: "\e900";
+    top: 0px;
+    font-size: 23px;
+}
+
+#wpadminbar #wp-admin-bar-bbforms .bbforms-admin-menu-badge {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    margin: 4px -2px -1px 2px !important;
+    padding: 0 5px !important;
+    height: 18px !important;
+    border-radius: 9px !important;
+    background-color: #d63638;
+    color: #fff;
+    font-size: 11px !important;
+    line-height: 1.6 !important;
+}

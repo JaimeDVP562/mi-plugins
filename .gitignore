@@ -1,0 +1,33 @@
+# Ignore node and vendor artifacts
+node_modules/
+vendor/
+
+# Logs and archives
+*.log
+*.zip
+*.tar.gz
+*.bak
+
+# Editor/project files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env
+*.env
+.env
+
+# Package managers
+npm-debug.log*
+yarn-debug.log*
+package-lock.json
+composer.lock
+
+# Build / cache
+cache/
+coverage/
+
+# WordPress upgrade temp (if present)
+upgrade-temp-backup/
+**/upgrade-temp-backup/

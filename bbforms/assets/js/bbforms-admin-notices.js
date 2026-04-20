@@ -1,0 +1,22 @@
+(function ( $ ) {
+
+    // Hide review notice
+    $('body').on('click', '.bbforms-hide-review-notice', function(e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            url: bbforms_admin_notices.ajaxurl,
+            data: {
+                action: 'bbforms_hide_review_notice',
+                nonce: bbforms_admin_notices.nonce,
+            },
+            success: function(response) {
+                // Hide the notice on success
+                $('.bbforms-review-notice').slideUp('fast');
+            }
+        });
+
+    });
+
+})( jQuery );

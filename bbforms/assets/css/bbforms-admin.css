@@ -1,0 +1,1342 @@
+/* -------------------------------------------
+    BBForms Icon
+   ------------------------------------------- */
+
+@font-face {
+    font-family: 'BBForms';
+    src:  url('../fonts/bbforms.eot?6ncb0e');
+    src:  url('../fonts/bbforms.eot?6ncb0e#iefix') format('embedded-opentype'),
+    url('../fonts/bbforms.ttf?6ncb0e') format('truetype'),
+    url('../fonts/bbforms.woff?6ncb0e') format('woff'),
+    url('../fonts/bbforms.svg?6ncb0e#bbforms') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.dashicons-bbforms, .dashicons-bbforms:before {
+    font-family: 'BBForms' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    content: "\e900";
+}
+
+div.wp-menu-image.dashicons-bbforms:before {
+    font-size: 23px;
+    margin-top: -2px;
+}
+
+/* -------------------------------------------
+    BBForms Icons
+   ------------------------------------------- */
+@font-face {
+    font-family: 'bbforms-icons';
+    src:  url('../fonts/bbforms-icons.eot?cbx8zw');
+    src:  url('../fonts/bbforms-icons.eot?cbx8zw#iefix') format('embedded-opentype'),
+    url('../fonts/bbforms-icons.ttf?cbx8zw') format('truetype'),
+    url('../fonts/bbforms-icons.woff?cbx8zw') format('woff'),
+    url('../fonts/bbforms-icons.svg?cbx8zw#bbforms-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="dashicons-bbforms-"], [class*=" dashicons-bbforms-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'bbforms-icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dashicons-bbforms-required:before {
+    content: "\e915";
+}
+.dashicons-bbforms-pattern:before {
+    content: "\e914";
+}
+.dashicons-bbforms-user:before {
+    content: "\e913";
+}
+.dashicons-bbforms-tags:before {
+    content: "\e912";
+}
+.dashicons-bbforms-bbcodes:before {
+    content: "\e911";
+}
+.dashicons-bbforms-user-delete:before {
+    content: "\e90f";
+}
+.dashicons-bbforms-user-export:before {
+    content: "\e910";
+}
+.dashicons-bbforms-select:before {
+    content: "\e90e";
+}
+.dashicons-bbforms-reset:before {
+    content: "\e907";
+}
+.dashicons-bbforms-submit:before {
+    content: "\e90d";
+}
+.dashicons-bbforms-range-circle:before {
+    content: "\e909";
+}
+.dashicons-bbforms-select-circle:before {
+    content: "\e90a";
+}
+.dashicons-bbforms-quiz:before {
+    content: "\e90b";
+}
+.dashicons-bbforms-textarea:before {
+    content: "\e90c";
+}
+.dashicons-bbforms-wysiwyg:before {
+    content: "\e908";
+}
+.dashicons-bbforms-range:before {
+    content: "\e903";
+}
+.dashicons-bbforms-text:before {
+    content: "\e900";
+}
+.dashicons-bbforms-textarea-alt:before {
+    content: "\e901";
+}
+.dashicons-bbforms-number:before {
+    content: "\e902";
+}
+.dashicons-bbforms-check:before {
+    content: "\e904";
+}
+.dashicons-bbforms-radio:before {
+    content: "\e905";
+}
+.dashicons-bbforms-file:before {
+    content: "\e906";
+}
+
+/* -------------------------------------------
+	Form Edit Screen
+   ------------------------------------------- */
+/* Make title appear like WordPress title */
+#bbforms-form-title.postbox {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-bottom: 0;
+}
+
+#bbforms-form-title .postbox-header,
+#bbforms-form-title .handlediv,
+#bbforms-form-title .hndle,
+#bbforms-form-title .cmb-th {
+    display: none;
+}
+
+#bbforms-form-title .inside {
+    padding: 0;
+    margin: 0;
+}
+
+#bbforms-form-title .cmb-td {
+    width: 100%;
+    max-width: 100% !important;
+    padding: 0;
+}
+
+#bbforms-form-title .cmb-td input {
+    padding: 3px 8px;
+    font-size: 1.7em;
+    line-height: 100%;
+    height: 1.7em;
+    width: 100%;
+    outline: none;
+    margin: 0 0 3px;
+    background-color: #fff;
+}
+
+/* Make shortcode appear like WordPress slug */
+#bbforms-form-shortcode.postbox {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-bottom: 4px;
+    margin-left: 8px;
+}
+
+#bbforms-form-shortcode .postbox-header,
+#bbforms-form-shortcode .handlediv,
+#bbforms-form-shortcode .hndle {
+    display: none;
+}
+
+#bbforms-form-shortcode .inside {
+    padding: 0;
+    margin: 0;
+}
+
+#bbforms-form-shortcode .cmb-th {
+    padding: 0;
+    width: auto;
+    margin-right: 6px;
+}
+
+#bbforms-form-shortcode .cmb-td {
+    padding: 0;
+}
+
+#bbforms-form-shortcode .cmb-td input {
+    width: 120px;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove submitdiv box */
+.admin_page_edit_bbforms_forms #submitdiv.postbox {
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv  .postbox-header,
+.admin_page_edit_bbforms_forms #submitdiv .handlediv,
+.admin_page_edit_bbforms_forms #submitdiv  .hndle {
+    display: none;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv #major-publishing-actions {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv .submitdelete {
+    float: right;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv #publishing-action {
+    float: left;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv #publishing-action .spinner:not(.is-active) {
+    display: none;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv #publishing-action .spinner {
+    float: right;
+}
+
+.admin_page_edit_bbforms_forms #submitdiv #view-submissions-action,
+.admin_page_edit_bbforms_forms #submitdiv #export-action {
+    float: left;
+    margin-left: 10px;
+}
+
+/* Editor box */
+#bbforms-form-editor .postbox-header {
+    display: none;
+}
+#bbforms-form-editor .cmb2-id-form .cmb-td,
+#bbforms-form-editor .cmb2-id-actions .cmb-td,
+#bbforms-form-editor .cmb2-id-options .cmb-td {
+    float: none;
+    padding: 0;
+    width: 100%;
+}
+
+#bbforms-form-editor .cmb-tabs-wrap .cmb2-wrap {
+    padding: 0;
+}
+
+#bbforms-form-editor .cmb-tabs-wrap .cmb-tabs {
+    background: #f7f7f7;
+    border-color: #ddd;
+}
+
+#bbforms-form-editor .cmb-tabs-wrap .cmb-tabs .cmb-tab {
+    border-color: #ddd;
+}
+
+#bbforms-form-editor .cmb-tab-title {
+    font-size: 14px;
+}
+
+#bbforms-form-editor #cmb2-metabox-bbforms-form-editor {
+    grid-auto-rows: 1fr;
+}
+
+#bbforms-form-editor:not(.bbforms-hide-preview) #cmb2-metabox-bbforms-form-editor {
+    display: flex;
+}
+
+#bbforms-form-editor .CodeMirror {
+    height: 500px;
+}
+
+.bbforms-form-export-dialog .CodeMirror,
+.bbforms-form-import-dialog .CodeMirror {
+    height: 500px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.wrap .page-title-action + .button.bbforms-form-import {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.bbforms-form-import-dialog-content {
+    min-height: 537px;
+}
+
+#bbforms-form-editor .cmb2-id-preview {
+    position: relative;
+}
+
+#bbforms-form-editor .cmb2-id-preview iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Editor box - Settings */
+#bbforms-form-editor .cmb2-id-settings {
+    padding: 24px 0;
+    min-height: 526px;
+}
+
+#bbforms-form-editor .cmb2-id-settings .cmb-row {
+    display: block !important;
+    padding: 0 24px;
+    border: none;
+    margin-bottom: 24px;
+}
+
+/* Editor box - Preview */
+#bbforms-form-editor:not(.bbforms-hide-preview) .cmb-tab-active-item {
+    width: 50%;
+}
+
+#bbforms-form-editor:not(.bbforms-hide-preview) .cmb2-id-preview {
+    float: right;
+}
+
+#bbforms-form-editor-preview-tabs {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#bbforms-form-editor.bbforms-hide-preview .cmb2-id-preview {
+    display: none !important;
+}
+
+/* Side area */
+.columns-2 #postbox-container-1 .cmb-th,
+.columns-2 #postbox-container-1 .cmb-td {
+    padding: 0 !important;
+}
+
+.columns-2 #postbox-container-1 .cmb-row {
+    padding: 0.7em 0 !important;
+}
+
+/* Shortcode box */
+#bbforms-form-shortcode .ui-sortable-handle .cmb-tooltip {
+    flex: 1;
+    margin-left: 4px;
+}
+
+/* Form style */
+.bbforms-required { color: red; font-weight: bold; }
+
+/* -------------------------------------------
+	Forms List Screen
+   ------------------------------------------- */
+.bbforms-reset-form-submissions {
+    color: #b3592d;
+}
+
+.bbforms-reset-form-submissions:hover,
+.bbforms-reset-form-submissions:active,
+.bbforms-reset-form-submissions:focus {
+    color: #9d4921;
+}
+
+a.bbforms-form-tag {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 1px 4px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+/* Form templates dialog */
+.bbforms-form-templates {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bbforms-form-templates .bbforms-form-template {
+    flex-grow: 1;
+    max-width: 50%;
+}
+
+.bbforms-form-templates .bbforms-form-template .bbforms-form-template-content {
+    display: block;
+    margin: 6px;
+    padding: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    color: #3c434a;
+}
+
+.bbforms-form-templates .bbforms-form-template .bbforms-form-template-content:hover,
+.bbforms-form-templates .bbforms-form-template .bbforms-form-template-content:focus {
+    background: #2271b1 !important;
+    border-color: #2271b1 !important;
+    color: #fff !important;
+}
+
+.bbforms-form-templates .bbforms-form-template .bbforms-form-template-content .bbforms-form-template-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.bbforms-form-templates .bbforms-form-template .bbforms-form-template-content .bbforms-form-template-title .spinner {
+    float: none;
+    margin-top: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    vertical-align: bottom;
+}
+
+.bbforms-form-import-dialog .spinner {
+    float: none;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.bbforms-form-templates .bbforms-form-template .bbforms-form-template-content .bbforms-form-template-desc {
+    display: block;
+    margin-bottom: 6px;
+    min-height: 55px;
+}
+
+.bbforms-editor-dark .bbforms-form-templates .bbforms-form-template .bbforms-form-template-content {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #555865;
+    color: #dccaf5;
+    color: #fff;
+}
+
+/* -------------------------------------------
+	Submissions List Screen
+   ------------------------------------------- */
+/* Hide screen options */
+.bbforms_page_bbforms_submissions #screen-meta-links {
+    display: none;
+}
+
+.bbforms-submissions-form-selector {
+    margin-top: -33px;
+    margin-bottom: 10px;
+}
+
+.bulkactions .bbforms-submissions-form-selector {
+    margin-top: -45px;
+    margin-bottom: 40px;
+}
+
+.bbforms-submissions-form-selector .spinner {
+    float: none;
+    margin-top: 0;
+}
+
+.bulkactions .bbforms-submissions-form-selector .spinner {
+    float: left;
+    margin-top: 4px;
+}
+
+.bbforms-submissions-columns-options {
+    display: none;
+    float: left;
+}
+
+.bulkactions + .bbforms-submissions-columns-options {
+    display: block;
+    margin-left: -8px;
+}
+
+.bbforms-submissions-columns-options label {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.bbforms-submissions-select-form-message {
+    position: absolute;
+    background: #f0f0f1;
+    width: 94%;
+    z-index: 999;
+    font-size: 23px;
+    text-align: center;
+    padding: 50px;
+}
+
+.bbforms-submissions-from-0 .wp-list-table {
+    display: none !important;
+}
+
+.bbforms-submissions-export-csv .spinner {
+    float: none;
+}
+
+.bbforms-submissions-export-csv .bbforms-submissions-export-csv-response {
+    vertical-align: middle;
+    line-height: 2.35;
+    margin-left: 4px;
+}
+
+.bbforms-check-display-icon,
+.bbforms-radio-display-icon {
+    display: inline-block;
+    border: 1px solid #888;
+    border-radius: 4px;
+    width: 15px;
+    height: 15px;
+    vertical-align: text-bottom;
+}
+
+.bbforms-radio-display-icon {
+    border-radius: 100%;
+}
+
+.bbforms-check-display-icon .dashicons {
+    line-height: 16px;
+    margin-left: -3px;
+}
+
+.bbforms-radio-display-icon .dashicons {
+    background: #50575e;
+    border-radius: 100%;
+    width: 9px;
+    height: 9px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.dashicons.dashicons-check:before {
+    content: "";
+    display: inline-block;
+    border: 3px solid #3c434a;
+    height: 10px;
+    width: 10px;
+    margin-top: 2px;
+}
+
+.bbforms-editor-dark .dashicons.dashicons-check:before {
+    border-color: #fff;
+}
+
+.bbforms-file-display * {
+    max-width: 100%;
+}
+
+/* -------------------------------------------
+	Submissions Edit Screen
+   ------------------------------------------- */
+#bbforms_submissions_actions table.form-table {
+    margin-bottom: 12px !important;
+}
+
+#bbforms_submissions_actions .form-table th,
+#bbforms_submissions_actions .form-table td {
+    padding: 10px 0;
+}
+
+#bbforms_submissions_actions #submitpost {
+    margin: -6px -12px -12px;
+}
+
+/* BBForms form in admin area */
+.bbforms-submit-field-row,
+.bbforms-reset-field-row,
+.bbforms-honeypot-field-row {
+    display: none !important;
+}
+
+.bbforms-field-row:first-of-type {
+    margin-top: 20px;
+}
+.bbforms-field-row {
+    margin-bottom: 20px;
+}
+
+.bbforms-label {
+    font-weight: 700;
+    float: left;
+    width: 200px;
+}
+
+.bbforms-field,
+.bbforms-desc {
+    margin-left: 200px;
+}
+
+.bbforms-desc {
+    color: #666;
+}
+
+.bbforms-field-row input[type="checkbox"] + label,
+.bbforms-field-row input[type="radio"] + label {
+    vertical-align: text-bottom;
+}
+
+.bbforms-field-row input:not([type="checkbox"]):not([type="radio"]),
+.bbforms-field-row select,
+.bbforms-field-row textarea {
+    min-width: 300px;
+}
+
+/* -------------------------------------------
+    Buttons
+   ------------------------------------------- */
+.button.bbforms-button-danger {
+    background: #e15151;
+    border: #e15151;
+    color: #fff;
+}
+
+.button.bbforms-button-danger:hover {
+    background: #de3b3b;
+    border: #de3b3b;
+    color: #fff;
+}
+
+.button.bbforms-button-danger:focus,
+.button.bbforms-button-danger:active {
+    background: #da2525;
+    border: #da2525;
+    color: #fff;
+}
+
+
+/* -------------------------------------------
+    Dialog
+   ------------------------------------------- */
+.bbforms-dialog {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    background: #fff;
+    padding: 15px;
+    font-size: 14px;
+    z-index: 999999;
+    border-radius: 8px;
+}
+
+.bbforms-dialog + .ui-widget-overlay {
+    opacity: 0.7;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+}
+
+.bbforms-dialog .ui-widget-content {
+    border: none;
+}
+
+.bbforms-dialog .ui-dialog-titlebar {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.bbforms-dialog .ui-dialog-title {
+    display: none;
+}
+
+.bbforms-dialog .bbforms-dialog-title {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.bbforms-dialog .bbforms-dialog-subtitle {
+    margin-top: -15px;
+}
+
+.bbforms-dialog .bbforms-dialog-title .cmb-tooltip {
+    margin-top: 5px;
+}
+
+.bbforms-dialog .bbforms-dialog-title .cmb-tooltip .cmb-tooltip-desc {
+    font-size: 14px;
+}
+
+.bbforms-dialog .bbforms-dialog-bottom {
+    margin-top: 10px;
+}
+
+.bbforms-dialog .button {
+    font-size: 14px;
+}
+
+.bbforms-dialog .button + .button {
+    margin-left: 4px;
+}
+
+/* Dialog close button */
+.bbforms-dialog .ui-dialog-titlebar-close {
+    float: right;
+    border: none;
+    background: transparent;
+    color: #72777c;
+    margin-top: -10px;
+    margin-right: -14px;
+    cursor: pointer;
+}
+
+.bbforms-dialog .ui-dialog-titlebar-close:hover {
+    color: #444;
+}
+
+.bbforms-dialog .ui-dialog-titlebar-close:before {
+    content: "\f335";
+
+    font-family: dashicons;
+    display: inline-block;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s ease-in;
+}
+
+.bbforms-dialog .ui-dialog-titlebar-close .ui-button-text {
+    display: none;
+}
+
+/* Dialog table */
+.bbforms-dialog table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 99%;
+}
+
+.bbforms-dialog table td {
+    border: 1px solid;
+    padding: 6px 8px;
+    vertical-align: baseline;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.bbforms-attrs-table-toggle.button {
+    font-size: 12px;
+    min-height: 28px;
+    margin-bottom: 4px;
+}
+
+/* Dialog tabs */
+.bbforms-dialog-tabs {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 12px;
+    background: #f7f7f7;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.bbforms-dialog-tabs .bbforms-dialog-tab {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+    border-right: 1px solid #eee;
+}
+
+.bbforms-dialog-tabs .bbforms-dialog-tab .dashicons {
+    vertical-align: bottom;
+}
+
+.bbforms-dialog-tabs .bbforms-dialog-tab.bbforms-dialog-tab-active {
+    background: #fff;
+}
+
+.bbforms-dialog-tab-content:not(.bbforms-dialog-tab-content-active) {
+    display: none;
+}
+
+.bbforms-dialog-tab-content .bbforms-dialog-tabs {
+    position: absolute;
+    width: 100%;
+    margin-top: -13px;
+}
+
+.bbforms-dialog-tab-content .bbforms-dialog-tabs ~ .bbforms-dialog-tab-content {
+    padding-top: 28px;
+}
+
+/* Dialog dark mode */
+
+.bbforms-editor-dark .bbforms-dialog {
+    background: #282a36;
+    border-color: #555865;
+    color: #fff;
+}
+
+.bbforms-editor-dark .bbforms-dialog a {
+    color: #fff;
+}
+
+.bbforms-editor-dark .bbforms-dialog .bbforms-dialog-title {
+    color: #fff;
+}
+
+.bbforms-editor-dark .bbforms-dialog h1,
+.bbforms-editor-dark .bbforms-dialog h2,
+.bbforms-editor-dark .bbforms-dialog h3,
+.bbforms-editor-dark .bbforms-dialog h4 {
+    color: #fff;
+}
+
+.bbforms-editor-dark .bbforms-dialog .ui-dialog-titlebar-close:before {
+    color: #dccaf5;
+}
+
+.bbforms-editor-dark .bbforms-dialog code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #dccaf5;
+}
+
+.bbforms-editor-dark .bbforms-dialog .button:not(.button-primary) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #dccaf5;
+    color: #fff;
+}
+
+.bbforms-editor-dark .bbforms-dialog .button:not(.button-primary):hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #dccaf5;
+    color: #fff;
+}
+
+/* Dialog table  - Dark Mode */
+.bbforms-editor-dark .bbforms-dialog table {
+    color: #fff;
+}
+
+.bbforms-editor-dark .bbforms-dialog table td {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Dialog tabs - Dark Mode */
+.bbforms-editor-dark .bbforms-dialog-tabs {
+    background: #282a36;
+    border-color: #555865;
+}
+
+.bbforms-editor-dark .bbforms-dialog-tabs .bbforms-dialog-tab {
+    background: rgba(255, 255, 255, 0.05);
+    color: #bbb;
+    border-color: #555865;
+}
+
+.bbforms-editor-dark .bbforms-dialog-tabs .bbforms-dialog-tab.bbforms-dialog-tab-active {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: #555865;
+    color: #dccaf5;
+    color: #fff;
+}
+
+/* -------------------------------------------
+	Options Help
+   ------------------------------------------- */
+.bbforms-help {
+    min-height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bbforms-help span[class^="cm-"] {
+    font-family: monospace;
+}
+
+.bbforms-help pre,
+.bbforms-help code {
+    font-size: 14px;
+}
+
+.bbforms-options-help-option:not(:first-of-type) {
+    border-top: 1px solid #ddd;
+    padding-top: 1em;
+}
+
+.bbforms-options-help-option-title {
+    font-size: 16px;
+}
+
+.bbforms-options-help-option-default {
+    user-select: none;
+}
+
+/* -------------------------------------------
+	Taxonomy Screens
+   ------------------------------------------- */
+/* Add form */
+#ct_add_form .bbforms-form .cmb-row {
+    margin: 1em 0;
+    padding: 0;
+}
+
+#ct_add_form .bbforms-form .cmb-th,
+#ct_add_form .bbforms-form .cmb-td {
+    width: 100%;
+    padding: 0;
+}
+
+#ct_add_form .bbforms-form .cmb-th label {
+    padding: 2px 0;
+    color: #1d2327;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#ct_add_form .bbforms-form .cmb-td .cmb2-metabox-description {
+    margin: 2px 0 0;
+    color: #646970;
+    padding: 0;
+    font-size: 13px;
+}
+
+#ct_add_form .bbforms-form input:not([type="radio"],[type="checkbox"]),
+#ct_add_form .bbforms-form select,
+#ct_add_form .bbforms-form textarea {
+    width: 95%;
+}
+
+#ct_add_form .spinner.is-active {
+    float: none;
+    margin: 0 10px;
+}
+
+/* -------------------------------------------
+	Notices
+   ------------------------------------------- */
+
+.bbforms-notice {
+    padding: 10px 12px;
+    border-radius: 4px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.bbforms-notice-info { background-color: dodgerblue; color: white; }
+
+/* -------------------------------------------
+    Logo
+   ------------------------------------------- */
+.bbforms-logo {
+    background-image: url("../img/logo.png");
+    display: inline-block;
+    width: 400px;
+    height: 88px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* -------------------------------------------
+    Review Notice
+   ------------------------------------------- */
+.bbforms-review-notice {
+    position: relative;
+    background: #220969;
+    background: linear-gradient(90deg,rgba(34, 9, 105, 1) 0%, rgba(56, 6, 65, 1) 100%);
+    color: #fff;
+    border: none;
+}
+
+.bbforms-review-notice p strong,
+.bbforms-review-notice p span {
+    color: #ff54f1;;
+}
+
+.bbforms-review-notice .button-primary {
+    background: #d053ff;
+    border-color: #d053ff #a129ce #a129ce;
+    box-shadow: 0 1px 0 #a129ce;
+    text-decoration: none;
+    text-shadow: none;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bbforms-review-notice .button-primary.hover,
+.bbforms-review-notice .button-primary:hover,
+.bbforms-review-notice .button-primary.focus,
+.bbforms-review-notice .button-primary:focus {
+    background: #ba3ee9;
+    border-color: #ba3ee9 #a129ce #a129ce;
+    color: #fff;
+}
+
+.bbforms-review-notice .button-primary.focus,
+.bbforms-review-notice .button-primary:focus {
+    box-shadow: 0 1px 0 #d053ff,
+    0 0 2px 1px #a129ce;
+}
+
+.bbforms-review-notice .button-primary.active,
+.bbforms-review-notice .button-primary.active:hover,
+.bbforms-review-notice .button-primary.active:focus,
+.bbforms-review-notice .button-primary:active {
+    background: #d053ff;
+    border-color: #a129ce;
+    box-shadow: inset 0 2px 0 #a129ce;
+    vertical-align: top;
+}
+
+.bbforms-review-notice .bbforms-hide-review-notice.button {
+    color: #ba3ee9;
+    border-color: #ba3ee9;
+}
+
+.bbforms-review-notice .bbforms-hide-review-notice.button:hover {
+    color: #a129ce;
+    border-color: #a129ce;
+}
+
+.bbforms-review-notice ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.bbforms-review-notice .bbforms-hide-review-notice:not(.button) {
+    color: #ccc;
+}
+
+.bbforms-review-notice .bbforms-hide-review-notice:not(.button):hover {
+    color: #fff;
+}
+
+.bbforms-review-notice .bbforms-logo,
+.bbforms-review-notice .bbforms-logo-white {
+    margin-top: 10px;
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+    .notice.bbforms-review-notice {
+        display: flex;
+        align-items: center;
+    }
+
+    .notice.bbforms-review-notice .bbforms-logo,
+    .notice.bbforms-review-notice .bbforms-logo-white {
+        margin-left: 10px;
+        margin-top: 0;
+    }
+
+    .notice.bbforms-review-notice p {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* -------------------------------------------
+    Add-ons
+   ------------------------------------------- */
+
+.bbforms_page_bbforms_add_ons .wp-filter {
+    margin-bottom: 0;
+}
+
+.bbforms_page_bbforms_add_ons .wp-filter a:hover,
+.bbforms_page_bbforms_add_ons .wp-filter a:focus {
+    box-shadow: none;
+}
+
+.bbforms_page_bbforms_add_ons .wp-filter a .dashicons {
+    vertical-align: bottom;
+}
+
+.bbforms-add-ons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.bbforms-plugin-card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bbforms-plugin-card .plugin-card-top {
+    width: 100%;
+}
+
+.bbforms-plugin-card .plugin-card-bottom {
+    width: 100%;
+    align-self: flex-end;
+    min-height: 30px;
+}
+
+.bbforms-plugin-card .name, .bbforms-plugin-card .desc,
+.bbforms-plugin-card .name, .bbforms-plugin-card .desc > p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bbforms-plugin-card .thumbnail {
+    margin: -20px -20px 10px;
+}
+
+.bbforms-plugin-card .thumbnail a {
+    display: block;
+    line-height: 0;
+}
+
+.bbforms-plugin-card .thumbnail a img {
+    max-width: 100%;
+}
+
+.bbforms-plugin-card .action-links {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.bbforms-plugin-card .action-links .plugin-action-buttons {
+    float: none;
+    margin: 0;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.bbforms-plugin-card .action-links .plugin-action-buttons li {
+    margin: 0;
+    width: 50%;
+}
+
+.bbforms-plugin-card .action-links .plugin-action-buttons li:only-of-type {
+    width: 100%;
+}
+
+.bbforms-plugin-card .action-links .plugin-action-buttons li .more-details {
+    float: left;
+}
+
+.is-bbforms-plugin#plugin-information #plugin-information-content .notice {
+    display: none;
+}
+
+@media screen and (min-width: 1600px) {
+    .bbforms-plugin-card {
+        width: 20%;
+        width: -webkit-calc( 20% - 16px );
+        width: calc( 20% - 16px );
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    .bbforms-plugin-card {
+        width: 20%;
+        width: -webkit-calc( 20% - 16px );
+        width: calc( 20% - 16px );
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .bbforms-add-ons {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .bbforms-plugin-card {
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+    }
+}
+
+/* Custom colors on add-ons page */
+.bbforms-plugin-card .plugin-card-top {
+    width: 100%;
+    background: #282c40;
+    background: linear-gradient(310deg, #282c40, #1d212b);
+}
+
+.bbforms-plugin-card .name {
+    text-align: center;
+}
+
+.bbforms-plugin-card .name a {
+    color: #fff;
+}
+
+.bbforms-plugin-card:hover .name a {
+    color: #ff54f1;
+}
+
+/* -------------------------------------------
+	Settings
+   ------------------------------------------- */
+
+.bbforms-page.cmb2-options-page {
+    max-width: 100%;
+}
+
+.bbforms-page.cmb2-options-page .cmb2-metabox > .cmb-row {
+    border: none;
+    box-shadow: none;
+}
+
+.bbforms-page .postbox .hndle {
+    justify-content: flex-start;
+    font-size: 16px;
+}
+
+.bbforms-page .postbox .hndle .dashicons {
+    height: 18px;
+    line-height: 18px;
+    margin-right: 5px;
+}
+
+.bbforms-page .postbox .handle-actions {
+    display: none;
+}
+
+.bbforms_settings input[name="submit-cmb"] {
+    float: left;
+    margin-right: 12px;
+}
+
+.bbforms_settings.cmb2-options-page #poststuff h2.nav-tab-wrapper {
+    margin-bottom: 20px !important;
+}
+
+.bbforms-page .nav-tab .dashicons {
+    vertical-align: text-bottom;
+    margin-right: 2px;
+}
+
+.bbforms-page > h2 {
+    margin-bottom: 0 !important;
+}
+
+/* Settings > Messages */
+.bbforms-page.cmb2-options-page #form_messages_settings .cmb2-metabox-description,
+.bbforms-page.cmb2-options-page #error_messages_settings .cmb2-metabox-description {
+    display: inline;
+}
+
+.bbforms-page.cmb2-options-page #form_messages_settings label > .dashicons,
+.bbforms-page.cmb2-options-page #error_messages_settings label > .dashicons {
+    color: #888;
+}
+
+/* Settings > Messages > Notice box > Make it not appear as a box */
+#form_messages_notice {
+    border: 0;
+    box-shadow: none;
+}
+
+#form_messages_notice .postbox-header {
+    display: none;
+}
+
+#form_messages_notice .inside {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+/* -------------------------------------------
+    Admin Menu
+   ------------------------------------------- */
+
+.bbforms-admin-menu-badge {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
+    margin: 1px -11px -1px 2px;
+    padding: 0 5px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: #d63638;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.6;
+}

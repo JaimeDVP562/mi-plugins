@@ -1,0 +1,125 @@
+/* Shortcode error */
+.bbforms-shortcode-error {
+    color: white;
+    background: red;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    margin: 1em 0;
+}
+
+.bbforms-shortcode-error small {
+    display: block;
+    opacity: 0.9;
+}
+
+/* Columns */
+@media screen and (min-width: 768px) {
+    .bbforms-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .bbforms-row .bbforms-column {
+        padding: 0 10px;
+    }
+
+    .bbforms-row .bbforms-column:first-of-type { padding-left: 0; }
+    .bbforms-row .bbforms-column:last-of-type { padding-right: 0; }
+}
+
+@media screen and (max-width: 768px) {
+    .bbforms-row .bbforms-column {
+        max-width: 100% !important;
+    }
+}
+
+/* Default theme */
+.bbforms-theme-default .bbforms-label { font-weight: 700; }
+.bbforms-theme-default .bbforms-required { color: red; }
+.bbforms-theme-default .bbforms-error { color: red; }
+
+.bbforms-theme-default .bbforms-field-row:not(.bbforms-hidden-field-row):not(.bbforms-honeypot-field-row) {
+    margin-bottom: 25px;
+}
+
+.bbforms-theme-default .bbforms-field-row .bbforms-desc {
+    font-size: medium;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.bbforms-theme-default .bbforms-field input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
+.bbforms-theme-default .bbforms-field textarea,
+.bbforms-theme-default .bbforms-field select {
+    width: 100%;
+}
+
+.bbforms-theme-default .bbforms-field.bbforms-quiz-field .bbforms-quiz-question + input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]) {
+    width: auto;
+}
+
+.bbforms-theme-default .bbforms-field.bbforms-range-field input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]) {
+    width: 90%;
+    vertical-align: middle;
+}
+
+.bbforms-theme-default .bbforms-range-field .bbforms-field-range-output {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+}
+
+.bbforms-theme-default .bbforms-submit-field-row,
+.bbforms-theme-default .bbforms-reset-field-row {
+    display: inline-block;
+}
+
+.bbforms-theme-default .bbforms-message {
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    margin: 1em 0;
+}
+
+.bbforms-theme-default .bbforms-message:not(.bbforms-none-message) {
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.bbforms-theme-default .bbforms-success-message { background-color: green; color: white; }
+.bbforms-theme-default .bbforms-info-message { background-color: dodgerblue; color: white; }
+.bbforms-theme-default .bbforms-error-message { background-color: red; color: white; }
+.bbforms-theme-default .bbforms-warning-message { background-color: orange; color: white; }
+
+/* Spinner */
+.bbforms-spinner {
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    margin: 0 1em;
+}
+
+.bbforms-spinner.is-active {
+    display: inline-block;
+    background-image: url('../img/spinner.svg');
+    height: 24px;
+    width: 24px;
+}
+
+/* Honeypot */
+.bbforms-honeypot-field-row {
+    position: absolute !important;
+    visibility: hidden !important;
+}
+
+/* Dark theme */
+.bbforms-theme-dark .bbforms-required { color: #EF9A9A; }
+.bbforms-theme-dark .bbforms-error { color: #EF9A9A; }
+
+.bbforms-theme-dark .bbforms-spinner.is-active {
+    filter: invert(100%);
+}
+
+/* Theme fixes */
+.wp-theme-buddyboss-theme .bbforms-theme-dark .bbforms-label label { color: #ffffff; }

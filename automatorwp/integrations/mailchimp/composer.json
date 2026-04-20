@@ -1,0 +1,11 @@
+{
+    "require": {
+        "mailchimp/marketing": "^3.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

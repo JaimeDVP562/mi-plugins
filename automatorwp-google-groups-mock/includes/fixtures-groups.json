@@ -1,0 +1,15 @@
+{
+  "groups": [
+    {"email": "team@example.test", "name": "Team"},
+    {"email": "devs@example.test", "name": "Developers"}
+  ],
+  "members": {
+    "team@example.test": [
+      {"email": "alice@test", "role": "MANAGER"},
+      {"email": "bob@test", "role": "MEMBER"}
+    ],
+    "devs@example.test": [
+      {"email": "carol@test", "role": "MEMBER"}
+    ]
+  }
+}

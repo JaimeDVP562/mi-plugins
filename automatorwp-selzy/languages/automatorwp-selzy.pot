@@ -1,0 +1,326 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - Google Sheets\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2025-03-10 09:37+0100\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://automatorwp.com/)\n"
+"Language-Team: GamiPress <contact@automatorwp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: automatorwp-selzy.php:193
+#, php-format
+msgid "AutomatorWP - Selzy requires %s in order to work. Please install and activate it."
+msgstr ""
+
+#: includes/actions/list-create.php:26
+msgid "Create list"
+msgstr ""
+
+#: includes/actions/list-create.php:27
+msgid "Create <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/list-create.php:29 includes/actions/list-create.php:31
+#, php-format
+msgid "Create %1$s"
+msgstr ""
+
+#: includes/actions/list-create.php:35 includes/actions/list-delete.php:35
+#: includes/actions/subscriber-add-to-list.php:48
+#: includes/actions/subscriber-delete-from-list.php:48
+#: includes/actions/user-add-to-list.php:35
+#: includes/actions/user-delete-from-list.php:35
+msgid "list"
+msgstr ""
+
+#: includes/actions/list-create.php:38 includes/actions/list-delete.php:36
+#: includes/actions/subscriber-add-to-list.php:49
+#: includes/actions/subscriber-delete-from-list.php:49
+#: includes/actions/user-add-to-list.php:36
+#: includes/actions/user-delete-from-list.php:36
+msgid "List:"
+msgstr ""
+
+#: includes/actions/list-create.php:39
+msgid "The name of the list you want to create."
+msgstr ""
+
+#: includes/actions/list-create.php:70 includes/actions/list-delete.php:68
+#: includes/actions/subscriber-add-to-list.php:82
+#: includes/actions/subscriber-delete-from-list.php:82
+#: includes/actions/tag-delete.php:68 includes/actions/user-add-to-list.php:68
+#: includes/actions/user-delete-from-list.php:68
+msgid "Selzy integration not configured in AutomatorWP settings."
+msgstr ""
+
+#: includes/actions/list-create.php:76 includes/actions/list-delete.php:74
+#: includes/actions/subscriber-add-to-list.php:88
+#: includes/actions/subscriber-delete-from-list.php:88
+#: includes/actions/user-add-to-list.php:74
+#: includes/actions/user-delete-from-list.php:74
+msgid "List field is empty."
+msgstr ""
+
+#: includes/actions/list-create.php:83
+msgid "List created"
+msgstr ""
+
+#: includes/actions/list-create.php:85
+msgid "Couldnt create list"
+msgstr ""
+
+#: includes/actions/list-create.php:133 includes/actions/list-delete.php:131
+#: includes/actions/subscriber-add-to-list.php:152
+#: includes/actions/subscriber-delete-from-list.php:154
+#: includes/actions/tag-delete.php:135
+#: includes/actions/user-add-to-list.php:139
+#: includes/actions/user-delete-from-list.php:139
+#, php-format
+msgid "You need to configure the <a href=\"%s\" target=\"_blank\">Selzy settings</a> to get this action to work."
+msgstr ""
+
+#: includes/actions/list-create.php:137 includes/actions/list-delete.php:135
+#: includes/actions/subscriber-add-to-list.php:156
+#: includes/actions/subscriber-delete-from-list.php:158
+#: includes/actions/tag-delete.php:139
+#: includes/actions/user-add-to-list.php:143
+#: includes/actions/user-delete-from-list.php:143
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Documentation</a>"
+msgstr ""
+
+#: includes/actions/list-create.php:195 includes/actions/list-delete.php:193
+#: includes/actions/subscriber-add-to-list.php:214
+#: includes/actions/subscriber-delete-from-list.php:216
+#: includes/actions/tag-delete.php:197
+#: includes/actions/user-add-to-list.php:201
+#: includes/actions/user-delete-from-list.php:201
+msgid "Result:"
+msgstr ""
+
+#: includes/actions/list-delete.php:26
+msgid "Delete list"
+msgstr ""
+
+#: includes/actions/list-delete.php:27
+msgid "Delete <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/list-delete.php:29 includes/actions/list-delete.php:31
+#: includes/actions/tag-delete.php:29 includes/actions/tag-delete.php:31
+#, php-format
+msgid "Delete %1$s"
+msgstr ""
+
+#: includes/actions/list-delete.php:81
+msgid "List deleted"
+msgstr ""
+
+#: includes/actions/list-delete.php:83
+msgid "Couldnt delete list"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:26
+msgid "Add subscriber to list"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:27
+msgid "Add <strong>subscriber</strong> to <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:29
+#: includes/actions/subscriber-add-to-list.php:31
+#, php-format
+msgid "Add %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:35
+#: includes/actions/subscriber-delete-from-list.php:35
+msgid "subscriber"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:38
+#: includes/actions/subscriber-delete-from-list.php:38
+msgid "Email:"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:39
+#: includes/actions/subscriber-delete-from-list.php:39
+msgid "The subscriber email address."
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:95
+#: includes/actions/subscriber-delete-from-list.php:95
+msgid "Subscriber in list already."
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:102
+msgid "Added subscriber to list"
+msgstr ""
+
+#: includes/actions/subscriber-add-to-list.php:104
+msgid "Couldnt add subscriber to list"
+msgstr ""
+
+#: includes/actions/subscriber-delete-from-list.php:26
+msgid "Delete subscriber from list"
+msgstr ""
+
+#: includes/actions/subscriber-delete-from-list.php:27
+msgid "Delete <strong>subscriber</strong> from <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/subscriber-delete-from-list.php:29
+#: includes/actions/subscriber-delete-from-list.php:31
+#, php-format
+msgid "Delete %1$s from %2$s"
+msgstr ""
+
+#: includes/actions/subscriber-delete-from-list.php:103
+msgid "Deleted subscriber from list"
+msgstr ""
+
+#: includes/actions/subscriber-delete-from-list.php:105
+msgid "Couldnt delete subscriber from list"
+msgstr ""
+
+#: includes/actions/tag-delete.php:26
+msgid "Delete tag"
+msgstr ""
+
+#: includes/actions/tag-delete.php:27
+msgid "Delete <strong>tag</strong>"
+msgstr ""
+
+#: includes/actions/tag-delete.php:35
+msgid "tag"
+msgstr ""
+
+#: includes/actions/tag-delete.php:36
+msgid "Tag:"
+msgstr ""
+
+#: includes/actions/tag-delete.php:74
+msgid "Tag field is empty."
+msgstr ""
+
+#: includes/actions/tag-delete.php:85
+msgid "Deleted tag"
+msgstr ""
+
+#: includes/actions/tag-delete.php:87
+msgid "Couldnt delete tag"
+msgstr ""
+
+#: includes/actions/user-add-to-list.php:26
+msgid "Add user to list"
+msgstr ""
+
+#: includes/actions/user-add-to-list.php:27
+msgid "Add <strong>user</strong> to <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/user-add-to-list.php:29
+#: includes/actions/user-add-to-list.php:31
+#, php-format
+msgid "Add user to %1$s"
+msgstr ""
+
+#: includes/actions/user-add-to-list.php:82
+msgid "Contact in list already."
+msgstr ""
+
+#: includes/actions/user-add-to-list.php:89
+msgid "Added user to list"
+msgstr ""
+
+#: includes/actions/user-add-to-list.php:91
+msgid "Couldnt add user to list"
+msgstr ""
+
+#: includes/actions/user-delete-from-list.php:26
+msgid "Delete user from list"
+msgstr ""
+
+#: includes/actions/user-delete-from-list.php:27
+msgid "Delete <strong>user</strong> from <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/user-delete-from-list.php:29
+#: includes/actions/user-delete-from-list.php:31
+#, php-format
+msgid "Delete user from %1$s"
+msgstr ""
+
+#: includes/actions/user-delete-from-list.php:82
+msgid "Contact isnt in list already."
+msgstr ""
+
+#: includes/actions/user-delete-from-list.php:89
+msgid "Deleted user from list"
+msgstr ""
+
+#: includes/actions/user-delete-from-list.php:91
+msgid "Couldnt delete user from list"
+msgstr ""
+
+#: includes/admin.php:39 includes/admin.php:60
+msgid "Selzy"
+msgstr ""
+
+#: includes/admin.php:63
+msgid "API token:"
+msgstr ""
+
+#: includes/admin.php:64
+msgid "Your Selzy API token."
+msgstr ""
+
+#: includes/admin.php:97
+msgid "Connect with Selzy:"
+msgstr ""
+
+#: includes/admin.php:100
+msgid "Save credentials"
+msgstr ""
+
+#: includes/admin.php:101
+msgid "Add you Selzy API Token and click on \"Authorize\" to connect."
+msgstr ""
+
+#: includes/admin.php:103
+msgid "Site connected with Selzy successfully."
+msgstr ""
+
+#: includes/ajax-functions.php:29
+msgid "API Token is required to connect with Selzy"
+msgstr ""
+
+#: includes/ajax-functions.php:43
+msgid "Please, check your credentials"
+msgstr ""
+
+#: includes/ajax-functions.php:57
+msgid "Correct data to connect with Selzy"
+msgstr ""
+
+#: includes/functions.php:101
+msgid "any list"
+msgstr ""
+
+#: includes/functions.php:211
+msgid "any tag"
+msgstr ""

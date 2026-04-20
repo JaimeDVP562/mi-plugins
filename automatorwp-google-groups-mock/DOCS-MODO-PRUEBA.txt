@@ -1,0 +1,78 @@
+Documentación — AutomatorWP Google Groups (modo prueba)
+
+1) ¿Qué es Google Groups?
+- Google Groups es un servicio de Google para crear "grupos" de correo: una dirección de grupo que agrupa a varias
+personas (miembros). Añadir o quitar miembros controla quién forma parte del grupo.
+
+2) ¿Qué hace este plugin con Google Groups?
+    - Permite que tu WordPress gestione Google Groups desde AutomatorWP: listar grupos, añadir miembros y quitar miembros
+    desde recetas/acciones automáticas.
+    - Sirve para integrar eventos de tu web con la gestión de grupos (por ejemplo: cuando un usuario se registra,
+    añadirlo a un grupo).
+
+3) Preparación antes de probar
+    - Asegúrate de que tienes instalado y activo en tu WordPress:
+      - AutomatorWP (plugin principal) y
+      - AutomatorWP - Google Groups (este plugin).
+- La carpeta del plugin debe estar en: `wp-content/plugins/automatorwp-google-groups`.
+
+4) Formas sencillas de activar el modo prueba (elige una)
+Nota: el modo prueba (mock) hace que el plugin use datos simulados dentro de WordPress en lugar de llamar a Google.
+
+Activación automática al activar el plugin (recomendado)
+    - Copia la carpeta del plugin a `wp-content/plugins/`.
+    - Ve a WP Admin → Plugins. Si el plugin ya está activo, desactívalo y vuelve a activarlo; si está inactivo,
+    actívalo.
+    - Al activarlo, el plugin inicializa el modo prueba automáticamente (crea grupos de ejemplo y la opción
+    `automatorwp_googlegroups_test_mode = 1`).
+
+5) Cómo comprobar que el modo prueba está activo (UI)
+- Ve a WP Admin → Herramientas → Mock GG state.
+    - Deberías ver un array con `groups` (ej.: staff@local.test y students@local.test) y `members` (vacío al inicio).
+    - Ve a AutomatorWP → crea/edita una receta y añade la acción "Add a member to a Google Group".
+    - Al editar la acción, en el selector de grupos deberías ver los grupos mock.
+    - Ejecuta la receta (o fuerza el trigger) y vuelve a Herramientas → Mock GG state para comprobar que el miembro
+    se ha añadido.
+
+6) Cómo desactivar el modo prueba
+- Opción sencilla: WP Admin → Plugins → Desactivar `AutomatorWP - Google Groups`. Al desactivarlo la rutina del plugin
+pone la opción `automatorwp_googlegroups_test_mode = 0`.
+- Si activaste el modo desde `functions.php`, elimina el bloque que pegaste y guarda. Como aqui lo hemos activado el
+modo prueba se desactivará al guardar.
+
+========================================================================================================================
+                            Integración real con Google (pasos para producción)
+========================================================================================================================
+
+7) Pasar a la integración real con Google (cuando tengáis Workspace y queráis producción)
+- Pasos generales:
+
+  1. Conseguir la clave JSON de una cuenta de servicio (service account) con permisos y domain‑wide delegation
+  (esto lo hace el administrador de Google Workspace).
+
+  2. En WP Admin → AutomatorWP → Google Groups (los ajustes que ves en la UI), pega el JSON en "Service Account JSON",
+  completa el email a impersonar y el dominio, marca "Configured" y guarda.
+
+  3. Probad las acciones en AutomatorWP; las llamadas ya usarán la API real de Google.
+- Si aparece error 401/403: la cuenta de servicio o los scopes no están autorizados en Admin Console (esto lo debe
+revisar quien gestiona Google Workspace).
+
+8) Por qué usamos el modo prueba
+- No siempre hay acceso a Google Workspace. El modo prueba permite:
+  - Probar funcionalidad sin tocar datos reales.
+  - Detectar errores en recetas e interfaz antes de integrar con Google real.
+
+9) Limitaciones del modo prueba
+- No modifica nada en Google: solo guarda datos dentro de WordPress.
+- No soporta configuraciones avanzadas específicas de Google Groups.
+- Es solo para pruebas funcionales y de flujo.
+
+10) Seguridad y buenas prácticas
+- No dejes el modo prueba activado en entornos públicos/producción.
+- Si usas el snippet en `functions.php`, elimina el bloque cuando termine la prueba.
+- No subas claves JSON de service accounts a repositorios públicos.
+
+11) Datos importantes para desarrolladores
+- El plugin guarda los grupos y miembros en la opción `automatorwp_googlegroups_test_mode_data` (array serializado).
+- La opción `automatorwp_googlegroups_test_mode` controla si el modo prueba está activo (1) o no (0).
+- Las funciones del plugin detectan el modo prueba y usan los datos mock en lugar de llamar a Google.

@@ -1,0 +1,5258 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: BBForms\n"
+"Report-Msgid-Bugs-To: https://bbforms.com/\n"
+"POT-Creation-Date: 2025-10-03 13:56+0200\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: BBForms (https://bbforms.com/)\n"
+"Language-Team: BBForms <contact@bbforms.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: includes/actions.php:162
+#, php-format
+msgid "Attempting to parse an ACTION without a valid callback: %s"
+msgstr ""
+
+#: includes/actions/actions/delete_request.php:25
+msgid "Delete user data request"
+msgstr ""
+
+#: includes/actions/actions/delete_request.php:29
+msgid "Basic delete user data request action"
+msgstr ""
+
+#: includes/actions/actions/delete_request.php:33
+msgid "Anonymize action"
+msgstr ""
+
+#: includes/actions/actions/delete_request.php:36
+#: includes/actions/actions/export_request.php:31 includes/help.php:1457
+msgid "Invalid email address."
+msgstr ""
+
+#: includes/actions/actions/delete_request.php:36
+#: includes/actions/actions/export_request.php:31
+#: includes/form-templates.php:336 includes/form-templates.php:348
+#: includes/help.php:1331 includes/help.php:1371 includes/help.php:1457
+msgid "A request for this email address already exists."
+msgstr ""
+
+#: includes/actions/actions/delete_request.php:37
+#: includes/actions/actions/export_request.php:32
+msgid "Notify about duplicated request or invalid email"
+msgstr ""
+
+#: includes/actions/actions/email.php:28 includes/help.php:1171
+msgid "Send email"
+msgstr ""
+
+#: includes/actions/actions/email.php:32
+msgid "Basic email action"
+msgstr ""
+
+#: includes/actions/actions/email.php:35 includes/form-templates.php:55
+#: includes/form-templates.php:146 includes/form-templates.php:256
+msgid "New submission"
+msgstr ""
+
+#: includes/actions/actions/email.php:36
+msgid "Email site admin about form submitted + Reply to form submitter email"
+msgstr ""
+
+#: includes/actions/actions/email.php:39 includes/form-templates.php:56
+#: includes/form-templates.php:147
+msgid "Submission received"
+msgstr ""
+
+#: includes/actions/actions/email.php:40
+msgid "Email confirmation to form submitter"
+msgstr ""
+
+#: includes/actions/actions/email.php:44
+msgid "Email action with several attributes"
+msgstr ""
+
+#: includes/actions/actions/export_request.php:24
+msgid "Export user data request"
+msgstr ""
+
+#: includes/actions/actions/export_request.php:28
+msgid "Basic export user data request action"
+msgstr ""
+
+#: includes/actions/actions/message.php:21
+msgid "Show message after submission"
+msgstr ""
+
+#: includes/actions/actions/message.php:25
+msgid "Basic message action (shows a info message)"
+msgstr ""
+
+#: includes/actions/actions/message.php:29
+msgid "Info message action"
+msgstr ""
+
+#: includes/actions/actions/message.php:33
+msgid "Success message action"
+msgstr ""
+
+#: includes/actions/actions/message.php:37
+msgid "Warning message action"
+msgstr ""
+
+#: includes/actions/actions/message.php:41
+msgid "Error message action"
+msgstr ""
+
+#: includes/actions/actions/record.php:20
+msgid "Record form submission"
+msgstr ""
+
+#: includes/actions/actions/record.php:24
+msgid "Basic form submission record action"
+msgstr ""
+
+#: includes/actions/actions/redirect.php:21 includes/help.php:1258
+msgid "Redirect"
+msgstr ""
+
+#: includes/actions/actions/redirect.php:25
+msgid "Basic redirect action"
+msgstr ""
+
+#: includes/actions/actions/redirect.php:29
+msgid "Redirect to home page"
+msgstr ""
+
+#: includes/admin.php:58 includes/admin.php:198
+#: includes/custom-tables/forms.php:26
+msgid "Add New"
+msgstr ""
+
+#: includes/admin.php:72 includes/admin.php:258
+#: includes/editor-controls.php:229 includes/editor-controls.php:320
+#: includes/editor-controls.php:398
+msgid "Add-ons"
+msgstr ""
+
+#: includes/admin.php:90
+msgid "Try GamiPress!"
+msgstr ""
+
+#: includes/admin.php:97
+msgid "Try AutomatorWP!"
+msgstr ""
+
+#: includes/admin.php:104
+msgid "Try ShortLinks Pro!"
+msgstr ""
+
+#: includes/admin.php:139 includes/admin.php:289
+msgid "New"
+msgstr ""
+
+#: includes/admin.php:190 includes/custom-tables/forms.php:23
+#: includes/custom-tables/forms.php:25
+msgid "Forms"
+msgstr ""
+
+#: includes/admin.php:206 includes/admin/pages/settings.php:199
+#: includes/custom-tables/forms.php:154
+#: includes/custom-tables/submissions.php:87
+#: includes/custom-tables/submissions.php:89
+#: includes/privacy/exporters/submissions.php:77
+msgid "Submissions"
+msgstr ""
+
+#: includes/admin.php:214 includes/custom-tables/categories.php:23
+#: includes/custom-tables/categories.php:25
+msgid "Categories"
+msgstr ""
+
+#: includes/admin.php:222 includes/custom-tables/forms.php:153
+#: includes/custom-tables/forms.php:796 includes/custom-tables/forms.php:1023
+#: includes/custom-tables/tags.php:23 includes/custom-tables/tags.php:25
+#: includes/editor-controls.php:72
+msgid "Tags"
+msgstr ""
+
+#: includes/admin.php:250 includes/admin/pages/settings.php:164
+#: includes/admin/pages/settings.php:170 includes/admin/pages/settings.php:195
+#: includes/custom-tables/forms.php:848 includes/tags.php:252
+msgid "Settings"
+msgstr ""
+
+#: includes/admin.php:456
+#, php-format
+msgid "Thank you for using <a href=\"%1$s\" target=\"_blank\">BBForms</a>! Please leave us a <a href=\"%2$s\" target=\"_blank\">%3$s</a> rating on WordPress.org"
+msgstr ""
+
+#: includes/admin/notices.php:47
+#, php-format
+msgid "Awesome! You've been using %s for a while."
+msgstr ""
+
+#: includes/admin/notices.php:50
+#, php-format
+msgid "May I ask you to give it a %s on WordPress?"
+msgstr ""
+
+#: includes/admin/notices.php:50
+msgid "5-star rating"
+msgstr ""
+
+#: includes/admin/notices.php:51
+msgid "This will help to spread its popularity and to make this plugin a better one."
+msgstr ""
+
+#: includes/admin/notices.php:53
+msgid "Your help is much appreciated. Thank you very much,"
+msgstr ""
+
+#: includes/admin/notices.php:57
+msgid "Yes, I want to rate it!"
+msgstr ""
+
+#: includes/admin/notices.php:58
+msgid "I already did"
+msgstr ""
+
+#: includes/admin/notices.php:59
+msgid "No, I don't want to rate it"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:32
+msgid "BBForms Add-ons"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:35
+msgid "Add-ons to extend and expand the functionality of BBForms."
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:127
+#, php-format
+msgid "Install %s now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:127
+msgid "Install Now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:133
+#, php-format
+msgid "Update %s now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:133
+msgid "Update Now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:140
+msgctxt "plugin"
+msgid "Active"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:142 includes/admin/pages/add-ons.php:214
+msgid "Activate"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:143 includes/admin/pages/add-ons.php:215
+#, php-format
+msgctxt "plugin"
+msgid "Activate %s"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:151 includes/admin/pages/add-ons.php:223
+msgid "Network Activate"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:152 includes/admin/pages/add-ons.php:224
+#, php-format
+msgctxt "plugin"
+msgid "Network Activate %s"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:163
+msgctxt "plugin"
+msgid "Installed"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:199
+msgid "Activate License"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:202
+msgid "Active and License Registered"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:208
+msgid "Active"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:239
+msgid "Get this pass"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:244
+msgid "Get this add-on"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:251
+#, php-format
+msgid "More information about %s"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:251
+msgid "More Details"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:320 includes/admin/pages/add-ons.php:332
+#, php-format
+msgid "An unexpected error occurred. Something may be wrong with bbforms.com or this server&#8217;s configuration. If you continue to have problems, please try to <a href=\"%s\">contact us</a>."
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:322
+msgid "(WordPress could not establish a secure connection to bbforms.com. Please contact your server administrator.)"
+msgstr ""
+
+#: includes/admin/pages/settings.php:174
+msgid "Save Settings"
+msgstr ""
+
+#: includes/admin/pages/settings.php:175
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/admin/pages/settings.php:203
+msgid "Messages"
+msgstr ""
+
+#: includes/admin/settings/error-messages.php:32
+#: includes/admin/settings/form-messages.php:32
+msgid "Default: "
+msgstr ""
+
+#: includes/admin/settings/error-messages.php:40
+msgid "Fields Error Messages"
+msgstr ""
+
+#: includes/admin/settings/form-messages.php:51
+msgid "Form Messages"
+msgstr ""
+
+#: includes/admin/settings/form-messages.php:64
+msgid "IMPORTANT: Overriding messages will make them no-translatable since WordPress is only able to translate messages inside the plugin's code."
+msgstr ""
+
+#: includes/admin/settings/general.php:24
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin/settings/general.php:27
+msgid "Minimum Access Role"
+msgstr ""
+
+#: includes/admin/settings/general.php:30
+msgid "Minimum role a user needs to access to BBForms management areas."
+msgstr ""
+
+#: includes/admin/settings/general.php:34
+msgid "Editor Theme"
+msgstr ""
+
+#: includes/admin/settings/general.php:35
+msgid "Set the BBForms editor theme. By default is set to dark to reduce eye strain."
+msgstr ""
+
+#: includes/admin/settings/general.php:39 includes/options.php:27
+msgid "Dark"
+msgstr ""
+
+#: includes/admin/settings/general.php:40
+msgid "Light"
+msgstr ""
+
+#: includes/admin/settings/general.php:44
+msgid "Disable Top Bar"
+msgstr ""
+
+#: includes/admin/settings/general.php:47
+msgid "Check this option to disable the BBForms top bar menu."
+msgstr ""
+
+#: includes/admin/settings/general.php:100
+msgid "Administrator"
+msgstr ""
+
+#: includes/admin/settings/general.php:101
+msgid "Editor"
+msgstr ""
+
+#: includes/admin/settings/general.php:102
+msgid "Author"
+msgstr ""
+
+#: includes/admin/settings/submissions-cleanup.php:24
+msgid "Automatic Submissions Cleanup"
+msgstr ""
+
+#: includes/admin/settings/submissions-cleanup.php:27
+msgid "Submissions Auto-Cleanup"
+msgstr ""
+
+#: includes/admin/settings/submissions-cleanup.php:30
+msgid "Check this option to automatically delete old submissions. You will be able to enter the number of days you want to keep the submissions stored."
+msgstr ""
+
+#: includes/admin/settings/submissions-cleanup.php:34
+msgid "Days Keeping Submissions"
+msgstr ""
+
+#: includes/admin/settings/submissions-cleanup.php:37
+msgid "Enter the number of days you want to keep submissions stored. This will remove submissions older than the number of days entered."
+msgstr ""
+
+#: includes/ajax-functions.php:23 includes/ajax-functions.php:175
+#: includes/submit.php:36
+msgid "Security check not passed."
+msgstr ""
+
+#: includes/ajax-functions.php:29
+msgid "Invalid import source."
+msgstr ""
+
+#: includes/ajax-functions.php:39
+msgid "Invalid import code."
+msgstr ""
+
+#: includes/ajax-functions.php:49
+msgid "The uploaded file is not a valid TXT."
+msgstr ""
+
+#: includes/ajax-functions.php:56
+msgid "Could not read the uploaded file."
+msgstr ""
+
+#: includes/ajax-functions.php:60
+msgid "The uploaded file is empty."
+msgstr ""
+
+#: includes/ajax-functions.php:73
+msgid "Could not import this form."
+msgstr ""
+
+#: includes/ajax-functions.php:186 includes/submit.php:41
+msgid "No form provided."
+msgstr ""
+
+#: includes/ajax-functions.php:251 includes/custom-tables/submissions.php:171
+msgid "#"
+msgstr ""
+
+#: includes/ajax-functions.php:261 includes/custom-tables/submissions.php:183
+#: includes/custom-tables/submissions.php:677 includes/help.php:268
+#: includes/privacy/exporters/submissions.php:151
+#: integrations/easy-digital-downloads/includes/tags.php:203
+#: integrations/easy-digital-downloads/includes/tags.php:282
+#: integrations/woocommerce/includes/tags.php:211
+#: integrations/woocommerce/includes/tags.php:290
+msgid "Date"
+msgstr ""
+
+#: includes/attachments.php:24
+msgid "Trying to import an empty attachment URL"
+msgstr ""
+
+#: includes/attachments.php:152
+msgid "Invalid file type"
+msgstr ""
+
+#: includes/bbcodes.php:239 includes/fields.php:236
+#, php-format
+msgid "Attempting to parse a BBCODE without a valid callback: %s"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/b.php:17
+msgid "Bold"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/center.php:17
+msgid "Align Center"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/code.php:17
+msgid "Code"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/color.php:17
+msgid "Text Color"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/email.php:21
+msgid "Email Link"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/font.php:18
+msgid "Font"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/i.php:17
+msgid "Italic"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/iframe.php:41
+msgid "Iframe"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/img.php:22
+msgid "Image"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/justify.php:17
+msgid "Justify"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/left.php:17
+msgid "Align Left"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/list.php:18
+msgid "List"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/quote.php:17
+msgid "Quote"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/right.php:17
+msgid "Align Right"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/row.php:18 includes/help.php:1588
+msgid "Columns"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/s.php:17
+msgid "Strikethrough"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/size.php:18
+msgid "Size"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/table.php:23
+msgid "Table"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/u.php:17
+msgid "Underlined"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/url.php:21
+msgid "URL Link"
+msgstr ""
+
+#: includes/bbcodes/bbcodes/youtube.php:28
+msgid "Youtube Video"
+msgstr ""
+
+#: includes/country.php:26
+msgid "Afghanistan"
+msgstr ""
+
+#: includes/country.php:27
+msgid "&#197;land Islands"
+msgstr ""
+
+#: includes/country.php:28
+msgid "Albania"
+msgstr ""
+
+#: includes/country.php:29
+msgid "Algeria"
+msgstr ""
+
+#: includes/country.php:30
+msgid "American Samoa"
+msgstr ""
+
+#: includes/country.php:31
+msgid "Andorra"
+msgstr ""
+
+#: includes/country.php:32
+msgid "Angola"
+msgstr ""
+
+#: includes/country.php:33
+msgid "Anguilla"
+msgstr ""
+
+#: includes/country.php:34
+msgid "Antarctica"
+msgstr ""
+
+#: includes/country.php:35
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: includes/country.php:36
+msgid "Argentina"
+msgstr ""
+
+#: includes/country.php:37
+msgid "Armenia"
+msgstr ""
+
+#: includes/country.php:38
+msgid "Aruba"
+msgstr ""
+
+#: includes/country.php:39
+msgid "Australia"
+msgstr ""
+
+#: includes/country.php:40
+msgid "Austria"
+msgstr ""
+
+#: includes/country.php:41
+msgid "Azerbaijan"
+msgstr ""
+
+#: includes/country.php:42
+msgid "Bahamas"
+msgstr ""
+
+#: includes/country.php:43
+msgid "Bahrain"
+msgstr ""
+
+#: includes/country.php:44
+msgid "Bangladesh"
+msgstr ""
+
+#: includes/country.php:45
+msgid "Barbados"
+msgstr ""
+
+#: includes/country.php:46
+msgid "Belarus"
+msgstr ""
+
+#: includes/country.php:47
+msgid "Belgium"
+msgstr ""
+
+#: includes/country.php:48
+msgid "Belau"
+msgstr ""
+
+#: includes/country.php:49
+msgid "Belize"
+msgstr ""
+
+#: includes/country.php:50
+msgid "Benin"
+msgstr ""
+
+#: includes/country.php:51
+msgid "Bermuda"
+msgstr ""
+
+#: includes/country.php:52
+msgid "Bhutan"
+msgstr ""
+
+#: includes/country.php:53
+msgid "Bolivia"
+msgstr ""
+
+#: includes/country.php:54
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr ""
+
+#: includes/country.php:55
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: includes/country.php:56
+msgid "Botswana"
+msgstr ""
+
+#: includes/country.php:57
+msgid "Bouvet Island"
+msgstr ""
+
+#: includes/country.php:58
+msgid "Brazil"
+msgstr ""
+
+#: includes/country.php:59
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: includes/country.php:60
+msgid "British Virgin Islands"
+msgstr ""
+
+#: includes/country.php:61
+msgid "Brunei"
+msgstr ""
+
+#: includes/country.php:62
+msgid "Bulgaria"
+msgstr ""
+
+#: includes/country.php:63
+msgid "Burkina Faso"
+msgstr ""
+
+#: includes/country.php:64
+msgid "Burundi"
+msgstr ""
+
+#: includes/country.php:65
+msgid "Cambodia"
+msgstr ""
+
+#: includes/country.php:66
+msgid "Cameroon"
+msgstr ""
+
+#: includes/country.php:67
+msgid "Canada"
+msgstr ""
+
+#: includes/country.php:68
+msgid "Cape Verde"
+msgstr ""
+
+#: includes/country.php:69
+msgid "Cayman Islands"
+msgstr ""
+
+#: includes/country.php:70
+msgid "Central African Republic"
+msgstr ""
+
+#: includes/country.php:71
+msgid "Chad"
+msgstr ""
+
+#: includes/country.php:72
+msgid "Chile"
+msgstr ""
+
+#: includes/country.php:73
+msgid "China"
+msgstr ""
+
+#: includes/country.php:74
+msgid "Christmas Island"
+msgstr ""
+
+#: includes/country.php:75
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: includes/country.php:76
+msgid "Colombia"
+msgstr ""
+
+#: includes/country.php:77
+msgid "Comoros"
+msgstr ""
+
+#: includes/country.php:78
+msgid "Congo (Brazzaville)"
+msgstr ""
+
+#: includes/country.php:79
+msgid "Congo (Kinshasa)"
+msgstr ""
+
+#: includes/country.php:80
+msgid "Cook Islands"
+msgstr ""
+
+#: includes/country.php:81
+msgid "Costa Rica"
+msgstr ""
+
+#: includes/country.php:82
+msgid "Croatia"
+msgstr ""
+
+#: includes/country.php:83
+msgid "Cuba"
+msgstr ""
+
+#: includes/country.php:84
+msgid "Cura&ccedil;ao"
+msgstr ""
+
+#: includes/country.php:85
+msgid "Cyprus"
+msgstr ""
+
+#: includes/country.php:86
+msgid "Czech Republic"
+msgstr ""
+
+#: includes/country.php:87
+msgid "Denmark"
+msgstr ""
+
+#: includes/country.php:88
+msgid "Djibouti"
+msgstr ""
+
+#: includes/country.php:89
+msgid "Dominica"
+msgstr ""
+
+#: includes/country.php:90
+msgid "Dominican Republic"
+msgstr ""
+
+#: includes/country.php:91
+msgid "Ecuador"
+msgstr ""
+
+#: includes/country.php:92
+msgid "Egypt"
+msgstr ""
+
+#: includes/country.php:93
+msgid "El Salvador"
+msgstr ""
+
+#: includes/country.php:94
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: includes/country.php:95
+msgid "Eritrea"
+msgstr ""
+
+#: includes/country.php:96
+msgid "Estonia"
+msgstr ""
+
+#: includes/country.php:97
+msgid "Ethiopia"
+msgstr ""
+
+#: includes/country.php:98
+msgid "Falkland Islands"
+msgstr ""
+
+#: includes/country.php:99
+msgid "Faroe Islands"
+msgstr ""
+
+#: includes/country.php:100
+msgid "Fiji"
+msgstr ""
+
+#: includes/country.php:101
+msgid "Finland"
+msgstr ""
+
+#: includes/country.php:102
+msgid "France"
+msgstr ""
+
+#: includes/country.php:103
+msgid "French Guiana"
+msgstr ""
+
+#: includes/country.php:104
+msgid "French Polynesia"
+msgstr ""
+
+#: includes/country.php:105
+msgid "French Southern Territories"
+msgstr ""
+
+#: includes/country.php:106
+msgid "Gabon"
+msgstr ""
+
+#: includes/country.php:107
+msgid "Gambia"
+msgstr ""
+
+#: includes/country.php:108
+msgid "Georgia"
+msgstr ""
+
+#: includes/country.php:109
+msgid "Germany"
+msgstr ""
+
+#: includes/country.php:110
+msgid "Ghana"
+msgstr ""
+
+#: includes/country.php:111
+msgid "Gibraltar"
+msgstr ""
+
+#: includes/country.php:112
+msgid "Greece"
+msgstr ""
+
+#: includes/country.php:113
+msgid "Greenland"
+msgstr ""
+
+#: includes/country.php:114
+msgid "Grenada"
+msgstr ""
+
+#: includes/country.php:115
+msgid "Guadeloupe"
+msgstr ""
+
+#: includes/country.php:116
+msgid "Guam"
+msgstr ""
+
+#: includes/country.php:117
+msgid "Guatemala"
+msgstr ""
+
+#: includes/country.php:118
+msgid "Guernsey"
+msgstr ""
+
+#: includes/country.php:119
+msgid "Guinea"
+msgstr ""
+
+#: includes/country.php:120
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: includes/country.php:121
+msgid "Guyana"
+msgstr ""
+
+#: includes/country.php:122
+msgid "Haiti"
+msgstr ""
+
+#: includes/country.php:123
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: includes/country.php:124
+msgid "Honduras"
+msgstr ""
+
+#: includes/country.php:125
+msgid "Hong Kong"
+msgstr ""
+
+#: includes/country.php:126
+msgid "Hungary"
+msgstr ""
+
+#: includes/country.php:127
+msgid "Iceland"
+msgstr ""
+
+#: includes/country.php:128
+msgid "India"
+msgstr ""
+
+#: includes/country.php:129
+msgid "Indonesia"
+msgstr ""
+
+#: includes/country.php:130
+msgid "Iran"
+msgstr ""
+
+#: includes/country.php:131
+msgid "Iraq"
+msgstr ""
+
+#: includes/country.php:132
+msgid "Ireland"
+msgstr ""
+
+#: includes/country.php:133
+msgid "Isle of Man"
+msgstr ""
+
+#: includes/country.php:134
+msgid "Israel"
+msgstr ""
+
+#: includes/country.php:135
+msgid "Italy"
+msgstr ""
+
+#: includes/country.php:136
+msgid "Ivory Coast"
+msgstr ""
+
+#: includes/country.php:137
+msgid "Jamaica"
+msgstr ""
+
+#: includes/country.php:138
+msgid "Japan"
+msgstr ""
+
+#: includes/country.php:139
+msgid "Jersey"
+msgstr ""
+
+#: includes/country.php:140
+msgid "Jordan"
+msgstr ""
+
+#: includes/country.php:141
+msgid "Kazakhstan"
+msgstr ""
+
+#: includes/country.php:142
+msgid "Kenya"
+msgstr ""
+
+#: includes/country.php:143
+msgid "Kiribati"
+msgstr ""
+
+#: includes/country.php:144
+msgid "Kuwait"
+msgstr ""
+
+#: includes/country.php:145
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: includes/country.php:146
+msgid "Laos"
+msgstr ""
+
+#: includes/country.php:147
+msgid "Latvia"
+msgstr ""
+
+#: includes/country.php:148
+msgid "Lebanon"
+msgstr ""
+
+#: includes/country.php:149
+msgid "Lesotho"
+msgstr ""
+
+#: includes/country.php:150
+msgid "Liberia"
+msgstr ""
+
+#: includes/country.php:151
+msgid "Libya"
+msgstr ""
+
+#: includes/country.php:152
+msgid "Liechtenstein"
+msgstr ""
+
+#: includes/country.php:153
+msgid "Lithuania"
+msgstr ""
+
+#: includes/country.php:154
+msgid "Luxembourg"
+msgstr ""
+
+#: includes/country.php:155
+msgid "Macao S.A.R., China"
+msgstr ""
+
+#: includes/country.php:156
+msgid "Macedonia"
+msgstr ""
+
+#: includes/country.php:157
+msgid "Madagascar"
+msgstr ""
+
+#: includes/country.php:158
+msgid "Malawi"
+msgstr ""
+
+#: includes/country.php:159
+msgid "Malaysia"
+msgstr ""
+
+#: includes/country.php:160
+msgid "Maldives"
+msgstr ""
+
+#: includes/country.php:161
+msgid "Mali"
+msgstr ""
+
+#: includes/country.php:162
+msgid "Malta"
+msgstr ""
+
+#: includes/country.php:163
+msgid "Marshall Islands"
+msgstr ""
+
+#: includes/country.php:164
+msgid "Martinique"
+msgstr ""
+
+#: includes/country.php:165
+msgid "Mauritania"
+msgstr ""
+
+#: includes/country.php:166
+msgid "Mauritius"
+msgstr ""
+
+#: includes/country.php:167
+msgid "Mayotte"
+msgstr ""
+
+#: includes/country.php:168
+msgid "Mexico"
+msgstr ""
+
+#: includes/country.php:169
+msgid "Micronesia"
+msgstr ""
+
+#: includes/country.php:170
+msgid "Moldova"
+msgstr ""
+
+#: includes/country.php:171
+msgid "Monaco"
+msgstr ""
+
+#: includes/country.php:172
+msgid "Mongolia"
+msgstr ""
+
+#: includes/country.php:173
+msgid "Montenegro"
+msgstr ""
+
+#: includes/country.php:174
+msgid "Montserrat"
+msgstr ""
+
+#: includes/country.php:175
+msgid "Morocco"
+msgstr ""
+
+#: includes/country.php:176
+msgid "Mozambique"
+msgstr ""
+
+#: includes/country.php:177
+msgid "Myanmar"
+msgstr ""
+
+#: includes/country.php:178
+msgid "Namibia"
+msgstr ""
+
+#: includes/country.php:179
+msgid "Nauru"
+msgstr ""
+
+#: includes/country.php:180
+msgid "Nepal"
+msgstr ""
+
+#: includes/country.php:181
+msgid "Netherlands"
+msgstr ""
+
+#: includes/country.php:182
+msgid "New Caledonia"
+msgstr ""
+
+#: includes/country.php:183
+msgid "New Zealand"
+msgstr ""
+
+#: includes/country.php:184
+msgid "Nicaragua"
+msgstr ""
+
+#: includes/country.php:185
+msgid "Niger"
+msgstr ""
+
+#: includes/country.php:186
+msgid "Nigeria"
+msgstr ""
+
+#: includes/country.php:187
+msgid "Niue"
+msgstr ""
+
+#: includes/country.php:188
+msgid "Norfolk Island"
+msgstr ""
+
+#: includes/country.php:189
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: includes/country.php:190
+msgid "North Korea"
+msgstr ""
+
+#: includes/country.php:191
+msgid "Norway"
+msgstr ""
+
+#: includes/country.php:192
+msgid "Oman"
+msgstr ""
+
+#: includes/country.php:193
+msgid "Pakistan"
+msgstr ""
+
+#: includes/country.php:194
+msgid "Palestinian Territory"
+msgstr ""
+
+#: includes/country.php:195
+msgid "Panama"
+msgstr ""
+
+#: includes/country.php:196
+msgid "Papua New Guinea"
+msgstr ""
+
+#: includes/country.php:197
+msgid "Paraguay"
+msgstr ""
+
+#: includes/country.php:198
+msgid "Peru"
+msgstr ""
+
+#: includes/country.php:199
+msgid "Philippines"
+msgstr ""
+
+#: includes/country.php:200
+msgid "Pitcairn"
+msgstr ""
+
+#: includes/country.php:201
+msgid "Poland"
+msgstr ""
+
+#: includes/country.php:202
+msgid "Portugal"
+msgstr ""
+
+#: includes/country.php:203
+msgid "Puerto Rico"
+msgstr ""
+
+#: includes/country.php:204
+msgid "Qatar"
+msgstr ""
+
+#: includes/country.php:205
+msgid "Reunion"
+msgstr ""
+
+#: includes/country.php:206
+msgid "Romania"
+msgstr ""
+
+#: includes/country.php:207
+msgid "Russia"
+msgstr ""
+
+#: includes/country.php:208
+msgid "Rwanda"
+msgstr ""
+
+#: includes/country.php:209
+msgid "Saint Barth&eacute;lemy"
+msgstr ""
+
+#: includes/country.php:210
+msgid "Saint Helena"
+msgstr ""
+
+#: includes/country.php:211
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: includes/country.php:212
+msgid "Saint Lucia"
+msgstr ""
+
+#: includes/country.php:213
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: includes/country.php:214
+msgid "Saint Martin (Dutch part)"
+msgstr ""
+
+#: includes/country.php:215
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: includes/country.php:216
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: includes/country.php:217
+msgid "San Marino"
+msgstr ""
+
+#: includes/country.php:218
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr ""
+
+#: includes/country.php:219
+msgid "Saudi Arabia"
+msgstr ""
+
+#: includes/country.php:220
+msgid "Senegal"
+msgstr ""
+
+#: includes/country.php:221
+msgid "Serbia"
+msgstr ""
+
+#: includes/country.php:222
+msgid "Seychelles"
+msgstr ""
+
+#: includes/country.php:223
+msgid "Sierra Leone"
+msgstr ""
+
+#: includes/country.php:224
+msgid "Singapore"
+msgstr ""
+
+#: includes/country.php:225
+msgid "Slovakia"
+msgstr ""
+
+#: includes/country.php:226
+msgid "Slovenia"
+msgstr ""
+
+#: includes/country.php:227
+msgid "Solomon Islands"
+msgstr ""
+
+#: includes/country.php:228
+msgid "Somalia"
+msgstr ""
+
+#: includes/country.php:229
+msgid "South Africa"
+msgstr ""
+
+#: includes/country.php:230
+msgid "South Georgia/Sandwich Islands"
+msgstr ""
+
+#: includes/country.php:231
+msgid "South Korea"
+msgstr ""
+
+#: includes/country.php:232
+msgid "South Sudan"
+msgstr ""
+
+#: includes/country.php:233 includes/help.php:672
+msgid "Spain"
+msgstr ""
+
+#: includes/country.php:234
+msgid "Sri Lanka"
+msgstr ""
+
+#: includes/country.php:235
+msgid "Sudan"
+msgstr ""
+
+#: includes/country.php:236
+msgid "Suriname"
+msgstr ""
+
+#: includes/country.php:237
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: includes/country.php:238
+msgid "Swaziland"
+msgstr ""
+
+#: includes/country.php:239
+msgid "Sweden"
+msgstr ""
+
+#: includes/country.php:240
+msgid "Switzerland"
+msgstr ""
+
+#: includes/country.php:241
+msgid "Syria"
+msgstr ""
+
+#: includes/country.php:242
+msgid "Taiwan"
+msgstr ""
+
+#: includes/country.php:243
+msgid "Tajikistan"
+msgstr ""
+
+#: includes/country.php:244
+msgid "Tanzania"
+msgstr ""
+
+#: includes/country.php:245
+msgid "Thailand"
+msgstr ""
+
+#: includes/country.php:246
+msgid "Timor-Leste"
+msgstr ""
+
+#: includes/country.php:247
+msgid "Togo"
+msgstr ""
+
+#: includes/country.php:248
+msgid "Tokelau"
+msgstr ""
+
+#: includes/country.php:249
+msgid "Tonga"
+msgstr ""
+
+#: includes/country.php:250
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: includes/country.php:251
+msgid "Tunisia"
+msgstr ""
+
+#: includes/country.php:252
+msgid "Turkey"
+msgstr ""
+
+#: includes/country.php:253
+msgid "Turkmenistan"
+msgstr ""
+
+#: includes/country.php:254
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: includes/country.php:255
+msgid "Tuvalu"
+msgstr ""
+
+#: includes/country.php:256
+msgid "Uganda"
+msgstr ""
+
+#: includes/country.php:257
+msgid "Ukraine"
+msgstr ""
+
+#: includes/country.php:258
+msgid "United Arab Emirates"
+msgstr ""
+
+#: includes/country.php:259
+msgid "United Kingdom (UK)"
+msgstr ""
+
+#: includes/country.php:260
+msgid "United States (US)"
+msgstr ""
+
+#: includes/country.php:261
+msgid "United States (US) Minor Outlying Islands"
+msgstr ""
+
+#: includes/country.php:262
+msgid "United States (US) Virgin Islands"
+msgstr ""
+
+#: includes/country.php:263
+msgid "Uruguay"
+msgstr ""
+
+#: includes/country.php:264
+msgid "Uzbekistan"
+msgstr ""
+
+#: includes/country.php:265
+msgid "Vanuatu"
+msgstr ""
+
+#: includes/country.php:266
+msgid "Vatican"
+msgstr ""
+
+#: includes/country.php:267
+msgid "Venezuela"
+msgstr ""
+
+#: includes/country.php:268
+msgid "Vietnam"
+msgstr ""
+
+#: includes/country.php:269
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: includes/country.php:270
+msgid "Western Sahara"
+msgstr ""
+
+#: includes/country.php:271
+msgid "Samoa"
+msgstr ""
+
+#: includes/country.php:272
+msgid "Yemen"
+msgstr ""
+
+#: includes/country.php:273
+msgid "Zambia"
+msgstr ""
+
+#: includes/country.php:274
+msgid "Zimbabwe"
+msgstr ""
+
+#: includes/cron.php:27
+msgid "Every five minutes"
+msgstr ""
+
+#: includes/custom-tables/categories.php:22
+#: includes/custom-tables/forms.php:152 includes/custom-tables/forms.php:776
+msgid "Category"
+msgstr ""
+
+#: includes/custom-tables/categories.php:97
+#: includes/custom-tables/categories.php:211
+#: includes/custom-tables/categories.php:262 includes/custom-tables/tags.php:97
+#: includes/custom-tables/tags.php:211 includes/custom-tables/tags.php:262
+#: includes/fields/fields/text.php:40 includes/form-templates.php:44
+#: includes/form-templates.php:124 includes/form-templates.php:135
+#: includes/form-templates.php:157 includes/form-templates.php:193
+msgid "Name"
+msgstr ""
+
+#: includes/custom-tables/categories.php:98
+#: includes/custom-tables/categories.php:219
+#: includes/custom-tables/categories.php:273 includes/custom-tables/tags.php:98
+#: includes/custom-tables/tags.php:219 includes/custom-tables/tags.php:273
+msgid "Slug"
+msgstr ""
+
+#: includes/custom-tables/categories.php:99
+#: includes/custom-tables/categories.php:227
+#: includes/custom-tables/categories.php:284 includes/custom-tables/tags.php:99
+#: includes/custom-tables/tags.php:227 includes/custom-tables/tags.php:284
+#: includes/editor-controls.php:841 includes/editor-controls.php:891
+#: includes/help.php:914
+msgid "Description"
+msgstr ""
+
+#: includes/custom-tables/categories.php:100
+#: includes/custom-tables/tags.php:100
+msgid "Count"
+msgstr ""
+
+#: includes/custom-tables/categories.php:143
+#: includes/custom-tables/tags.php:143 includes/forms.php:529
+#: includes/forms.php:568 includes/forms.php:597 includes/forms.php:636
+msgid "(no name)"
+msgstr ""
+
+#: includes/custom-tables/categories.php:162
+#: includes/custom-tables/forms.php:452
+msgid "View forms with this category"
+msgstr ""
+
+#: includes/custom-tables/categories.php:207
+#: includes/custom-tables/tags.php:207
+msgid "Link Category"
+msgstr ""
+
+#: includes/custom-tables/categories.php:212
+#: includes/custom-tables/categories.php:263
+msgid "The category name."
+msgstr ""
+
+#: includes/custom-tables/categories.php:220
+#: includes/custom-tables/categories.php:274
+#: includes/custom-tables/tags.php:220 includes/custom-tables/tags.php:274
+msgid "The URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: includes/custom-tables/categories.php:228
+#: includes/custom-tables/categories.php:285
+msgid "Internal description for this category."
+msgstr ""
+
+#: includes/custom-tables/forms.php:22 includes/custom-tables/forms.php:833
+msgid "Form"
+msgstr ""
+
+#: includes/custom-tables/forms.php:151 includes/custom-tables/forms.php:712
+#: includes/form-templates.php:106
+msgid "Title"
+msgstr ""
+
+#: includes/custom-tables/forms.php:155 includes/custom-tables/forms.php:727
+msgid "Shortcode"
+msgstr ""
+
+#: includes/custom-tables/forms.php:208 includes/custom-tables/forms.php:209
+#: includes/custom-tables/forms.php:644
+msgid "Export"
+msgstr ""
+
+#: includes/custom-tables/forms.php:217 includes/custom-tables/forms.php:218
+msgid "Duplicate"
+msgstr ""
+
+#: includes/custom-tables/forms.php:247
+msgid "Are you sure you want to reset submissions for this form?\\n\\nClick \\'Cancel\\' to go back, \\'OK\\' to confirm the reset."
+msgstr ""
+
+#: includes/custom-tables/forms.php:249 includes/custom-tables/forms.php:250
+msgid "Reset Submissions"
+msgstr ""
+
+#: includes/custom-tables/forms.php:263
+msgid "Are you sure you want to delete this form?\\n\\nClick \\'Cancel\\' to go back, \\'OK\\' to confirm deletion."
+msgstr ""
+
+#: includes/custom-tables/forms.php:265 includes/custom-tables/forms.php:266
+#: includes/custom-tables/submissions.php:243
+#: includes/custom-tables/submissions.php:244
+msgid "Delete"
+msgstr ""
+
+#: includes/custom-tables/forms.php:392
+#, php-format
+msgid "Filtered by category %s"
+msgstr ""
+
+#: includes/custom-tables/forms.php:395
+#, php-format
+msgid "Filtered by tag %s"
+msgstr ""
+
+#: includes/custom-tables/forms.php:403
+msgid "Remove filter"
+msgstr ""
+
+#: includes/custom-tables/forms.php:408
+msgid "Back to Categories"
+msgstr ""
+
+#: includes/custom-tables/forms.php:413
+msgid "Back to Tags"
+msgstr ""
+
+#: includes/custom-tables/forms.php:444
+#: includes/custom-tables/submissions.php:273
+#: includes/custom-tables/submissions.php:339 includes/forms.php:395
+#: includes/forms.php:413 includes/forms.php:500 includes/forms.php:547
+#: includes/forms.php:615
+msgid "(no title)"
+msgstr ""
+
+#: includes/custom-tables/forms.php:477 includes/custom-tables/tags.php:162
+msgid "View forms with this tag"
+msgstr ""
+
+#: includes/custom-tables/forms.php:507
+#, php-format
+msgid "%d Submission"
+msgid_plural "%d Submissions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/custom-tables/forms.php:575
+#: includes/custom-tables/submissions.php:606
+msgid "Save Changes"
+msgstr ""
+
+#: includes/custom-tables/forms.php:601
+msgid "Add"
+msgstr ""
+
+#: includes/custom-tables/forms.php:604
+msgid "Update"
+msgstr ""
+
+#: includes/custom-tables/forms.php:622
+msgid "Delete permanently"
+msgstr ""
+
+#: includes/custom-tables/forms.php:623
+msgid "Delete Permanently"
+msgstr ""
+
+#: includes/custom-tables/forms.php:640
+msgid "View Submissions"
+msgstr ""
+
+#: includes/custom-tables/forms.php:708
+msgid "Form Title"
+msgstr ""
+
+#: includes/custom-tables/forms.php:715
+msgid "Enter title here"
+msgstr ""
+
+#: includes/custom-tables/forms.php:731
+msgid "Shortcode:"
+msgstr ""
+
+#: includes/custom-tables/forms.php:741
+msgid "Copy this shortcode to place this form anywhere in your site."
+msgstr ""
+
+#: includes/custom-tables/forms.php:755
+msgid "Form Editor"
+msgstr ""
+
+#: includes/custom-tables/forms.php:780
+msgid "Set the category of your choice to this form."
+msgstr ""
+
+#: includes/custom-tables/forms.php:784
+msgid "Select a category"
+msgstr ""
+
+#: includes/custom-tables/forms.php:800
+msgid "Set the tags of your choice to this form."
+msgstr ""
+
+#: includes/custom-tables/forms.php:804
+msgid "Select the tags"
+msgstr ""
+
+#: includes/custom-tables/forms.php:838 includes/custom-tables/forms.php:997
+#: includes/editor-controls.php:60
+msgid "Actions"
+msgstr ""
+
+#: includes/custom-tables/forms.php:843 includes/custom-tables/forms.php:1053
+#: includes/editor-controls.php:64 includes/editor-controls.php:308
+msgid "Options"
+msgstr ""
+
+#: includes/custom-tables/forms.php:942
+msgid "Choose a form template"
+msgstr ""
+
+#: includes/custom-tables/forms.php:949
+msgid "Export Form"
+msgstr ""
+
+#: includes/custom-tables/forms.php:953
+msgid "Download as TXT"
+msgstr ""
+
+#: includes/custom-tables/forms.php:957 includes/scripts.php:128
+msgid "Copy to clipboard"
+msgstr ""
+
+#: includes/custom-tables/forms.php:960 includes/custom-tables/forms.php:976
+#: includes/custom-tables/forms.php:989 includes/custom-tables/forms.php:1002
+#: includes/custom-tables/forms.php:1015 includes/custom-tables/forms.php:1028
+#: includes/custom-tables/forms.php:1058
+msgid "Close"
+msgstr ""
+
+#: includes/custom-tables/forms.php:968 includes/custom-tables/forms.php:972
+#: includes/scripts.php:130
+msgid "Import Form"
+msgstr ""
+
+#: includes/custom-tables/forms.php:984 includes/editor-controls.php:56
+#: includes/tags.php:44
+msgid "Fields"
+msgstr ""
+
+#: includes/custom-tables/forms.php:985
+msgid "Help guide about the form fields."
+msgstr ""
+
+#: includes/custom-tables/forms.php:998
+msgid "Help guide about the form actions."
+msgstr ""
+
+#: includes/custom-tables/forms.php:1010 includes/editor-controls.php:68
+msgid "BBCodes"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1011
+msgid "Help guide about the BBCodes."
+msgstr ""
+
+#: includes/custom-tables/forms.php:1024
+msgid "Help guide about the form tags."
+msgstr ""
+
+#: includes/custom-tables/forms.php:1036
+msgid "Warning!"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1037
+msgid "This action will override your current options."
+msgstr ""
+
+#: includes/custom-tables/forms.php:1038
+msgid "Do you want to proceed?"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1041
+msgid "Continue"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1045
+msgid "Cancel"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1054
+msgid "Help guide about all available form options."
+msgstr ""
+
+#: includes/custom-tables/forms.php:1100
+msgid "From Code"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1103
+msgid "From File"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1109
+msgid "Paste the form code here:"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1113
+msgid "Upload a form TXT file:"
+msgstr ""
+
+#: includes/custom-tables/forms.php:1198 includes/scripts.php:199
+msgid "Hide preview"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:86
+msgid "Submission"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:241
+msgid "Are you sure you want to delete this submission?\\n\\nClick \\'Cancel\\' to go back, \\'OK\\' to confirm deletion."
+msgstr ""
+
+#: includes/custom-tables/submissions.php:268
+msgid "Select a form"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:284
+msgid "Please, select a form to view submissions"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:312
+msgid "Columns:"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:325
+msgid "File Previews"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:350 includes/scripts.php:133
+msgid "Export as CSV"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:607
+#: includes/privacy/exporters/submissions.php:146
+msgid "Fields Submitted"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:629
+msgid "ID"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:634 includes/tags.php:113
+msgid "User"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:651
+#: includes/custom-tables/submissions.php:672
+msgid "Not assigned"
+msgstr ""
+
+#: includes/custom-tables/submissions.php:656
+msgid "Post"
+msgstr ""
+
+#: includes/custom-tables/tags.php:22 includes/editor-controls.php:889
+msgid "Tag"
+msgstr ""
+
+#: includes/custom-tables/tags.php:212 includes/custom-tables/tags.php:263
+msgid "The tag name."
+msgstr ""
+
+#: includes/custom-tables/tags.php:228 includes/custom-tables/tags.php:285
+msgid "Internal description for this tag."
+msgstr ""
+
+#: includes/editor-controls.php:124
+msgid "Restore all form options to their default configuration."
+msgstr ""
+
+#: includes/editor-controls.php:125
+msgid "Load Default Options"
+msgstr ""
+
+#: includes/editor-controls.php:130
+msgid "Options Help"
+msgstr ""
+
+#: includes/editor-controls.php:131 includes/editor-controls.php:182
+#: includes/editor-controls.php:509
+msgid "Help"
+msgstr ""
+
+#: includes/editor-controls.php:170 includes/editor-controls.php:890
+#: includes/scripts.php:193
+msgid "Preview"
+msgstr ""
+
+#: includes/editor-controls.php:181
+msgid "Tags Help"
+msgstr ""
+
+#: includes/editor-controls.php:209
+msgid "Layout"
+msgstr ""
+
+#: includes/editor-controls.php:213 includes/help.php:1704
+msgid "Alignment"
+msgstr ""
+
+#: includes/editor-controls.php:217
+msgid "Decoration"
+msgstr ""
+
+#: includes/editor-controls.php:221
+msgid "Formatting"
+msgstr ""
+
+#: includes/editor-controls.php:225
+msgid "Embed"
+msgstr ""
+
+#: includes/editor-controls.php:300
+msgid "Inputs"
+msgstr ""
+
+#: includes/editor-controls.php:304
+msgid "Numerics"
+msgstr ""
+
+#: includes/editor-controls.php:312
+msgid "Specials"
+msgstr ""
+
+#: includes/editor-controls.php:316
+msgid "Buttons"
+msgstr ""
+
+#: includes/editor-controls.php:390
+msgid "Core"
+msgstr ""
+
+#: includes/editor-controls.php:394
+msgid "Personal Data"
+msgstr ""
+
+#: includes/editor-controls.php:456
+msgid "Fields Help"
+msgstr ""
+
+#: includes/editor-controls.php:460
+msgid "Actions Help"
+msgstr ""
+
+#: includes/editor-controls.php:464
+msgid "BBCodes Help"
+msgstr ""
+
+#: includes/editor-controls.php:742
+#, php-format
+msgid "1|Option %d"
+msgstr ""
+
+#: includes/editor-controls.php:744
+#, php-format
+msgid "2|Option %d"
+msgstr ""
+
+#: includes/editor-controls.php:749 includes/editor-controls.php:751
+#: includes/editor-controls.php:756 includes/fields/fields/check.php:46
+#: includes/fields/fields/radio.php:43 includes/form-templates.php:290
+#: includes/form-templates.php:292 includes/form-templates.php:298
+#: includes/form-templates.php:300 includes/form-templates.php:306
+#: includes/form-templates.php:308 includes/scripts.php:203
+#, php-format
+msgid "Option %d"
+msgstr ""
+
+#: includes/editor-controls.php:768 includes/editor-controls.php:770
+#: includes/form-templates.php:288 includes/form-templates.php:296
+#: includes/form-templates.php:304 includes/form-templates.php:312
+#: includes/form-templates.php:315 includes/scripts.php:205
+#, php-format
+msgid "Question %d"
+msgstr ""
+
+#: includes/editor-controls.php:768 includes/editor-controls.php:770
+#: includes/scripts.php:207
+#, php-format
+msgid "Answer %d"
+msgstr ""
+
+#: includes/editor-controls.php:832 includes/scripts.php:124
+msgid "Show Attributes"
+msgstr ""
+
+#: includes/editor-controls.php:839
+msgid "Attribute"
+msgstr ""
+
+#: includes/editor-controls.php:840
+msgid "Examples"
+msgstr ""
+
+#: includes/editor-controls.php:853 includes/help.php:111 includes/help.php:451
+#: includes/help.php:453 includes/help.php:476 includes/help.php:517
+#: includes/help.php:536 includes/help.php:577 includes/help.php:596
+#: includes/help.php:635 includes/help.php:651 includes/help.php:715
+#: includes/help.php:726 includes/help.php:776 includes/help.php:791
+#: includes/help.php:1202 includes/help.php:1236 includes/help.php:1253
+#: includes/help.php:1271 includes/help.php:1307 includes/help.php:1327
+#: includes/help.php:1358
+msgid "Required."
+msgstr ""
+
+#: includes/editor-controls.php:883
+msgid "Tags in this group:"
+msgstr ""
+
+#: includes/error-messages.php:21
+msgid "Please enter a valid date."
+msgstr ""
+
+#: includes/error-messages.php:22
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/error-messages.php:23
+msgid "Honeypot error."
+msgstr ""
+
+#: includes/error-messages.php:24
+msgid "Please enter a valid number."
+msgstr ""
+
+#: includes/error-messages.php:25
+msgid "The answer is incorrect."
+msgstr ""
+
+#: includes/error-messages.php:26
+msgid "Please enter a time between 00:00 and 23:59."
+msgstr ""
+
+#: includes/error-messages.php:27
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: includes/error-messages.php:28
+msgid "There was an error uploading the file."
+msgstr ""
+
+#: includes/error-messages.php:29
+msgid "The uploaded file type is not allowed."
+msgstr ""
+
+#: includes/error-messages.php:30
+msgid "The uploaded file is too small."
+msgstr ""
+
+#: includes/error-messages.php:31
+msgid "The uploaded file is too large."
+msgstr ""
+
+#: includes/error-messages.php:33
+msgid "This field is required."
+msgstr ""
+
+#: includes/error-messages.php:36
+#, php-format
+msgid "Please enter a value greater or equal than %s."
+msgstr ""
+
+#: includes/error-messages.php:38
+#, php-format
+msgid "Please enter a value lower or equal than %s."
+msgstr ""
+
+#: includes/error-messages.php:40
+#, php-format
+msgid "Please enter a value between %1$s and %2$s."
+msgstr ""
+
+#: includes/error-messages.php:42
+msgid "Please match the requested format."
+msgstr ""
+
+#: includes/error-messages.php:107
+msgid "Incorrect Date"
+msgstr ""
+
+#: includes/error-messages.php:108
+msgid "Incorrect Email"
+msgstr ""
+
+#: includes/error-messages.php:109
+msgid "Honeypot Error"
+msgstr ""
+
+#: includes/error-messages.php:110
+msgid "Incorrect Number"
+msgstr ""
+
+#: includes/error-messages.php:111
+msgid "Incorrect Answer"
+msgstr ""
+
+#: includes/error-messages.php:112
+msgid "Incorrect Time"
+msgstr ""
+
+#: includes/error-messages.php:113
+msgid "Incorrect URL"
+msgstr ""
+
+#: includes/error-messages.php:114
+msgid "File Upload Error"
+msgstr ""
+
+#: includes/error-messages.php:115
+msgid "File Type Error"
+msgstr ""
+
+#: includes/error-messages.php:116
+msgid "Min. File Size Error"
+msgstr ""
+
+#: includes/error-messages.php:117
+msgid "Max. File Size Error"
+msgstr ""
+
+#: includes/error-messages.php:119
+msgid "Field Required"
+msgstr ""
+
+#: includes/error-messages.php:121
+msgid "Minimum Error"
+msgstr ""
+
+#: includes/error-messages.php:122
+msgid "Maximum Error"
+msgstr ""
+
+#: includes/error-messages.php:123
+msgid "Min. & Max. Error"
+msgstr ""
+
+#: includes/error-messages.php:125
+msgid "Pattern Mismatch"
+msgstr ""
+
+#: includes/error-messages.php:139
+msgid "Error displayed when an incorrect date was entered in a date field."
+msgstr ""
+
+#: includes/error-messages.php:140
+msgid "Error displayed when an incorrect email address was entered in an email field."
+msgstr ""
+
+#: includes/error-messages.php:141
+msgid "Error displayed when a honeypot was filled (commonly only bots would fill them)."
+msgstr ""
+
+#: includes/error-messages.php:142
+msgid "Error displayed when an incorrect number was entered in a number or range field."
+msgstr ""
+
+#: includes/error-messages.php:143
+msgid "Error displayed when an incorrect answer was entered in a quiz field."
+msgstr ""
+
+#: includes/error-messages.php:144
+msgid "Error displayed when an incorrect time was entered in a time field."
+msgstr ""
+
+#: includes/error-messages.php:145
+msgid "Error displayed when an incorrect URL was entered in a URL field."
+msgstr ""
+
+#: includes/error-messages.php:146
+msgid "Error displayed when there is an error uploading a file."
+msgstr ""
+
+#: includes/error-messages.php:147
+msgid "Error displayed when an uploaded file type does not matches with the required file type."
+msgstr ""
+
+#: includes/error-messages.php:148
+msgid "Error displayed when an uploaded file does not reach the minimum required file size."
+msgstr ""
+
+#: includes/error-messages.php:149
+msgid "Error displayed when an uploaded file exceeds the maximum allowed file size."
+msgstr ""
+
+#: includes/error-messages.php:151
+msgid "Error displayed when a required field was not filled."
+msgstr ""
+
+#: includes/error-messages.php:153
+msgid "Error displayed when a value entered does not reach the minimum required (defined in \"min\" attribute)."
+msgstr ""
+
+#: includes/error-messages.php:154
+msgid "Error displayed when a value entered exceeds the maximum allowed (defined in \"max\" attribute)."
+msgstr ""
+
+#: includes/error-messages.php:155
+msgid "Error displayed when a value entered does not reach the minimum required or exceeds the maximum allowed (defined in \"min\" & \"max\" attributes)."
+msgstr ""
+
+#: includes/error-messages.php:157
+msgid "Error displayed when a value entered does not matches with the required pattern (defined in \"pattern\" attribute)."
+msgstr ""
+
+#: includes/fields.php:78
+msgid "If you can see this field, please leave it empty."
+msgstr ""
+
+#: includes/fields/field.php:383
+msgid "Required"
+msgstr ""
+
+#: includes/fields/fields/check.php:26
+msgid "Checkbox Field"
+msgstr ""
+
+#: includes/fields/fields/check.php:30
+msgid "Basic single checkbox field"
+msgstr ""
+
+#: includes/fields/fields/check.php:36
+msgid "Basic multiple checkbox field"
+msgstr ""
+
+#: includes/fields/fields/check.php:42
+msgid "Required checkbox field"
+msgstr ""
+
+#: includes/fields/fields/check.php:49
+msgid "Checkbox field with options displayed inline + Option 2 checked"
+msgstr ""
+
+#: includes/fields/fields/check.php:55
+msgid "Checkbox field where you define the internal value of each option + Options 2 checked"
+msgstr ""
+
+#: includes/fields/fields/check.php:61
+msgid "Checkbox field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/country.php:25
+msgid "Country Field"
+msgstr ""
+
+#: includes/fields/fields/country.php:29
+msgid "Basic country field"
+msgstr ""
+
+#: includes/fields/fields/country.php:33
+msgid "Required country field"
+msgstr ""
+
+#: includes/fields/fields/country.php:37
+msgid "Country field that allows select multiple options"
+msgstr ""
+
+#: includes/fields/fields/country.php:41
+msgid "Country field that stores the country code in lower case"
+msgstr ""
+
+#: includes/fields/fields/country.php:45
+msgid "Country field that stores the country name"
+msgstr ""
+
+#: includes/fields/fields/country.php:49
+msgid "Country field that stores the country name in lower case"
+msgstr ""
+
+#: includes/fields/fields/country.php:53
+msgid "Country field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/date.php:22
+msgid "Date Field"
+msgstr ""
+
+#: includes/fields/fields/date.php:26
+msgid "Basic date field"
+msgstr ""
+
+#: includes/fields/fields/date.php:30
+msgid "Required date field"
+msgstr ""
+
+#: includes/fields/fields/date.php:34
+msgid "Limited date field"
+msgstr ""
+
+#: includes/fields/fields/date.php:37
+msgid "Birthday"
+msgstr ""
+
+#: includes/fields/fields/date.php:37
+msgid "Your birthday"
+msgstr ""
+
+#: includes/fields/fields/date.php:37
+msgid "Enter your birthday here"
+msgstr ""
+
+#: includes/fields/fields/date.php:38
+msgid "User birthday field from a custom user meta named \"birthday\" (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/date.php:42
+msgid "Date field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/email.php:21
+msgid "Email Field"
+msgstr ""
+
+#: includes/fields/fields/email.php:25
+msgid "Basic email field"
+msgstr ""
+
+#: includes/fields/fields/email.php:29
+msgid "Required email field"
+msgstr ""
+
+#: includes/fields/fields/email.php:32 includes/form-templates.php:46
+#: includes/form-templates.php:77 includes/form-templates.php:160
+#: includes/form-templates.php:196 includes/form-templates.php:283
+#: includes/form-templates.php:333 includes/form-templates.php:345
+#: includes/help.php:191 includes/tags.php:131
+msgid "Email"
+msgstr ""
+
+#: includes/fields/fields/email.php:32
+msgid "Your email"
+msgstr ""
+
+#: includes/fields/fields/email.php:32 includes/form-templates.php:46
+#: includes/form-templates.php:160 includes/form-templates.php:196
+#: includes/form-templates.php:333 includes/form-templates.php:345
+msgid "Enter your email here"
+msgstr ""
+
+#: includes/fields/fields/email.php:33
+msgid "Email field (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/email.php:37
+msgid "Email field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/file.php:28
+msgid "File Field"
+msgstr ""
+
+#: includes/fields/fields/file.php:32
+msgid "Basic file field"
+msgstr ""
+
+#: includes/fields/fields/file.php:36
+msgid "Required file field"
+msgstr ""
+
+#: includes/fields/fields/file.php:40
+msgid "Limited file type (wildcard)"
+msgstr ""
+
+#: includes/fields/fields/file.php:44
+msgid "Limited file type by extension"
+msgstr ""
+
+#: includes/fields/fields/file.php:48
+msgid "Limited file type by MIME type"
+msgstr ""
+
+#: includes/fields/fields/file.php:52
+msgid "Limited file size"
+msgstr ""
+
+#: includes/fields/fields/file.php:56
+msgid "File field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/hidden.php:19
+msgid "Hidden Field"
+msgstr ""
+
+#: includes/fields/fields/hidden.php:23
+msgid "Basic hidden field"
+msgstr ""
+
+#: includes/fields/fields/hidden.php:27
+msgid "Hidden user ID field (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/hidden.php:31
+msgid "Hidden user username field (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/hidden.php:35
+msgid "Hidden user email field (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/hidden.php:39
+msgid "Hidden field with custom id and class attributes"
+msgstr ""
+
+#: includes/fields/fields/honeypot.php:19
+msgid "Honeypot Field"
+msgstr ""
+
+#: includes/fields/fields/honeypot.php:23
+msgid "Basic honeypot field"
+msgstr ""
+
+#: includes/fields/fields/honeypot.php:27
+msgid "Honeypot field with custom id and class attributes"
+msgstr ""
+
+#: includes/fields/fields/number.php:23
+msgid "Number Field"
+msgstr ""
+
+#: includes/fields/fields/number.php:27
+msgid "Basic number field"
+msgstr ""
+
+#: includes/fields/fields/number.php:31
+msgid "Required number field"
+msgstr ""
+
+#: includes/fields/fields/number.php:35
+msgid "Limited number field"
+msgstr ""
+
+#: includes/fields/fields/number.php:39
+msgid "Decimal number field"
+msgstr ""
+
+#: includes/fields/fields/number.php:43
+msgid "Number field that increments in 5 (only accepts values multiple of 5)"
+msgstr ""
+
+#: includes/fields/fields/number.php:47
+msgid "Number field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/password.php:25
+msgid "Password Field"
+msgstr ""
+
+#: includes/fields/fields/password.php:29
+msgid "Basic password field"
+msgstr ""
+
+#: includes/fields/fields/password.php:33
+msgid "Required password field"
+msgstr ""
+
+#: includes/fields/fields/password.php:37
+msgid "Limited length password field"
+msgstr ""
+
+#: includes/fields/fields/password.php:41
+msgid "Password field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/quiz.php:29
+msgid "Quiz Field"
+msgstr ""
+
+#: includes/fields/fields/quiz.php:35
+msgid "Basic quiz field"
+msgstr ""
+
+#: includes/fields/fields/quiz.php:41
+msgid "Required quiz field"
+msgstr ""
+
+#: includes/fields/fields/quiz.php:47
+msgid "Auto-generated math quiz"
+msgstr ""
+
+#: includes/fields/fields/quiz.php:53
+msgid "Quiz field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/radio.php:27
+msgid "Radio Field"
+msgstr ""
+
+#: includes/fields/fields/radio.php:33
+msgid "Basic radio field"
+msgstr ""
+
+#: includes/fields/fields/radio.php:39
+msgid "Required radio field"
+msgstr ""
+
+#: includes/fields/fields/radio.php:46
+msgid "Radio field with options displayed inline + Option 2 checked"
+msgstr ""
+
+#: includes/fields/fields/radio.php:52
+msgid "Radio field where you define the internal value of each option + Option 2 checked"
+msgstr ""
+
+#: includes/fields/fields/radio.php:58
+msgid "Radio field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/range.php:23
+msgid "Range Field"
+msgstr ""
+
+#: includes/fields/fields/range.php:27
+msgid "Basic range field"
+msgstr ""
+
+#: includes/fields/fields/range.php:31
+msgid "Required range field"
+msgstr ""
+
+#: includes/fields/fields/range.php:35
+msgid "Decimal range field"
+msgstr ""
+
+#: includes/fields/fields/range.php:39
+msgid "Range field that increments in 5"
+msgstr ""
+
+#: includes/fields/fields/range.php:43
+msgid "Range field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/reset.php:19
+msgid "Reset Button"
+msgstr ""
+
+#: includes/fields/fields/reset.php:23
+msgid "Basic reset button"
+msgstr ""
+
+#: includes/fields/fields/reset.php:26 includes/help.php:781
+#: includes/help.php:782 includes/help.php:787 includes/scripts.php:209
+msgid "Reset"
+msgstr ""
+
+#: includes/fields/fields/reset.php:27
+msgid "Reset button with the text \"Reset\""
+msgstr ""
+
+#: includes/fields/fields/reset.php:30 includes/help.php:788
+msgid "Clear"
+msgstr ""
+
+#: includes/fields/fields/reset.php:31
+msgid "Reset button with the text \"Clear\""
+msgstr ""
+
+#: includes/fields/fields/reset.php:35
+msgid "Reset button with several attributes"
+msgstr ""
+
+#: includes/fields/fields/select.php:26
+msgid "Select Field"
+msgstr ""
+
+#: includes/fields/fields/select.php:32
+msgid "Basic select field"
+msgstr ""
+
+#: includes/fields/fields/select.php:38
+msgid "Required select field"
+msgstr ""
+
+#: includes/fields/fields/select.php:44
+msgid "Select field that allows select multiple options"
+msgstr ""
+
+#: includes/fields/fields/select.php:50
+msgid "Select field where you define the internal value of each option"
+msgstr ""
+
+#: includes/fields/fields/select.php:56
+msgid "Select field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/submit.php:19
+msgid "Submit Button"
+msgstr ""
+
+#: includes/fields/fields/submit.php:23
+msgid "Basic submit button"
+msgstr ""
+
+#: includes/fields/fields/submit.php:26 includes/form-templates.php:53
+#: includes/form-templates.php:254 includes/form-templates.php:322
+#: includes/form-templates.php:334 includes/form-templates.php:346
+#: includes/help.php:766 includes/help.php:767 includes/help.php:772
+#: includes/scripts.php:208
+msgid "Submit"
+msgstr ""
+
+#: includes/fields/fields/submit.php:27
+msgid "Submit button with the text \"Submit\""
+msgstr ""
+
+#: includes/fields/fields/submit.php:30 includes/help.php:773
+msgid "Send"
+msgstr ""
+
+#: includes/fields/fields/submit.php:31
+msgid "Submit button with the text \"Send\""
+msgstr ""
+
+#: includes/fields/fields/submit.php:35
+msgid "Submit button with several attributes"
+msgstr ""
+
+#: includes/fields/fields/tel.php:21
+msgid "Tel Field"
+msgstr ""
+
+#: includes/fields/fields/tel.php:25
+msgid "Basic phone field"
+msgstr ""
+
+#: includes/fields/fields/tel.php:29
+msgid "Required phone field"
+msgstr ""
+
+#: includes/fields/fields/tel.php:33
+msgid "Formatted phone field (555-555-5555)"
+msgstr ""
+
+#: includes/fields/fields/tel.php:37
+msgid "Formatted phone field 2 (999999999)"
+msgstr ""
+
+#: includes/fields/fields/tel.php:40 includes/form-templates.php:80
+#: includes/form-templates.php:127 includes/form-templates.php:138
+#: includes/help.php:213
+msgid "Phone"
+msgstr ""
+
+#: includes/fields/fields/tel.php:40
+msgid "Your phone"
+msgstr ""
+
+#: includes/fields/fields/tel.php:40
+msgid "Enter your phone here"
+msgstr ""
+
+#: includes/fields/fields/tel.php:41
+msgid "User phone field from the WooCommerce user meta \"_billing_phone\" (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/tel.php:45
+msgid "Phone field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/text.php:25
+msgid "Text Field"
+msgstr ""
+
+#: includes/fields/fields/text.php:29
+msgid "Basic text field"
+msgstr ""
+
+#: includes/fields/fields/text.php:33
+msgid "Required text field"
+msgstr ""
+
+#: includes/fields/fields/text.php:37
+msgid "Limited length text field"
+msgstr ""
+
+#: includes/fields/fields/text.php:40
+msgid "Your name"
+msgstr ""
+
+#: includes/fields/fields/text.php:40 includes/form-templates.php:44
+#: includes/form-templates.php:157 includes/form-templates.php:193
+msgid "Enter your name here"
+msgstr ""
+
+#: includes/fields/fields/text.php:41
+msgid "User name field (autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/text.php:44 includes/form-templates.php:68
+#: includes/form-templates.php:267
+msgid "First Name"
+msgstr ""
+
+#: includes/fields/fields/text.php:44
+msgid "Your first name"
+msgstr ""
+
+#: includes/fields/fields/text.php:44
+msgid "Enter your first name here"
+msgstr ""
+
+#: includes/fields/fields/text.php:45 includes/form-templates.php:71
+#: includes/form-templates.php:270
+msgid "Last Name"
+msgstr ""
+
+#: includes/fields/fields/text.php:45
+msgid "Your last name"
+msgstr ""
+
+#: includes/fields/fields/text.php:45
+msgid "Enter your last name here"
+msgstr ""
+
+#: includes/fields/fields/text.php:46
+msgid "First and last name fields (both autofilled if user is logged in)"
+msgstr ""
+
+#: includes/fields/fields/text.php:50 includes/fields/fields/url.php:41
+msgid "Text field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/textarea.php:26
+msgid "Text Area Field"
+msgstr ""
+
+#: includes/fields/fields/textarea.php:30
+msgid "Basic text area field"
+msgstr ""
+
+#: includes/fields/fields/textarea.php:34
+msgid "Required text area field"
+msgstr ""
+
+#: includes/fields/fields/textarea.php:38
+msgid "Limited length text area field"
+msgstr ""
+
+#: includes/fields/fields/textarea.php:42
+msgid "Text area with 10 lines visible"
+msgstr ""
+
+#: includes/fields/fields/textarea.php:46
+msgid "Text area field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/time.php:22
+msgid "Time Field"
+msgstr ""
+
+#: includes/fields/fields/time.php:26
+msgid "Basic time field"
+msgstr ""
+
+#: includes/fields/fields/time.php:30
+msgid "Required time field"
+msgstr ""
+
+#: includes/fields/fields/time.php:34
+msgid "Limited time field"
+msgstr ""
+
+#: includes/fields/fields/time.php:38
+msgid "Time field with several attributes"
+msgstr ""
+
+#: includes/fields/fields/url.php:21
+msgid "URL Field"
+msgstr ""
+
+#: includes/fields/fields/url.php:25
+msgid "Basic URL field"
+msgstr ""
+
+#: includes/fields/fields/url.php:29
+msgid "Required URL field"
+msgstr ""
+
+#: includes/fields/fields/url.php:33
+msgid "URL field allowing only secure URLs (https)"
+msgstr ""
+
+#: includes/fields/fields/url.php:37
+msgid "Limited length URL field"
+msgstr ""
+
+#: includes/form-messages.php:22 includes/options.php:58
+#, php-format
+msgid "Fields marked with an %s are required"
+msgstr ""
+
+#: includes/form-messages.php:23 includes/help.php:1121
+msgid "Form submitted successfully!"
+msgstr ""
+
+#: includes/form-messages.php:24
+msgid "Please, correct errors before submitting this form."
+msgstr ""
+
+#: includes/form-messages.php:25
+msgid "Unknown error while processing your submission."
+msgstr ""
+
+#: includes/form-messages.php:26
+msgid "You must be logged in to view this form."
+msgstr ""
+
+#: includes/form-messages.php:27
+msgid "A form with this value has already been submitted."
+msgstr ""
+
+#: includes/form-messages.php:28
+msgid "This form has reached it's submission limit."
+msgstr ""
+
+#: includes/form-messages.php:92
+msgid "Fields Required"
+msgstr ""
+
+#: includes/form-messages.php:93
+msgid "Submit Success"
+msgstr ""
+
+#: includes/form-messages.php:94
+msgid "Submit Error"
+msgstr ""
+
+#: includes/form-messages.php:95
+msgid "Unknown Submit Error"
+msgstr ""
+
+#: includes/form-messages.php:96
+msgid "Require Login"
+msgstr ""
+
+#: includes/form-messages.php:97
+msgid "Unique Field"
+msgstr ""
+
+#: includes/form-messages.php:98
+msgid "Submissions Limit"
+msgstr ""
+
+#: includes/form-messages.php:111
+msgid "Message displayed at top of the form when the form contains required fields."
+msgstr ""
+
+#: includes/form-messages.php:112
+msgid "Message displayed when the form gets submitted successfully."
+msgstr ""
+
+#: includes/form-messages.php:113
+msgid "Message displayed when any of the form fields has found an incorrect value."
+msgstr ""
+
+#: includes/form-messages.php:114
+msgid "Message displayed when there is an unknown error while processing a from submission."
+msgstr ""
+
+#: includes/form-messages.php:115
+msgid "Message displayed when to not logged in users when the form requires to be logged in."
+msgstr ""
+
+#: includes/form-messages.php:116 includes/options.php:108
+msgid "Message displayed when a duplicated value is found for a unique field."
+msgstr ""
+
+#: includes/form-messages.php:117 includes/options.php:124
+msgid "Message displayed when the form has reached the submissions limit."
+msgstr ""
+
+#: includes/form-templates.php:34
+msgid "Blank Form"
+msgstr ""
+
+#: includes/form-templates.php:35
+msgid "A blank form to let you create the form of your choice using our code editor."
+msgstr ""
+
+#: includes/form-templates.php:42
+msgid "Contact Form"
+msgstr ""
+
+#: includes/form-templates.php:43
+msgid "A sample contact form to let your users get in touch with you."
+msgstr ""
+
+#: includes/form-templates.php:48 includes/help.php:1283 includes/help.php:1284
+msgid "Message"
+msgstr ""
+
+#: includes/form-templates.php:48
+msgid "Enter your message here"
+msgstr ""
+
+#: includes/form-templates.php:51 includes/form-templates.php:178
+#: includes/help.php:1944
+#, php-format
+msgid "I have read and agree with your %s."
+msgstr ""
+
+#: includes/form-templates.php:51 includes/form-templates.php:178
+#: includes/help.php:1944
+msgid "Privacy Policy"
+msgstr ""
+
+#: includes/form-templates.php:58 includes/form-templates.php:149
+#: includes/form-templates.php:185
+#, php-format
+msgid "A confirmation email was sent to %s"
+msgstr ""
+
+#: includes/form-templates.php:62
+msgid "Job Application"
+msgstr ""
+
+#: includes/form-templates.php:63
+msgid "A sample job application form to let your users apply for a job and attach their curriculum in PDF, DOC or DOCX format."
+msgstr ""
+
+#: includes/form-templates.php:64 includes/form-templates.php:263
+msgid "About you"
+msgstr ""
+
+#: includes/form-templates.php:84
+msgid "Address"
+msgstr ""
+
+#: includes/form-templates.php:86
+msgid "Address Line 1"
+msgstr ""
+
+#: includes/form-templates.php:88
+msgid "Address Line 2"
+msgstr ""
+
+#: includes/form-templates.php:92 includes/help.php:640
+msgid "Country"
+msgstr ""
+
+#: includes/form-templates.php:95
+msgid "City"
+msgstr ""
+
+#: includes/form-templates.php:98
+msgid "Zip"
+msgstr ""
+
+#: includes/form-templates.php:102
+msgid "Previous Job"
+msgstr ""
+
+#: includes/form-templates.php:109
+msgid "Started"
+msgstr ""
+
+#: includes/form-templates.php:112
+msgid "Ended"
+msgstr ""
+
+#: includes/form-templates.php:116
+msgid "Describe your tasks"
+msgstr ""
+
+#: includes/form-templates.php:118
+msgid "References"
+msgstr ""
+
+#: includes/form-templates.php:121 includes/form-templates.php:132
+#, php-format
+msgid "Reference %d"
+msgstr ""
+
+#: includes/form-templates.php:142
+msgid "CV"
+msgstr ""
+
+#: includes/form-templates.php:142
+msgid "Upload your CV in PDF or DOC format."
+msgstr ""
+
+#: includes/form-templates.php:144
+msgid "Apply"
+msgstr ""
+
+#: includes/form-templates.php:153
+msgid "Support Ticket"
+msgstr ""
+
+#: includes/form-templates.php:154
+msgid "A more advanced contact form to let your users describe a problem, explain how to reproduce it and attach an image or video."
+msgstr ""
+
+#: includes/form-templates.php:164
+msgid "Topic"
+msgstr ""
+
+#: includes/form-templates.php:164
+msgid "Please, select an option"
+msgstr ""
+
+#: includes/form-templates.php:165
+msgid "Pre-sales Inquiry"
+msgstr ""
+
+#: includes/form-templates.php:166
+msgid "General Inquiry"
+msgstr ""
+
+#: includes/form-templates.php:167
+msgid "Report a problem"
+msgstr ""
+
+#: includes/form-templates.php:168
+msgid "Other"
+msgstr ""
+
+#: includes/form-templates.php:171
+msgid "Issue"
+msgstr ""
+
+#: includes/form-templates.php:171
+msgid "Provide a detailed description of your issue."
+msgstr ""
+
+#: includes/form-templates.php:171
+msgid "Describe your issue here"
+msgstr ""
+
+#: includes/form-templates.php:173
+msgid "Steps to reproduce"
+msgstr ""
+
+#: includes/form-templates.php:173
+msgid "Describe the steps to reproduce your issue."
+msgstr ""
+
+#: includes/form-templates.php:173 includes/help.php:933 includes/help.php:1806
+msgid "Example:"
+msgstr ""
+
+#: includes/form-templates.php:173
+msgid "1 - Do this"
+msgstr ""
+
+#: includes/form-templates.php:173
+msgid "2 - Then do this"
+msgstr ""
+
+#: includes/form-templates.php:173
+msgid "3 - ..."
+msgstr ""
+
+#: includes/form-templates.php:175
+msgid "Evidence"
+msgstr ""
+
+#: includes/form-templates.php:175
+msgid "You can upload an image or video to evidence your issue."
+msgstr ""
+
+#: includes/form-templates.php:180
+msgid "Open a new ticket"
+msgstr ""
+
+#: includes/form-templates.php:182 includes/form-templates.php:324
+msgid "New ticket"
+msgstr ""
+
+#: includes/form-templates.php:183
+msgid "Ticket received"
+msgstr ""
+
+#: includes/form-templates.php:189
+msgid "Feedback"
+msgstr ""
+
+#: includes/form-templates.php:190
+msgid "A sample feedback form to collect information about your users experience and opinion."
+msgstr ""
+
+#: includes/form-templates.php:200
+msgid "How would you rate your experience?"
+msgstr ""
+
+#: includes/form-templates.php:201
+msgid "Excellent"
+msgstr ""
+
+#: includes/form-templates.php:203
+msgid "Good"
+msgstr ""
+
+#: includes/form-templates.php:204
+msgid "Bad"
+msgstr ""
+
+#: includes/form-templates.php:205
+msgid "Very bad"
+msgstr ""
+
+#: includes/form-templates.php:208
+msgid "How would you rate the information provided?"
+msgstr ""
+
+#: includes/form-templates.php:209
+msgid "Very satisfied"
+msgstr ""
+
+#: includes/form-templates.php:210
+msgid "Satisfied"
+msgstr ""
+
+#: includes/form-templates.php:211
+msgid "Unsatisfied"
+msgstr ""
+
+#: includes/form-templates.php:212
+msgid "Very unsatisfied"
+msgstr ""
+
+#: includes/form-templates.php:215
+msgid "Please, rate the following aspects"
+msgstr ""
+
+#: includes/form-templates.php:227
+msgid "Speed"
+msgstr ""
+
+#: includes/form-templates.php:235
+msgid "Attention"
+msgstr ""
+
+#: includes/form-templates.php:243
+msgid "Result"
+msgstr ""
+
+#: includes/form-templates.php:252
+msgid "Any additional feedback?"
+msgstr ""
+
+#: includes/form-templates.php:261 includes/form-templates.php:285
+msgid "Questionnaire"
+msgstr ""
+
+#: includes/form-templates.php:262
+msgid "A sample questionnaire form to let you collect information about your users."
+msgstr ""
+
+#: includes/form-templates.php:276
+msgid "Gender Identification"
+msgstr ""
+
+#: includes/form-templates.php:279
+msgid "Age"
+msgstr ""
+
+#: includes/form-templates.php:317
+msgid "Are you human?"
+msgstr ""
+
+#: includes/form-templates.php:330 includes/help.php:1315
+msgid "Export Data Request"
+msgstr ""
+
+#: includes/form-templates.php:331
+msgid "A simple personal data export form to help you comply with GDPR and other privacy regulations."
+msgstr ""
+
+#: includes/form-templates.php:332
+msgid "Includes an action to register the request in the WordPress \"Export Personal Data\" tool."
+msgstr ""
+
+#: includes/form-templates.php:336 includes/form-templates.php:348
+#: includes/scripts.php:210
+msgid "Request registered successfully!"
+msgstr ""
+
+#: includes/form-templates.php:342 includes/help.php:1346
+msgid "Delete Data Request"
+msgstr ""
+
+#: includes/form-templates.php:343
+msgid "A simple personal data deletion form to help you comply with GDPR and other privacy regulations."
+msgstr ""
+
+#: includes/form-templates.php:344
+msgid "Includes an action to register the request in the WordPress \"Delete Personal Data\" tool."
+msgstr ""
+
+#: includes/forms.php:31
+#, php-format
+msgid "The form #%s does not exists."
+msgstr ""
+
+#: includes/forms.php:32
+msgid "Message visible only to site administrators"
+msgstr ""
+
+#: includes/forms.php:505 includes/forms.php:573 includes/forms.php:641
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/forms.php:509 includes/forms.php:577 includes/forms.php:645
+#, php-format
+msgid "<a href=\"%1$s\" title=\"%2$s\">%3$s</a>"
+msgstr ""
+
+#: includes/help.php:33 includes/help.php:1094 includes/help.php:1516
+#: includes/help.php:1909
+msgid "Getting Started"
+msgstr ""
+
+#: includes/help.php:36
+msgid "Fields List"
+msgstr ""
+
+#: includes/help.php:39
+msgid "Label & Description"
+msgstr ""
+
+#: includes/help.php:42 includes/help.php:1522
+msgid "HTML Attributes"
+msgstr ""
+
+#: includes/help.php:45 includes/help.php:1103 includes/help.php:1525
+msgid "Editor Tricks"
+msgstr ""
+
+#: includes/help.php:55
+msgid "Fields help you to setup your form in a easy way."
+msgstr ""
+
+#: includes/help.php:57
+msgid "Basic field:"
+msgstr ""
+
+#: includes/help.php:60
+msgid "IMPORTANT: Fields always require a unique name."
+msgstr ""
+
+#: includes/help.php:62
+msgid "Required field (just add an * (asterisk) after it's BBCode):"
+msgstr ""
+
+#: includes/help.php:65
+msgid "Field with an initial value:"
+msgstr ""
+
+#: includes/help.php:66
+msgid "Hi!"
+msgstr ""
+
+#: includes/help.php:68
+msgid "User tag as initial value:"
+msgstr ""
+
+#: includes/help.php:71
+msgid "All fields accepts global HTML attributes:"
+msgstr ""
+
+#: includes/help.php:74
+msgid "IMPORTANT: Submit button is essential to let the user send the form so, don't forgive to place at least one!"
+msgstr ""
+
+#: includes/help.php:77
+msgid "EXTRA: Reset button let's user to clear the form:"
+msgstr ""
+
+#: includes/help.php:80
+msgid "Check the \"Fields List\" tab to meet all of them!"
+msgstr ""
+
+#: includes/help.php:110 includes/help.php:475 includes/help.php:535
+#: includes/help.php:595 includes/help.php:650 includes/help.php:714
+msgid "The field name. Needs to be unique in the form."
+msgstr ""
+
+#: includes/help.php:115 includes/help.php:160 includes/help.php:745
+#: includes/help.php:1014 includes/help.php:1707 includes/help.php:1709
+#: includes/help.php:1711 includes/help.php:1713 includes/help.php:1721
+#: includes/help.php:1723 includes/help.php:1725 includes/help.php:1727
+#: includes/help.php:1735 includes/help.php:1736 includes/help.php:1739
+#: includes/help.php:1740 includes/help.php:1743 includes/help.php:1744
+#: includes/help.php:1747 includes/help.php:1748 includes/help.php:1807
+msgid "Text"
+msgstr ""
+
+#: includes/help.php:119
+msgid "The initial field value."
+msgstr ""
+
+#: includes/help.php:120 includes/help.php:127 includes/help.php:134
+#: includes/help.php:144 includes/help.php:156 includes/help.php:179
+#: includes/help.php:186 includes/help.php:284 includes/help.php:290
+#: includes/help.php:313 includes/help.php:319 includes/help.php:340
+#: includes/help.php:349 includes/help.php:359 includes/help.php:369
+#: includes/help.php:380 includes/help.php:399 includes/help.php:406
+#: includes/help.php:417 includes/help.php:429 includes/help.php:485
+#: includes/help.php:499 includes/help.php:545 includes/help.php:559
+#: includes/help.php:605 includes/help.php:612 includes/help.php:619
+#: includes/help.php:667 includes/help.php:677 includes/help.php:684
+#: includes/help.php:691 includes/help.php:942 includes/help.php:950
+#: includes/help.php:958 includes/help.php:977 includes/help.php:985
+#: includes/help.php:993 includes/help.php:1001 includes/help.php:1010
+#: includes/help.php:1017 includes/help.php:1184 includes/help.php:1193
+#: includes/help.php:1211 includes/help.php:1220 includes/help.php:1229
+#: includes/help.php:1246 includes/help.php:1278 includes/help.php:1300
+#: includes/help.php:1334 includes/help.php:1341 includes/help.php:1367
+#: includes/help.php:1374 includes/help.php:1381 includes/help.php:1815
+#: includes/help.php:1823 includes/help.php:1831
+msgid "Optional."
+msgstr ""
+
+#: includes/help.php:124 includes/scripts.php:192
+msgid "Insert text here"
+msgstr ""
+
+#: includes/help.php:126
+msgid "Text displayed when the field has no value."
+msgstr ""
+
+#: includes/help.php:133
+msgid "Minimum characters length allowed."
+msgstr ""
+
+#: includes/help.php:137 includes/help.php:147
+#, php-format
+msgid "NOTE: Shortcut of %s attribute."
+msgstr ""
+
+#: includes/help.php:143
+msgid "Maximum characters length allowed."
+msgstr ""
+
+#: includes/help.php:151 includes/help.php:206 includes/help.php:230
+#: includes/help.php:253 includes/help.php:424
+msgid "Regular expression"
+msgstr ""
+
+#: includes/help.php:155 includes/help.php:428
+msgid "A regular expression the field value should match."
+msgstr ""
+
+#: includes/help.php:163
+msgid "Text field."
+msgstr ""
+
+#: includes/help.php:168
+msgid "Text Area"
+msgstr ""
+
+#: includes/help.php:171
+msgid "Text area field."
+msgstr ""
+
+#: includes/help.php:178
+msgid "Defines the visible text lines."
+msgstr ""
+
+#: includes/help.php:185
+msgid "Defines the visible width."
+msgstr ""
+
+#: includes/help.php:194
+msgid "Text field that forces to enter a valid email address."
+msgstr ""
+
+#: includes/help.php:203
+msgid "Insert email here."
+msgstr ""
+
+#: includes/help.php:216
+msgid "Commonly used with a pattern to force a phone format."
+msgstr ""
+
+#: includes/help.php:217
+msgid "NOTE: \"tel\" is from \"Telephone\", the good-old days...."
+msgstr ""
+
+#: includes/help.php:227
+msgid "Insert phone here."
+msgstr ""
+
+#: includes/help.php:237 includes/tags.php:236
+msgid "URL"
+msgstr ""
+
+#: includes/help.php:240
+msgid "Forces to enter a valid URL."
+msgstr ""
+
+#: includes/help.php:250
+msgid "Insert URL here."
+msgstr ""
+
+#: includes/help.php:260
+msgid "Password"
+msgstr ""
+
+#: includes/help.php:263
+msgid "Password field. The entered value will be displayed as * (asterisk)."
+msgstr ""
+
+#: includes/help.php:271
+msgid "Commonly browsers show a date picker with the local date format but the value is always stored as YYYY-MM-DD."
+msgstr ""
+
+#: includes/help.php:283
+msgid "Minimum date allowed."
+msgstr ""
+
+#: includes/help.php:289
+msgid "Maximum date allowed."
+msgstr ""
+
+#: includes/help.php:297
+msgid "Time"
+msgstr ""
+
+#: includes/help.php:300
+msgid "Commonly browsers show a time picker in format 23:59."
+msgstr ""
+
+#: includes/help.php:312
+msgid "Minimum time allowed."
+msgstr ""
+
+#: includes/help.php:318
+msgid "Maximum time allowed."
+msgstr ""
+
+#: includes/help.php:326
+msgid "File"
+msgstr ""
+
+#: includes/help.php:329
+msgid "Field that allows to upload a file."
+msgstr ""
+
+#: includes/help.php:338
+msgid "Minimum file size allowed."
+msgstr ""
+
+#: includes/help.php:339 includes/help.php:348
+msgid "Accepts: Number + suffix (kb, mb, gb & tb) or only number to define the size in bytes."
+msgstr ""
+
+#: includes/help.php:347
+msgid "Maximum file size allowed."
+msgstr ""
+
+#: includes/help.php:357
+msgid "A comma-separated list of file types allowed."
+msgstr ""
+
+#: includes/help.php:358
+msgid "Accepts: File extensiones (.pdf), MIME types (application/pdf) and wildcard MIME types (application/*, which means that all subtypes of that MIME type are allowed)."
+msgstr ""
+
+#: includes/help.php:367
+msgid "For mobiles mainly, specifies which device should capture the media, for images, can be the user-facing camera (user) or the outward-facing camera (environment)."
+msgstr ""
+
+#: includes/help.php:368 includes/help.php:868
+msgid "Accepts: user or environment."
+msgstr ""
+
+#: includes/help.php:377
+msgid "Decides if file should be registered in the WordPress media. Recommended to leave it to yes to be able to access to the file details from the media library."
+msgstr ""
+
+#: includes/help.php:378
+msgid "Accepts: yes or no."
+msgstr ""
+
+#: includes/help.php:379 includes/help.php:416 includes/help.php:493
+#: includes/help.php:553 includes/help.php:666 includes/help.php:1299
+#: includes/help.php:1366 includes/help.php:2067
+msgid "Default:"
+msgstr ""
+
+#: includes/help.php:398 includes/help.php:450
+msgid "Minimum number allowed."
+msgstr ""
+
+#: includes/help.php:405 includes/help.php:415 includes/help.php:452
+msgid "Maximum number allowed."
+msgstr ""
+
+#: includes/help.php:433 includes/privacy/exporters/submissions.php:125
+msgid "Number"
+msgstr ""
+
+#: includes/help.php:437
+msgid "Allows to input a number."
+msgstr ""
+
+#: includes/help.php:437
+msgid "Supports decimal numbers using the \"step\" attribute."
+msgstr ""
+
+#: includes/help.php:442
+msgid "Range"
+msgstr ""
+
+#: includes/help.php:445
+msgid "Allows to input a number between a range using a slider."
+msgstr ""
+
+#: includes/help.php:445
+msgid "Requires \"min\" and \"max\" attributes."
+msgstr ""
+
+#: includes/help.php:446
+msgid "Also supports decimal numbers, using the \"step\" attribute."
+msgstr ""
+
+#: includes/help.php:461
+msgid "Checkbox"
+msgstr ""
+
+#: includes/help.php:464 includes/help.php:495 includes/help.php:497
+#: includes/help.php:503 includes/help.php:504 includes/help.php:506
+#: includes/help.php:510 includes/help.php:524 includes/help.php:555
+#: includes/help.php:557 includes/help.php:563 includes/help.php:564
+#: includes/help.php:566 includes/help.php:570 includes/help.php:584
+#: includes/help.php:624 includes/help.php:628 includes/help.php:881
+#: includes/help.php:889 includes/help.php:895 includes/help.php:900
+#: includes/help.php:1553
+msgid "Option 1"
+msgstr ""
+
+#: includes/help.php:465 includes/help.php:480 includes/help.php:495
+#: includes/help.php:498 includes/help.php:507 includes/help.php:511
+#: includes/help.php:525 includes/help.php:540 includes/help.php:555
+#: includes/help.php:558 includes/help.php:567 includes/help.php:571
+#: includes/help.php:585 includes/help.php:600 includes/help.php:625
+#: includes/help.php:629 includes/help.php:882 includes/help.php:889
+#: includes/help.php:896 includes/help.php:901 includes/help.php:1554
+msgid "Option 2"
+msgstr ""
+
+#: includes/help.php:468
+msgid "Checkbox field. Supports single and multiple options."
+msgstr ""
+
+#: includes/help.php:483 includes/help.php:543
+msgid "The initial checked option."
+msgstr ""
+
+#: includes/help.php:484 includes/help.php:544
+msgid "Note: The value needs to match with the option value, so if you define an option like \"2|Option 2\", to check this option you need to set the value as value=\"2\"."
+msgstr ""
+
+#: includes/help.php:492 includes/help.php:552
+msgid "Decides if options should be displayed inline."
+msgstr ""
+
+#: includes/help.php:494 includes/help.php:554
+msgid "If set to \"no\", options will be displayed as:"
+msgstr ""
+
+#: includes/help.php:496 includes/help.php:556
+msgid "If set to \"yes\", options will be displayed as:"
+msgstr ""
+
+#: includes/help.php:501 includes/help.php:561 includes/help.php:621
+#: includes/help.php:717 includes/help.php:1248 includes/help.php:1273
+#: includes/help.php:1302 includes/help.php:1336 includes/help.php:1376
+msgid "CONTENT"
+msgstr ""
+
+#: includes/help.php:514 includes/help.php:574 includes/help.php:632
+msgid "The content inside the BBCode will be used as the field options."
+msgstr ""
+
+#: includes/help.php:515 includes/help.php:575 includes/help.php:633
+msgid "Options can be defined as \"Text\" or \"Value|Text\". When options are defined as \"Text\" the internal value will be the option text itself. When options are defined as \"Value|Text\" the internal value will be the \"Value\" part of the option and the option will be displayed as the \"Text\" part."
+msgstr ""
+
+#: includes/help.php:516 includes/help.php:576 includes/help.php:634
+msgid "Example: An option defined as \"2|Option 2\" will store the value \"2\" and show the text \"Option 2\"."
+msgstr ""
+
+#: includes/help.php:522
+msgid "Radio:"
+msgstr ""
+
+#: includes/help.php:528
+msgid "Radio field."
+msgstr ""
+
+#: includes/help.php:582
+msgid "Select"
+msgstr ""
+
+#: includes/help.php:588
+msgid "Select field."
+msgstr ""
+
+#: includes/help.php:603 includes/help.php:675
+msgid "The initial selected option."
+msgstr ""
+
+#: includes/help.php:604
+msgid "Note: The value needs to match with the option value, so if you define an option like \"2|Option 2\", to select this option you need to set the value as value=\"2\"."
+msgstr ""
+
+#: includes/help.php:609 includes/help.php:880
+msgid "Choose an option"
+msgstr ""
+
+#: includes/help.php:611 includes/help.php:683
+msgid "Adds a disabled option at the start of the options list to work as placeholder."
+msgstr ""
+
+#: includes/help.php:618 includes/help.php:690
+msgid "Allows user to select multiple options."
+msgstr ""
+
+#: includes/help.php:643
+msgid "Country field."
+msgstr ""
+
+#: includes/help.php:660
+msgid "Defines what to save."
+msgstr ""
+
+#: includes/help.php:661
+msgid "Saves the country code in upper case. Eg: \"ES\"."
+msgstr ""
+
+#: includes/help.php:662
+msgid "Saves the country code in lower case. Eg: \"es\"."
+msgstr ""
+
+#: includes/help.php:663
+msgid "Saves the country name. Eg: \"Spain\"."
+msgstr ""
+
+#: includes/help.php:664
+msgid "Saves the country name in lower case. Eg: \"spain\"."
+msgstr ""
+
+#: includes/help.php:673
+msgid "spain"
+msgstr ""
+
+#: includes/help.php:676
+msgid "Note: The value needs to match with \"save_as\" attribute value."
+msgstr ""
+
+#: includes/help.php:681
+msgid "Choose your country"
+msgstr ""
+
+#: includes/help.php:696
+msgid "Quiz"
+msgstr ""
+
+#: includes/help.php:698 includes/help.php:720
+msgid "Question 1"
+msgstr ""
+
+#: includes/help.php:698 includes/help.php:720
+msgid "Answer 1"
+msgstr ""
+
+#: includes/help.php:699 includes/help.php:721
+msgid "Question 2"
+msgstr ""
+
+#: includes/help.php:699 includes/help.php:721
+msgid "Answer 2"
+msgstr ""
+
+#: includes/help.php:702
+msgid "Quiz field picks randomly one of the questions provided and forces to enter the correct answer."
+msgstr ""
+
+#: includes/help.php:704
+msgid "NOTE: For text answers, quiz will work case-insensitive, which means that answers \"Answer 1\", \"answer 1\" or \"ANSWER 1\" will work."
+msgstr ""
+
+#: includes/help.php:706
+msgid "RECOMMENDATION: Text questions are more difficult but more secure against bots while maths questions are internationally understood."
+msgstr ""
+
+#: includes/help.php:707
+msgid "So, if a form is accessed by people who speak different languages, the best would be to use maths questions like 7 + 3."
+msgstr ""
+
+#: includes/help.php:724
+msgid "The content inside the BBCode will be used as the field question/answer pairs."
+msgstr ""
+
+#: includes/help.php:725
+msgid "Options need to be defined as \"Question|Answer\"."
+msgstr ""
+
+#: includes/help.php:734
+msgid "Hidden"
+msgstr ""
+
+#: includes/help.php:737
+msgid "An invisible field that you can use to store any custom information of you choice, using tags or static values since users will not be able to fill it."
+msgstr ""
+
+#: includes/help.php:751
+msgid "Honeypot"
+msgstr ""
+
+#: includes/help.php:754
+msgid "An invisible field used to detect bots since it does not accepts any value. If gets filled, it will return an error (like an email field when receives an invalid email address)."
+msgstr ""
+
+#: includes/help.php:756
+msgid "Since is an invisible field humans will not fill it but bots read your website code trying to fill all fields and commonly they fall in this kind of trick (for that is called honeypot!)."
+msgstr ""
+
+#: includes/help.php:759
+#, php-format
+msgid "BBForms adds a honeypot field to all forms with the option %1$s set to %2$s. You can turn it to %3$s to disable this default honeypot (the ones you placed in the form will continue working)."
+msgstr ""
+
+#: includes/help.php:775 includes/help.php:790
+msgid "Defines the button label."
+msgstr ""
+
+#: includes/help.php:809
+msgid "There are some examples of the most common used attributes."
+msgstr ""
+
+#: includes/help.php:811
+msgid "Limited length text field:"
+msgstr ""
+
+#: includes/help.php:815
+#, php-format
+msgid "NOTE: %1$s and %2$s attributes are also supported, but to make it more easy to remember, we added %3$s and %4$s support to all fields as the standard way to limit the length or value of a field."
+msgstr ""
+
+#: includes/help.php:819
+#, php-format
+msgid "Text area taller (using %s attribute):"
+msgstr ""
+
+#: includes/help.php:824
+#, php-format
+msgid "Limited length text area (only accepts %s attribute):"
+msgstr ""
+
+#: includes/help.php:828
+msgid "Email that only accepts \"gmail.com\" addresses:"
+msgstr ""
+
+#: includes/help.php:831
+msgid "Phone that requires the format 555 555 555:"
+msgstr ""
+
+#: includes/help.php:834
+msgid "URL that only accepts \"https://\" URLs:"
+msgstr ""
+
+#: includes/help.php:837
+msgid "URL that only accepts URLs from a domain:"
+msgstr ""
+
+#: includes/help.php:840
+msgid "Limited date:"
+msgstr ""
+
+#: includes/help.php:842
+msgid "Remember that date field internally works in the format YYYY-MM-DD."
+msgstr ""
+
+#: includes/help.php:844
+msgid "Limited time:"
+msgstr ""
+
+#: includes/help.php:846
+msgid "Remember that time field internally works in the format 23:59."
+msgstr ""
+
+#: includes/help.php:848
+msgid "Limited file type:"
+msgstr ""
+
+#: includes/help.php:850
+msgid "File type needs a comma-separated list of file types allowed."
+msgstr ""
+
+#: includes/help.php:852
+msgid "Accepts: File extensions (.pdf), MIME types (image/jpeg) and wildcard MIME types (video/* which means that all video MIME types are allowed)."
+msgstr ""
+
+#: includes/help.php:854
+msgid "Limited file size:"
+msgstr ""
+
+#: includes/help.php:856
+msgid "File size supports size suffix (kb, mb, gb & tb) or number to define the size in bytes."
+msgstr ""
+
+#: includes/help.php:859
+#, php-format
+msgid "IMPORTANT: You can not exceed your server maximum upload size (commonly defined in the %s of your PHP configuration)."
+msgstr ""
+
+#: includes/help.php:863
+#, php-format
+msgid "File %s attribute:"
+msgstr ""
+
+#: includes/help.php:866
+msgid "Mainly for mobiles, specifies which device should capture the media, for images, can be the user-facing camera (user) or the outward-facing camera (environment)."
+msgstr ""
+
+#: includes/help.php:870
+msgid "Limited number:"
+msgstr ""
+
+#: includes/help.php:873
+msgid "Limited decimal number:"
+msgstr ""
+
+#: includes/help.php:876
+msgid "Decimal range:"
+msgstr ""
+
+#: includes/help.php:879
+msgid "Select with placeholder:"
+msgstr ""
+
+#: includes/help.php:884
+msgid "This will add a disabled option at the start of the options list to work as placeholder."
+msgstr ""
+
+#: includes/help.php:886
+msgid "Checkboxes and radios inline"
+msgstr ""
+
+#: includes/help.php:888
+msgid "By default checkboxes (multiple) and radios are displayed inline:"
+msgstr ""
+
+#: includes/help.php:892
+msgid "But if you place the attribute $1$s to $2$s like:"
+msgstr ""
+
+#: includes/help.php:899
+msgid "Then the field options will be displayed in different lines:"
+msgstr ""
+
+#: includes/help.php:909
+msgid "The old-fashioned way:"
+msgstr ""
+
+#: includes/help.php:911
+msgid "Field"
+msgstr ""
+
+#: includes/help.php:916
+msgid "The cool way:"
+msgstr ""
+
+#: includes/help.php:920
+#, php-format
+msgid "If field is required, will appear an %s in the label automatically:"
+msgstr ""
+
+#: includes/help.php:923
+msgid "In addition, if you provide a label attribute, this label will be used in the submissions view."
+msgstr ""
+
+#: includes/help.php:931 includes/help.php:1804
+msgid "You can define common HTML attributes like id, class or style to any BBCode."
+msgstr ""
+
+#: includes/help.php:941 includes/help.php:1814
+msgid "Defines the element id."
+msgstr ""
+
+#: includes/help.php:949 includes/help.php:1822
+msgid "Defines the element CSS classes."
+msgstr ""
+
+#: includes/help.php:957 includes/help.php:1830
+msgid "Defines the element inline CSS style."
+msgstr ""
+
+#: includes/help.php:963 includes/help.php:1836
+msgid "IMPORTANT: Javascript code is not allowed in attributes for security reasons."
+msgstr ""
+
+#: includes/help.php:965 includes/help.php:1838
+msgid "If you want to add a Javascript functionality to a BBCode, the best would be to give it a custom id or class and add your code in a separate .js file or through a custom code plugin."
+msgstr ""
+
+#: includes/help.php:968
+msgid "Additionally, all fields have support for some global HTML attributes that all major browsers support."
+msgstr ""
+
+#: includes/help.php:976
+msgid "Defines if field can be automatically completed by the browser."
+msgstr ""
+
+#: includes/help.php:984
+msgid "Defines if automatic spelling correction and processing of text is enabled while the user is editing this field."
+msgstr ""
+
+#: includes/help.php:991 includes/help.php:999
+msgid "Defines that the user cannot modify the value of the field."
+msgstr ""
+
+#: includes/help.php:992
+msgid "Some browsers prevent the user from clicking or selecting disabled fields."
+msgstr ""
+
+#: includes/help.php:1000
+msgid "Read only fields can be clicked or selected by the user."
+msgstr ""
+
+#: includes/help.php:1009
+msgid "Defines if field is subject to spell-checking by the underlying browser or Operating System (OS)."
+msgstr ""
+
+#: includes/help.php:1016
+msgid "Defines a text representing advisory information related to the field."
+msgstr ""
+
+#: includes/help.php:1026
+msgid "The editor is designed to help you build forms faster. There are some of the functionalities included:"
+msgstr ""
+
+#: includes/help.php:1028
+msgid "Field buttons"
+msgstr ""
+
+#: includes/help.php:1030
+msgid "Clicking a field button will place a basic BBCode with an auto-generated \"name\" like:"
+msgstr ""
+
+#: includes/help.php:1033 includes/help.php:1446
+msgid "Arrow at side of a button"
+msgstr ""
+
+#: includes/help.php:1035
+msgid "Clicking the arrow at side of a field button will show you a list of common field patterns like:"
+msgstr ""
+
+#: includes/help.php:1037
+msgid "A limited number field:"
+msgstr ""
+
+#: includes/help.php:1040
+msgid "An email field autofilled with the user email:"
+msgstr ""
+
+#: includes/help.php:1043
+msgid "A phone field that only accepts numbers like 555-555-5555:"
+msgstr ""
+
+#: includes/help.php:1046 includes/help.php:1459 includes/help.php:1856
+msgid "Mouse selection matters"
+msgstr ""
+
+#: includes/help.php:1048 includes/help.php:1461 includes/help.php:1858
+msgid "You can select content in the editor with your mouse and on clicking a button, the editor will place it in the best position."
+msgstr ""
+
+#: includes/help.php:1050 includes/help.php:1463 includes/help.php:1860
+msgid "Example, you have the content:"
+msgstr ""
+
+#: includes/help.php:1051 includes/help.php:1059 includes/help.php:1464
+#: includes/help.php:1472 includes/help.php:1861 includes/help.php:1869
+msgid "Line 1"
+msgstr ""
+
+#: includes/help.php:1052 includes/help.php:1060 includes/help.php:1465
+#: includes/help.php:1473 includes/help.php:1862 includes/help.php:1870
+msgid "Line 2"
+msgstr ""
+
+#: includes/help.php:1053 includes/help.php:1061 includes/help.php:1466
+#: includes/help.php:1474 includes/help.php:1863 includes/help.php:1871
+msgid "Line 3"
+msgstr ""
+
+#: includes/help.php:1056
+#, php-format
+msgid "If you select those lines with your mouse and you click the %s field button, the selected content will be placed in the field options like:"
+msgstr ""
+
+#: includes/help.php:1097
+msgid "Actions List"
+msgstr ""
+
+#: includes/help.php:1100
+msgid "Success & Error Messages"
+msgstr ""
+
+#: includes/help.php:1113
+msgid "You can configure the actions of your choice like record the submission, send an email or redirect the form submitter to another URL."
+msgstr ""
+
+#: includes/help.php:1115
+msgid "These actions are processed only when the form gets successfully submitted, which means that all form fields have been filled correctly."
+msgstr ""
+
+#: includes/help.php:1117
+msgid "In the actions editor, you can place all the actions of your choice."
+msgstr ""
+
+#: includes/help.php:1119
+msgid "Example placing the record and message actions:"
+msgstr ""
+
+#: includes/help.php:1123
+msgid "Even you can repeat the same action for different purposes."
+msgstr ""
+
+#: includes/help.php:1126
+#, php-format
+msgid "Example sending an email to site admin and another email to form submitter (using tags for the %s attribute):"
+msgstr ""
+
+#: includes/help.php:1128
+msgid "New submission!"
+msgstr ""
+
+#: includes/help.php:1129
+msgid "Submission received!"
+msgstr ""
+
+#: includes/help.php:1131
+msgid "EXTRA: To meet with GDPR and other privacy laws, you have actions to register data export and deletion requests:"
+msgstr ""
+
+#: includes/help.php:1132
+msgid "Export request registered!"
+msgstr ""
+
+#: includes/help.php:1133
+msgid "Deletion request registered!"
+msgstr ""
+
+#: includes/help.php:1135
+msgid "Check the \"Actions List\" tab to meet all of them!"
+msgstr ""
+
+#: includes/help.php:1166
+msgid "Record submission"
+msgstr ""
+
+#: includes/help.php:1169
+msgid "Action to record the form submission."
+msgstr ""
+
+#: includes/help.php:1172 includes/help.php:1250
+msgid "Email Body"
+msgstr ""
+
+#: includes/help.php:1174
+msgid "Action to send an email."
+msgstr ""
+
+#: includes/help.php:1174
+msgid "You can place this action multiple times to send multiples emails, for example, send a confirmation email to the form submitter and a notification email to the site admin."
+msgstr ""
+
+#: includes/help.php:1183
+msgid "From email."
+msgstr ""
+
+#: includes/help.php:1192
+msgid "From name."
+msgstr ""
+
+#: includes/help.php:1201
+msgid "Comma-separated list of email addresses to send the email."
+msgstr ""
+
+#: includes/help.php:1210
+msgid "Comma-separated list of email addresses to be used for carbon copy."
+msgstr ""
+
+#: includes/help.php:1219
+msgid "Comma-separated list of email addresses to be used for blink carbon copy."
+msgstr ""
+
+#: includes/help.php:1228
+msgid "Email address to be used for when replying to this email."
+msgstr ""
+
+#: includes/help.php:1233 includes/help.php:1451
+msgid "New Submission"
+msgstr ""
+
+#: includes/help.php:1235
+msgid "The email subject."
+msgstr ""
+
+#: includes/help.php:1245
+msgid "Comma-separated list of file paths to attach."
+msgstr ""
+
+#: includes/help.php:1252
+msgid "The content inside the BBCode will be used as the email body."
+msgstr ""
+
+#: includes/help.php:1259
+msgid "Redirect Message"
+msgstr ""
+
+#: includes/help.php:1261
+msgid "Action to redirect the form submitter to another URL."
+msgstr ""
+
+#: includes/help.php:1270
+msgid "The URL to redirect."
+msgstr ""
+
+#: includes/help.php:1275 includes/help.php:1304 includes/help.php:1454
+#: includes/scripts.php:211
+msgid "Redirecting..."
+msgstr ""
+
+#: includes/help.php:1277
+msgid "The content inside the BBCode will be used as message while perform the redirection."
+msgstr ""
+
+#: includes/help.php:1286
+msgid "Action to display a message after submit the form."
+msgstr ""
+
+#: includes/help.php:1297
+msgid "The message type."
+msgstr ""
+
+#: includes/help.php:1298
+msgid "Accepts: info, success, warning, error and none."
+msgstr ""
+
+#: includes/help.php:1306
+msgid "The content inside the BBCode will be used as the message content."
+msgstr ""
+
+#: includes/help.php:1316 includes/help.php:1338 includes/help.php:1347
+#: includes/help.php:1378
+msgid "Success Message"
+msgstr ""
+
+#: includes/help.php:1318
+msgid "Action to register an email address in the WordPress export data tool."
+msgstr ""
+
+#: includes/help.php:1326 includes/help.php:1357
+msgid "The email address to register the request."
+msgstr ""
+
+#: includes/help.php:1333 includes/help.php:1373
+msgid "Message to be displayed in case there is another request for this email."
+msgstr ""
+
+#: includes/help.php:1340 includes/help.php:1380
+msgid "The content inside the BBCode will be used as a success message."
+msgstr ""
+
+#: includes/help.php:1349
+msgid "Action to register an email address in the WordPress deletion data tool."
+msgstr ""
+
+#: includes/help.php:1365
+msgid "Decides if the submission data for this request should be anonymized or deleted."
+msgstr ""
+
+#: includes/help.php:1407
+#, php-format
+msgid "All actions have support to %1$s and %2$s attributes as a short way to display a message after the form submission."
+msgstr ""
+
+#: includes/help.php:1410
+msgid "Long way:"
+msgstr ""
+
+#: includes/help.php:1412 includes/help.php:1415
+msgid "Email sent to site admin!"
+msgstr ""
+
+#: includes/help.php:1414
+msgid "Short way:"
+msgstr ""
+
+#: includes/help.php:1418
+#, php-format
+msgid "In addition, you can use %1$s and %2$s to confirm to the form submitter if the action was processed successfully."
+msgstr ""
+
+#: includes/help.php:1421
+msgid "Messages about the send email action result:"
+msgstr ""
+
+#: includes/help.php:1423
+#, php-format
+msgid "Email sent to %s"
+msgstr ""
+
+#: includes/help.php:1423
+#, php-format
+msgid "Failed to send email to %s"
+msgstr ""
+
+#: includes/help.php:1425
+msgid "Messages about the export data request action result:"
+msgstr ""
+
+#: includes/help.php:1427
+#, php-format
+msgid "Request for %s registered successfully"
+msgstr ""
+
+#: includes/help.php:1427
+#, php-format
+msgid "The email %s is not registered in our database"
+msgstr ""
+
+#: includes/help.php:1430
+#, php-format
+msgid "Remember that %1$s and %2$s actions have support for the %3$s attribute to display a message in case there is another request for that email address."
+msgstr ""
+
+#: includes/help.php:1439
+msgid "The editor is designed to help you setup the form actions faster. There are some of the functionalities included:"
+msgstr ""
+
+#: includes/help.php:1441
+msgid "Action buttons"
+msgstr ""
+
+#: includes/help.php:1443
+msgid "Clicking an action button will place a basic BBCode of the action like:"
+msgstr ""
+
+#: includes/help.php:1448
+msgid "Clicking the arrow at side of an action button will show you a list of common action patterns like:"
+msgstr ""
+
+#: includes/help.php:1450
+msgid "Email site admin about a form submission:"
+msgstr ""
+
+#: includes/help.php:1453
+msgid "Redirect form submitter to homepage:"
+msgstr ""
+
+#: includes/help.php:1456
+msgid "Export data request that notifies if there is a duplicated request:"
+msgstr ""
+
+#: includes/help.php:1469
+#, php-format
+msgid "If you select those lines with your mouse and you click the %s action button, the selected content will be placed as the email body like:"
+msgstr ""
+
+#: includes/help.php:1519
+msgid "BBCodes List"
+msgstr ""
+
+#: includes/help.php:1535
+msgid "BBCodes helps you to format the content in a easy way."
+msgstr ""
+
+#: includes/help.php:1537
+msgid "You can bold text:"
+msgstr ""
+
+#: includes/help.php:1538 includes/help.php:1541 includes/help.php:1544
+#: includes/help.php:1547 includes/help.php:1558 includes/help.php:1561
+#: includes/help.php:1934
+msgid "Hi"
+msgstr ""
+
+#: includes/help.php:1540
+msgid "Align it:"
+msgstr ""
+
+#: includes/help.php:1543
+msgid "Combine multiples BBCodes:"
+msgstr ""
+
+#: includes/help.php:1546
+msgid "Use them on fields and actions attributes:"
+msgstr ""
+
+#: includes/help.php:1549
+msgid "Even use them on fields and actions content."
+msgstr ""
+
+#: includes/help.php:1551
+msgid "Example placing BBCodes in a field options:"
+msgstr ""
+
+#: includes/help.php:1557
+msgid "Example placing BBCodes in an action content:"
+msgstr ""
+
+#: includes/help.php:1560
+msgid "EXTRA: BBCodes also support HTML attributes:"
+msgstr ""
+
+#: includes/help.php:1590
+msgid "Columns are the perfect way to divide the content in different sections in the same line:"
+msgstr ""
+
+#: includes/help.php:1593 includes/help.php:1661 includes/help.php:1665
+#: includes/help.php:1679 includes/help.php:1683 includes/help.php:1691
+#: includes/help.php:1695
+msgid "Column 1"
+msgstr ""
+
+#: includes/help.php:1596 includes/help.php:1662 includes/help.php:1666
+#: includes/help.php:1680 includes/help.php:1684 includes/help.php:1692
+#: includes/help.php:1696
+msgid "Column 2"
+msgstr ""
+
+#: includes/help.php:1599
+msgid "Column 3"
+msgstr ""
+
+#: includes/help.php:1604
+#, php-format
+msgid "IMPORTANT: %1$s always needs to be placed inside a %2$s."
+msgstr ""
+
+#: includes/help.php:1607
+msgid "They have a responsive design which means that previous example will show 3 columns in large screens (desktop, tablets, etc) but on small screens (commonly mobile) the columns will fit the entire screen width and they will look like 3 rows instead."
+msgstr ""
+
+#: includes/help.php:1609
+msgid "Of course, they are perfect for fields:"
+msgstr ""
+
+#: includes/help.php:1622
+msgid "Even you can control the width of each individual column:"
+msgstr ""
+
+#: includes/help.php:1635
+msgid "You can define the columns of your choice:"
+msgstr ""
+
+#: includes/help.php:1637
+msgid "2 columns:"
+msgstr ""
+
+#: includes/help.php:1643
+msgid "5 columns:"
+msgstr ""
+
+#: includes/help.php:1652
+msgid "The BBCode supports unlimited columns but you may need to think on visibility while placing a large number of them (on small screens them will work like rows, so no problem!)."
+msgstr ""
+
+#: includes/help.php:1654
+msgid "IMPORTANT: Do not use columns on an email body, the best for compatibility is to use a table without border."
+msgstr ""
+
+#: includes/help.php:1656
+msgid "Tables"
+msgstr ""
+
+#: includes/help.php:1658
+msgid "Tables lets you divide your content in columns in a static way:"
+msgstr ""
+
+#: includes/help.php:1661 includes/help.php:1662 includes/help.php:1679
+#: includes/help.php:1680 includes/help.php:1691 includes/help.php:1692
+msgid "Row 1"
+msgstr ""
+
+#: includes/help.php:1665 includes/help.php:1666 includes/help.php:1683
+#: includes/help.php:1684 includes/help.php:1695 includes/help.php:1696
+msgid "Row 2"
+msgstr ""
+
+#: includes/help.php:1671
+#, php-format
+msgid "IMPORTANT: You need to meet the structure of %1$s to wrap the entire table, %2$s to wrap the row and %3$s to wrap the row column."
+msgstr ""
+
+#: includes/help.php:1674
+msgid "They have a static design which means columns will be respected on any screen size."
+msgstr ""
+
+#: includes/help.php:1676
+msgid "Tables includes support for some attributes (other HTML attributes like id, class or style are also supported):"
+msgstr ""
+
+#: includes/help.php:1688
+msgid "Even you can define the width of each individual column:"
+msgstr ""
+
+#: includes/help.php:1706
+msgid "Left:"
+msgstr ""
+
+#: includes/help.php:1708
+msgid "Center:"
+msgstr ""
+
+#: includes/help.php:1710
+msgid "Right:"
+msgstr ""
+
+#: includes/help.php:1712
+msgid "Justify:"
+msgstr ""
+
+#: includes/help.php:1718
+msgid "Text decoration"
+msgstr ""
+
+#: includes/help.php:1720
+msgid "Bold:"
+msgstr ""
+
+#: includes/help.php:1722
+msgid "Italic:"
+msgstr ""
+
+#: includes/help.php:1724
+msgid "Underlined:"
+msgstr ""
+
+#: includes/help.php:1726
+msgid "Strikethrough:"
+msgstr ""
+
+#: includes/help.php:1732
+msgid "Text formatting"
+msgstr ""
+
+#: includes/help.php:1734
+msgid "Font:"
+msgstr ""
+
+#: includes/help.php:1738
+msgid "Size:"
+msgstr ""
+
+#: includes/help.php:1742
+msgid "Color:"
+msgstr ""
+
+#: includes/help.php:1746
+msgid "Quote:"
+msgstr ""
+
+#: includes/help.php:1748
+msgid "Author says:"
+msgstr ""
+
+#: includes/help.php:1750
+msgid "List:"
+msgstr ""
+
+#: includes/help.php:1752 includes/help.php:1758
+msgid "Item 1"
+msgstr ""
+
+#: includes/help.php:1753 includes/help.php:1759
+msgid "Item 2"
+msgstr ""
+
+#: includes/help.php:1756
+msgid "Ordered List (accepts 0, 1, a, A, i, I):"
+msgstr ""
+
+#: includes/help.php:1762
+msgid "Code: "
+msgstr ""
+
+#: includes/help.php:1768
+msgid "Embeds"
+msgstr ""
+
+#: includes/help.php:1770
+msgid "Email:"
+msgstr ""
+
+#: includes/help.php:1772
+msgid "Contact us!"
+msgstr ""
+
+#: includes/help.php:1773
+msgid "Displays a clickable mailto link."
+msgstr ""
+
+#: includes/help.php:1775
+msgid "Iframe:"
+msgstr ""
+
+#: includes/help.php:1777
+msgid "Embeds an iframe."
+msgstr ""
+
+#: includes/help.php:1779
+msgid "Image:"
+msgstr ""
+
+#: includes/help.php:1781
+msgid "Alt Text"
+msgstr ""
+
+#: includes/help.php:1783
+msgid "URL:"
+msgstr ""
+
+#: includes/help.php:1785
+msgid "Visit our website!"
+msgstr ""
+
+#: includes/help.php:1786
+msgid "Displays a clickable link."
+msgstr ""
+
+#: includes/help.php:1788
+msgid "Youtube:"
+msgstr ""
+
+#: includes/help.php:1790
+msgid "Embeds a youtube video."
+msgstr ""
+
+#: includes/help.php:1846
+msgid "The editor is designed to help you place BBCodes faster. There are some of the functionalities included:"
+msgstr ""
+
+#: includes/help.php:1848
+msgid "BBCodes buttons"
+msgstr ""
+
+#: includes/help.php:1850
+msgid "Clicking a BBCode button will place a basic BBCode of the action like:"
+msgstr ""
+
+#: includes/help.php:1866
+#, php-format
+msgid "If you select those lines with your mouse and you click the %s BBCode button, the selected content will be placed as the list items like:"
+msgstr ""
+
+#: includes/help.php:1912
+msgid "Tags List"
+msgstr ""
+
+#: includes/help.php:1923
+msgid "Tags helps you to place dynamic information on your form."
+msgstr ""
+
+#: includes/help.php:1926
+#, php-format
+msgid "For example the tag %1$s will render the current user email that in your case is %2$s. If another user access to the form, they will see their email instead, making the tag to work dynamically for each user."
+msgstr ""
+
+#: includes/help.php:1930
+#, php-format
+msgid "While BBCodes are wrapped by %1$s, tags are wrapped by %2$s and they are colored in the editor like %3$s to be easily identificable."
+msgstr ""
+
+#: includes/help.php:1933
+msgid "You can place them in HTML:"
+msgstr ""
+
+#: includes/help.php:1936
+msgid "On fields to autofill their value:"
+msgstr ""
+
+#: includes/help.php:1940
+msgid "On any field or BBCode attribute:"
+msgstr ""
+
+#: includes/help.php:1942
+#, php-format
+msgid "Required to continue using %s"
+msgstr ""
+
+#: includes/help.php:1947
+msgid "Even on actions:"
+msgstr ""
+
+#: includes/help.php:1950
+#, php-format
+msgid "User %s has filled the form!"
+msgstr ""
+
+#: includes/help.php:1952
+msgid "Here are the values entered:"
+msgstr ""
+
+#: includes/help.php:1962
+msgid "Fields tags"
+msgstr ""
+
+#: includes/help.php:1964
+msgid "IMPORTANT: Only available on actions."
+msgstr ""
+
+#: includes/help.php:1966
+msgid "Tags to display the values of the form. Every time you add a new field to your form, a new tag will appear in this group."
+msgstr ""
+
+#: includes/help.php:1969
+#, php-format
+msgid "Includes the %s tag which lets you easily add a HTML table with all fields submitted."
+msgstr ""
+
+#: includes/help.php:1974
+msgid "Site tags"
+msgstr ""
+
+#: includes/help.php:1976
+msgid "Tags to display information about your site."
+msgstr ""
+
+#: includes/help.php:1980
+msgid "User tags"
+msgstr ""
+
+#: includes/help.php:1982 includes/help.php:1994
+msgid "Tags to display information about logged in user. If the user is not logged in, all tags will display an empty string."
+msgstr ""
+
+#: includes/help.php:1986
+msgid "URL tags"
+msgstr ""
+
+#: includes/help.php:1988
+msgid "Tags to display information form the URL."
+msgstr ""
+
+#: includes/help.php:1992
+msgid "Datetime tags"
+msgstr ""
+
+#: includes/help.php:1998
+msgid "Settings tags"
+msgstr ""
+
+#: includes/help.php:2000
+msgid "Tags to display the value of a BBForms setting. Designed specifically to let you set global form messages to use them in the form options."
+msgstr ""
+
+#: includes/help.php:2043 includes/help.php:2053
+msgid "Accepts:"
+msgstr ""
+
+#: includes/help.php:2043 includes/help.php:2051
+msgid "or"
+msgstr ""
+
+#: includes/help.php:2056
+msgid "Accepts any integer number."
+msgstr ""
+
+#: includes/help.php:2060
+msgid "Accepts any text of your choice."
+msgstr ""
+
+#: includes/options.php:24
+msgid "The form theme."
+msgstr ""
+
+#: includes/options.php:26
+msgid "Default"
+msgstr ""
+
+#: includes/options.php:28
+msgid "None"
+msgstr ""
+
+#: includes/options.php:34
+msgid "Show the form title when the form gets displayed."
+msgstr ""
+
+#: includes/options.php:39
+msgid "The form title HTML tag."
+msgstr ""
+
+#: includes/options.php:56
+#, php-format
+msgid "Show the text \"%s\" at top of the form."
+msgstr ""
+
+#: includes/options.php:65
+#, php-format
+msgid "Show field descriptions after their label, if is set to %s, field description will appear after the field."
+msgstr ""
+
+#: includes/options.php:70
+msgid "Hide the form when it gets submitted is successfully."
+msgstr ""
+
+#: includes/options.php:75
+msgid "Clear all fields when it gets submitted is successfully."
+msgstr ""
+
+#: includes/options.php:80
+msgid "Add a honeypot field to prevent bots submissions."
+msgstr ""
+
+#: includes/options.php:82
+#, php-format
+msgid "Set this option to %1$s to disable it. You can place custom honeypots using the field %2$s in the \"Form\" tab."
+msgstr ""
+
+#: includes/options.php:87
+msgid "Make the form only accessible to logged in users."
+msgstr ""
+
+#: includes/options.php:92
+msgid "Message displayed to not logged in users."
+msgstr ""
+
+#: includes/options.php:94
+#, php-format
+msgid "BBForms only displays this message if %1$s is set to %2$s and the user is not logged in."
+msgstr ""
+
+#: includes/options.php:99
+msgid "Limit form submission with a unique field value. With this option you can force a field to be unique, so no new submissions will be accepted for duplicated values of this field (ej: making an email field unique)."
+msgstr ""
+
+#: includes/options.php:100
+msgid "Leave it empty to disable this option."
+msgstr ""
+
+#: includes/options.php:103 includes/options.php:119
+#, php-format
+msgid "IMPORTANT: This option requires the action %s in order to work."
+msgstr ""
+
+#: includes/options.php:110
+#, php-format
+msgid "BBForms only displays this message if %s is configured and there is a form submission with the same value for that field."
+msgstr ""
+
+#: includes/options.php:116
+#, php-format
+msgid "Add a limit of submissions to the form. Set it to %s to disable this option."
+msgstr ""
+
+#: includes/options.php:126
+#, php-format
+msgid "BBForms only displays this message if %s is configured and the form has reached the submissions limit."
+msgstr ""
+
+#: includes/privacy.php:26
+msgid "Personal information collection"
+msgstr ""
+
+#: includes/privacy.php:27
+msgid "If you are using BBForms to collect personal information, you should consult a legal professional for your use case."
+msgstr ""
+
+#: includes/privacy.php:29
+msgid "BBForms"
+msgstr ""
+
+#: includes/privacy/erasers/submissions.php:24
+#: includes/privacy/exporters/submissions.php:24
+msgid "BBForms Submissions"
+msgstr ""
+
+#: includes/privacy/erasers/submissions.php:76
+#, php-format
+msgid "%d submissions anonymized."
+msgstr ""
+
+#: includes/privacy/erasers/submissions.php:89
+#, php-format
+msgid "Removed %d submissions."
+msgstr ""
+
+#: includes/privacy/exporters/submissions.php:120
+msgid "Submission ID"
+msgstr ""
+
+#: includes/privacy/exporters/submissions.php:130
+msgid "Form ID"
+msgstr ""
+
+#: includes/privacy/exporters/submissions.php:141
+msgid "Post ID"
+msgstr ""
+
+#: includes/scripts.php:122
+msgid "Show"
+msgstr ""
+
+#: includes/scripts.php:123
+msgid "Hide"
+msgstr ""
+
+#: includes/scripts.php:125
+msgid "Hide Attributes"
+msgstr ""
+
+#: includes/scripts.php:126
+msgid "Show Examples"
+msgstr ""
+
+#: includes/scripts.php:127
+msgid "Hide Examples"
+msgstr ""
+
+#: includes/scripts.php:129
+msgid "Copied!"
+msgstr ""
+
+#: includes/scripts.php:131
+msgid "Importing..."
+msgstr ""
+
+#: includes/scripts.php:132
+msgid "Done! Redirecting..."
+msgstr ""
+
+#: includes/scripts.php:134
+msgid "Exporting..."
+msgstr ""
+
+#: includes/scripts.php:135
+msgid "Done!"
+msgstr ""
+
+#: includes/scripts.php:136
+msgid "No submissions found."
+msgstr ""
+
+#: includes/scripts.php:195
+#, php-format
+msgid "Field %s"
+msgstr ""
+
+#: includes/scripts.php:197
+#, php-format
+msgid "Field %s value"
+msgstr ""
+
+#: includes/scripts.php:198
+msgid "Show preview"
+msgstr ""
+
+#: includes/scripts.php:201
+#, php-format
+msgid "Item %d"
+msgstr ""
+
+#: includes/submit.php:47
+msgid "Form not found."
+msgstr ""
+
+#: includes/tags.php:50
+msgid "Field value"
+msgstr ""
+
+#: includes/tags.php:52
+msgid "Field value, replace \"FIELD_NAME\" by the field name."
+msgstr ""
+
+#: includes/tags.php:56
+msgid "Comma-separated list of form fields"
+msgstr ""
+
+#: includes/tags.php:69
+msgid "Fields table"
+msgstr ""
+
+#: includes/tags.php:79
+msgid "Site"
+msgstr ""
+
+#: includes/tags.php:85
+msgid "Site name"
+msgstr ""
+
+#: includes/tags.php:91
+msgid "Site URL"
+msgstr ""
+
+#: includes/tags.php:97
+msgid "Admin email"
+msgstr ""
+
+#: includes/tags.php:103
+msgid "Privacy policy page URL"
+msgstr ""
+
+#: includes/tags.php:119
+msgid "User ID"
+msgstr ""
+
+#: includes/tags.php:125
+msgid "Username"
+msgstr ""
+
+#: includes/tags.php:137
+msgid "Display name"
+msgstr ""
+
+#: includes/tags.php:139
+msgid "BBForms Plugin"
+msgstr ""
+
+#: includes/tags.php:143
+msgid "First name"
+msgstr ""
+
+#: includes/tags.php:149
+msgid "Last name"
+msgstr ""
+
+#: includes/tags.php:151
+msgid "Plugin"
+msgstr ""
+
+#: includes/tags.php:155
+msgid "User's website URL"
+msgstr ""
+
+#: includes/tags.php:161
+msgid "Avatar URL"
+msgstr ""
+
+#: includes/tags.php:168
+msgid "Avatar Image"
+msgstr ""
+
+#: includes/tags.php:174
+msgid "Reset password URL"
+msgstr ""
+
+#: includes/tags.php:180
+msgid "Reset password link"
+msgstr ""
+
+#: includes/tags.php:182 includes/tags.php:686
+msgid "Click here to reset your password"
+msgstr ""
+
+#: includes/tags.php:186
+msgid "User Meta"
+msgstr ""
+
+#: includes/tags.php:188
+msgid "User meta value, replace \"META_KEY\" by the user meta key."
+msgstr ""
+
+#: includes/tags.php:196 includes/tags.php:202
+msgid "Datetime"
+msgstr ""
+
+#: includes/tags.php:204
+msgid "The current date and time formatted as \"Y-m-d H:i:s\"."
+msgstr ""
+
+#: includes/tags.php:208
+msgid "Formatted datetime"
+msgstr ""
+
+#: includes/tags.php:210
+msgid "The current date and time, replace \"FORMAT\" by the date format. Default format is \"Y-m-d H:i:s\"."
+msgstr ""
+
+#: includes/tags.php:214
+msgid "Relative datetime"
+msgstr ""
+
+#: includes/tags.php:216
+msgid "The relative date and time, replace \"FORMAT\" by the date format and \"VALUE\" by the relative date. Default format is \"Y-m-d H:i:s\" and default value is \"now\"."
+msgstr ""
+
+#: includes/tags.php:220
+msgid "Timestamp"
+msgstr ""
+
+#: includes/tags.php:222
+msgid "The current timestamp."
+msgstr ""
+
+#: includes/tags.php:226
+msgid "Relative timestamp"
+msgstr ""
+
+#: includes/tags.php:228
+msgid "The relative timestamp, replace \"VALUE\" by the relative date. Default value is \"now\"."
+msgstr ""
+
+#: includes/tags.php:242
+msgid "URL Parameter"
+msgstr ""
+
+#: includes/tags.php:244
+msgid "URL parameter value, replace \"PARAM\" by the parameter name."
+msgstr ""
+
+#: includes/tags.php:258
+msgid "Setting value"
+msgstr ""
+
+#: includes/tags.php:260
+msgid "BBForms setting value, replace \"SETTING_NAME\" by the setting name."
+msgstr ""
+
+#: includes/tags.php:270
+#, php-format
+msgid "%s Message"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:24
+msgid "EDD"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:30
+#: integrations/woocommerce/includes/tags.php:30
+msgid "Logged in user is customer"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:32
+#: integrations/woocommerce/includes/tags.php:32
+msgid "Shows \"yes\" if logged in user is a customer, \"no\" if not."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:36
+#: integrations/woocommerce/includes/tags.php:36
+msgid "Email is registered as customer"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:38
+#: integrations/woocommerce/includes/tags.php:38
+msgid "Shows \"yes\" if email is registered as customer, \"no\" if not."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:39
+#: integrations/easy-digital-downloads/includes/tags.php:48
+#: integrations/woocommerce/includes/tags.php:39
+#: integrations/woocommerce/includes/tags.php:48
+msgid "Replace \"EMAIL\" by the email address to check."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:41
+#: integrations/easy-digital-downloads/includes/tags.php:65
+#: integrations/easy-digital-downloads/includes/tags.php:81
+#: integrations/woocommerce/includes/tags.php:41
+#: integrations/woocommerce/includes/tags.php:65
+#: integrations/woocommerce/includes/tags.php:81
+#, php-format
+msgid "You can use a tag for the email like %s."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:45
+#: integrations/woocommerce/includes/tags.php:45
+msgid "Custom YES or NO for is customer"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:47
+#: integrations/woocommerce/includes/tags.php:47
+msgid "Shows a custom value if email is registered as customer."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:49
+#: integrations/woocommerce/includes/tags.php:49
+msgid "Replace \"YES\" and \"NO\" by the values you want ."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:50
+msgid "You can leave \"NO\" empty to only display a text if is customer like {edd.is_customer.EMAIL.(Customer).}."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:54
+#: integrations/woocommerce/includes/tags.php:54
+msgid "Logged in user order history"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:56
+#: integrations/easy-digital-downloads/includes/tags.php:62
+#: integrations/woocommerce/includes/tags.php:56
+#: integrations/woocommerce/includes/tags.php:62
+msgid "Shows a HTML table with the customer orders history including the order number, payment date and payment status."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:60
+#: integrations/woocommerce/includes/tags.php:60
+msgid "Email order history"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:63
+#: integrations/easy-digital-downloads/includes/tags.php:79
+#: integrations/woocommerce/includes/tags.php:63
+#: integrations/woocommerce/includes/tags.php:79
+msgid "Replace \"EMAIL\" by the customer email address to retrieve the information."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:69
+#: integrations/woocommerce/includes/tags.php:69
+msgid "Admin logged in user order history"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:71
+msgid "Same as {edd.order_history_table} but including links to access to the customer or order details in the admin area."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:72
+#: integrations/woocommerce/includes/tags.php:72
+msgid "Useful when your team receives an email and you want to place direct links to quickly view the customer or order details from the admin area."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:76
+#: integrations/woocommerce/includes/tags.php:76
+msgid "Admin email order history"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:78
+msgid "Same as {edd.order_history_table.EMAIL} but including links to access to the customer or order details in the admin area."
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:201
+#: integrations/easy-digital-downloads/includes/tags.php:280
+#: integrations/woocommerce/includes/tags.php:209
+#: integrations/woocommerce/includes/tags.php:288
+msgid "Order"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:202
+#: integrations/easy-digital-downloads/includes/tags.php:281
+#: integrations/woocommerce/includes/tags.php:210
+#: integrations/woocommerce/includes/tags.php:289
+msgid "Payment Status"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:271
+#: integrations/woocommerce/includes/tags.php:279
+msgid "Customer"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:390
+msgid "Easy Digital Downloads tags"
+msgstr ""
+
+#: integrations/easy-digital-downloads/includes/tags.php:392
+#: integrations/woocommerce/includes/tags.php:387
+msgid "Tags to display customer information about logged in user or entered email."
+msgstr ""
+
+#: integrations/woocommerce/includes/tags.php:24
+msgid "WooCommerce"
+msgstr ""
+
+#: integrations/woocommerce/includes/tags.php:50
+msgid "You can leave \"NO\" empty to only display a text if is customer like {woocommerce.is_customer.EMAIL.(Customer).}."
+msgstr ""
+
+#: integrations/woocommerce/includes/tags.php:71
+msgid "Same as {woocommerce.order_history_table} but including links to access to the customer or order details in the admin area."
+msgstr ""
+
+#: integrations/woocommerce/includes/tags.php:78
+msgid "Same as {woocommerce.order_history_table.EMAIL} but including links to access to the customer or order details in the admin area."
+msgstr ""
+
+#: integrations/woocommerce/includes/tags.php:385
+msgid "WooCommerce tags"
+msgstr ""

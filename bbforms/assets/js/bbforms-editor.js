@@ -1,0 +1,573 @@
+var bbforms_form_editor = undefined;
+var bbforms_actions_editor = undefined;
+var bbforms_options_editor = undefined;
+
+var bbforms_editor_change_timer;
+var bbforms_editor_change_delay = 1000;
+var bbforms_preview_hidden = false;
+var bbforms_last_update = 0;
+
+var bbforms_update_tags_timer;
+var bbforms_update_tags_delay = 5000;
+
+var bbforms_form_export_editor = undefined;
+var bbforms_form_import_editor = undefined;
+
+(function ( $ ) {
+
+    bbforms_editor.editor_settings.codemirror.mode = "bbformsmixed";
+    bbforms_editor.editor_settings.codemirror.autoRefresh = true;
+
+    // Init form export/import editors
+    bbforms_form_export_editor = wp.codeEditor.initialize( "bbforms-form-export-editor", bbforms_editor.editor_settings );
+    bbforms_form_import_editor = wp.codeEditor.initialize( "bbforms-form-import-editor", bbforms_editor.editor_settings );
+
+    if( $('#form').length ) {
+        // Init form, actions and options editors
+        bbforms_form_editor = wp.codeEditor.initialize("form", bbforms_editor.editor_settings);
+
+        bbforms_actions_editor = wp.codeEditor.initialize("actions", bbforms_editor.editor_settings);
+
+        // HTML not displayed on settings
+        bbforms_editor.editor_settings.codemirror.mode = "bbforms";
+
+        bbforms_options_editor = wp.codeEditor.initialize("options", bbforms_editor.editor_settings);
+
+        bbforms_update_field_tags();
+
+        // Check for changes in form editor
+        bbforms_form_editor.codemirror.on('change', function () {
+            clearTimeout(bbforms_editor_change_timer);
+            bbforms_editor_change_timer = setTimeout(bbforms_update_form_preview, bbforms_editor_change_delay);
+
+            clearTimeout(bbforms_update_tags_timer);
+            bbforms_update_tags_timer = setTimeout(bbforms_update_field_tags, bbforms_update_tags_delay);
+        });
+
+        // Check for changes in options editor
+        bbforms_options_editor.codemirror.on('change', function () {
+            clearTimeout(bbforms_editor_change_timer);
+            bbforms_editor_change_timer = setTimeout(bbforms_update_form_preview, bbforms_editor_change_delay);
+        });
+    }
+
+    $('body').on( 'click', '#bbforms-form-editor-preview-tab', function(e) {
+        var $this = $(this);
+        var box = $this.closest('#bbforms-form-editor');
+
+        box.toggleClass('bbforms-hide-preview');
+
+        if( box.hasClass('bbforms-hide-preview') ) {
+            $this.find('.cmb-tab-title').html( bbforms_editor.show_preview );
+            $this.find('.dashicons').attr( 'class', 'dashicons dashicons-visibility' );
+            bbforms_preview_hidden = true;
+        } else {
+            $this.find('.cmb-tab-title').html( bbforms_editor.hide_preview );
+            $this.find('.dashicons').attr( 'class', 'dashicons dashicons-hidden' );
+            bbforms_preview_hidden = false;
+        }
+
+        bbforms_update_form_preview();
+    });
+
+    // Editor control
+    $('body').on( 'click', '.bbforms-editor-control', function(e) {
+        e.preventDefault();
+
+        var $this = $(this);
+        var row = $this.closest('.cmb-row');
+        var toggle = $this.data('toggle');
+        var open = $this.data('open');
+        var insert = $this.data('insert');
+        var override = $this.data('override');
+        var bbcode = $this.data('bbcode');
+        var field = $this.data('field');
+        var action = $this.data('action');
+        var tag = $this.data('tag');
+        var current_editor;
+
+        if( toggle !== undefined && toggle.length ) {
+            $(toggle).toggle();
+
+            if( $(toggle).hasClass('bbforms-editor-control-dropdown') ) {
+                if( $(toggle).hasClass('bbforms-editor-control-dropdown-open') ) {
+                    $(toggle).removeClass('bbforms-editor-control-dropdown-open');
+                } else {
+                    $('.bbforms-editor-control-dropdown-open').toggle();
+                    $('.bbforms-editor-control-dropdown-open').removeClass('bbforms-editor-control-dropdown-open');
+
+                    $(toggle).addClass('bbforms-editor-control-dropdown-open');
+                }
+            }
+
+            if( $this.hasClass('bbforms-editor-control-section-title') ) {
+
+                if( ! $this.hasClass('bbforms-editor-control-active') ) {
+                    var active = $this.parent().find('.bbforms-editor-control-active');
+                    if( active.length ) {
+                        active.trigger('click');
+                        //active.removeClass('bbforms-editor-control-active');
+                    }
+                }
+
+
+                var icon = $this.find('.dashicons.dashicons-arrow-up, .dashicons.dashicons-arrow-down');
+
+                if( icon.hasClass('dashicons-arrow-up') ) {
+                    icon.removeClass('dashicons-arrow-up');
+                    icon.addClass('dashicons-arrow-down');
+                } else {
+                    icon.addClass('dashicons-arrow-up');
+                    icon.removeClass('dashicons-arrow-down');
+                }
+
+                $this.toggleClass('bbforms-editor-control-active');
+
+                $('.bbforms-editor-control-dropdown-open').toggle();
+                $('.bbforms-editor-control-dropdown-open').removeClass('bbforms-editor-control-dropdown-open');
+            }
+        } else {
+            if( $('.bbforms-editor-control-dropdown-open').length && $this.closest('.bbforms-editor-control-dropdown').length === 0 ) {
+                $('.bbforms-editor-control-dropdown-open').toggle();
+                $('.bbforms-editor-control-dropdown-open').removeClass('bbforms-editor-control-dropdown-open');
+            }
+        }
+
+        if( open !== undefined && open.length ) {
+            $(open).dialog({
+                dialogClass: 'bbforms-dialog',
+                closeText: '',
+                show: { effect: 'fadeIn', duration: 200 },
+                hide: { effect: 'fadeOut', duration: 200 },
+                resizable: false,
+                height: 'auto',
+                width: 800,
+                modal: true,
+                draggable: false,
+                closeOnEscape: false,
+            });
+            return;
+        }
+
+        // Get the current editor
+        if( row.hasClass('cmb2-id-form') ) {
+            current_editor = bbforms_form_editor;
+        } else if( row.hasClass('cmb2-id-actions') ) {
+            current_editor = bbforms_actions_editor;
+        } else if( row.hasClass('cmb2-id-options') ) {
+            current_editor = bbforms_options_editor;
+        }
+
+        var current_selection = current_editor.codemirror.getSelection();
+
+        if( insert !== undefined && insert.length ) {
+            if( override ) {
+                current_editor.codemirror.setValue( insert );
+            } else {
+
+                // BBCodes
+                if( bbcode !== undefined && bbcode === 'email' )  {
+                    if( bbforms_is_valid_email( current_selection.trim() ) ) {
+                        insert = insert.replace( 'VALUE', current_selection.trim() );
+                        insert = insert.replace( 'CONTENT', bbforms_editor.insert_text_here );
+                    } else {
+                        insert = insert.replace( '="VALUE"', '' );
+                    }
+                }
+
+                if( bbcode !== undefined && ( bbcode === 'url' || bbcode === 'img' ) )  {
+                    if( bbforms_is_valid_url( current_selection.trim() ) ) {
+                        insert = insert.replace( 'VALUE', current_selection.trim() );
+                        insert = insert.replace( 'CONTENT', bbforms_editor.insert_text_here );
+                    } else {
+                        insert = insert.replace( '="VALUE"', '' );
+                    }
+                }
+
+                if( bbcode !== undefined && bbcode === 'list' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT',
+                            '' + bbforms_editor.item_pattern.replace('%d', 1) +
+                            '\n[*] ' + bbforms_editor.item_pattern.replace('%d', 2)
+                        )
+                    } else {
+                        current_selection = current_selection.replaceAll('\n', '\n[*] ');
+                    }
+
+                }
+
+                if( bbcode !== undefined && bbcode === 'row' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT',
+                            '' + bbforms_editor.insert_text_here + '\n\t[/column]' +
+                            '\n\t[column]\n\t\t' + bbforms_editor.insert_text_here
+                        )
+                    } else {
+                        current_selection = current_selection.replaceAll('\n', '\n\t[/column]\n\t[column]\n\t\t');
+                    }
+
+                }
+
+                if( bbcode !== undefined && bbcode === 'table' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT',
+                            '' + bbforms_editor.insert_text_here + '[/td]' +
+                            '\n\t\t[td]' + bbforms_editor.insert_text_here
+                        )
+                    } else {
+                        current_selection = current_selection.replaceAll('\n', '[/td]\n\t\t[td]');
+                    }
+
+                }
+
+                // Fields
+                if( field !== undefined ) {
+
+                    while( insert.indexOf('name=""') !== -1 ) {
+                        var unique_name = bbforms_generate_field_name( field, current_editor.codemirror.getValue() );
+
+                        insert = insert.replace( 'name=""', 'name="' + unique_name + '"' );
+                    }
+
+                    if( current_selection === '' && insert.indexOf('name="CONTENT"') !== -1 ) {
+                        while( insert.indexOf('name="CONTENT"') !== -1 ) {
+                            var unique_name = bbforms_generate_field_name( field, current_editor.codemirror.getValue() );
+
+                            insert = insert.replace( 'name="CONTENT"', 'name="' + unique_name + '"' );
+                        }
+                    }
+
+                }
+
+                // Select, check and radio
+                if( field !== undefined && ( field === 'select' || field === 'check' || field === 'radio' ) ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT_VALUE',
+                            '1|' + bbforms_editor.option_pattern.replace('%d', 1) +
+                            '\n2|' + bbforms_editor.option_pattern.replace('%d', 2)
+                        );
+
+                        insert = insert.replace( 'CONTENT' + "\n",
+                            '' + bbforms_editor.option_pattern.replace('%d', 1) +
+                            '\n' + bbforms_editor.option_pattern.replace('%d', 2) +
+                            '\n'
+                        );
+
+                        insert = insert.replace( 'CONTENT',
+                            '' + bbforms_editor.option_pattern.replace('%d', 1)
+                        );
+                    } else {
+                        current_selection = current_selection.replaceAll('\n', '\n');
+
+                        insert = insert.replace( 'CONTENT_VALUE', 'CONTENT' );
+                        insert = insert.replace( 'CONTENT[', '\nCONTENT\n[' );
+                    }
+
+                }
+
+                // Quiz
+                if( field !== undefined && field === 'quiz' ) {
+                    if( current_selection === '' ) {
+                        if( insert.indexOf('CONTENT_MATH') !== -1 ) {
+                            insert = insert.replace( 'CONTENT_MATH',
+                                '' + bbforms_generate_random_math_quiz() +
+                                '\n' + bbforms_generate_random_math_quiz()
+                            );
+                        } else {
+                            insert = insert.replace( 'CONTENT',
+                                '' + bbforms_editor.question_pattern.replace('%d', 1) + '|' + bbforms_editor.answer_pattern.replace('%d', 1) +
+                                '\n' + bbforms_editor.question_pattern.replace('%d', 2) + '|' + bbforms_editor.answer_pattern.replace('%d', 2)
+                            );
+                        }
+
+                    } else {
+                        current_selection = current_selection.replaceAll('\n', '\n');
+
+                        insert = insert.replace( 'CONTENT_MATH', 'CONTENT' );
+                    }
+
+                }
+
+                // Submit
+                if( field !== undefined && field === 'submit' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT', bbforms_editor.submit_text );
+                    }
+                }
+
+                // Reset
+                if( field !== undefined && field === 'reset' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT', bbforms_editor.reset_text );
+                    }
+                }
+
+                // Actions
+                if( action !== undefined && action === 'email' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT_FIELDS_TABLE', '{fields_table}' );
+                    } else {
+                        insert = insert.replace( 'CONTENT_FIELDS_TABLE', 'CONTENT' );
+                    }
+                }
+
+                if( action !== undefined && ( action === 'delete_data_request' || action === 'export_data_request' ) ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT', bbforms_editor.data_request_pattern );
+                    }
+                }
+
+                if( action !== undefined && action === 'redirect' ) {
+                    if( current_selection === '' ) {
+                        insert = insert.replace( 'CONTENT', bbforms_editor.redirect_pattern );
+                    }
+                }
+
+                var args = {
+                    insert: insert,
+                    current_selection: current_selection,
+                    current_editor: current_editor,
+                };
+
+                /**
+                 * Editor control INSERT event
+                 *
+                 * @since 1.0.0
+                 *
+                 * @selector    .bbforms-editor-control
+                 * @event       bbforms_editor_control_insert
+                 *
+                 * @param Object    args
+                 */
+                $this.trigger( 'bbforms_editor_control_insert', [ args ] );
+
+                current_editor.codemirror.replaceSelection( args.insert.replace( 'CONTENT', args.current_selection ) );
+            }
+
+            return;
+        }
+
+    });
+
+    // Check for clicks outside a dropdown to close it
+    $("body").on("click", function(event) {
+        if( $('.bbforms-editor-control-dropdown-open').length ) {
+            var clicked = $(event.target);
+
+            if( ! ( clicked.hasClass('.bbforms-editor-control') || clicked.closest('.bbforms-editor-control').length ) ) {
+                $('.bbforms-editor-control-dropdown-open').toggle();
+                $('.bbforms-editor-control-dropdown-open').removeClass('bbforms-editor-control-dropdown-open');
+            }
+
+        }
+    });
+
+    // Dialog close button
+    $('body').on('click', '.bbforms-dialog-button-close', function(e) {
+
+        var $this = $(this);
+        var dialog = $this.closest('.ui-dialog-content');
+
+        dialog.dialog('close');
+
+    });
+
+    // Apply default options button
+    $('body').on('click', '.bbforms-dialog-button-apply-default-options', function(e) {
+
+        var $this = $(this);
+        var dialog = $this.closest('.ui-dialog-content');
+
+        dialog.dialog('close');
+
+        bbforms_options_editor.codemirror.setValue( bbforms_editor.default_options );
+
+    });
+
+})( jQuery );
+
+function bbforms_generate_field_name( field, editor_content ) {
+
+    var n1 = Math.floor( Math.random() * 8 ) + 1;
+    var n2 = Math.floor( Math.random() * 8 ) + 1;
+    var n3 = Math.floor( Math.random() * 8 ) + 1;
+
+    var name = field + '_' + n1 + '' + n2 + '' + n3;
+
+    if( editor_content.indexOf( 'name="' + name + '"' ) !== -1 ) {
+        return bbforms_generate_field_name( field, editor_content );
+    }
+
+    return name;
+
+}
+
+function bbforms_generate_random_math_quiz() {
+
+    var numbers = Math.floor( Math.random() * 2 ) + 2;
+    var operator = Math.floor( Math.random() * 4 );
+    var max = Math.floor( Math.random() * 20 ) + 1;
+
+    switch ( numbers ) {
+        case 3:
+
+            var number_1 = Math.floor( Math.random() * max ) + 1;
+            var number_2 = Math.floor( Math.random() * max ) + 1;
+            var number_3 = Math.floor( Math.random() * max ) + 1;
+
+            if( number_1 === number_2 ) {
+                number_2 += Math.floor( Math.random() * 2 );
+            }
+
+            if( number_1 === number_3 ) {
+                number_3 += Math.floor( Math.random() * 2 );
+            }
+
+            if( number_2 === number_3 ) {
+                number_2 += Math.floor( Math.random() * 2 );
+            }
+
+            if( operator === 0 ) {
+                if( number_1 < ( number_2 + number_3 ) ) {
+                    var diff = ( number_2 + number_3 ) - number_1;
+                    diff += Math.floor( Math.random() * 3 ) + 1;
+                    number_1 += diff;
+                }
+
+                return number_1 + ' - ' + number_2 + ' - ' + number_3 + ' =|' + ( number_1 - number_2 - number_3 );
+            } else if( operator === 1 ) {
+
+                if( ( number_1 + number_3 ) < number_2 ) {
+                    var diff = number_2 - ( number_1 + number_3 );
+                    diff += Math.floor( Math.random() * 3 ) + 1;
+                    number_3 += diff;
+                }
+
+                return number_1 + ' - ' + number_2 + ' + ' + number_3 + ' =|' + ( number_1 - number_2 + number_3 );
+            } else if( operator === 2 ) {
+
+                if( ( number_1 + number_2 ) < number_3 ) {
+                    var diff = number_3 - ( number_1 + number_2 );
+                    diff += Math.floor( Math.random() * 3 ) + 1;
+                    number_2 += diff;
+                }
+
+                return number_1 + ' + ' + number_2 + ' - ' + number_3 + ' =|' + ( number_1 + number_2 - number_3 );
+            } else {
+                return number_1 + ' + ' + number_2 + ' + ' + number_3 + ' =|' + ( number_1 + number_2 + number_3 );
+            }
+            break;
+        default:
+            var number_1 = Math.floor( Math.random() * max ) + 1;
+            var number_2 = Math.floor( Math.random() * max ) + 1;
+
+            if( number_1 === number_2 ) {
+                number_2 += Math.floor( Math.random() * 2 );
+            }
+
+            if( operator === 0 ) {
+                if( number_1 < number_2 ) {
+                    var diff = number_2 - number_1;
+                    diff += Math.floor( Math.random() * 3 ) + 1;
+                    number_1 += diff;
+                }
+
+                return number_1 + ' - ' + number_2 + ' =|' + ( number_1 - number_2 );
+            } else {
+                return number_1 + ' + ' + number_2 + ' =|' + ( number_1 + number_2 );
+            }
+            break;
+    }
+
+
+}
+
+function bbforms_update_field_tags() {
+
+    var $ = $ || jQuery;
+
+    var fields = bbforms_form_editor.codemirror.getValue();
+    var names = [...fields.matchAll(/name="(.*?)"/g)];
+
+    //names = names.reverse();
+
+    names.forEach(function( match ) {
+        $('.bbforms-editor-controls-tags .bbforms-editor-control-dropdown[class*="bbforms-editor-control-dropdown-fields"]').each(function() {
+            var $this = $(this);
+
+            if( ! $this.find('.bbforms-editor-control-dropdown-option[class*=" bbforms-editor-control-dropdown-field.' + match[1] + '"]').length ) {
+                var isFor = $this.attr('class').replace('bbforms-editor-control-dropdown bbforms-editor-control-dropdown-fields-', '');
+                var label = bbforms_editor.field_label_pattern.replace( '%s', match[1] );
+                var value = bbforms_editor.field_value_pattern.replace( '%s', match[1] );
+
+                $this.append('<span class="bbforms-editor-control bbforms-editor-control-dropdown-option bbforms-editor-control-dropdown-field.' + match[1] + '-' + isFor + '-option cm-s-default" data-insert="{field.' + match[1] + '}" title="' + label + '">' +
+                    '<span>' + label + ': </span>' +
+                    '<span class="cm-def">{field.' + match[1] + '}</span>' +
+                    '<br>' +
+                    '<span>' + bbforms_editor.preview + ': </span><span class="cm-comment">' + value + '.</span>' +
+                    '</span>');
+            }
+        });
+    });
+
+}
+
+function bbforms_update_form_preview() {
+
+    var $ = $ || jQuery;
+
+    if( bbforms_preview_hidden ) return;
+
+    if( bbforms_last_update + 500 > Date.now() ) return;
+
+    bbforms_last_update = Date.now();
+
+    // Show updating preview
+    var container = $('#cmb2-metabox-bbforms-form-editor .cmb2-id-preview');
+    var iframe = $('#cmb2-metabox-bbforms-form-editor .cmb2-id-preview iframe');
+
+    var params = {
+        form: bbforms_form_editor.codemirror.getValue(),
+        //actions: bbforms_actions_editor.codemirror.getValue(),
+        options: bbforms_options_editor.codemirror.getValue(),
+    }
+    var queryString = new URLSearchParams(params).toString()
+
+
+    iframe.attr('src', iframe.data('url') + '&' + queryString );
+}
+
+function bbforms_form_export_editor_get_value() {
+    return bbforms_form_export_editor.codemirror.getValue();
+}
+function bbforms_form_export_editor_set_value( value ) {
+    bbforms_form_export_editor.codemirror.setValue( value );
+    setTimeout( function() {
+        bbforms_form_export_editor.codemirror.refresh();
+    }, 1 );
+}
+
+function bbforms_form_import_editor_get_value() {
+    return bbforms_form_import_editor.codemirror.getValue();
+}
+function bbforms_form_import_editor_set_value( value ) {
+    bbforms_form_import_editor.codemirror.setValue( value );
+    setTimeout( function() {
+        bbforms_form_import_editor.codemirror.refresh();
+    }, 1 );
+}
+
+function bbforms_is_valid_email( value ) {
+    return value.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+}
+
+function bbforms_is_valid_url( value ) {
+    try{
+        new URL( value );
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
