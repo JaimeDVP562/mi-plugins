@@ -13,6 +13,74 @@
     try { console.info('[automatorwp-sendpulse] script loaded', typeof automatorwp_sendpulse !== 'undefined' ? automatorwp_sendpulse : null); } catch(e){}
 
     /**
+     * Ensure a visible fallback email input exists inside the option form.
+     * Some admin themes or integration setups hide or render the CMB2 email
+     * field differently; this helper injects a simple visible input so the
+     * end user (client) can enter the Subscriber Email regardless of the UI.
+     */
+    function ensureFallbackEmailInput(option_form) {
+        try {
+            if (!option_form || !option_form.length) return;
+            var $ = window.jQuery || jQuery;
+            var emailInput = option_form.find('input[type="email"]').first();
+            if (!emailInput || !emailInput.length) {
+                emailInput = option_form.find('input[name="email"]').first();
+            }
+
+            // If a visible email input already exists, nothing to do.
+            var inputVisible = false;
+            try { inputVisible = emailInput && emailInput.length ? (emailInput.is(':visible') && emailInput.css('display') !== 'none') : false; } catch(e) { inputVisible = false; }
+            if (inputVisible) return;
+
+            // If we already injected a fallback input previously, don't inject again
+            try {
+                if ( option_form.find('input[data-automatorwp-fallback="1"]').length ) return;
+            } catch(e){}
+
+            // Inject a visible fallback input so the client always sees a Subscriber Email field
+            try {
+                // Check for an existing label that mentions 'Subscriber Email' so
+                // we don't duplicate the title. If found, insert only the input
+                // after that label. Otherwise create a full row with label + input.
+                var foundLabel = null;
+                try {
+                    option_form.find('label').each(function(){
+                        try {
+                            var txt = $(this).text() || '';
+                            if ( txt.indexOf('Subscriber Email') !== -1 ) { foundLabel = $(this); return false; }
+                        } catch(e){}
+                    });
+                } catch(e){}
+
+                var input = $('<input type="email" name="email" placeholder="example@domain.test" class="regular-text" data-automatorwp-fallback="1" />');
+
+                if ( foundLabel && foundLabel.length ) {
+                    // Insert just the input after the existing label's parent if possible
+                    try {
+                        var parent = foundLabel.parent();
+                        if ( parent && parent.length ) {
+                            parent.append(input);
+                        } else {
+                            option_form.prepend(input);
+                        }
+                        console.info('[automatorwp-sendpulse] fallback email input injected after existing label');
+                    } catch(e) {
+                        try { option_form.prepend(input); } catch(e) { option_form.append(input); }
+                    }
+                } else {
+                    try {
+                        var emailRow = $('<div class="cmb-row automatorwp-sendpulse-email-row" style="margin-bottom:8px;display:block;"></div>');
+                        var label = $('<label class="cmb2-id-sub" style="display:block;font-weight:600;margin-bottom:4px;">Subscriber Email:<span style="color:#d00">*</span></label>');
+                        emailRow.append(label).append(input);
+                        try { option_form.prepend(emailRow); } catch(e){ option_form.append(emailRow); }
+                        console.info('[automatorwp-sendpulse] fallback email input injected');
+                    } catch(e) { /* ignore */ }
+                }
+            } catch(e) { /* ignore */ }
+        } catch(e) { /* ignore */ }
+    }
+
+    /**
      * Force-populate underlying select with addressbooks via AJAX.
      * Used as a fallback when the UI is hidden and Select2 measures 0x0.
      */
@@ -199,6 +267,8 @@
         var autoLoad = !!opts.autoLoad;
 
         if (!option_form || !option_form.length) return;
+        // Ensure fallback email input early so it's present for token insertion
+        try { ensureFallbackEmailInput(option_form); } catch(e){}
 
         console.info('[automatorwp-sendpulse] initAddressbookSelector called', { autoSelectFirst: autoSelectFirst, autoLoad: autoLoad });
 
@@ -254,18 +324,25 @@
                                 }
                                 var data = (resp.data && resp.data.data) ? resp.data.data : (resp.data ? resp.data : []);
                                 var emailWrapper = option_form.find('.automatorwp-sendpulse-email-wrapper');
-                                if (!emailWrapper.length) {
-                                    var emailInput = option_form.find('input[type="email"]').first();
-                                    if (emailInput && emailInput.length) {
-                                        emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
-                                        emailInput.after(emailWrapper);
-                                    } else {
-                                        emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
-                                        row_for_sel.after(emailWrapper);
-                                    }
-                                } else {
-                                    emailWrapper.empty();
-                                }
+                                 if (!emailWrapper.length) {
+                                     var emailInput = option_form.find('input[type="email"]').first();
+                                     // Prefer placing the email list dropdown after the Load emails button
+                                     // so the control the user clicked is immediately associated with
+                                     // the resulting select. Fall back to inserting after the email
+                                     // input or the row if Load button isn't available.
+                                     if (typeof loadBtn !== 'undefined' && loadBtn && loadBtn.length) {
+                                         emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                                         loadBtn.after(emailWrapper);
+                                     } else if (emailInput && emailInput.length) {
+                                         emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                                         emailInput.after(emailWrapper);
+                                     } else {
+                                         emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                                         row_for_sel.after(emailWrapper);
+                                     }
+                                 } else {
+                                     emailWrapper.empty();
+                                 }
                                 var sel = $('<select class="automatorwp-sendpulse-email-select" style="width:100%;"></select>');
                                 sel.append($('<option>').attr('value','').text('-- Select email --'));
                                 data.forEach(function(e){
@@ -274,20 +351,57 @@
                                     sel.append($('<option>').attr('value', em).text(em + ' (' + (e.status_explain || e.status || '') + ')'));
                                 });
                                 emailWrapper.append(sel);
-                                sel.on('change', function(){
-                                    var v = $(this).val();
-                                    var emailInput = option_form.find('input[type="email"]').first();
-                                    if (emailInput && emailInput.length) {
-                                        emailInput.val(v);
-                                    } else {
-                                        var hidden = option_form.find('input[name="email"]');
-                                        if (!hidden.length) {
-                                            hidden = $('<input type="hidden" name="email">');
-                                            emailWrapper.after(hidden);
+                                // Synchronize select <-> visible email input so the client
+                                // sees the selected email in the Subscriber Email field.
+                                (function(sel, option_form, emailWrapper){
+                                    try {
+                                        var emailInput = option_form.find('input[type="email"]').first();
+                                        if (!emailInput || !emailInput.length) emailInput = option_form.find('input[name="email"]').first();
+
+                                        // If an email is already present in the input, try to select it in the dropdown
+                                        if (emailInput && emailInput.length) {
+                                            var current = (emailInput.val() || '').trim();
+                                            if (current) {
+                                                if ( sel.find('option[value="' + current + '"]').length ) {
+                                                    try { sel.val(current).trigger('change'); } catch(e){}
+                                                } else {
+                                                    // add current email as first option so it remains selectable
+                                                    try { sel.prepend($('<option>').attr('value', current).text(current + ' (Current)')); sel.val(current).trigger('change'); } catch(e){}
+                                                }
+                                            }
+
+                                            // When the input changes manually, try to reflect it in the select
+                                            try {
+                                                emailInput.off('input.automatorwp_sendpulse_sync').on('input.automatorwp_sendpulse_sync', function(){
+                                                    var iv = ($(this).val() || '').trim();
+                                                    if (iv && sel.find('option[value="' + iv + '"]').length) {
+                                                        try { sel.val(iv).trigger('change'); } catch(e){}
+                                                    } else {
+                                                        try { sel.val(''); } catch(e){}
+                                                    }
+                                                });
+                                            } catch(e){}
                                         }
-                                        hidden.val(v);
-                                    }
-                                });
+
+                                        sel.off('change.automatorwp_sendpulse_emailsync').on('change.automatorwp_sendpulse_emailsync', function(){
+                                            var v = $(this).val();
+                                            try {
+                                                var emailInput2 = option_form.find('input[type="email"]').first();
+                                                if (emailInput2 && emailInput2.length) {
+                                                    emailInput2.val(v);
+                                                    try { emailInput2.focus(); } catch(e){}
+                                                } else {
+                                                    var hidden = option_form.find('input[name="email"]');
+                                                    if (!hidden.length) {
+                                                        hidden = $('<input type="hidden" name="email">');
+                                                        emailWrapper.after(hidden);
+                                                    }
+                                                    hidden.val(v);
+                                                }
+                                            } catch(e){}
+                                        });
+                                    } catch(e) { /* ignore */ }
+                                })(sel, option_form, emailWrapper);
                             }).fail(function(){ btn.prop('disabled', false).text('Load emails'); alert('Request failed'); });
                         });
                     }
@@ -313,6 +427,29 @@
             console.info('[automatorwp-sendpulse] addressbook row not found in option_form or item');
             return;
         }
+
+        // Ensure there is a visible email input for Subscriber Email. Some
+        // AutomatorWP setups or admin themes may render the CMB2 input in a
+        // way that is hidden or not present; create a fallback visible input
+        // so the end-user (client) can enter the subscriber email directly.
+        try {
+            var emailInput = option_form.find('input[type="email"]').first();
+            if (!emailInput || !emailInput.length) {
+                // Also check for existing hidden input named 'email'
+                emailInput = option_form.find('input[name="email"]').first();
+            }
+            if (!emailInput || !emailInput.length) {
+                // Build a simple row compatible with CMB2-like layout
+                var emailRow = $('<div class="cmb-row automatorwp-sendpulse-email-row" style="margin-bottom:8px;"></div>');
+                var label = $('<label class="cmb2-id-sub" style="display:block;font-weight:600;margin-bottom:4px;">Subscriber Email:<span style="color:#d00">*</span></label>');
+                var input = $('<input type="email" name="email" placeholder="example@domain.test" class="regular-text" />');
+                emailRow.append(label).append(input);
+                // Insert the email row at top of the option form so it's visible
+                try { option_form.prepend(emailRow); } catch(e){ option_form.append(emailRow); }
+                emailInput = input;
+                console.info('[automatorwp-sendpulse] fallback email input injected');
+            }
+        } catch(e) { /* ignore errors */ }
 
         // Prefer to use the existing CMB2 <select> and let AutomatorWP initialize it via its helper
         var existingVal = input && input.length ? input.val() : '';
@@ -363,7 +500,10 @@
                     var emailWrapper = option_form.find('.automatorwp-sendpulse-email-wrapper');
                     if (!emailWrapper.length) {
                         var emailInput = option_form.find('input[type="email"]').first();
-                        if (emailInput && emailInput.length) {
+                        if (typeof loadBtn !== 'undefined' && loadBtn && loadBtn.length) {
+                            emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
+                            loadBtn.after(emailWrapper);
+                        } else if (emailInput && emailInput.length) {
                             emailWrapper = $('<div class="automatorwp-sendpulse-email-wrapper" style="margin-top:6px;"></div>');
                             emailInput.after(emailWrapper);
                         } else {
@@ -381,20 +521,55 @@
                         sel.append($('<option>').attr('value', em).text(em + ' (' + (e.status_explain || e.status || '') + ')'));
                     });
                     emailWrapper.append(sel);
-                    sel.on('change', function(){
-                        var v = $(this).val();
-                        var emailInput = option_form.find('input[type="email"]').first();
-                        if (emailInput && emailInput.length) {
-                            emailInput.val(v);
-                        } else {
-                            var hidden = option_form.find('input[name="email"]');
-                            if (!hidden.length) {
-                                hidden = $('<input type="hidden" name="email">');
-                                emailWrapper.after(hidden);
+                    // Keep select and email input synchronized (both directions).
+                    (function(sel, option_form, emailWrapper){
+                        try {
+                            var emailInput = option_form.find('input[type="email"]').first();
+                            if (!emailInput || !emailInput.length) emailInput = option_form.find('input[name="email"]').first();
+
+                            // If input already contains an address, pre-select it in dropdown
+                            if (emailInput && emailInput.length) {
+                                var cur = (emailInput.val() || '').trim();
+                                if (cur) {
+                                    if ( sel.find('option[value="' + cur + '"]').length ) {
+                                        try { sel.val(cur).trigger('change'); } catch(e){}
+                                    } else {
+                                        try { sel.prepend($('<option>').attr('value', cur).text(cur + ' (Current)')); sel.val(cur).trigger('change'); } catch(e){}
+                                    }
+                                }
+
+                                // When input is edited manually, reflect in select if possible
+                                try {
+                                    emailInput.off('input.automatorwp_sendpulse_sync').on('input.automatorwp_sendpulse_sync', function(){
+                                        var iv = ($(this).val() || '').trim();
+                                        if (iv && sel.find('option[value="' + iv + '"]').length) {
+                                            try { sel.val(iv).trigger('change'); } catch(e){}
+                                        } else {
+                                            try { sel.val(''); } catch(e){}
+                                        }
+                                    });
+                                } catch(e){}
                             }
-                            hidden.val(v);
-                        }
-                    });
+
+                            sel.off('change.automatorwp_sendpulse_emailsync').on('change.automatorwp_sendpulse_emailsync', function(){
+                                var v = $(this).val();
+                                try {
+                                    var emailInput2 = option_form.find('input[type="email"]').first();
+                                    if (emailInput2 && emailInput2.length) {
+                                        emailInput2.val(v);
+                                        try { emailInput2.focus(); } catch(e){}
+                                    } else {
+                                        var hidden = option_form.find('input[name="email"]');
+                                        if (!hidden.length) {
+                                            hidden = $('<input type="hidden" name="email">');
+                                            emailWrapper.after(hidden);
+                                        }
+                                        hidden.val(v);
+                                    }
+                                } catch(e){}
+                            });
+                        } catch(e) { /* ignore */ }
+                    })(sel, option_form, emailWrapper);
                 }).fail(function(){ btn.prop('disabled', false).text('Load emails'); alert('Request failed'); });
             });
         }
@@ -803,48 +978,34 @@
                 var label = $item.find('.automatorwp-automation-item-label > .automatorwp-option').first();
                 var option_form = $item.find('.automatorwp-option-form-container').first();
 
-                // If there's a UI toggle (label), prefer triggering it and wait for the form to become visible.
-                if (label && label.length) {
-                    try { label.trigger('click'); } catch(e){}
+                // Instead of triggering a click on the UI toggle (which may be
+                // intercepted by browser extensions or other admin scripts and
+                // produce async/message-channel errors), directly ensure the
+                // option form is visible and initialize it. This avoids relying
+                // on the host page event handlers and makes the UI more robust.
+                if (option_form && option_form.length) {
+                    try {
+                        // Remove draggable attributes from potential handles to
+                        // avoid 'move' cursor interception that blocks clicks.
+                        try { document.querySelectorAll('[draggable="true"]').forEach(function(e){ e.removeAttribute('draggable'); e.style.cursor = ''; }); } catch(ignore){}
 
-                    var attempts = 0;
-                    var maxAttempts = 20;
-                    var waitForForm = function() {
-                        attempts++;
-                        var visible = $item.find('.automatorwp-option-form-container:visible').first();
-                        if (visible && visible.length) {
-                            try {
-                                if (typeof initAddressbookSelector === 'function') {
-                                    initAddressbookSelector(visible, { autoSelectFirst: true, autoLoad: true });
-                                } else if ( typeof window !== 'undefined' && typeof window.automatorwp_sendpulse_initAddressbookSelector === 'function' ) {
-                                    window.automatorwp_sendpulse_initAddressbookSelector(visible, { autoSelectFirst: true, autoLoad: true });
-                                }
-                            } catch(e){}
-                            try { $item.data('automatorwp-sendpulse-opened', true); } catch(e){}
-                            try { $item.removeData('automatorwp-sendpulse-opening'); } catch(e){}
-                            return;
-                        }
-                        if (attempts < maxAttempts) {
-                            setTimeout(waitForForm, 100);
-                            return;
-                        }
-                        // Fallback: force open the option form if it exists
-                        if (option_form && option_form.length) {
-                            try { option_form.addClass('automatorwp-option-form-active').slideDown('fast'); } catch(e){}
-                            try {
-                                if (typeof initAddressbookSelector === 'function') {
-                                    initAddressbookSelector(option_form, { autoSelectFirst: true, autoLoad: true });
-                                } else if ( typeof window !== 'undefined' && typeof window.automatorwp_sendpulse_initAddressbookSelector === 'function' ) {
-                                    window.automatorwp_sendpulse_initAddressbookSelector(option_form, { autoSelectFirst: true, autoLoad: true });
-                                }
-                            } catch(e){}
-                            try { $item.data('automatorwp-sendpulse-opened', true); } catch(e){}
-                        } else {
-                            try { $item.data('automatorwp-sendpulse-opened', true); } catch(e){}
-                        }
+                        // Force the option form visible
+                        try { option_form.addClass('automatorwp-option-form-active').show(); } catch(ignore){}
+
+                        // Initialize the addressbook selector on the visible form
+                        try {
+                            if (typeof initAddressbookSelector === 'function') {
+                                initAddressbookSelector(option_form, { autoSelectFirst: true, autoLoad: true });
+                            } else if ( typeof window !== 'undefined' && typeof window.automatorwp_sendpulse_initAddressbookSelector === 'function' ) {
+                                window.automatorwp_sendpulse_initAddressbookSelector(option_form, { autoSelectFirst: true, autoLoad: true });
+                            }
+                        } catch(e) { console.warn('[automatorwp-sendpulse] init fallback error', e); }
+
+                        try { $item.data('automatorwp-sendpulse-opened', true); } catch(e){}
                         try { $item.removeData('automatorwp-sendpulse-opening'); } catch(e){}
-                    };
-                    setTimeout(waitForForm, 100);
+                    } catch(e) {
+                        try { $item.removeData('automatorwp-sendpulse-opening'); } catch(ignore){}
+                    }
                     return;
                 }
 

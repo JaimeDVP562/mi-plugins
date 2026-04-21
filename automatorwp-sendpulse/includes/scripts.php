@@ -72,5 +72,105 @@ function automatorwp_sendpulse_admin_enqueue_scripts( $hook ) {
     ) );
 
     wp_enqueue_script( 'automatorwp-sendpulse-js' );
+
+    // Inline: apply a small UI robustness fix in the AutomatorWP admin builder so
+    // the SendPulse action option box reliably expands and the input fields are
+    // focusable. This mirrors the temporary workaround used during debugging but
+    // runs only in admin screens where this plugin enqueues its scripts.
+    $inline = <<<'JS'
+(function(){
+    try {
+        // Remove draggable attributes that cause the cursor to show as "move"
+        // and can intercept clicks on the option toggle.
+        var els = document.querySelectorAll('[draggable="true"]');
+        Array.prototype.forEach.call(els, function(e){ try{ e.removeAttribute('draggable'); e.style.cursor = ''; }catch(ignore){} });
+
+        // Ensure clicking the action label toggles the option form. Some
+        // admin themes or builders may intercept pointer events; make the
+        // label explicitly clickable.
+        document.addEventListener('click', function(ev){
+            var t = ev.target;
+            // find nearest action label element
+            var label = t.closest ? t.closest('.automatorwp-automation-item-label > .automatorwp-option') : null;
+            if (label) {
+                try { label.click(); } catch(ignore){}
+            }
+        }, true);
+
+        // Helper: ensure a visible Subscriber Email input exists inside a form element
+        function ensureFallbackInDOM(of){
+            try {
+                if (!of || !of.querySelector) return;
+                // skip if an email input already present
+                if ( of.querySelector('input[type="email"], input[name="email"], input[data-automatorwp-fallback="1"]') ) return;
+                // find label that mentions Subscriber Email
+                var labels = of.querySelectorAll('label');
+                var found = null;
+                for (var i=0;i<labels.length;i++){
+                    try{ if (labels[i].textContent && labels[i].textContent.indexOf('Subscriber Email') !== -1) { found = labels[i]; break; } }catch(e){}
+                }
+                var input = document.createElement('input'); input.type='email'; input.name='email'; input.placeholder='example@domain.test'; input.className='regular-text'; input.setAttribute('data-automatorwp-fallback','1');
+                if (found && found.parentNode) {
+                    try {
+                        // Insert only the input near the existing label to avoid duplicating titles
+                        found.parentNode.appendChild(input);
+                    } catch(e) {
+                        of.insertBefore(input, of.firstChild);
+                    }
+                } else {
+                    var row = document.createElement('div'); row.className='cmb-row automatorwp-sendpulse-email-row'; row.style.marginBottom='8px';
+                    var lab = document.createElement('label'); lab.className='cmb2-id-sub'; lab.style.display='block'; lab.style.fontWeight='600'; lab.style.marginBottom='4px'; lab.innerHTML='Subscriber Email:<span style="color:#d00">*</span>';
+                    row.appendChild(lab); row.appendChild(input);
+                    of.insertBefore(row, of.firstChild);
+                }
+            } catch(e){}
+        }
+
+        // Initial pass: ensure existing forms have the fallback input
+        try {
+            document.querySelectorAll('.automatorwp-option-form-container').forEach(function(of){
+                try { ensureFallbackInDOM(of); } catch(e){}
+            });
+        } catch(e){}
+
+        // Observe DOM mutations so we re-inject or ensure the input exists when
+        // AutomatorWP/CMB2 renders or re-renders option forms dynamically.
+        try {
+            var mo = new MutationObserver(function(mutations){
+                mutations.forEach(function(m){
+                    try {
+                        if (m.addedNodes && m.addedNodes.length) {
+                            Array.prototype.forEach.call(m.addedNodes, function(node){
+                                try {
+                                    if (!node || node.nodeType !== 1) return;
+                                    if (node.matches && node.matches('.automatorwp-option-form-container')) {
+                                        ensureFallbackInDOM(node);
+                                    }
+                                    if (node.querySelectorAll) {
+                                        var forms = node.querySelectorAll('.automatorwp-option-form-container');
+                                        Array.prototype.forEach.call(forms, function(f){ try { ensureFallbackInDOM(f); } catch(e){} });
+                                    }
+                                } catch(e){}
+                            });
+                        }
+                        // If attributes (like class) changed on an element inside the form,
+                        // try to ensure the fallback still exists for its closest form.
+                        if (m.type === 'attributes' && m.target) {
+                            try {
+                                var form = (m.target.closest) ? m.target.closest('.automatorwp-option-form-container') : null;
+                                if (form) ensureFallbackInDOM(form);
+                            } catch(e){}
+                        }
+                    } catch(e){}
+                });
+            });
+            mo.observe(document.body || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+        } catch(e){}
+
+    } catch(e) { /* silent */ }
+})();
+JS;
+
+    wp_add_inline_script( 'automatorwp-sendpulse-js', $inline );
 }
 add_action( 'admin_enqueue_scripts', 'automatorwp_sendpulse_admin_enqueue_scripts', 100 );

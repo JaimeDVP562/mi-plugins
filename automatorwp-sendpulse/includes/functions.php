@@ -64,16 +64,23 @@ function automatorwp_sendpulse_request( $method, $endpoint, $args = array() ) {
     if ( is_wp_error( $token ) ) {
         return $token;
     }
-
     $url = rtrim( $api['base_url'], '/' ) . '/' . ltrim( $endpoint, '/' );
 
     $defaults = array( 'timeout' => 20 );
     $args = wp_parse_args( $args, $defaults );
 
-    // Prepare headers and include Bearer token
+    // Prepare headers and include Bearer token. Prefer the freshly-obtained $token
     $headers = isset( $args['headers'] ) ? $args['headers'] : array();
-    if ( ! empty( $api['access_token'] ) ) {
-        $headers['Authorization'] = 'Bearer ' . $api['access_token'];
+    $auth_token = '';
+    if ( ! empty( $token ) && ! is_wp_error( $token ) ) {
+        $auth_token = $token;
+    } elseif ( ! empty( $api['access_token'] ) ) {
+        // Fallback to the value present in the stored API settings
+        $auth_token = $api['access_token'];
+    }
+
+    if ( ! empty( $auth_token ) ) {
+        $headers['Authorization'] = 'Bearer ' . $auth_token;
     }
     $headers['Accept'] = isset( $headers['Accept'] ) ? $headers['Accept'] : 'application/json';
 
@@ -232,6 +239,17 @@ function automatorwp_sendpulse_add_subscriber( $email, $first_name = '', $last_n
         return new WP_Error( 'no_email', __( 'No email provided.', 'automatorwp-sendpulse' ) );
     }
 
+    // Additional temporary debug: write a plugin-local debug file so we can be sure logs are saved
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        try {
+            $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+            $entry = date( 'c' ) . " | add_subscriber called | email=" . $email . " | first_name=" . $first_name . " | last_name=" . $last_name . " | addressbook_id=" . var_export( $addressbook_id, true ) . "\n";
+            @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+        } catch ( Exception $e ) {
+            // ignore
+        }
+    }
+
     // Determine addressbook
     if ( empty( $addressbook_id ) ) {
         $books = automatorwp_sendpulse_request( 'GET', '/addressbooks' );
@@ -267,6 +285,17 @@ function automatorwp_sendpulse_add_subscriber( $email, $first_name = '', $last_n
     $endpoint = '/addressbooks/' . intval( $addressbook_id ) . '/emails';
 
     $response = automatorwp_sendpulse_request( 'POST', $endpoint, array( 'body' => $payload ) );
+
+    // Log response to plugin-local debug file when WP_DEBUG is enabled
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        try {
+            $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+            $entry = date( 'c' ) . " | add_subscriber response | endpoint=" . $endpoint . " | response=" . print_r( $response, true ) . "\n";
+            @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+        } catch ( Exception $e ) {
+            // ignore
+        }
+    }
 
     return $response;
 

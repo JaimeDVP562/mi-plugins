@@ -17,10 +17,10 @@
  * @copyright             Copyright (c) AutomatorWP
  */
 
-final class AutomatorWP_Sendpulse {
+final class AutomatorWP_Integration_Sendpulse {
 
     /**
-     * @var         AutomatorWP_Sendpulse $instance The one true AutomatorWP_Sendpulse
+     * @var         AutomatorWP_Integration_Sendpulse $instance The one true AutomatorWP_Integration_Sendpulse
      * @since       1.0.0
      */
     private static $instance;
@@ -30,11 +30,11 @@ final class AutomatorWP_Sendpulse {
      *
      * @access      public
      * @since       1.0.0
-     * @return      AutomatorWP_Sendpulse self::$instance The one true AutomatorWP_Sendpulse
+     * @return      AutomatorWP_Integration_Sendpulse self::$instance The one true AutomatorWP_Integration_Sendpulse
      */
     public static function instance() {
         if( !self::$instance ) {
-            self::$instance = new AutomatorWP_Sendpulse();
+            self::$instance = new AutomatorWP_Integration_Sendpulse();
             self::$instance->constants();
             self::$instance->includes();
             self::$instance->hooks();
@@ -265,9 +265,35 @@ final class AutomatorWP_Sendpulse {
  * The main function responsible for returning the one true AutomatorWP_Sendpulse instance to functions everywhere
  *
  * @since       1.0.0
- * @return      \AutomatorWP_Sendpulse The one true AutomatorWP_Sendpulse
+ * @return      \AutomatorWP_Integration_Sendpulse The one true AutomatorWP_Integration_Sendpulse
  */
-function AutomatorWP_Sendpulse() {
-    return AutomatorWP_Sendpulse::instance();
+function AutomatorWP_Integration_Sendpulse() {
+    return AutomatorWP_Integration_Sendpulse::instance();
 }
-add_action( 'plugins_loaded', 'AutomatorWP_Sendpulse' );
+add_action( 'automatorwp_pre_init', 'AutomatorWP_Integration_Sendpulse' );
+
+// Quick startup probe: write a tiny WP_DEBUG-only entry to a plugin-local file so we can confirm the plugin is loading.
+if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+    try {
+        $wp_content = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, "\\/" ) : rtrim( ABSPATH, "\\/" ) . DIRECTORY_SEPARATOR . 'wp-content';
+        $probe_file = $wp_content . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+        @file_put_contents( $probe_file, date( 'c' ) . " | plugin_loaded\n", FILE_APPEND | LOCK_EX );
+    } catch ( Exception $e ) {
+        // ignore
+    }
+}
+
+// Backwards compatibility: keep old class name and helper function so external
+// code that depended on the previous `AutomatorWP_Sendpulse` symbol keeps
+// working. This performs a safe alias and helper wrapper without changing
+// the current integration implementation.
+if ( ! function_exists( 'AutomatorWP_Sendpulse' ) ) {
+    function AutomatorWP_Sendpulse() {
+        return AutomatorWP_Integration_Sendpulse();
+    }
+}
+
+if ( ! class_exists( 'AutomatorWP_Sendpulse' ) && class_exists( 'AutomatorWP_Integration_Sendpulse' ) ) {
+    class_alias( 'AutomatorWP_Integration_Sendpulse', 'AutomatorWP_Sendpulse' );
+}
+

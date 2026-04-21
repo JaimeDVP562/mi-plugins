@@ -131,7 +131,8 @@ function automatorwp_sendpulse_authorize_display_cb($field_args, $field) {
                         return;
                     }
                     jQuery.post( automatorwp_sendpulse.ajax_url, {
-                        action: 'automatorwp_sendpulse_delete_oauth_credentials',
+                        // Use the server-side action name expected by the AJAX handler
+                        action: 'automatorwp_remove_sendpulse_oauth',
                         nonce: automatorwp_sendpulse.nonce
                     }, function( response ) {
                         if ( response && response.success ) {
@@ -243,7 +244,8 @@ function automatorwp_sendpulse_handle_oauth_response() {
  */
 function automatorwp_sendpulse_remove_credentials() {
     if (isset($_POST['action']) && $_POST['action'] === 'automatorwp_remove_sendpulse_oauth') {
-        check_ajax_referer('awp-outh-ajax-nonce', 'nonce');
+        // Use the same nonce action used across the plugin's AJAX handlers
+        check_ajax_referer('automatorwp_admin', 'nonce');
 
         delete_option('automatorwp_sendpulse_access_token');
         delete_option('automatorwp_sendpulse_access_valid');

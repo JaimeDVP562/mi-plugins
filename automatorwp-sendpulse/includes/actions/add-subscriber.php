@@ -74,7 +74,28 @@ class AutomatorWP_Sendpulse_Add_Subscriber extends AutomatorWP_Integration_Actio
             return;
         }
 
+        // Temporary debug logging: record the parameters and the API response when WP_DEBUG is enabled.
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            try {
+                error_log( '[automatorwp-sendpulse] add_subscriber called with: email=' . $email . ' first_name=' . $first_name . ' last_name=' . $last_name . ' addressbook_id=' . var_export( $addressbook_id, true ) );
+            } catch ( Exception $e ) {
+                // ignore logging failures
+            }
+        }
+
         $response = automatorwp_sendpulse_add_subscriber( $email, $first_name, $last_name, $addressbook_id );
+
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            try {
+                if ( is_wp_error( $response ) ) {
+                    error_log( '[automatorwp-sendpulse] automatorwp_sendpulse_add_subscriber WP_Error: ' . $response->get_error_message() . ' data: ' . print_r( $response->get_error_data(), true ) );
+                } else {
+                    error_log( '[automatorwp-sendpulse] automatorwp_sendpulse_add_subscriber response: ' . print_r( $response, true ) );
+                }
+            } catch ( Exception $e ) {
+                // ignore logging failures
+            }
+        }
 
         if ( is_wp_error( $response ) ) {
             $this->result = sprintf( __( 'SendPulse API error: %s', 'automatorwp-sendpulse' ), $response->get_error_message() );

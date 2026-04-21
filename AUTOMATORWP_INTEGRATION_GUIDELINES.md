@@ -56,6 +56,104 @@ Buenas prácticas de implementación
   - Evitar `include`/`require` dinámicos basados en entrada del usuario.
   - Mantener nombres de constantes y prefijos consistentes: `AUTOMATORWP_<SLUG>_DIR`, `AUTOMATORWP_<SLUG>_URL`, opciones `automatorwp_<slug>_...`.
 
+Convenciones de nombres y arranque (recomendado)
+----------------------------------------------
+Para homogeneidad con las integraciones en producción recomendamos seguir estas convenciones mínimas:
+
+- Clase principal: `final class AutomatorWP_Integration_<Slug>`
+- Helper de instancia: `function AutomatorWP_Integration_<Slug>() { return AutomatorWP_Integration_<Slug>::instance(); }`
+- Hook de arranque recomendado: `add_action( 'automatorwp_pre_init', 'AutomatorWP_Integration_<Slug>' );` (o `automatorwp_init` si requiere que AutomatorWP ya esté inicializado)
+- Constantes estándar por integración: `AUTOMATORWP_<SLUG>_VER`, `AUTOMATORWP_<SLUG>_FILE`, `AUTOMATORWP_<SLUG>_DIR`, `AUTOMATORWP_<SLUG>_URL`
+
+Guardar secrets sin autoload (snippet)
+-------------------------------------
+Ejemplo reusable para almacenar opciones sensibles sin autoload (`autoload = 'no'`):
+
+```php
+function my_integration_set_option_noautoload( $option, $value ) {
+    global $wpdb;
+    if ( false === get_option( $option ) ) {
+        return add_option( $option, $value, '', 'no' );
+    }
+    $updated = update_option( $option, $value );
+    // Forzar autoload = 'no' en la base de datos
+    $wpdb->update( $wpdb->options, array( 'autoload' => 'no' ), array( 'option_name' => $option ) );
+    return $updated;
+}
+```
+
+Política recomendada para llamadas HTTP
+--------------------------------------
+- Timeout por defecto: 20 segundos (ajustable por caso de uso).
+- Siempre comprobar `is_wp_error()` y el código HTTP (`wp_remote_retrieve_response_code`).
+- Devolver `WP_Error` en caso de fallo y no exponer detalles sensibles en la respuesta pública.
+- Loggear información técnica mínima sólo si `WP_DEBUG === true` y nunca incluir secrets.
+
+Ejemplo mínimo:
+
+```php
+$response = wp_remote_post( $url, array( 'body' => $body, 'timeout' => 20 ) );
+if ( is_wp_error( $response ) ) {
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( '[my_integration] HTTP error: ' . $response->get_error_message() );
+    }
+    return new WP_Error( 'http_error', __( 'Request failed', 'my-integration' ) );
+}
+$code = intval( wp_remote_retrieve_response_code( $response ) );
+if ( $code < 200 || $code >= 300 ) {
+    return new WP_Error( 'api_error', __( 'Unexpected response from provider', 'my-integration' ), array( 'status' => $code ) );
+}
+```
+
+Migraciones y upgrades
+-----------------------
+Incluir un archivo `includes/admin/upgrades.php` si la integración mantiene datos en opciones o tablas propias. Política mínima:
+
+- Mantener `AUTOMATORWP_<SLUG>_VER` actualizado en el bootstrap.
+- En `activate` o en `admin_init` comprobar la versión almacenada y ejecutar funciones de migración idempotentes.
+- Documentar cada migración (qué cambia y por qué) en `CHANGELOG.md`.
+
+Política de logging y manejo de errores
+-------------------------------------
+- No usar `error_log()` para escribir secrets. Si se registra, incluir sólo un tag y mensaje no sensible.
+- Para debug detallado usar `WP_DEBUG` y opcionalmente una opción de plugin para activar logs más verbosos sólo en entorno controlado.
+- Devolver `WP_Error` con códigos claros para que las capas superiores los manejen adecuadamente.
+
+Gestión de dependencias / Composer
+---------------------------------
+- Preferible no commitear `vendor/` en repositorios públicos. Usar `composer.json` y dejar que CI ejecute `composer install`.
+- Documentar dependencias externas y su licencia.
+
+Tests y CI — plantillas rápidas
+------------------------------
+- Añadir `phpunit.xml` mínimo y pruebas para:
+  - wrappers de API (mockear `wp_remote_*`).
+  - handlers de webhook (validación de HMAC/token).
+  - acciones/ejecución crítica (`execute()` de actions).
+- Añadir workflow de GitHub Actions que ejecute `composer install`, `vendor/bin/phpcs`, y `vendor/bin/phpunit` en PRs.
+
+Ejemplo de job GitHub Actions (esqueleto):
+
+```yaml
+name: CI
+on: [push, pull_request]
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+      - name: Run PHPCS
+        run: vendor/bin/phpcs --standard=PSR12
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit --configuration phpunit.xml
+```
+
 Checklist para creación / revisión (manual)
 -----------------------------------------
 - [ ] Existe `automatorwp-<slug>.php` con includes correctos.
