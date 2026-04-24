@@ -270,27 +270,101 @@ function automatorwp_sendpulse_add_subscriber( $email, $first_name = '', $last_n
         return new WP_Error( 'no_addressbook', __( 'No addressbook available.', 'automatorwp-sendpulse' ) );
     }
 
-    $payload = array(
+    // Build variables array and include a combined 'name' field to improve compatibility
+    $variables = array(
+        'first_name' => $first_name,
+        'last_name'  => $last_name,
+    );
+
+    $full_name = trim( $first_name . ' ' . $last_name );
+    if ( ! empty( $full_name ) ) {
+        // Some SendPulse setups expect a 'name' field (or capitalized 'Name'). Add both to be safe.
+        $variables['name'] = $full_name;
+        $variables['Name'] = $full_name;
+    }
+
+    // Prepare two payload variants: A = array-of-objects, B = wrapper 'emails' for compatibility
+    $payloadA = array(
+        array(
+            'email'     => $email,
+            'variables' => $variables,
+        ),
+    );
+
+    $payloadB = array(
         'emails' => array(
             array(
-                'email' => $email,
-                'variables' => array(
-                    'first_name' => $first_name,
-                    'last_name'  => $last_name,
-                ),
+                'email'     => $email,
+                'variables' => $variables,
             ),
         ),
     );
 
     $endpoint = '/addressbooks/' . intval( $addressbook_id ) . '/emails';
 
-    $response = automatorwp_sendpulse_request( 'POST', $endpoint, array( 'body' => $payload ) );
-
-    // Log response to plugin-local debug file when WP_DEBUG is enabled
+    // Debug: write the exact payload JSON to the plugin-local debug file when WP_DEBUG is enabled
     if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
         try {
             $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
-            $entry = date( 'c' ) . " | add_subscriber response | endpoint=" . $endpoint . " | response=" . print_r( $response, true ) . "\n";
+            $entry = date( 'c' ) . " | add_subscriber attempt A payload | endpoint=" . $endpoint . " | body=" . wp_json_encode( $payloadA ) . "\n";
+            @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+        } catch ( Exception $e ) {
+            // ignore
+        }
+    }
+
+    // Try payload A first (array of objects)
+    $response = automatorwp_sendpulse_request( 'POST', $endpoint, array( 'body' => $payloadA ) );
+
+    // If attempt A failed, try payload B
+    if ( is_wp_error( $response ) ) {
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            try {
+                $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+                $entry = date( 'c' ) . " | add_subscriber attempt A error | endpoint=" . $endpoint . " | error=" . $response->get_error_message() . "\n";
+                @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+            } catch ( Exception $e ) {}
+        }
+
+        // Log payload B
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            try {
+                $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+                $entry = date( 'c' ) . " | add_subscriber attempt B payload | endpoint=" . $endpoint . " | body=" . wp_json_encode( $payloadB ) . "\n";
+                @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+            } catch ( Exception $e ) {}
+        }
+
+        $response = automatorwp_sendpulse_request( 'POST', $endpoint, array( 'body' => $payloadB ) );
+    } else {
+        // If not WP_Error, but API handler could still return an error WP_Error via automatorwp_sendpulse_request
+        // Check if response looks like an error (automatorwp_sendpulse_request returns WP_Error on non-2xx)
+        // If response is array, assume success; otherwise attempt B as fallback
+        if ( ! is_array( $response ) ) {
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                try {
+                    $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+                    $entry = date( 'c' ) . " | add_subscriber attempt A unexpected response | endpoint=" . $endpoint . " | response=" . print_r( $response, true ) . "\n";
+                    @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+                } catch ( Exception $e ) {}
+            }
+            // Try B
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                try {
+                    $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+                    $entry = date( 'c' ) . " | add_subscriber attempt B payload (fallback) | endpoint=" . $endpoint . " | body=" . wp_json_encode( $payloadB ) . "\n";
+                    @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
+                } catch ( Exception $e ) {}
+            }
+            $response = automatorwp_sendpulse_request( 'POST', $endpoint, array( 'body' => $payloadB ) );
+        }
+    }
+
+    // Log final response to plugin-local debug file when WP_DEBUG is enabled
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        try {
+            $logfile = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, '\\/' ) . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log' : __DIR__ . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+            $entry = date( 'c' ) . " | add_subscriber final response | endpoint=" . $endpoint . " | response=" . print_r( $response, true ) . "\n";
             @file_put_contents( $logfile, $entry, FILE_APPEND | LOCK_EX );
         } catch ( Exception $e ) {
             // ignore

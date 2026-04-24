@@ -81,6 +81,198 @@
     }
 
     /**
+     * Ensure backing hidden inputs exist for fields that AutomatorWP saves to meta.
+     * This creates (if missing) hidden inputs named: email, first_name, last_name, addressbook_id
+     * and keeps them synchronized with the visible inputs/select so values are persisted when saving.
+     */
+    function ensureBackingFields(option_form) {
+        try {
+            if (!option_form || !option_form.length) return;
+            var $ = window.jQuery || jQuery;
+
+                    // helpers to find visible fields. Prefer CMB2-rendered inputs that have
+                    // data-option attributes (AutomatorWP sets data-option instead of name).
+                    var visibleEmail = option_form.find('input[data-option="email"]').first();
+                    if (!visibleEmail || !visibleEmail.length) visibleEmail = option_form.find('input[type="email"]').first();
+                    if (!visibleEmail || !visibleEmail.length) visibleEmail = option_form.find('input[name="email"]').first();
+
+                    var visibleFirst = option_form.find('[data-option="first_name"]').first();
+                    if (!visibleFirst || !visibleFirst.length) visibleFirst = option_form.find('input[name*="first_name"]').first();
+
+                    var visibleLast = option_form.find('[data-option="last_name"]').first();
+                    if (!visibleLast || !visibleLast.length) visibleLast = option_form.find('input[name*="last_name"]').first();
+
+                    var addressbookSelect = option_form.find('select[data-option="addressbook_id"]').first();
+                    if (!addressbookSelect || !addressbookSelect.length) addressbookSelect = option_form.find('select[name*="addressbook_id"]').first();
+
+            // create or find hidden backing inputs in multiple potential containers
+            function ensureHiddenInContainers(name) {
+                var hid = null;
+                // prefer option_form
+                try { hid = option_form.find('input[type="hidden"][name="' + name + '"]').first(); } catch(e) { hid = null; }
+                if (hid && hid.length) return hid;
+
+                // try to find in the closest automation item container
+                var item = null;
+                try { item = option_form.closest('.automatorwp-automation-item'); } catch(e) { item = null; }
+                try { if (item && item.length) hid = item.find('input[type="hidden"][name="' + name + '"]').first(); } catch(e) { hid = null; }
+                if (hid && hid.length) return hid;
+
+                // try to find inside any form wrapping the item
+                try {
+                    var form = option_form.closest('form');
+                    if ((!hid || !hid.length) && form && form.length) hid = form.find('input[type="hidden"][name="' + name + '"]').first();
+                } catch(e) { hid = null; }
+                if (hid && hid.length) return hid;
+
+                // Not found — create inside the option_form if possible, otherwise in the item, otherwise in document.body
+                try {
+                    hid = $('<input type="hidden" />').attr('name', name).attr('data-automatorwp-backing','1');
+                    // Prefer appending to the nearest enclosing form so AutomatorWP's
+                    // serialization picks up the hidden input reliably. Fall back to
+                    // option_form, then item, then body.
+                    try {
+                        var form = option_form && option_form.length ? option_form.closest('form') : null;
+                        if (form && form.length) {
+                            form.append(hid);
+                        } else if (option_form && option_form.length) {
+                            option_form.append(hid);
+                        } else if (item && item.length) {
+                            item.append(hid);
+                        } else {
+                            $('body').append(hid);
+                        }
+                        try { console.info('[automatorwp-sendpulse] created backing input', name, 'appendedTo', (form && form.length) ? form[0] : (option_form && option_form.length) ? option_form[0] : (item && item.length) ? item[0] : document.body); } catch(e){}
+                    } catch(e) {
+                        try { $('body').append(hid); } catch(ignore) { }
+                    }
+                } catch(e) {
+                    try { hid = $('<input type="hidden" />').attr('name', name).attr('data-automatorwp-backing','1'); $('body').append(hid); } catch(ignore) { hid = null; }
+                }
+                return hid;
+            }
+
+            var hidEmail = ensureHiddenInContainers('email');
+            var hidFirst = ensureHiddenInContainers('first_name');
+            var hidLast = ensureHiddenInContainers('last_name');
+            var hidAddressbook = ensureHiddenInContainers('addressbook_id');
+
+            // initial sync — prefer values from CMB2/data-option inputs, then fall back
+            try {
+                var v = '';
+                if (visibleEmail && visibleEmail.length) v = visibleEmail.val();
+                if (!v) {
+                    var alt = option_form.find('input[name="email"]').first(); if (alt && alt.length) v = alt.val();
+                }
+                if (v) {
+                    hidEmail.val(v);
+                    try { console.info('[automatorwp-sendpulse] initial sync email ->', v, 'hidEmail parent form:', (hidEmail && hidEmail.length) ? hidEmail.closest('form')[0] : null); } catch(e){}
+                } else {
+                    try { console.info('[automatorwp-sendpulse] initial sync email empty; visibleEmail?', !!(visibleEmail && visibleEmail.length), 'alt present?', !!option_form.find('input[name="email"]').length); } catch(e){}
+                }
+            } catch(e){}
+            try {
+                var v = '';
+                if (visibleFirst && visibleFirst.length) v = visibleFirst.val();
+                if (!v) {
+                    var alt = option_form.find('input[name*="first_name"]').first(); if (alt && alt.length) v = alt.val();
+                }
+                if (v) hidFirst.val(v);
+            } catch(e){}
+            try {
+                var v = '';
+                if (visibleLast && visibleLast.length) v = visibleLast.val();
+                if (!v) {
+                    var alt = option_form.find('input[name*="last_name"]').first(); if (alt && alt.length) v = alt.val();
+                }
+                if (v) hidLast.val(v);
+            } catch(e){}
+            try {
+                var v = '';
+                if (addressbookSelect && addressbookSelect.length) v = addressbookSelect.val();
+                if (!v) {
+                    var alt = option_form.find('input[name*="addressbook_id"]').first(); if (alt && alt.length) v = alt.val();
+                }
+                if (v) hidAddressbook.val(v);
+            } catch(e){}
+
+            // If CMB2 rendered fields exist with values, ensure any backing inputs
+            // are populated from them so saved meta and UI stay in sync on reopen.
+            try { populateBackingFromCMB2(option_form); } catch(e){}
+
+            // helper to sync values across all backing inputs when a visible field changes
+            function syncBacking(name, value) {
+                try {
+                    // update any matching hidden inputs across option_form, item and forms
+                    try { option_form.find('input[type="hidden"][name="' + name + '"]').each(function(){ try{ $(this).val(value); }catch(ignore){} }); } catch(e){}
+                    try { var item = option_form.closest('.automatorwp-automation-item'); if (item && item.length) item.find('input[type="hidden"][name="' + name + '"]').each(function(){ try{ $(this).val(value); }catch(ignore){} }); } catch(e){}
+                    try { var form = option_form.closest('form'); if (form && form.length) form.find('input[type="hidden"][name="' + name + '"]').each(function(){ try{ $(this).val(value); }catch(ignore){} }); } catch(e){}
+                    // also update any global ones in body
+                    try { $('body').find('input[type="hidden"][name="' + name + '"]').each(function(){ try{ $(this).val(value); }catch(ignore){} }); } catch(e){}
+                    try { if ( name === 'email' ) { console.info('[automatorwp-sendpulse] syncBacking', name, '->', value, 'option_form.closest(form):', option_form && option_form.length ? option_form.closest('form')[0] : null); } } catch(e){}
+                } catch(e){}
+            }
+
+            // bind events to keep in sync
+            try {
+                if (visibleEmail && visibleEmail.length) visibleEmail.off('input.automatorwp_backing').on('input.automatorwp_backing', function(){ syncBacking('email', $(this).val()); });
+                if (visibleFirst && visibleFirst.length) visibleFirst.off('input.automatorwp_backing').on('input.automatorwp_backing', function(){ syncBacking('first_name', $(this).val()); });
+                if (visibleLast && visibleLast.length) visibleLast.off('input.automatorwp_backing').on('input.automatorwp_backing', function(){ syncBacking('last_name', $(this).val()); });
+                if (addressbookSelect && addressbookSelect.length) addressbookSelect.off('change.automatorwp_backing').on('change.automatorwp_backing', function(){ syncBacking('addressbook_id', $(this).val()); });
+            } catch(e){}
+
+            // also ensure sync on any programmatic changes triggered by selects dropdowns
+            try {
+                option_form.find('.automatorwp-sendpulse-email-select').each(function(){ var s = $(this); s.off('change.automatorwp_backing_prog').on('change.automatorwp_backing_prog', function(){ syncBacking('email', $(this).val()); }); });
+            } catch(e){}
+
+            // final safety: when any form is submitted in admin, make sure backing inputs mirror visible values
+            try { $('body').off('submit.automatorwp_backing').on('submit.automatorwp_backing', 'form', function(){ try { if (visibleEmail && visibleEmail.length) syncBacking('email', visibleEmail.val()); if (visibleFirst && visibleFirst.length) syncBacking('first_name', visibleFirst.val()); if (visibleLast && visibleLast.length) syncBacking('last_name', visibleLast.val()); if (addressbookSelect && addressbookSelect.length) syncBacking('addressbook_id', addressbookSelect.val()); } catch(e){} }); } catch(e){}
+
+        } catch(e) { /* ignore */ }
+    }
+
+    /**
+     * Populate any backing hidden inputs from CMB2-rendered fields (data-option/id).
+     * This runs when an option form is initialized so hidden inputs reflect
+     * stored meta and the visible UI stays in sync after saving/reopen.
+     */
+    function populateBackingFromCMB2(option_form) {
+        try {
+            if (!option_form || !option_form.length) return;
+            var $ = window.jQuery || jQuery;
+            var mapping = {
+                'email': ['[data-option="email"]', 'input[type="email"]', 'input[name="email"]'],
+                'first_name': ['[data-option="first_name"]', 'input[name*="first_name"]', 'input[id*="first_name-"]'],
+                'last_name': ['[data-option="last_name"]', 'input[name*="last_name"]', 'input[id*="last_name-"]'],
+                'addressbook_id': ['select[data-option="addressbook_id"]', 'select[name*="addressbook_id"]', 'input[name*="addressbook_id"]']
+            };
+
+            Object.keys(mapping).forEach(function(name){
+                try {
+                    var selectors = mapping[name];
+                    var val = '';
+                    for (var i=0;i<selectors.length;i++) {
+                        try { var src = option_form.find(selectors[i]).first(); if (src && src.length && src.val()) { val = src.val(); break; } } catch(e){}
+                    }
+                    // If still empty, try inputs elsewhere in the item
+                    if (!val) {
+                        try { var item = option_form.closest('.automatorwp-automation-item'); if (item && item.length) { var alt = item.find(selectors.join(',' )).first(); if (alt && alt.length && alt.val()) val = alt.val(); } } catch(e){}
+                    }
+                    if (val) {
+                        try { option_form.find('input[type="hidden"][name="' + name + '"]').each(function(){ try{ $(this).val(val); }catch(ignore){} }); } catch(e){}
+                        try { var bodyAlt = $('body').find('input[type="hidden"][name="' + name + '"]').each(function(){ try{ $(this).val(val); }catch(ignore){} }); } catch(e){}
+                        // update visible fallback email if present
+                        if (name === 'email') {
+                            try { var vf = option_form.find('input[data-automatorwp-fallback="1"]').first(); if (vf && vf.length && !vf.val()) vf.val(val); } catch(e){}
+                        }
+                    }
+                } catch(e){}
+            });
+        } catch(e){}
+    }
+
+    /**
      * Force-populate underlying select with addressbooks via AJAX.
      * Used as a fallback when the UI is hidden and Select2 measures 0x0.
      */
@@ -269,6 +461,8 @@
         if (!option_form || !option_form.length) return;
         // Ensure fallback email input early so it's present for token insertion
         try { ensureFallbackEmailInput(option_form); } catch(e){}
+        // Ensure backing hidden inputs exist and are synced so values persist when the action is saved
+        try { ensureBackingFields(option_form); } catch(e){}
 
         console.info('[automatorwp-sendpulse] initAddressbookSelector called', { autoSelectFirst: autoSelectFirst, autoLoad: autoLoad });
 

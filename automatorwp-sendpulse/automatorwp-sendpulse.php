@@ -88,6 +88,13 @@ final class AutomatorWP_Integration_Sendpulse {
                     require_once $action_file;
                 }
             }
+            // Auto-include all trigger files
+            $triggers_dir = AUTOMATORWP_SENDPULSE_DIR . 'includes/triggers/';
+            if ( is_dir( $triggers_dir ) ) {
+                foreach ( glob( $triggers_dir . '*.php' ) as $trigger_file ) {
+                    require_once $trigger_file;
+                }
+            }
             // Upgrades (follows AutomatorWP upgrades structure)
             if ( file_exists( AUTOMATORWP_SENDPULSE_DIR . 'includes/admin/upgrades.php' ) ) {
                 require_once AUTOMATORWP_SENDPULSE_DIR . 'includes/admin/upgrades.php';
@@ -283,6 +290,20 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
     }
 }
 
+// Debug: hook into AutomatorWP execution event to log action executions (temporary)
+if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+    add_action( 'automatorwp_execute_action', function( $action, $user_id, $event, $action_options, $automation ) {
+        try {
+            $wp_content = defined( 'WP_CONTENT_DIR' ) ? rtrim( WP_CONTENT_DIR, "\\/" ) : rtrim( ABSPATH, "\\/" ) . DIRECTORY_SEPARATOR . 'wp-content';
+            $probe_file = $wp_content . DIRECTORY_SEPARATOR . 'automatorwp-sendpulse-debug.log';
+            $entry = date( 'c' ) . " | automatorwp_execute_action fired | action_id=" . ( isset( $action->id ) ? $action->id : 'n/a' ) . " | type=" . ( isset( $action->type ) ? $action->type : 'n/a' ) . " | user_id=" . intval( $user_id ) . " | options=" . maybe_serialize( $action_options ) . "\n";
+            @file_put_contents( $probe_file, $entry, FILE_APPEND | LOCK_EX );
+        } catch ( Exception $e ) {
+            // ignore
+        }
+    }, 10, 5 );
+}
+
 // Backwards compatibility: keep old class name and helper function so external
 // code that depended on the previous `AutomatorWP_Sendpulse` symbol keeps
 // working. This performs a safe alias and helper wrapper without changing
@@ -296,4 +317,3 @@ if ( ! function_exists( 'AutomatorWP_Sendpulse' ) ) {
 if ( ! class_exists( 'AutomatorWP_Sendpulse' ) && class_exists( 'AutomatorWP_Integration_Sendpulse' ) ) {
     class_alias( 'AutomatorWP_Integration_Sendpulse', 'AutomatorWP_Sendpulse' );
 }
-
