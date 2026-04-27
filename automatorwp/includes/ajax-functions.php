@@ -312,25 +312,7 @@ function automatorwp_ajax_update_item_option() {
 
     // Get option sanitized values
     $sanitized_values = $cmb2->get_sanitized_values( $_POST );
-
-    // Temporary debug logging: save POST and sanitized values to wp-content/automatorwp-save-debug.log
-    // This helps to debug why some fields (eg. hidden backing fields) are not being persisted.
-    if ( defined( 'WP_CONTENT_DIR' ) ) {
-        $log_file = WP_CONTENT_DIR . '/automatorwp-save-debug.log';
-        $log_data = array(
-            'time' => date( 'c' ),
-            'action' => 'automatorwp_update_item_option',
-            'id' => $id,
-            'item_type' => $item_type,
-            'option' => $option,
-            'post_keys' => array_keys( $_POST ),
-            'post' => $_POST,
-            'sanitized_values' => $sanitized_values,
-        );
-        // Append JSON line
-        @file_put_contents( $log_file, json_encode( $log_data ) . "\n", FILE_APPEND );
-    }
-
+    
     // Fields not in sanitized values need to recover its default value
     foreach ( $type_args['options'][$option]['fields'] as $field_id => $field ) {
         
@@ -398,26 +380,7 @@ function automatorwp_ajax_update_item_option() {
     foreach( $sanitized_values as $field_id => $value ) {
         ct_update_object_meta( $object->id, $field_id, $value );
     }
-
-    // After saving, log saved meta values for the fields we attempted to save
-    if ( defined( 'WP_CONTENT_DIR' ) ) {
-        $log_file = WP_CONTENT_DIR . '/automatorwp-save-debug.log';
-        $meta_dump = array();
-        foreach( array_keys( $sanitized_values ) as $field_id ) {
-            // ct_get_object_meta should return the stored meta for the field
-            $meta_dump[$field_id] = function_exists( 'ct_get_object_meta' ) ? ct_get_object_meta( $object->id, $field_id ) : null;
-        }
-        $after_data = array(
-            'time' => date( 'c' ),
-            'stage' => 'after_save',
-            'id' => $object->id,
-            'item_type' => $item_type,
-            'option' => $option,
-            'meta' => $meta_dump,
-        );
-        @file_put_contents( $log_file, json_encode( $after_data ) . "\n", FILE_APPEND );
-    }
-
+    
     // Flush cache to ensure that option replacement gets the newest value
     wp_cache_flush();
 

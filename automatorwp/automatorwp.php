@@ -3,14 +3,14 @@
  * Plugin Name:     	AutomatorWP
  * Plugin URI:      	https://automatorwp.com
  * Description:     	Connect your WordPress plugins together and create automated workflows with no code!
- * Version:         	5.6.9
+ * Version:         	5.7.1
  * Author:          	AutomatorWP
  * Author URI:      	https://automatorwp.com/
  * Text Domain:     	automatorwp
  * Domain Path: 		/languages/
  * Requires PHP:        7.0
  * Requires at least: 	4.4
- * Tested up to: 		6.9
+ * Tested up to: 		7.0
  * License:         	GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
  *
  * @package         	AutomatorWP
@@ -119,7 +119,7 @@ final class AutomatorWP {
     private function constants() {
 
         // Plugin version
-        define( 'AUTOMATORWP_VER', '5.6.9' );
+        define( 'AUTOMATORWP_VER', '5.7.1' );
 
         // Plugin file
         define( 'AUTOMATORWP_FILE', __FILE__ );

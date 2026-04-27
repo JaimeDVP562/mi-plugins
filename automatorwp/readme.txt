@@ -2,8 +2,8 @@
 Contributors: automatorwp, rubengc, eneribs, dioni00, tinocalvo, pacogon, flabernardez
 Tags: automator, automation, zapier, webhooks, marketing
 Requires at least: 4.4
-Tested up to: 6.9
-Stable tag: 5.6.9
+Tested up to: 7.0
+Stable tag: 5.7.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -128,6 +128,7 @@ AutomatorWP works with different WordPress plugins, including:
 * [Everest Forms](https://automatorwp.com/add-ons/everest-forms/)
 * [Favorites](https://automatorwp.com/add-ons/favorites/)
 * [FluentBooking](https://automatorwp.com/add-ons/fluentbooking/)
+* [FluentBooking](https://automatorwp.com/add-ons/fluentcart/)
 * [FluentCRM](https://automatorwp.com/add-ons/fluentcrm/)
 * [Fluent Support](https://automatorwp.com/add-ons/fluent-support/)
 * [Formidable Forms](https://automatorwp.com/add-ons/formidable-forms/)
@@ -349,6 +350,20 @@ Yes, AutomatorWP is stored in the official WordPress plugins repository where yo
 No, We're unable to provide custom development services, as our focus is developing the core AutomatorWP plugin, and the official AutomatorWP add-ons.
 
 == Changelog ==
+
+= 5.7.1 =
+
+* **Bug Fixes**
+* Fixed bug in All users automations related to special characters in meta conditions.
+
+= 5.7.0 =
+
+* **New Features**
+* New integration: FluentCart.
+* FluentCart: New trigger: User completes a purchase.
+* FluentCart: New trigger: User purchases a product.
+* **Improvements**
+* FluentCRM: Result messages in action logs.
 
 = 5.6.9 =
 

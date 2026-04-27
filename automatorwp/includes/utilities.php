@@ -1795,9 +1795,12 @@ function automatorwp_utilities_parse_condition_to_sql( $field, $condition, $valu
             $pattern = '%d';
         }
     } else {
-        $value = $wpdb->esc_like( $value );
+        
+        if ( in_array( $condition, $string_required_conditions ) )    
+            $value = $wpdb->esc_like( $value );
+        
         $value = esc_sql( $value );
-
+        
         switch( $condition ) {
             case 'contains':
             case 'not_contains':

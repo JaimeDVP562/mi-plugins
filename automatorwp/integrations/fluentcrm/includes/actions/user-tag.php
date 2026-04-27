@@ -62,9 +62,11 @@ class AutomatorWP_FluentCRM_User_Tag extends AutomatorWP_Integration_Action {
 
         // Shorthand
         $tag_id = $action_options['tag'];
+        $this->result = '';
 
         // Bail if empty tag to assign
         if( empty( $tag_id ) ) {
+            $this->result = __( 'Tag field cannot be empty.', 'automatorwp' );
             return;
         }
 
@@ -75,6 +77,7 @@ class AutomatorWP_FluentCRM_User_Tag extends AutomatorWP_Integration_Action {
 
         // Bail if tag not exists
         if( ! $tag ) {
+            $this->result = sprintf( __( 'Tag with %s ID cannot be found.', 'automatorwp' ), $tag_id );
             return;
         }
 
@@ -82,12 +85,87 @@ class AutomatorWP_FluentCRM_User_Tag extends AutomatorWP_Integration_Action {
 
         // Bail if subscriber not exists
         if( ! $subscriber ) {
+            $this->result = __( 'User is not a contact.', 'automatorwp-fluentcrm' );
             return;
         }
 
         // Add tag to the user
         $subscriber->attachTags( array( $tag_id ) );
 
+    }
+
+    /**
+     * Register required hooks
+     *
+     * @since 1.0.0
+     */
+    public function hooks() {
+
+        // Log meta data
+        add_filter( 'automatorwp_user_completed_action_log_meta', array( $this, 'log_meta' ), 10, 5 );
+
+        // Log fields
+        add_filter( 'automatorwp_log_fields', array( $this, 'log_fields' ), 10, 5 );
+
+        parent::hooks();
+
+    }
+
+    /**
+     * Action custom log meta
+     *
+     * @since 1.0.0
+     *
+     * @param array     $log_meta           Log meta data
+     * @param stdClass  $action             The action object
+     * @param int       $user_id            The user ID
+     * @param array     $action_options     The action's stored options (with tags already passed)
+     * @param stdClass  $automation         The action's automation object
+     *
+     * @return array
+     */
+    public function log_meta( $log_meta, $action, $user_id, $action_options, $automation ) {
+
+        // Bail if action type don't match this action
+        if( $action->type !== $this->action ) {
+            return $log_meta;
+        }
+
+        // Store the action's result
+        $log_meta['result'] = $this->result;
+
+        return $log_meta;
+    }
+
+    /**
+     * Action custom log fields
+     *
+     * @since 1.0.0
+     *
+     * @param array     $log_fields The log fields
+     * @param stdClass  $log        The log object
+     * @param stdClass  $object     The trigger/action/automation object attached to the log
+     *
+     * @return array
+     */
+    public function log_fields( $log_fields, $log, $object ) {
+
+        // Bail if log is not assigned to an action
+        if( $log->type !== 'action' ) {
+            return $log_fields;
+        }
+
+        // Bail if action type don't match this action
+        if( $object->type !== $this->action ) {
+            return $log_fields;
+        }
+
+        $log_fields['result'] = array(
+            'name' => __( 'Result:', 'automatorwp-fluentcrm' ),
+            'type' => 'text',
+        );
+
+        return $log_fields;
     }
 
 }
