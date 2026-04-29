@@ -290,6 +290,11 @@ function automatorwp_manage_automations_custom_column(  $column_name, $object_id
     // Setup vars
     $automation = ct_get_object( $object_id );
 
+    if( automatorwp_is_automation_expired( $automation ) ) {
+        automatorwp_deactivate_automation( $automation->id );
+        $automation->status = 'inactive';
+    }
+
     switch( $column_name ) {
         case 'title':
             $title = ! empty( $automation->title ) ? $automation->title : __( '(No title)', 'automatorwp' ); ?>
@@ -431,6 +436,22 @@ function automatorwp_manage_automations_custom_column(  $column_name, $object_id
             <span class="automatorwp-automation-status automatorwp-automation-status-<?php echo esc_attr( $automation->status ); ?>"><?php echo $status; ?></span>
 
             <?php
+
+            // Expiration
+            $now        = current_time( 'timestamp' );
+            $expiration = strtotime( $automation->expiration );
+            $date       = strtotime( $automation->date );
+
+            if( $expiration > 0 ) {
+                $expires_text = $expiration > $now ? __( 'Expires on', 'automatorwp' ) : __( 'Expired on', 'automatorwp' );
+                ?>
+
+                <div class="automatorwp-automation-expiration">
+                    <?php echo esc_html( $expires_text ); ?> <abbr title="<?php echo date( 'Y/m/d g:i:s a', $expiration ); ?>"><?php echo date( 'Y/m/d', $expiration ); ?></abbr>
+                </div>
+
+                <?php
+            }
 
             break;
         case 'date':
@@ -628,6 +649,7 @@ function automatorwp_automations_default_data( $default_data = array() ) {
     $default_data['times']          = 0;
     $default_data['status']         = 'inactive';
     $default_data['date']           = date( 'Y-m-d H:i:s', current_time( 'timestamp' ) );
+    $default_data['expiration']     = '';
     $default_data['title']          = '';
 
     return $default_data;
@@ -655,7 +677,31 @@ function automatorwp_automations_insert_automation_data( $object_data, $original
 
     // Fix date format
     if( isset( $object_data['date'] ) && ! empty( $object_data['date'] ) ) {
-        $object_data['date'] = date( 'Y-m-d 00:00:00', strtotime( $object_data['date'] ) );
+        // Covers CMB2 format with array( 'date' => '', 'time' => '' )
+        if( is_array( $object_data['date'] ) ) {
+            $object_data['date'] = implode( ' ', $object_data['date'] );
+        }
+
+        $object_data['date'] = date( 'Y-m-d H:i:s', strtotime( $object_data['date'] ) );
+    }
+
+    // Fix expiration format
+    if( isset( $object_data['expiration'] ) && ! empty( $object_data['expiration'] ) ) {
+        // Covers CMB2 format with array( 'date' => '', 'time' => '' )
+        if( is_array( $object_data['expiration'] ) ) {
+            $object_data['expiration'] = implode( ' ', $object_data['expiration'] );
+        }
+
+        $now = current_time( 'timestamp' );
+        $expiration = strtotime( $object_data['expiration'] );
+
+        if( $object_data['status'] === 'active' && $expiration < $now ) {
+            // Prevent to have an older expiration (which will deactivate constantly the automation)
+            $object_data['expiration'] = '0000-00-00 00:00:00';
+        } else {
+            $object_data['expiration'] = date( 'Y-m-d H:i:s', $expiration );
+        }
+
     }
 
     // Handle sequential saving
@@ -782,13 +828,16 @@ function automatorwp_automations_meta_boxes( ) {
                 'name' 	=> __( 'Created on', 'automatorwp' ),
                 'desc' 	=> __( 'Automation will take effect based on this date. You can schedule <strong>future</strong> automations by setting this field with a future date.', 'automatorwp' )
                     . '<br>' . __( '<strong>Note:</strong> For future automations, status need to be <strong>active</strong> because setting a future date won\'t update the status automatically.', 'automatorwp' ),
-                'type' 	=> 'text_date_timestamp',
+                'type' 	=> 'text_datetime_timestamp',
+                'date_format' => automatorwp_get_date_format( array( 'm/d/Y', 'd/m/Y' ), 'm/d/Y' ),
+                'time_format' => 'H:i',
+                'escape_cb' => 'automatorwp_automation_date_escape_cb',
+                'display_cb' => 'automatorwp_automation_date_display_cb',
                 'attributes' => array(
                     'autocomplete' => 'off'
                 ),
                 'classes' => 'automatorwp-has-tooltip',
                 'after_field' => 'automatorwp_tooltip_cb',
-                'after_row' => 'automatorwp_automations_publishing_actions',
                 'js_controls' => array(
                     'icon' => 'dashicons-calendar',
                     'save_button'   => __( 'Save', 'automatorwp' ),
@@ -796,7 +845,31 @@ function automatorwp_automations_meta_boxes( ) {
                     'cancel_button_classes' => 'button automatorwp-button-danger',
                 ),
                 'before_row' => 'js_controls_before',
+                'after_row' => 'js_controls_after', // Handled on automatorwp_automations_publishing_actions()
+            ),
+            'expiration' => array(
+                'name' 	=> __( 'Expires on', 'automatorwp' ),
+                'desc' 	=> __( 'Automation will be automatically set to <strong>inactive</strong> after this date. You can schedule the automation deactivation by setting this field with a future date.', 'automatorwp' ),
+                'type' 	=> 'text_datetime_timestamp',
+                'date_format' => automatorwp_get_date_format( array( 'm/d/Y', 'd/m/Y' ), 'm/d/Y' ),
+                'time_format' => 'H:i',
+                'escape_cb' => 'automatorwp_automation_date_escape_cb',
+                'display_cb' => 'automatorwp_automation_date_display_cb',
+                'attributes' => array(
+                    'autocomplete' => 'off'
+                ),
+                'classes' => 'automatorwp-has-tooltip',
+                'after_field' => 'automatorwp_tooltip_cb',
+                'js_controls' => array(
+                    'icon' => 'dashicons-clock',
+                    'save_button'   => __( 'Save', 'automatorwp' ),
+                    'save_button_classes' => 'button button-primary',
+                    'cancel_button_classes' => 'button automatorwp-button-danger',
+                ),
+                'before_row' => 'js_controls_before',
                 //'after_row' => 'js_controls_after', // Handled on automatorwp_automations_publishing_actions()
+                'after_row' => 'automatorwp_automations_publishing_actions',
+
             ),
         ),
         array(
@@ -807,6 +880,38 @@ function automatorwp_automations_meta_boxes( ) {
 
 }
 add_action( 'cmb2_admin_init', 'automatorwp_automations_meta_boxes' );
+
+/**
+ * Expiration escape callback.
+ *
+ * @param  string     $value        Field value.
+ * @param  array      $field_args   Array of field arguments.
+ * @param  CMB2_Field $field        The field object
+ */
+function automatorwp_automation_date_escape_cb( $value, $field_args, $field ) {
+
+    if ( $value === '0000-00-00 00:00:00' )
+        $escaped_value = '';
+    else
+        $escaped_value = date( automatorwp_get_date_format( array( 'm/d/Y', 'd/m/Y' ), 'm/d/Y' ) . ' H:i', strtotime( $value ) );
+
+    return $escaped_value;
+
+}
+
+/**
+ * Expiration display callback.
+ *
+ * @param  array      $field_args Array of field arguments.
+ * @param  CMB2_Field $field      The field object
+ */
+function automatorwp_automation_date_display_cb( $field_args, $field ) {
+    $value = $field->escaped_value(); ?>
+    <div class="<?php echo $field->row_classes(); ?>" data-fieldtype="text_date_timestamp">
+        <?php echo $value === '' ? __( 'Never Expires', 'automatorwp' ) : $value; ?>
+    </div>
+    <?php
+}
 
 /**
  * Publishing actions

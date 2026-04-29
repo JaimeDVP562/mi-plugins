@@ -159,6 +159,14 @@ function automatorwp_maybe_completed_trigger( $trigger, $event = array() ) {
         return false;
     }
 
+    // Check if automation is expired to deactivate it
+    if( automatorwp_is_automation_expired( $automation ) ) {
+        automatorwp_deactivate_automation( $automation->id );
+
+        // The automation has expired so bail here
+        return false;
+    }
+
     $trigger_args = automatorwp_get_trigger( $trigger->type );
 
     if( $automation->type === 'anonymous' ) {
@@ -292,10 +300,13 @@ function automatorwp_anonymous_has_access_to_trigger( $trigger = null, $event = 
         $has_access = false;
     }
 
-    $now = current_time( 'timestamp' );
-
     // Bail if is a future automation
-    if( $has_access && strtotime( $automation->date ) > $now ) {
+    if( $has_access && automatorwp_is_automation_scheduled( $automation ) ) {
+        $has_access = false;
+    }
+
+    // Bail if expired automation
+    if( $has_access && automatorwp_is_automation_expired( $automation ) ) {
         $has_access = false;
     }
 
@@ -672,10 +683,13 @@ function automatorwp_user_has_access_to_trigger( $trigger = null, $user_id = 0, 
         $has_access = false;
     }
 
-    $now = current_time( 'timestamp' );
-
     // Bail if is a future automation
-    if( $has_access && strtotime( $automation->date ) > $now ) {
+    if( $has_access && automatorwp_is_automation_scheduled( $automation ) ) {
+        $has_access = false;
+    }
+
+    // Bail if expired automation
+    if( $has_access && automatorwp_is_automation_expired( $automation ) ) {
         $has_access = false;
     }
 

@@ -25,15 +25,19 @@
 
         var field_row = $(this).parent().prev('.cmb-row');
         var field = $($(this).attr('href'));
+        var field_type = 'text';
+
+        // Get the field type
+        if( field_row[0].hasAttribute('data-fieldtype') )
+            field_type = field_row.attr('data-fieldtype');
+
+        // Datetime picker
+        if( field_type === 'text_datetime_timestamp' )
+            field = $($(this).attr('href') + '_date');
 
         if ( ! field_row.is( ':hidden' ) ) {
             // Update value to show
             var value_container = field_row.prev('.cmb-field-js-controls-before').find('.cmb-field-js-controls-value');
-            var field_type = 'text';
-
-            if( field_row[0].hasAttribute('data-fieldtype') ) {
-                field_type = field_row.attr('data-fieldtype');
-            }
 
             value_container.html( cmb_js_controls_display_field( field, field_type ) );
 
@@ -55,6 +59,15 @@
 
         var field_row = $(this).parent().prev('.cmb-row');
         var field = $($(this).attr('href'));
+        var field_type = 'text';
+
+        // Get the field type
+        if( field_row[0].hasAttribute('data-fieldtype') )
+            field_type = field_row.attr('data-fieldtype');
+
+        // Datetime picker
+        if( field_type === 'text_datetime_timestamp' )
+            field = $($(this).attr('href') + '_date');
 
         if ( ! field_row.is( ':hidden' ) ) {
             // Restore previous value
@@ -107,6 +120,14 @@ function cmb_js_controls_display_field( field, field_type ) {
     // radio
     if( field_type === 'radio' ) {
         // TODO: Get label text
+    }
+
+    // Datetime Picker
+    if( field_type === 'text_datetime_timestamp' ) {
+        var date = field.val();
+        var time = field.next().val();
+
+        return date + ' ' + time;
     }
 
     // CMB2 custom fields

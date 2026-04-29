@@ -221,14 +221,14 @@ function automatorwp_set_html_content_type( $content_type = 'text/html' ) {
  *
  * @return string
  */
-function automatorwp_get_date_format( $allowed_formats = array() ) {
+function automatorwp_get_date_format( $allowed_formats = array(), $default_format = 'Y-m-d' ) {
 
-    $format = 'Y-m-d';
+    $format = $default_format;
 
     $option = get_option( 'date_format' );
 
     if( empty( $allowed_formats ) ) {
-        $allowed_formats = array( 'Y-m-d', 'm/d/Y', 'd/m/Y' );
+        $allowed_formats = array( 'Y-m-d', 'm/d/Y', 'd/m/Y', 'd.m.Y' );
     }
 
     if( in_array( $option, $allowed_formats ) ) {

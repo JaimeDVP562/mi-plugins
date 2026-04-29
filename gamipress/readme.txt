@@ -3,7 +3,7 @@ Contributors: gamipress, rubengc, eneribs, dioni00, tinocalvo, pacogon, flaberna
 Tags: gamification, points, achievements, ranks, badges
 Requires at least: 4.4
 Tested up to: 7.0
-Stable tag: 7.8.5
+Stable tag: 7.8.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -125,6 +125,7 @@ Turn shopping into an interactive experience that drives customer loyalty & brin
 * [WooCommerce Shipstation](https://gamipress.com/add-ons/woocommerce-shipstation-integration/)
 * [WP Simple Pay](https://gamipress.com/add-ons/wp-simple-pay-integration/)
 * [Paid Membership Subscriptions](https://gamipress.com/add-ons/paid-membership-subscriptions-integration/)
+* [FluentCart](https://gamipress.com/add-ons/fluentcart-integration/)
 
 = Forms integrations =
 
@@ -230,6 +231,7 @@ If you’re looking for something endorsed and maintained by the developers who 
 * [Transfers](https://gamipress.com/add-ons/gamipress-transfers/)
 * [Zapier](https://gamipress.com/add-ons/gamipress-zapier/)
 * [Limited-Time Rewards](https://gamipress.com/add-ons/limited-time-rewards/)
+* [Monster Collecting Game](https://gamipress.com/add-ons/gamipress-monster-collecting-game/)
 
 [View all add-ons](https://gamipress.com/add-ons/)
 
@@ -377,6 +379,30 @@ No, We're unable to provide custom development services, as our focus is develop
 Also, you can check [our customize section](https://gamipress.com/customize/) where you can find a huge number of code snippets to help you customize GamiPress!
 
 == Changelog ==
+
+= 7.8.7 =
+
+* **Improvements**
+* Prevent PHP warnings when site can not connect with gamipress.com.
+* Make BuddyPress and BuddyBoss tabs more extensible.
+* Make earners queries more extensible.
+
+= 7.8.6 =
+
+* **New Features**
+* New integration: FluentCart.
+* FluentCart: Make a new purchase.
+* FluentCart: Purchase a product.
+* FluentCart: Purchase a specific product.
+* FluentCart: Refund fully a purchase.
+* FluentCart: Refund partially a purchase.
+* FluentCart: Activate a subscription.
+* FluentCart: Activate a subscription of a specific product.
+* FluentCart: Cancel a subscription.
+* FluentCart: Cancel a subscription of a specific product.
+* FluentCart: Renew a subscription.
+* FluentCart: Renew a subscription of a specific product.
+* New tool: Bulk Award/Revoke Requirements.
 
 = 7.8.5 =
 

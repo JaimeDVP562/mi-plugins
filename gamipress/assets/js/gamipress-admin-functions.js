@@ -45,7 +45,7 @@ function gamipress_post_selector( $this ) {
                 return {
                     q: params.term,
                     page: params.page || 1,
-                    action: 'gamipress_get_posts',
+                    action: ( $this.data('action') ? $this.data('action') : 'gamipress_get_posts' ),
                     nonce: gamipress_admin_functions.nonce,
                     post_type: $this.data('post-type').split(','),
                 };
@@ -133,6 +133,10 @@ function gamipress_select2_destroy( $this, clear_options = false ) {
  */
 function gamipress_select2_posts_template_result( item ) {
 
+    if( item.post_parent_title !== undefined ) {
+        return gamipress_select2_post_parent_template_result( item );
+    }
+
     if( item.post_type !== undefined ) {
 
         var post_type_label = item.post_type;
@@ -144,6 +148,42 @@ function gamipress_select2_posts_template_result( item ) {
         return '<strong>' + item.post_title + '</strong>'
             + '<span class="result-description">'
             + 'ID: ' + item.ID + '<span class="align-right">' + post_type_label + '</span>'
+            + ( item.site_name !== undefined ? ' (' + item.site_name + ')' : '' )
+            + '</span>';
+    }
+
+    return item.text;
+
+}
+
+/**
+ * Custom formatting for post with parent information on select2
+ *
+ * @since 1.4.1
+ *
+ * @param {Object} item
+ *
+ * @return {string}
+ */
+function gamipress_select2_post_parent_template_result( item ) {
+
+    if( item.post_parent_type !== undefined ) {
+
+        var post_type_label = item.post_parent_type;
+
+        if( item.post_parent_type === 'points-type' ) {
+            post_type_label = '';
+        } else if( gamipress_post_type_exists( item.post_parent_type ) ) {
+            post_type_label = gamipress_get_post_type_label( item.post_parent_type );
+
+            post_type_label += ':';
+        }
+
+
+
+        return '<strong>' + item.post_title + '</strong>'
+            + '<span class="result-description">'
+            + 'ID: ' + item.ID + '<span class="align-right">' + post_type_label + ' ' + item.post_parent_title  + '</span>'
             + ( item.site_name !== undefined ? ' (' + item.site_name + ')' : '' )
             + '</span>';
     }

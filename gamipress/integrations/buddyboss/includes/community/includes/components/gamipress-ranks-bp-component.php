@@ -65,6 +65,18 @@ if( ! class_exists( 'GamiPress_Ranks_BP_Component' ) ) {
                 return;
             }
 
+            /**
+             * Filter to programmatically decide if tab should be displayed
+             *
+             * @param bool $show
+             * @param int $displayed_user_id
+             *
+             * @return bool
+             */
+            if( ! (bool) apply_filters( 'gamipress_bp_member_ranks_tab', true, bp_displayed_user_id() ) ) {
+                return;
+            }
+
             $tab_title = gamipress_bp_get_option( 'ranks_tab_title', __( 'Ranks', 'gamipress' ) );
 
             $sub_nav = '';

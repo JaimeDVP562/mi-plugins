@@ -65,6 +65,18 @@ if( ! class_exists( 'GamiPress_Achievements_BP_Component' ) ) {
                 return;
             }
 
+            /**
+             * Filter to programmatically decide if tab should be displayed
+             *
+             * @param bool $show
+             * @param int $displayed_user_id
+             *
+             * @return bool
+             */
+            if( ! (bool) apply_filters( 'gamipress_bp_member_achievements_tab', true, bp_displayed_user_id() ) ) {
+                return;
+            }
+
             $parent_url = trailingslashit( bp_displayed_user_domain() . $this->slug );
 
             // Get registered achievement types

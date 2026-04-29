@@ -94,12 +94,12 @@
 }
 
 #post-body.columns-2 #postbox-container-1 .automatorwp-box-form .cmb-type-text-datetime-timestamp input.cmb2-datepicker {
-    max-width: 145px;
+    max-width: 110px;
 }
 
 #post-body.columns-2 #postbox-container-1 .automatorwp-box-form .cmb-type-text-datetime-timestamp input.cmb2-timepicker {
     display: inline;
-    max-width: 100px;
+    max-width: 90px;
     margin-top: 0;
 }
 

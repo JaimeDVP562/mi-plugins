@@ -29,7 +29,7 @@ function automatorwp_register_custom_tables() {
         'show_ui' => true,
         'show_in_rest' => true,
         'rest_base' => 'automatorwp-automations',
-        'version' => 3,
+        'version' => 4,
         'capability' => automatorwp_get_manager_capability(),
         'supports' => array( 'meta' ),
         'views' => array(
@@ -76,6 +76,10 @@ function automatorwp_register_custom_tables() {
                 'length' => '50',
             ),
             'date' => array(
+                'type' => 'datetime',
+                'default' => '0000-00-00 00:00:00'
+            ),
+            'expiration' => array(
                 'type' => 'datetime',
                 'default' => '0000-00-00 00:00:00'
             ),

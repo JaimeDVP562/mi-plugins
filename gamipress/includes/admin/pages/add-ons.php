@@ -537,6 +537,11 @@ function gamipress_override_plugin_information( $data, $action = '', $args = nul
 
     $plugins = gamipress_plugins_api();
 
+    // Bail if API is not returning any plugin
+    if( ! is_array( $plugins ) ) {
+        return $data;
+    }
+
     $override_plugin = false;
 
     foreach( $plugins as $plugin ) {

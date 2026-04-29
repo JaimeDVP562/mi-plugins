@@ -885,12 +885,22 @@ function gamipress_get_achievement_earners( $achievement_id = 0, $args = array()
 
     $args = wp_parse_args( $args, $defaults );
 
-    // Setup limit
+    // Setup FROM
+    if( ! empty( $args['from'] ) ) {
+        $from .= $args['from'];
+    }
+
+    // Setup WHERE
+    if( ! empty( $args['where'] ) ) {
+        $where .= $args['where'];
+    }
+
+    // Setup LIMIT
     if( (int)( $args['limit'] ) > 0 ) {
         $limit = '0, ' . $args['limit'];
     }
 
-    // Setup order by
+    // Setup ORDER BY
     if( ! empty( $args['orderby'] ) ) {
         $order_by = $args['orderby'] . ' ' .  $args['order'];
     }

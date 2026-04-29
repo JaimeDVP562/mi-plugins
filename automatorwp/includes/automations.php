@@ -1015,3 +1015,105 @@ function automatorwp_get_array_from_export_url( $request, $prefix = '' ) {
     return $params[$prefix];
 
 }
+
+/**
+ * Helper function to meet if is a scheduled automation
+ *
+ * @param stdClass $automation
+ *
+ * @return bool
+ */
+function automatorwp_is_automation_scheduled( $automation ) {
+
+    $now = current_time( 'timestamp' );
+    $date = strtotime( $automation->date );
+
+    return ( $date > $now );
+
+}
+
+/**
+ * Helper function to meet if is an expired automation
+ *
+ * @param stdClass $automation
+ *
+ * @return bool
+ */
+function automatorwp_is_automation_expired( $automation ) {
+
+    // Ensure that automation object is up-to-date
+    if( ! property_exists( $automation, 'expiration' ) ) return false;
+    // Bail if automation is not active
+    if( $automation->status !== 'active' ) return false;
+
+    $now = current_time( 'timestamp' );
+
+    $expiration = strtotime( $automation->expiration );
+    $date = strtotime( $automation->date );
+
+    // Only check this if automation has been correctly setup
+    if( $expiration > 0 && $expiration > $date ) {
+        return ( $expiration < $now );
+    }
+
+    return false;
+
+}
+
+/**
+ * Helper function to activate an automation
+ *
+ * @param int $automation_id
+ *
+ * @return bool
+ */
+function automatorwp_activate_automation( $automation_id ) {
+
+    ct_setup_table( 'automatorwp_automations' );
+
+    $automation = ct_get_object( $automation_id );
+
+    // Bail if automation does not exists
+    if( ! $automation ) {
+        ct_reset_setup_table();
+        return false;
+    }
+
+    $automation = ( array ) $automation;
+    $automation['status'] = 'active';
+
+    $result = ct_update_object( $automation );
+
+    ct_reset_setup_table();
+
+    return true;
+}
+
+/**
+ * Helper function to activate an automation
+ *
+ * @param int $automation_id
+ *
+ * @return bool
+ */
+function automatorwp_deactivate_automation( $automation_id ) {
+
+    ct_setup_table( 'automatorwp_automations' );
+
+    $automation = ct_get_object( $automation_id );
+
+    // Bail if automation does not exists
+    if( ! $automation ) {
+        ct_reset_setup_table();
+        return false;
+    }
+
+    $automation = ( array ) $automation;
+    $automation['status'] = 'inactive';
+
+    $result = ct_update_object( $automation );
+
+    ct_reset_setup_table();
+
+    return true;
+}

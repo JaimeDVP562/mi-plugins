@@ -223,6 +223,7 @@ function automatorwp_admin_enqueue_scripts( $hook ) {
         'nonce' => automatorwp_get_admin_nonce(),
         'save_text' => __( 'Save', 'automatorwp' ),
         'saving_text' => __( 'Saving', 'automatorwp' ),
+        'never_expires_text' => __( 'Never Expires', 'automatorwp' ),
     ) );
 
     // Scripts

@@ -28,6 +28,16 @@
     automatorwp_update_items_position( $('.automatorwp-automation-items.automatorwp-triggers') );
     automatorwp_update_items_position( $('.automatorwp-automation-items.automatorwp-actions') );
 
+    // Save expiration (just to update its preview to "Never Expires")
+    $('body').on('click', '.cmb2-id-expiration + #cmb-field-js-controls-expiration-after #cmb-field-js-controls-expiration-save', function(e) {
+        var field_row = $(this).parent().prev('.cmb-row');
+        var field = $($(this).attr('href') + '_date');
+        if( field.val() === '' ) {
+            var value_container = field_row.prev('.cmb-field-js-controls-before').find('.cmb-field-js-controls-value');
+            value_container.text( automatorwp_admin.never_expires_text );
+        }
+    });
+
     // Save and activate
     $('body').on('click', '.automatorwp-save-and-activate input', function(e) {
         e.preventDefault();

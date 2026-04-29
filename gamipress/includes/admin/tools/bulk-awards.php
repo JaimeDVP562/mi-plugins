@@ -29,6 +29,15 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
         $points_types_options[$slug] = $data['plural_name'];
     }
 
+    // Grab our requirement types as an array
+    $requirement_types_options = array(
+        '' => __( 'Choose a requirement type', 'gamipress' )
+    );
+
+    foreach( gamipress_get_requirement_types() as $slug => $data ) {
+        $requirement_types_options[$slug] = $data['singular_name'];
+    }
+
     $meta_boxes['bulk-awards'] = array(
         'title' => gamipress_dashicon( 'yes' ) . __( 'Bulk Awards', 'gamipress' ),
         'fields' => apply_filters( 'gamipress_bulk_awards_tool_fields', array(
@@ -61,6 +70,8 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'tooltip'   => __( 'Enter the line text to be displayed on user earnings.', 'gamipress' ),
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'text',
+                'show_if' => array( 'bulk_award_points_register_movement' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
                 'default' => __( 'Manual balance adjustment', 'gamipress' ),
             ),
             'bulk_award_points_all_users' => array(
@@ -76,12 +87,14 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'advanced_select',
                 'multiple' => true,
-                'classes' 	        => 'gamipress-user-selector',
+                'custom_classes' 	        => 'gamipress-user-selector',
                 'attributes' 	    => array(
                     'data-placeholder' => __( 'Choose users(s)', 'gamipress' ),
                     'data-close-on-select' => 'false',
                 ),
                 'options_cb' => 'gamipress_options_cb_users',
+                'hide_if' => array( 'bulk_award_points_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
             ),
             'bulk_award_points_roles' => array(
                 'name' => __( 'Roles to award', 'gamipress' ),
@@ -89,12 +102,14 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'advanced_select',
                 'multiple' => true,
-                'classes' 	        => 'gamipress-selector',
+                'custom_classes' 	        => 'gamipress-selector',
                 'attributes' 	    => array(
                     'data-placeholder' => __( 'Choose role(s)', 'gamipress' ),
                     'data-close-on-select' => 'false',
                 ),
                 'options_cb' => 'gamipress_options_cb_roles',
+                'hide_if' => array( 'bulk_award_points_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
             ),
             'bulk_award_points_button' => array(
                 'label' => __( 'Award Points', 'gamipress' ),
@@ -131,12 +146,14 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'advanced_select',
                 'multiple' => true,
-                'classes' 	        => 'gamipress-user-selector',
+                'custom_classes' 	        => 'gamipress-user-selector',
                 'attributes' 	    => array(
                     'data-placeholder' => __( 'Choose users(s)', 'gamipress' ),
                     'data-close-on-select' => 'false',
                 ),
                 'options_cb' => 'gamipress_options_cb_users',
+                'hide_if' => array( 'bulk_award_achievements_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
             ),
             'bulk_award_achievements_roles' => array(
                 'name' => __( 'Roles to award', 'gamipress' ),
@@ -144,12 +161,14 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'advanced_select',
                 'multiple' => true,
-                'classes' 	        => 'gamipress-selector',
+                'custom_classes' 	        => 'gamipress-selector',
                 'attributes' 	    => array(
                     'data-placeholder' => __( 'Choose role(s)', 'gamipress' ),
                     'data-close-on-select' => 'false',
                 ),
                 'options_cb' => 'gamipress_options_cb_roles',
+                'hide_if' => array( 'bulk_award_achievements_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
             ),
             'bulk_award_achievements_button' => array(
                 'label' => __( 'Award Achievements', 'gamipress' ),
@@ -185,12 +204,14 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'advanced_select',
                 'multiple' => true,
-                'classes' 	        => 'gamipress-user-selector',
+                'custom_classes' 	        => 'gamipress-user-selector',
                 'attributes' 	    => array(
                     'data-placeholder' => __( 'Choose users(s)', 'gamipress' ),
                     'data-close-on-select' => 'false',
                 ),
                 'options_cb' => 'gamipress_options_cb_users',
+                 'hide_if' => array( 'bulk_award_rank_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
             ),
             'bulk_award_rank_roles' => array(
                 'name' => __( 'Roles to award', 'gamipress' ),
@@ -198,15 +219,86 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                 'label_cb' => 'cmb_tooltip_label_cb',
                 'type' => 'advanced_select',
                 'multiple' => true,
-                'classes' 	        => 'gamipress-selector',
+                'custom_classes' 	        => 'gamipress-selector',
                 'attributes' 	    => array(
                     'data-placeholder' => __( 'Choose role(s)', 'gamipress' ),
                     'data-close-on-select' => 'false',
                 ),
                 'options_cb' => 'gamipress_options_cb_roles',
+                 'hide_if' => array( 'bulk_award_rank_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
             ),
             'bulk_award_rank_button' => array(
                 'label' => __( 'Award Rank', 'gamipress' ),
+                'type' => 'button',
+                'button' => 'primary'
+            ),
+
+            // Requirements
+
+            'bulk_award_requirements_type' => array(
+                'name' => __( 'Requirement Type', 'gamipress' ),
+                'tooltip'   => __( 'Choose the requirement type to award.', 'gamipress' ),
+                'label_cb' => 'cmb_tooltip_label_cb',
+                'type' => 'select',
+                'options' => $requirement_types_options,
+            ),
+            'bulk_award_requirements' => array(
+                'name' => __( 'Requirements to Award', 'gamipress' ),
+                'tooltip'   => __( 'Choose the requirements to award.', 'gamipress' ),
+                'label_cb' => 'cmb_tooltip_label_cb',
+                'type' => 'advanced_select',
+                'multiple' => true,
+                'custom_classes' 	        => 'gamipress-post-selector',
+                'attributes' 	    => array(
+                    'data-action' => 'gamipress_get_requirements',
+                    'data-post-type' => implode( ',',  gamipress_get_requirement_types_slugs() ),
+                    'data-placeholder' => __( 'Choose requirement(s)', 'gamipress' ),
+                    'data-close-on-select' => 'false',
+                ),
+                'options_cb' => 'gamipress_options_cb_posts',
+                'hide_if' => array( 'bulk_award_requirements_type' => '' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
+            ),
+            'bulk_award_requirements_all_users' => array(
+                'name' => __( 'Award to all users', 'gamipress' ),
+                'tooltip'   => __( 'Check this option to award the requirements to all users.', 'gamipress' ),
+                'label_cb' => 'cmb_tooltip_label_cb',
+                'type' => 'checkbox',
+                'classes' => 'gamipress-switch'
+            ),
+            'bulk_award_requirements_users' => array(
+                'name' => __( 'Users to award', 'gamipress' ),
+                'tooltip'   => __( 'Choose users to award this requirements.', 'gamipress' ),
+                'label_cb' => 'cmb_tooltip_label_cb',
+                'type' => 'advanced_select',
+                'multiple' => true,
+                'custom_classes' 	        => 'gamipress-user-selector',
+                'attributes' 	    => array(
+                    'data-placeholder' => __( 'Choose users(s)', 'gamipress' ),
+                    'data-close-on-select' => 'false',
+                ),
+                'options_cb' => 'gamipress_options_cb_users',
+                'hide_if' => array( 'bulk_award_requirements_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
+            ),
+            'bulk_award_requirements_roles' => array(
+                'name' => __( 'Roles to award', 'gamipress' ),
+                'tooltip'   => __( 'Choose roles to award this requirements.', 'gamipress' ),
+                'label_cb' => 'cmb_tooltip_label_cb',
+                'type' => 'advanced_select',
+                'multiple' => true,
+                'custom_classes' 	        => 'gamipress-selector',
+                'attributes' 	    => array(
+                    'data-placeholder' => __( 'Choose role(s)', 'gamipress' ),
+                    'data-close-on-select' => 'false',
+                ),
+                'options_cb' => 'gamipress_options_cb_roles',
+                'hide_if' => array( 'bulk_award_requirements_all_users' => 'checked' ),
+                'classes_cb' => 'cmb_conditional_fields_classes_cb',
+            ),
+            'bulk_award_requirements_button' => array(
+                'label' => __( 'Award Requirements', 'gamipress' ),
                 'type' => 'button',
                 'button' => 'primary'
             ),
@@ -247,6 +339,18 @@ function gamipress_bulk_awards_tool_meta_boxes( $meta_boxes ) {
                     'bulk_award_rank_users',
                     'bulk_award_rank_roles',
                     'bulk_award_rank_button',
+                ),
+            ),
+            'bulk_award_requirement' => array(
+                'icon' => 'dashicons-editor-ol',
+                'title' => __( 'Requirements', 'gamipress' ),
+                'fields' => array(
+                    'bulk_award_requirements_type',
+                    'bulk_award_requirements',
+                    'bulk_award_requirements_all_users',
+                    'bulk_award_requirements_users',
+                    'bulk_award_requirements_roles',
+                    'bulk_award_requirements_button',
                 ),
             )
         ) )
@@ -352,6 +456,22 @@ function gamipress_ajax_bulk_awards_tool() {
         if( ! $to_all_users ) {
             $specific_users = isset( $_POST['bulk_award_rank_users'] ) ? $_POST['bulk_award_rank_users'] : array();
             $specific_roles = isset( $_POST['bulk_award_rank_roles'] ) ? $_POST['bulk_award_rank_roles'] : array();
+        }
+
+    } else if( $bulk_award === 'requirements' ) {
+        // Check requirements parameters
+
+        $requirements = isset( $_POST['bulk_award_requirements'] ) ? $_POST['bulk_award_requirements'] : array();
+
+        if( empty( $requirements ) ) {
+            wp_send_json_error( __( 'Choose at least one requirement to be awarded.', 'gamipress' ) );
+        }
+
+        $to_all_users = isset( $_POST['bulk_award_requirements_all_users'] );
+
+        if( ! $to_all_users ) {
+            $specific_users = isset( $_POST['bulk_award_requirements_users'] ) ? $_POST['bulk_award_requirements_users'] : array();
+            $specific_roles = isset( $_POST['bulk_award_requirements_roles'] ) ? $_POST['bulk_award_requirements_roles'] : array();
         }
 
     }
@@ -479,6 +599,13 @@ function gamipress_ajax_bulk_awards_tool() {
 
             // Award rank
             gamipress_update_user_rank( $user->ID, $rank_id, get_current_user_id() );
+
+        } else if( $bulk_award === 'requirements' ) {
+
+            // Award requirements
+            foreach( $requirements as $requirement ) {
+                gamipress_award_achievement_to_user( absint( $requirement ), $user->ID, get_current_user_id() );
+            }
 
         }
 

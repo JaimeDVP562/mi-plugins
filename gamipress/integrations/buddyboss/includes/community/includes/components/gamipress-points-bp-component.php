@@ -65,6 +65,18 @@ if( ! class_exists( 'GamiPress_Points_BP_Component' ) ) {
                 return;
             }
 
+            /**
+             * Filter to programmatically decide if tab should be displayed
+             *
+             * @param bool $show
+             * @param int $displayed_user_id
+             *
+             * @return bool
+             */
+            if( ! (bool) apply_filters( 'gamipress_bp_member_points_tab', true, bp_displayed_user_id() ) ) {
+                return;
+            }
+
             $tab_title = gamipress_bp_get_option( 'points_tab_title', __( 'Points', 'gamipress' ) );
 
             $sub_nav = '';

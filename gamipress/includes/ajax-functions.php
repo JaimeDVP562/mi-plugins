@@ -494,6 +494,154 @@ function gamipress_ajax_get_posts() {
 add_action( 'wp_ajax_gamipress_get_posts', 'gamipress_ajax_get_posts' );
 
 /**
+ * AJAX Helper for selecting requirements
+ *
+ * @since 1.0.0
+ * @updated 1.4.8 Added multisite support
+ */
+function gamipress_ajax_get_requirements() {
+    // Security check, forces to die if not security passed
+    check_ajax_referer( 'gamipress_admin', 'nonce' );
+
+    if( ! current_user_can( gamipress_get_manager_capability() ) ) {
+        return;
+    }
+
+    global $wpdb;
+
+    // Pull back the search string
+    $search = isset( $_REQUEST['q'] ) ? esc_sql( $wpdb->esc_like( $_REQUEST['q'] ) ) : '';
+
+    // Setup where conditions (initialized with 1=1)
+    $where = '1=1';
+
+    // Post type conditional
+    $post_type = ( isset( $_REQUEST['post_type'] ) && ! empty( $_REQUEST['post_type'] ) ? $_REQUEST['post_type'] :  gamipress_get_requirement_types_slugs() );
+
+    if ( is_array( $post_type ) ) {
+
+        // Sanitize all post types given
+        foreach( $post_type as $i => $value ) {
+            $post_type[$i] = sanitize_text_field( $value );
+        }
+
+        $post_type = sprintf( ' AND p.post_type IN(\'%s\')', implode( "','", $post_type ) );
+    } else {
+
+        // Sanitize the post type
+        $post_type = sanitize_text_field( $post_type );
+
+        $post_type = sprintf( ' AND p.post_type = \'%s\'', $post_type );
+    }
+
+    $where .= $post_type;
+
+    // Post title and ID conditional
+    $where .= " AND ( p.post_title LIKE '%{$search}%' OR p.ID LIKE '%{$search}%' )";
+
+    // Post status conditional
+    $where .= " AND p.post_status = 'publish'";
+
+    // Setup from (from is filtered to allow joins)
+    $posts = GamiPress()->db->posts;
+    $from = "{$posts} AS p";
+
+    /**
+     * Ajax requirements FROM (used on almost every post selector)
+     * Note: Use $_REQUEST for all given parameters
+     *
+     * @since  1.6.6
+     *
+     * @param string $from By default '{GamiPress()->db->posts} AS p'
+     *
+     * @return string
+     */
+    $from = apply_filters( 'gamipress_ajax_get_requirements_from', $from );
+
+    /**
+     * Ajax requirements WHERE (used on almost every post selector)
+     * Note: Use $_REQUEST for all given parameters
+     *
+     * @since  1.6.6
+     *
+     * @param string $where Contains all wheres
+     *
+     * @return string
+     */
+    $where = apply_filters( 'gamipress_ajax_get_requirements_where', $where );
+
+    // Setup order by
+    $order_by = "p.post_type ASC, p.post_parent ASC, p.menu_order DESC";
+
+    /**
+     * Ajax requirements ORDER BY (used on almost every post selector)
+     * Note: Use $_REQUEST for all given parameters
+     *
+     * @since  1.6.6
+     *
+     * @param string $order_by By default 'p.post_type ASC, p.post_parent ASC, p.menu_order DESC'
+     *
+     * @return string
+     */
+    $order_by = apply_filters( 'gamipress_ajax_get_requirements_order_by', $order_by );
+
+    // Pagination args
+    $page = isset( $_REQUEST['page'] ) ? absint( $_REQUEST['page'] ) : 1;
+    $limit = 20;
+    $offset = $limit * ( $page - 1 );
+
+    // On this query, keep $wpdb->posts to get current site posts
+    $results = $wpdb->get_results(
+        "SELECT p.ID, p.post_title, p.post_type, p.post_parent
+             FROM {$from}
+             WHERE {$where}
+             ORDER BY {$order_by}
+             LIMIT {$offset}, {$limit}", ARRAY_A
+    );
+
+    $count = absint( $wpdb->get_var( "SELECT COUNT(*) FROM {$from} WHERE {$where}" ) );
+
+    $parents = array();
+
+    foreach( $results as $i => $result ) {
+        $parent_id = absint( $result['post_parent'] );
+
+        // Check if parent have been found previously
+        if( ! isset( $parents[$parent_id] ) ) {
+            $parent = $wpdb->get_row( $wpdb->prepare(
+                "SELECT p.post_title, p.post_type
+                 FROM {$posts} AS p
+                 WHERE p.ID = %d
+                 LIMIT 1",
+                $parent_id
+            ), ARRAY_A );
+
+            if( $parent ) {
+                $parents[$parent_id] = $parent;
+            }
+        }
+
+        // Add the parent post type & title
+        $parent = ( isset( $parents[$parent_id] ) ? $parents[$parent_id] : null );
+
+        if( $parent !== null ) {
+            $results[$i]['post_parent_title'] = $parent['post_title'];
+            $results[$i]['post_parent_type'] = $parent['post_type'];
+        }
+    }
+
+    $response = array(
+        'results' => $results,
+        'more_results' => $count > $limit && $count > $offset,
+    );
+
+    // Return our results
+    wp_send_json_success( $response );
+
+}
+add_action( 'wp_ajax_gamipress_get_requirements', 'gamipress_ajax_get_requirements' );
+
+/**
  * AJAX Helper for selecting posts in Shortcode Embedder
  *
  * @since 1.0.0

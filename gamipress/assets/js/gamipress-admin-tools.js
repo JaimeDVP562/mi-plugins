@@ -4,49 +4,18 @@
     // Bulk Awards/Revokes Tool
     // ----------------------------------
 
-    // Register points movement
-    $('#bulk-awards, #bulk-revokes').on('change', '#bulk_award_points_register_movement, #bulk_revoke_points_register_movement', function() {
+    // On change requirement type
+    $('#bulk-awards, #bulk-revokes').on('change', '#bulk_award_requirements_type, #bulk_revoke_requirements_type', function() {
 
-        var target =  $(this).closest('.cmb-row').next();
+        var target =  $(this).closest('.cmb-row').next().find('select[data-post-type]');
+        var post_type = $(this).val();
 
-        if( $(this).prop('checked') ) {
-            target.slideDown(250).removeClass('cmb2-tab-ignore');
-        } else {
-            target.slideUp(250).addClass('cmb2-tab-ignore');
+
+        if( post_type !== '' ) {
+            target.val('').change();
+            target.data('post-type', post_type)
         }
-
     });
-
-    $('#bulk_award_points_register_movement, #bulk_revoke_points_register_movement').each( function() {
-
-        var target =  $(this).closest('.cmb-row').next();
-
-        if( $(this).prop('checked') ) {
-            target.show().removeClass('cmb2-tab-ignore');
-        } else {
-            target.hide().addClass('cmb2-tab-ignore');
-        }
-
-    });
-
-    // Award to all users
-    $('#bulk-awards, #bulk-revokes').on('change',
-        '#bulk_award_points_all_users, #bulk_award_achievements_all_users, #bulk_award_rank_all_users, '
-        + '#bulk_revoke_points_all_users, #bulk_revoke_achievements_all_users, #bulk_revoke_rank_all_users',
-        function() {
-
-            var users_target = $('#' + $(this).attr('id').replace('_all', '')).closest('.cmb-row');
-            var roles_target = $('#' + $(this).attr('id').replace('all_users', 'roles')).closest('.cmb-row');
-
-            if( $(this).prop('checked') ) {
-                users_target.slideUp(250).addClass('cmb2-tab-ignore');
-                roles_target.slideUp(250).addClass('cmb2-tab-ignore');
-            } else {
-                users_target.slideDown(250).removeClass('cmb2-tab-ignore');
-                roles_target.slideDown(250).removeClass('cmb2-tab-ignore');
-            }
-
-        });
 
     function gamipress_run_bulk_tool( button, loop ) {
 
@@ -145,8 +114,8 @@
 
     }
 
-    $('#bulk_award_points_button, #bulk_award_achievements_button, #bulk_award_rank_button, '
-        + '#bulk_revoke_points_button, #bulk_revoke_achievements_button, #bulk_revoke_rank_button').on('click', function(e) {
+    $('#bulk_award_points_button, #bulk_award_achievements_button, #bulk_award_rank_button, #bulk_award_requirements_button, '
+        + '#bulk_revoke_points_button, #bulk_revoke_achievements_button, #bulk_revoke_rank_button, #bulk_revoke_requirements_button').on('click', function(e) {
         e.preventDefault();
 
         gamipress_run_bulk_tool( $(this) );
