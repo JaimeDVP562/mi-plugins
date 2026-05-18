@@ -3,14 +3,14 @@
  * Plugin Name:     	BBForms
  * Plugin URI:      	https://bbforms.com
  * Description:     	Build [forms] faster and easily just by typing them!
- * Version:         	1.0.9
+ * Version:         	1.1.0
  * Author:          	BBForms
  * Author URI:      	https://bbforms.com/
  * Text Domain:     	bbforms
  * Domain Path: 		/languages/
  * Requires PHP:        7.0
  * Requires at least: 	4.4
- * Tested up to: 		6.9
+ * Tested up to: 		7.0
  * License:         	GPLv3
  *
  * @package         	BBForms
@@ -81,7 +81,7 @@ final class BBForms {
     private function constants() {
 
         // Plugin version
-        define( 'BBFORMS_VER', '1.0.9' );
+        define( 'BBFORMS_VER', '1.1.0' );
 
         // Plugin file
         define( 'BBFORMS_FILE', __FILE__ );

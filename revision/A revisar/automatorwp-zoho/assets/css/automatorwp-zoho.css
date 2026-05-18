@@ -1,0 +1,75 @@
+/**
+ * Zoho CRM Admin Styles
+ *
+ * @package     AutomatorWP\Integrations\Zoho\Assets
+ * @since       1.0.0
+ */
+
+/**
+ * Custom Zoho Icon for AutomatorWP settings menu
+ */
+.dashicons-zoho {
+    background-image: url('../zoho.svg');
+    /* Path adjusted based on your folder structure */
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/**
+ * Disconnect/Delete Credentials button (Danger style)
+ */
+#automatorwp_zoho_delete_credentials {
+    margin-left: 10px;
+    color: #d63638;
+    border-color: #d63638;
+    vertical-align: middle;
+}
+
+#automatorwp_zoho_delete_credentials:hover {
+    background: #fcf0f1;
+    border-color: #d63638;
+    color: #d63638;
+}
+
+#automatorwp_zoho_delete_credentials:focus {
+    box-shadow: 0 0 0 1px #d63638;
+}
+
+/**
+ * Loading Spinner alignment
+ */
+.cmb-td .spinner.is-active {
+    float: none;
+    margin: 4px 10px;
+    vertical-align: middle;
+}
+
+/**
+ * AJAX Response messages styling
+ */
+#automatorwp_zoho_response {
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-weight: 500;
+    border-left: 4px solid;
+}
+
+/**
+ * Success notice color scheme
+ */
+.automatorwp-notice-success {
+    background-color: #f0f6f1;
+    border-color: #46b450;
+    color: #1d2327;
+}
+
+/**
+ * Error notice color scheme
+ */
+.automatorwp-notice-error {
+    background-color: #fcf0f1;
+    border-color: #d63638;
+    color: #1d2327;
+}

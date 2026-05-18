@@ -1,0 +1,27 @@
+In this guide, you'll learn how to configure a link to expire after a specific number of clicks or unique clicks.
+
+If you want to configure the expiration condition based on a specific date refer to the other configuration section.
+
+<h2> Configure Link Expiration Based on Clicks </h2>
+
+<b>1</b> - Go to your preferred link and click <b>Edit</b>.
+
+[Captura: configure1.png]
+
+<b>2</b> - Then go to in the <b>"Expiration"</b> section, click on "No" and select "Clicks" or "Unique Clicks".
+
+[Captura: configure_clicks1.png]
+
+<b>3</b> - A field for the <b>number of clicks</b> and one for the <b>expired URL</b> will now appear. In the first field, enter the <b>number of clicks</b> or <b>unique clicks</b>.
+
+[Captura: configure_clicks2.png]
+
+<b>4</b> - In the last field, enter the <b>URL</b> that the original link will <b>redirect to</b> once it expires.
+
+[Captura: configure_clicks3.png]
+
+<b>5</b> - Click <b>Update</b> to save your changes.
+
+[Captura: configure2.png]
+
+And that's it! Your link will now expire on the specified number of clicks or unique clicks, and redirect to the new URL — if you provided one.

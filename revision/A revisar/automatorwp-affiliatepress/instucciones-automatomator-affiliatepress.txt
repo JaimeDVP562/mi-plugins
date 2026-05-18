@@ -1,0 +1,58 @@
+# AutomatorWP – AffiliatePress Integration
+
+### Requisitos Previos
+- WordPress instalado y funcionando.
+- Plugin **AutomatorWP** activo (se puede descargar gratuitamente desde el repositorio oficial de WordPress).
+- Plugin **AffiliatePress** activo (descargable desde affiliatepressplugin.com).
+
+++El icono no corresponde con el oficial de la aplicación. Es solo orientativo para las pruebas.++
+
+---
+
+## 1) Instalación del entorno
+1. Subir y activar la carpeta de nuestro plugin de integración recién creado (`automatorwp-affiliatepress`) en la ruta `wp-content/plugins/`.
+
+## 2) Configuración de AffiliatePress (Paso Previo Obligatorio)
+Para poder testear correctamente el disparador de "Aprobación de cuenta", los usuarios deben registrarse inicialmente en estado pendiente.
+1. En el menú de WordPress, ir a **AffiliatePress > Settings**.
+2. Buscar la opción referente a la aprobación de afiliados ("Auto Approve Affiliates" o "Default Status").
+3. Asegurarse de que esté configurada para que los nuevos afiliados entren en estado **Pending** (Pendiente) por defecto. Guardar los cambios.
+
+## 3) Configuración de las Automatizaciones (AutomatorWP)
+Para testear de forma visual y rápida que los triggers recogen al usuario correcto, utilizaremos la acción nativa de cambiar roles en WordPress.
+
+1. Ir a **AutomatorWP > Automations > Add New**.
+2. **Crear Automatización 1 (Registro):**
+   - Añadir Trigger: *AffiliatePress > A user registers as an affiliate*.
+   - Añadir Action: *WordPress > Change user role* -> Seleccionar **Suscriptor**.
+3. **Crear Automatización 2 (Aprobación):**
+   - Añadir Trigger: *AffiliatePress > An affiliate account is approved*.
+   - Añadir Action: *WordPress > Change user role* -> Seleccionar **Autor**.
+4. **Crear Automatización 3 (Comisión):**
+   - Añadir Trigger: *AffiliatePress > An affiliate earns a commission*.
+   - Añadir Action: *WordPress > Change user role* -> Seleccionar **Editor**.
+5. Cambiar el estado de las tres automatizaciones y sus acciones a **Active**.
+
+*Nota: Los tres eventos se pueden testear de forma secuencial con un mismo usuario de prueba siguiendo los pasos a continuación, o de forma independiente si se prefiere.*
+
+## 4) Ejecución de la Prueba 1: Registro (Frontend)
+1. Abrir una ventana de navegación privada / incógnito.
+2. Navegar a la página de registro de afiliados (Affiliate Panel) de AffiliatePress en el frontend .
+3. Rellenar el formulario creando un usuario completamente nuevo (ej: "Test Afiliado").
+4. Cerrar la ventana de incógnito y volver al panel de administración de WordPress.
+
+## 5) Verificación 1 y Ejecución de la Prueba 2: Aprobación
+1. Ir a **Usuarios > Todos los usuarios**. Confirmar que el usuario "Test Afiliado" tiene ahora el rol de **Suscriptor**.
+2. Ir a **AutomatorWP > Logs** y confirmar que el registro aparece en verde para la automatización de registro.
+3. En el menú lateral, ir a **AffiliatePress > Affiliates**.
+4. Buscar a "Test Afiliado" (que estará en estado *Pending*) y cambiar su estado a **Activo / Aprobado**.
+
+## 6) Verificación 2 y Ejecución de la Prueba 3: Comisión
+1. Ir a **Usuarios > Todos los usuarios**. Confirmar que el rol de "Test Afiliado" ha cambiado a **Autor**.
+2. Ir a **AutomatorWP > Logs** y confirmar el nuevo registro en verde para la aprobación.
+3. Ir a **AffiliatePress > Commissions**.
+4. Hacer clic en "Add New" para crear una comisión manual, asignar una cantidad y vincularla al usuario "Test Afiliado". Guardar.
+
+## 7) Verificación Final
+1. Ir a **Usuarios > Todos los usuarios**. Confirmar que el rol de "Test Afiliado" ha cambiado a **Editor**.
+2. Ir a **AutomatorWP > Logs**. Confirmar que aparece el tercer y último registro en verde indicando que el evento de la comisión se ha capturado con éxito.

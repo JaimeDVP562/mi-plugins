@@ -1,0 +1,36 @@
+<h1>Dynamic Redirects</h1>
+
+This add-on extends the plugin ShortLinks Pro, adding six new redirect options to the links you create. Let's explain them a bit more:
+
+<h2>Rotation redirect</h2>
+This option allows you to add multiple links where the plugin can redirect your link to. Each of the links has a weight assigned, which symbolizes how much probability has that link in particular of being chosen when clicked. When you set a link, another box will appear under the first one, for the second link, and so on.
+
+<img src="screenshot-3.png"/>
+
+<h2>Geographic redirect</h2>
+With this option, you can select a link you can show when the user is trying to access your link from a certain country. For example, you can redirect a user to the translated versión of your page to the language spoken in that country, or limit the access at certain countries for legal purposes.
+
+<img src="screenshot-4.png"/>
+
+<h2>Technology redirect</h2>
+This options allows you to redirect a link to the desired URL if the user is using a certain device (tablet, phone or desktop) , operating system or browser. For example, if our page has some element which is not supported by a browser, we can redirect to another versión of the page that doesn't use the aforementioned element if we detect this browser is being used.
+
+<img src="screenshot-5.png"/>
+
+<h2>Date range redirect</h2>
+This tool redirects the link if the current date is inside a date range you select when you set the redirect. You can choose a start date and an end date, or leave one of the fields empty. If you leave the end date empty, the link will always redirect to the specified URL, and if you leave the start date empty, the link will start redirecting at the moment you save the redirect. This can be useful if there is a temporary event in your page and you don't want the users to access it before or after it's been set.
+
+<img src="screenshot-6.png"/>
+
+<h2>Time range redirect</h2>
+Very similar to the date range redirect, in this case we set an interval of hours, allowing us to manage shorter intervals of time. Again, we can set a start time and an end time, or leave one of them empty.
+
+<img src="screenshot-7.png"/>
+
+<h2>Clicks redirect</h2>
+Lastly, this option allows you to redirect a link until an amount of clicks is reached. We can set a mínimum and a maximun of clicks for the redirect to happen. We can use this if we have a special discount for the first users who visit our page or something similar.
+
+<img src="screenshot-8.png"/>
+
+
+

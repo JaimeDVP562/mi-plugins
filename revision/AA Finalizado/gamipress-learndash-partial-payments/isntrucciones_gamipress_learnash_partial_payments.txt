@@ -1,0 +1,59 @@
+# GamiPress – LearnDash Partial Payments
+
+### Requisitos Previos
+- WordPress instalado y funcionando.
+- Plugin GamiPress activo.
+- Plugin LearnDash LMS activo.
+- (Opcional) Plugin WooCommerce activo si se desea probar la compatibilidad total del carrito.
+
+---
+
+## 1) Instalación del entorno
+1. Para instalar LearnDash son necesarios los siguientes archivos adicionales: `sfwd-lms.zip` que se encuentra en la carpeta "AAA - Recursos".
+2. Subir y activar la carpeta de nuestro plugin de pagos parciales (`gamipress-ld-partial-payments`) en la ruta `wp-content/plugins/`.
+
+## 2) Creación de Monedas en GamiPress (Paso Previo Obligatorio)
+Para que el plugin pueda aplicar descuentos, el sistema debe tener al menos un tipo de punto (moneda) creado. Para probar la función multimoneda, crearemos dos:
+1. En el menú lateral de WordPress, ir a GamiPress → Tipos de Puntos (Point Types) → Añadir nuevo.
+2. Escribir como título "Monedas" y Publicar.
+3. Repetir el proceso: GamiPress → Tipos de Puntos → Añadir nuevo.
+4. Escribir como título "Gemas" y Publicar.
+
+## 3) Preparación del Curso (LearnDash)
+1. Ir a LearnDash LMS → Cursos → Añadir nuevo (o editar uno existente).
+2. Asignarle un título (ej: "Curso de prueba PHP") y publicar.
+3. Ir a la pestaña "Ajustes" (Settings) en la parte superior del editor del curso.
+4. Bajar hasta "Modo de acceso" (Access Mode) y seleccionar "Comprar ahora" (Buy Now).
+5. Asignarle un precio numérico fijo en el campo correspondiente (ej: 50.00).
+6. Actualizar el curso para guardar los cambios.
+
+## 4) Configuración del Plugin de Pagos Parciales (Backend)
+1. En el menú lateral de WordPress, ir a Ajustes → GamiPress LD Payments.
+2. En "Select Point Type for Discounts", abrir el desplegable y seleccionar "-- Allow user to choose at checkout --" para activar la función multimoneda.
+3. En "Conversion Rate (€/$)", establecer el valor `1` (1 punto descuenta 1€) o el valor deseado (ej: `0.10` para que 1 punto descuente 10 céntimos).
+4. En "Maximum Discount (%)", establecer `100` para permitir que el curso pueda salir gratis, o un valor menor (ej: `50`) si se desea limitar el descuento.
+5. Hacer clic en "Guardar cambios".
+
+## 5) Preparación del Usuario de Prueba
+1. En el menú de WordPress, ir a Usuarios → Añadir nuevo.
+2. Crear un usuario de prueba asegurándose de asignarle el perfil/rol de "Suscriptor" (Subscriber).
+3. Ir a Usuarios → Todos los usuarios y editar el perfil de este usuario recién creado.
+4. Bajar hasta la sección inferior de "GamiPress" y añadirle saldo manual suficiente en las monedas creadas (ej: 100 Monedas y 100 Gemas).
+5. Actualizar el perfil del usuario.
+
+## 6) Ejecución de la Prueba (Frontend)
+1. Abrir una ventana de Navegación Privada / Incógnito.
+2. Iniciar sesión en WordPress con el usuario de prueba creado en el paso 5.
+3. Navegar a la URL pública del curso creado en el paso 3.
+4. Confirmar que debajo del precio oficial de LearnDash aparece una nueva caja integrada para aplicar puntos.
+5. Introducir una cantidad numérica a descontar (ej: 10) en el campo de texto.
+6. Seleccionar en el desplegable contiguo el tipo de moneda a gastar (Gemas o Monedas).
+7. Hacer clic en el botón "Apply".
+
+## 7) Verificación de Resultados
+- Confirmar que la página carga durante un segundo y se actualiza automáticamente.
+- Confirmar que en la caja aparece un mensaje verde de éxito ("Discount applied!"), mostrando la cantidad pendiente a descontar y un botón rojo de "Remove".
+- Confirmar que el precio principal del curso (botón azul de LearnDash) ha bajado matemáticamente el importe exacto sin arrojar precios negativos (ej: de €50.00 a €40.00).
+- Hacer clic en el botón de comprar (Take this Course) y confirmar que la pasarela de pago (Stripe/Razorpay) procesa exactamente la cantidad rebajada.
+- *Opcional si se usa WooCommerce:* Añadir el curso al carrito y verificar en la página de pago que se ha inyectado una línea en negativo llamada "GamiPress Points Discount".
+- Tras el pago exitoso, volver al panel de administración como administrador, editar el usuario de prueba y confirmar que se le han deducido de su saldo de GamiPress exactamente los puntos que reservó.

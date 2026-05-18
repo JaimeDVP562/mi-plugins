@@ -1,0 +1,17 @@
+.cmb2-id-automatorwp-constant-contact-authorize .automatorwp-notice-success,
+.cmb2-id-automatorwp-constant-contact-authorize .automatorwp-notice-error {
+  display: inline-block;
+  margin: 10px 0 0 0;
+}
+.automatorwp-constant-contact-refresh-token {
+  margin-bottom: 0;
+}
+.automatorwp-constant-contact-access-token strong,
+.automatorwp-constant-contact-refresh-token strong {
+  display: inline-block;
+  min-width: 85px;
+}
+.automatorwp-constant-contact-access-token input,
+.automatorwp-constant-contact-refresh-token input {
+  min-width: 300px;
+}

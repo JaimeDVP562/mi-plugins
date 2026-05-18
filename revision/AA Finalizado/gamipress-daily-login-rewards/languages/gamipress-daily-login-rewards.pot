@@ -1,0 +1,638 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress Daily Login Rewards\n"
+"Report-Msgid-Bugs-To: https://gamipress.com/\n"
+"POT-Creation-Date: 2026-02-26 10:24+0100\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://gamipress.com/)\n"
+"Language-Team: GamiPress <contact@gamipress.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: classes/class-gamipress-rewards-calendar.php:67
+msgid "No rewards configured on this rewards calendar."
+msgstr ""
+
+#: gamipress-daily-login-rewards.php:168
+#, php-format
+msgid "GamiPress - Daily Login Rewards requires %s (%s or higher) in order to work. Please install and activate it."
+msgstr ""
+
+#: includes/admin.php:37 includes/admin.php:53 includes/post-types.php:106
+msgid "Rewards Calendars"
+msgstr ""
+
+#: includes/admin.php:75 includes/admin.php:209 includes/admin.php:382
+#: includes/triggers.php:22
+msgid "Daily Login Rewards"
+msgstr ""
+
+#: includes/admin.php:81
+msgid "Allow Multiple Login"
+msgstr ""
+
+#: includes/admin.php:82
+msgid "Check this option if you want to allow users get rewarded for log in multiple times in same day. You can enable this option for testing purposes if you want to check how users are getting awarded without need to wait to the next day."
+msgstr ""
+
+#: includes/admin.php:87
+msgid "Stamp"
+msgstr ""
+
+#: includes/admin.php:88
+msgid "Upload, choose or paste the URL of the stamp to be displayed on earned calendar rewards (leave blank if you don't want to add it)."
+msgstr ""
+
+#: includes/admin.php:92
+msgid "Align stamp with reward's image"
+msgstr ""
+
+#: includes/admin.php:93
+msgid "By default, the stamp is aligned with the reward element (text and image), check this option if you want to align the stamp effect with the reward's image instead."
+msgstr ""
+
+#: includes/admin.php:101
+msgid "Pop-up Button Text"
+msgstr ""
+
+#: includes/admin.php:102
+msgid "Set the button text shown at bottom to hide the pop-up."
+msgstr ""
+
+#: includes/admin.php:104 includes/content-filters.php:41
+msgid "Ok!"
+msgstr ""
+
+#: includes/admin.php:107
+msgid "Show Rewards Calendar Title"
+msgstr ""
+
+#: includes/admin.php:108
+msgid "Check this option to display the rewards calendar title on pop-ups."
+msgstr ""
+
+#: includes/admin.php:113
+msgid "Show Rewards Calendar Excerpt"
+msgstr ""
+
+#: includes/admin.php:114
+msgid "Check this option to display the rewards calendar short description on pop-ups."
+msgstr ""
+
+#: includes/admin.php:122
+msgid "Rewards Calendar Post Type"
+msgstr ""
+
+#: includes/admin.php:123
+msgid "From this settings you can modify the default configuration of the rewards calendar post type."
+msgstr ""
+
+#: includes/admin.php:127
+msgid "Slug"
+msgstr ""
+
+#: includes/admin.php:133
+msgid "Public"
+msgstr ""
+
+#: includes/admin.php:134
+msgid "Check this option if you want to allow to your visitors access to a rewards calendar as a page. Not checking this option will make rewards calendar just visible through shortcodes or widgets."
+msgstr ""
+
+#: includes/admin.php:139
+msgid "Supports"
+msgstr ""
+
+#: includes/admin.php:140
+msgid "Check the features you want to add to the rewards calendar post type."
+msgstr ""
+
+#: includes/admin.php:144
+msgid "Title"
+msgstr ""
+
+#: includes/admin.php:145
+msgid "Editor"
+msgstr ""
+
+#: includes/admin.php:146
+msgid "Author"
+msgstr ""
+
+#: includes/admin.php:147
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/admin.php:147
+msgid "Featured Image"
+msgstr ""
+
+#: includes/admin.php:148
+msgid "Excerpt"
+msgstr ""
+
+#: includes/admin.php:149
+msgid "Trackbacks"
+msgstr ""
+
+#: includes/admin.php:150
+msgid "Custom Fields"
+msgstr ""
+
+#: includes/admin.php:151
+msgid "Comments"
+msgstr ""
+
+#: includes/admin.php:152
+msgid "Revisions"
+msgstr ""
+
+#: includes/admin.php:153
+msgid "Page Attributes"
+msgstr ""
+
+#: includes/admin.php:154
+msgid "Post Formats"
+msgstr ""
+
+#: includes/admin.php:162
+msgid "General"
+msgstr ""
+
+#: includes/admin.php:171
+msgid "Pop-up"
+msgstr ""
+
+#: includes/admin.php:180
+msgid "Post Type"
+msgstr ""
+
+#: includes/admin.php:212
+msgid "License"
+msgstr ""
+
+#: includes/admin.php:238
+msgid "Rewards Calendar Completion Requirements"
+msgstr ""
+
+#: includes/admin.php:242
+msgid "Consecutively"
+msgstr ""
+
+#: includes/admin.php:243
+msgid "User needs to log in consecutively to earn rewards."
+msgstr ""
+
+#: includes/admin.php:248
+msgid "Penalty"
+msgstr ""
+
+#: includes/admin.php:249
+msgid "Select the penalty for not log in consecutively."
+msgstr ""
+
+#: includes/admin.php:250
+msgid "<strong>Restart progress:</strong> User will return back to day 1. Already earned rewards will not be awarded again."
+msgstr ""
+
+#: includes/admin.php:251
+msgid "<strong>Restart progress and revoke rewards:</strong> User will return back to day 1 and all earned rewards will be revoked."
+msgstr ""
+
+#: includes/admin.php:254
+msgid "Restart progress"
+msgstr ""
+
+#: includes/admin.php:255
+msgid "Restart progress and revoke rewards"
+msgstr ""
+
+#: includes/admin.php:259
+msgid "Limited time"
+msgstr ""
+
+#: includes/admin.php:260
+msgid "Make this calendar available by a limited time."
+msgstr ""
+
+#: includes/admin.php:265
+msgid "Start date"
+msgstr ""
+
+#: includes/admin.php:266
+msgid "Enter the start date (leave blank to no limit by a start date). If entered, the rewards will be awarded after or on this date."
+msgstr ""
+
+#: includes/admin.php:270
+msgid "End date"
+msgstr ""
+
+#: includes/admin.php:271
+msgid "Enter the end date (leave blank to no limit by an end date). If entered, the rewards will be awarded before or on this date."
+msgstr ""
+
+#: includes/admin.php:275
+msgid "Repeatable"
+msgstr ""
+
+#: includes/admin.php:276
+msgid "Make this calendar repeatable to let users earn the rewards limited or unlimited times."
+msgstr ""
+
+#: includes/admin.php:281
+msgid "Maximum Times"
+msgstr ""
+
+#: includes/admin.php:282
+msgid "Number of times a user can repeat this calendar (set it to 0 for no maximum)."
+msgstr ""
+
+#: includes/admin.php:290
+msgid "Complete other calendars"
+msgstr ""
+
+#: includes/admin.php:291
+msgid "User needs to complete other calendars to being awarded."
+msgstr ""
+
+#: includes/admin.php:296
+msgid "Calendars"
+msgstr ""
+
+#: includes/admin.php:297
+msgid "Choose the calendar(s) that user needs to complete."
+msgstr ""
+
+#: includes/admin.php:309
+msgid "Rewards Calendar Display Options"
+msgstr ""
+
+#: includes/admin.php:313
+msgid "Show a pop-up on reward"
+msgstr ""
+
+#: includes/admin.php:314
+msgid "When user gets rewarded, show a pop-up to notify it."
+msgstr ""
+
+#: includes/admin.php:319 includes/shortcodes/gamipress_rewards_calendar.php:45
+msgid "Columns"
+msgstr ""
+
+#: includes/admin.php:320 includes/shortcodes/gamipress_rewards_calendar.php:46
+msgid "Columns to divide calendar rewards."
+msgstr ""
+
+#: includes/admin.php:323 includes/shortcodes/gamipress_rewards_calendar.php:49
+msgid "1 Column"
+msgstr ""
+
+#: includes/admin.php:324 includes/shortcodes/gamipress_rewards_calendar.php:50
+msgid "2 Columns"
+msgstr ""
+
+#: includes/admin.php:325 includes/shortcodes/gamipress_rewards_calendar.php:51
+msgid "3 Columns"
+msgstr ""
+
+#: includes/admin.php:326 includes/shortcodes/gamipress_rewards_calendar.php:52
+msgid "4 Columns"
+msgstr ""
+
+#: includes/admin.php:327 includes/shortcodes/gamipress_rewards_calendar.php:53
+msgid "5 Columns"
+msgstr ""
+
+#: includes/admin.php:328 includes/shortcodes/gamipress_rewards_calendar.php:54
+msgid "6 Columns"
+msgstr ""
+
+#: includes/admin.php:329 includes/shortcodes/gamipress_rewards_calendar.php:55
+msgid "7 Columns"
+msgstr ""
+
+#: includes/admin.php:333 includes/shortcodes/gamipress_rewards_calendar.php:59
+#: includes/shortcodes/gamipress_rewards_current_day.php:45
+msgid "Image Size"
+msgstr ""
+
+#: includes/admin.php:334 includes/shortcodes/gamipress_rewards_calendar.php:60
+msgid "Size of the rewards images."
+msgstr ""
+
+#: includes/admin.php:349
+msgid "Rewards Calendar Shortcode"
+msgstr ""
+
+#: includes/admin.php:353
+msgid "Place this shortcode anywhere to display this rewards calendar."
+msgstr ""
+
+#: includes/admin/rewards-ui.php:21 includes/post-types.php:121
+msgid "Rewards"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:64
+msgid "Add New Reward"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:70
+msgid "Save All Rewards"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:132
+msgid "Click the image to edit or update."
+msgstr ""
+
+#: includes/admin/rewards-ui.php:134
+msgid "Label"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:142
+msgid "Nothing"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:147
+msgid "That's okay, a day that user needs to log in but without get rewarded."
+msgstr ""
+
+#: includes/admin/rewards-ui.php:156
+msgid "Points"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:171
+msgid "Use points type image as image."
+msgstr ""
+
+#: includes/admin/rewards-ui.php:181
+msgid "Achievement"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:194
+msgid "Use achievement image as image."
+msgstr ""
+
+#: includes/admin/rewards-ui.php:204
+msgid "Rank"
+msgstr ""
+
+#: includes/admin/rewards-ui.php:217
+msgid "Use rank image as image."
+msgstr ""
+
+#: includes/ajax-functions.php:59
+msgid "No calendars to show."
+msgstr ""
+
+#: includes/ajax-functions.php:67
+msgid "Calendar removed successfully!"
+msgstr ""
+
+#: includes/logs.php:22
+msgid "Calendar Revoke"
+msgstr ""
+
+#: includes/logs.php:23
+msgid "Calendar Restart"
+msgstr ""
+
+#: includes/logs.php:45
+#, php-format
+msgid "{user} lost all rewards of \"%s\" for break a consecutive login (last login %s)"
+msgstr ""
+
+#: includes/logs.php:74
+#, php-format
+msgid "{user} has restarted the calendar \"%s\" for break a consecutive login (last login %s)"
+msgstr ""
+
+#: includes/post-types.php:32 includes/post-types.php:67
+msgid "Add New"
+msgstr ""
+
+#: includes/post-types.php:33 includes/post-types.php:68
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: includes/post-types.php:34 includes/post-types.php:69
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/post-types.php:35 includes/post-types.php:70
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: includes/post-types.php:37 includes/post-types.php:72
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: includes/post-types.php:38 includes/post-types.php:73
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: includes/post-types.php:39 includes/post-types.php:74
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: includes/post-types.php:40 includes/post-types.php:75
+#, php-format
+msgid "No %s found in Trash"
+msgstr ""
+
+#: includes/post-types.php:105
+#: includes/shortcodes/gamipress_rewards_calendar.php:18
+#: includes/shortcodes/gamipress_rewards_calendar.php:24
+#: includes/shortcodes/gamipress_rewards_current_day.php:24
+#: includes/user-earnings.php:59 includes/user-earnings.php:159
+msgid "Rewards Calendar"
+msgstr ""
+
+#: includes/post-types.php:120
+msgid "Reward"
+msgstr ""
+
+#: includes/scripts.php:91
+msgid "Select Calendar(s)"
+msgstr ""
+
+#: includes/scripts.php:103
+msgid "Select an Achievement"
+msgstr ""
+
+#: includes/scripts.php:104
+msgid "Select a Rank"
+msgstr ""
+
+#: includes/scripts.php:105
+msgid "Reward Image"
+msgstr ""
+
+#: includes/scripts.php:117 includes/scripts.php:129
+msgid "Select a Calendar"
+msgstr ""
+
+#: includes/shortcodes.php:27
+msgid "Show Calendar Rewards"
+msgstr ""
+
+#: includes/shortcodes.php:28
+msgid "Show calendar rewards earned."
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_calendar.php:19
+msgid "Render the desired rewards calendar."
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_calendar.php:25
+#: includes/shortcodes/gamipress_rewards_current_day.php:25
+msgid "Choose the rewards calendar to display."
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_calendar.php:31
+#: includes/shortcodes/gamipress_rewards_current_day.php:31
+msgid "Show Title"
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_calendar.php:32
+#: includes/shortcodes/gamipress_rewards_current_day.php:32
+msgid "Display the rewards calendar title."
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_calendar.php:38
+#: includes/shortcodes/gamipress_rewards_current_day.php:38
+msgid "Show Excerpt"
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_calendar.php:39
+#: includes/shortcodes/gamipress_rewards_current_day.php:39
+msgid "Display the rewards calendar short description."
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_current_day.php:18
+msgid "Rewards Calendar Current Day"
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_current_day.php:19
+msgid "Render the current day of the rewards calendar."
+msgstr ""
+
+#: includes/shortcodes/gamipress_rewards_current_day.php:46
+msgid "Size of the reward image."
+msgstr ""
+
+#: includes/triggers.php:25
+msgid "Earn any reward"
+msgstr ""
+
+#: includes/triggers.php:26
+msgid "Earn any reward of a specific calendar"
+msgstr ""
+
+#: includes/triggers.php:27
+msgid "Earn any points reward"
+msgstr ""
+
+#: includes/triggers.php:28
+msgid "Earn any points reward of a specific calendar"
+msgstr ""
+
+#: includes/triggers.php:29
+msgid "Earn any achievement reward"
+msgstr ""
+
+#: includes/triggers.php:30
+msgid "Earn any achievement reward of a specific calendar"
+msgstr ""
+
+#: includes/triggers.php:31
+msgid "Earn any rank reward"
+msgstr ""
+
+#: includes/triggers.php:32
+msgid "Earn any rank reward of a specific calendar"
+msgstr ""
+
+#: includes/triggers.php:35
+msgid "Earn all rewards of any calendar"
+msgstr ""
+
+#: includes/triggers.php:36
+msgid "Earn all rewards of a specific calendar"
+msgstr ""
+
+#: includes/triggers.php:77
+#, php-format
+msgid "Earn any reward of %s"
+msgstr ""
+
+#: includes/triggers.php:78
+#, php-format
+msgid "Earn any points reward of %s"
+msgstr ""
+
+#: includes/triggers.php:79
+#, php-format
+msgid "Earn any achievement reward of %s"
+msgstr ""
+
+#: includes/triggers.php:80
+#, php-format
+msgid "Earn any rank reward of %s"
+msgstr ""
+
+#: includes/triggers.php:82
+#, php-format
+msgid "Earn all rewards of %s"
+msgstr ""
+
+#: includes/user-earnings.php:43 includes/user-earnings.php:119
+#: templates/calendar-reward.php:50
+#, php-format
+msgid "Day %d"
+msgstr ""
+
+#: includes/user-earnings.php:46 includes/user-earnings.php:125
+#: includes/user-earnings.php:134
+msgid "Login Reward"
+msgstr ""
+
+#: includes/user-earnings.php:46
+msgid "Calendar:"
+msgstr ""
+
+#: includes/user-earnings.php:126 includes/user-earnings.php:135
+msgid "Calendar"
+msgstr ""
+
+#: includes/widgets/rewards-calendar-current-day-widget.php:24
+msgid "GamiPress: Rewards Calendar Current Day"
+msgstr ""
+
+#: includes/widgets/rewards-calendar-current-day-widget.php:25
+msgid "Render a desired rewards calendar current day."
+msgstr ""
+
+#: includes/widgets/rewards-calendar-widget.php:24
+msgid "GamiPress: Rewards Calendar"
+msgstr ""
+
+#: includes/widgets/rewards-calendar-widget.php:25
+msgid "Render a desired rewards calendar."
+msgstr ""

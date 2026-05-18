@@ -1,0 +1,20 @@
+<b>Dynamic Redirects</b> is an add-on for <b>ShortLinks Pro</b> that allows you to redirect your links with multiple target URLs, based on some conditions of your choice. You can access these options with the ShortLinks Pro menu, in the "Add new link" section.
+
+<img src="screenshot-1.png"/>
+
+You can choose between the following options:
+
+<ul>
+<li>Rotation redirect: Chooses randomly between a set of URLs, and you can choose the weight (probability) of each of them.</li>
+<li>Geographic redirect: Depending on the country of the user, you can redirect to one link or another.</li>
+<li>Technology redirect: Choose a link depending on the device is being used, the operating system or even the browser.</li>
+<li>Date range redirects: Redirects to a certain URL if it's clicked on a certain range of days.</li>
+<li>Time range redirects: Redirects to a certain URL if it's clicked on a certain range of hours.</li>
+<li>Clicks redirect: Redirects only the number of times you set.</li>
+
+<b>To add a redirection</b>, go to Add new link, and choose one of the options in the Dynamics Redirects section, under the regular link settings of ShortLinks pro.
+
+<img src="screenshot-2.png"/>
+
+
+

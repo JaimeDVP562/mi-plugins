@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress - Social Proof\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-01 13:34+0000\n"
+"PO-Revision-Date: 2026-04-02 10:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.12\n"
+"X-Domain: gamipress-social-proof"
+
+#: gamipress-social-proof.php:143
+#| msgid " instalation to use ( GamiPress Social Proof )"
+msgid " instalation to use ( GamiPress Social Proof )."
+msgstr " instalado para usar ( GamiPress Social Proof )."
+
+#: includes/admin.php:47
+msgid "Add user"
+msgstr "Añadir usuario"
+
+#: includes/admin.php:34 includes/admin.php:161
+msgid "All"
+msgstr "Todos"
+
+#: includes/admin.php:60
+msgid "Avatar"
+msgstr ""
+
+#: includes/admin.php:173
+msgid "Delete History"
+msgstr "Borrar Historial"
+
+#. Page title
+#: includes/admin.php:133 includes/admin.php:134 includes/admin.php:168
+msgid "FOMO History"
+msgstr "Historial FOMO"
+
+#: includes/admin.php:81
+msgid ""
+"For FOMO to function properly, you must have at least one rank, one "
+"achievement, and one points type created in GamiPress."
+msgstr ""
+"Para que el FOMO funcione, necesitas por lo menos un rango, un logro y "
+"puntos GamiPress creados."
+
+#. Author of the plugin
+msgid "GamiPress"
+msgstr ""
+
+#. Name of the plugin
+msgid "GamiPress - Social Proof"
+msgstr ""
+
+#. Description of the plugin
+msgid "GamiPress add-on that display FOMO events."
+msgstr "Add-on de GamiPress que muestra por pantalla eventos FOMO."
+
+#: includes/admin.php:85
+msgid "Great news! FOMO is now working perfectly."
+msgstr ""
+
+#: includes/admin.php:36 includes/admin.php:162
+msgid "Guests"
+msgstr "Visitantes"
+
+#: includes/admin.php:169
+msgid "Here is the history of messages shown to users"
+msgstr "Aquí está el historial de mensajes mostrados a los usuarios"
+
+#. Author URI of the plugin
+msgid "https://gamipress.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://gamipress.com/add-ons/gamipress-social-fake-events"
+msgstr ""
+
+#: includes/admin.php:89
+msgid ""
+"If a user does not have an avatar, the message is still displayed, but not "
+"in the recommended way."
+msgstr ""
+"Si un usuario no tiene un avatar, el mensaje se muestra igualmente, pero no "
+"de la forma recomendada."
+
+#: includes/functions.php:182 includes/functions.php:186
+msgid "just won an award"
+msgstr "acaba de ganar un premio"
+
+#: includes/admin.php:163
+msgid "logged"
+msgstr "logueado"
+
+#: includes/admin.php:35
+msgid "Logged-in Users"
+msgstr "Usuarios Logueados"
+
+#: includes/admin.php:179
+#| msgid "Message_Shown"
+msgid "Message Shown"
+msgstr "Mensaje Mostrado"
+
+#: includes/admin.php:54
+msgid "Name"
+msgstr "Nombre"
+
+#: includes/admin.php:48
+msgid "Remove User"
+msgstr "Borrar Usuario"
+
+#: includes/admin.php:21 includes/admin.php:24
+msgid "Settings FOMO"
+msgstr "Ajustes FOMO"
+
+#: includes/admin.php:30
+msgid "Show notifications to"
+msgstr "Mostrar notificaciones a"
+
+#: includes/admin.php:181
+msgid "Shown To"
+msgstr "Mostrado A"
+
+#: includes/admin.php:180
+msgid "Time Shown"
+msgstr "Momento Mostrado"
+
+#: includes/functions.php:187 includes/functions.php:189
+msgid "unlocked"
+msgstr "a desbloqueado"
+
+#: includes/admin.php:46
+msgid "User"
+msgstr "Usuario"
+
+#: includes/admin.php:178
+msgid "User Shown"
+msgstr "Usuario Mostrado"
+
+#: includes/functions.php:188
+msgid "won"
+msgstr "a ganado"
+
+#: gamipress-social-proof.php:143
+msgid "You need "
+msgstr "Usted necesita "
+
+#: includes/admin.php:97
+msgid "Your FOMO settings have been successfully saved."
+msgstr "Sus ajustes FOMO fueron guardados exitosamente."

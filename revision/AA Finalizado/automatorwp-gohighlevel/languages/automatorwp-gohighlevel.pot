@@ -1,0 +1,191 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - GoHighLevel\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2026-03-03 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: AutomatorWP <contact@automatorwp.com>\n"
+"Language-Team: AutomatorWP <contact@automatorwp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: GitHub Copilot\n"
+"X-Textdomain-Support: yes\n"
+
+#: includes/admin.php
+msgid "GoHighLevel"
+msgstr ""
+
+#: includes/admin.php
+msgid "API Key:"
+msgstr ""
+
+#: includes/admin.php
+msgid "Your GoHighLevel API key."
+msgstr ""
+
+#: includes/admin.php
+msgid "Location ID:"
+msgstr ""
+
+#: includes/admin.php
+msgid "Default GoHighLevel location (optional)."
+msgstr ""
+
+#: includes/admin.php
+msgid "Webhook Secret Token:"
+msgstr ""
+
+#: includes/admin.php
+msgid "Secret token used to validate GoHighLevel webhooks."
+msgstr ""
+
+#: includes/admin.php
+msgid "Connect with GoHighLevel:"
+msgstr ""
+
+#: includes/admin.php
+msgid "Save Credentials"
+msgstr ""
+
+#: includes/admin.php
+msgid "Delete Credentials"
+msgstr ""
+
+#: includes/admin.php
+msgid "Test Trigger:"
+msgstr ""
+
+#: includes/admin.php
+msgid "Fire Test Trigger"
+msgstr ""
+
+#: includes/ajax-functions.php
+msgid "Security check failed"
+msgstr ""
+
+#: includes/ajax-functions.php
+msgid "API key is missing"
+msgstr ""
+
+#: includes/ajax-functions.php
+#: includes/scripts.php
+msgid "Credentials saved successfully"
+msgstr ""
+
+#: includes/ajax-functions.php
+#: includes/scripts.php
+msgid "Credentials deleted successfully"
+msgstr ""
+
+#: includes/ajax-functions.php
+msgid "API key is required to connect with GoHighLevel"
+msgstr ""
+
+#: includes/ajax-functions.php
+msgid "Correct data to connect with GoHighLevel"
+msgstr ""
+
+#: includes/ajax-functions.php
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/ajax-functions.php
+msgid "Test trigger fired successfully!"
+msgstr ""
+
+#: includes/functions.php
+msgid "GoHighLevel API not configured"
+msgstr ""
+
+#: includes/functions.php
+#, php-format
+msgid "GoHighLevel API returned HTTP %d"
+msgstr ""
+
+#: includes/functions.php
+msgid "Please check your API credentials"
+msgstr ""
+
+#: includes/scripts.php
+msgid "Please enter an API key first."
+msgstr ""
+
+#: includes/scripts.php
+msgid "Saving credentials..."
+msgstr ""
+
+#: includes/scripts.php
+msgid "Could not save credentials."
+msgstr ""
+
+#: includes/scripts.php
+msgid "Request failed while saving credentials."
+msgstr ""
+
+#: includes/scripts.php
+msgid "Deleting credentials..."
+msgstr ""
+
+#: includes/scripts.php
+msgid "Could not delete credentials."
+msgstr ""
+
+#: includes/scripts.php
+msgid "Request failed while deleting credentials."
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Event type"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Location ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Contact ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Contact email"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Contact phone"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Appointment ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Calendar ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Opportunity ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Pipeline ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Pipeline stage ID"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Message"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Timestamp"
+msgstr ""
+
+#: includes/tags.php
+msgid "GoHighLevel: Test URL"
+msgstr ""

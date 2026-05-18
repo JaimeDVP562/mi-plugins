@@ -1,0 +1,14 @@
+{
+    "name": "shortlinkspro/advanced-redirects",
+    "description": "Add-on for ShortLinksPro that adds advanced redirect types like 1x1 transparent pixel.",
+    "type": "wordpress-plugin",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Andrea Borrás y Paula Lei Gimeno"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    }
+}

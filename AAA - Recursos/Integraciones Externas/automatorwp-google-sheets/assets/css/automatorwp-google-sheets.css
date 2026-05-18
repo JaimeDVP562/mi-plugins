@@ -1,0 +1,20 @@
+.cmb2-id-automatorwp-google-sheets-authorize .automatorwp-notice-success,
+.cmb2-id-automatorwp-google-sheets-authorize .automatorwp-notice-error {
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+.automatorwp-google-sheets-refresh-token {
+    margin-bottom: 0;
+}
+
+.automatorwp-google-sheets-access-token strong,
+.automatorwp-google-sheets-refresh-token strong {
+    display: inline-block;
+    min-width: 85px;
+}
+
+.automatorwp-google-sheets-access-token input,
+.automatorwp-google-sheets-refresh-token input {
+    min-width: 300px;
+}

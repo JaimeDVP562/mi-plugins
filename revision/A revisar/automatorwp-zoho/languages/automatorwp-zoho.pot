@@ -1,0 +1,49 @@
+# Copyright (C) 2026 AutomatorWP
+# This file is distributed under the same license as the AutomatorWP - Zoho package.
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - Zoho 1.0.0\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/support/\n"
+"POT-Creation-Date: 2026-03-23 15:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/admin.php:36
+msgid "Zoho CRM"
+msgstr ""
+
+#: includes/admin.php:54
+msgid "Zoho CRM Settings"
+msgstr ""
+
+#: includes/admin.php:57
+msgid "Access Token:"
+msgstr ""
+
+#: includes/admin.php:108
+msgid "Connect with Zoho CRM:"
+msgstr ""
+
+#: includes/admin.php:115
+msgid "Save Credentials"
+msgstr ""
+
+#: includes/admin.php:121
+msgid "Delete Credentials"
+msgstr ""
+
+#: includes/actions/create-lead.php:15
+msgid "Create Zoho Lead"
+msgstr ""
+
+#: includes/actions/create-contact.php:15
+msgid "Create Zoho Contact"
+msgstr ""
+
+#: includes/actions/create-task.php:15
+msgid "Create Zoho Task"
+msgstr ""

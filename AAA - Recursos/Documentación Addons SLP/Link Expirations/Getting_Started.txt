@@ -1,0 +1,8 @@
+<b>Link Expirations</b> is an add-on for <b>ShortLinks Pro</b> that allows you to set expiration conditions for links based on a specific date, 
+total number of clicks, or unique clicks.
+
+<b>To add an expiration condition</b>, edit a link and choose one of the following options under the expiration settings: <a href="Configure_date.txt">Date</a>, 
+<a href="Configure_clicks.txt">Clicks</a>, or <a href="Configure_clicks.txt">Unique Clicks</a>. Then, save the link.
+
+For more detailed instructions, refer to the configuration sections.
+

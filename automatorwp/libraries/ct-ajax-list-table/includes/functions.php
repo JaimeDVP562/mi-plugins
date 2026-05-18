@@ -23,7 +23,7 @@ function ct_render_ajax_list_table( $table, $query_args = array(), $view_args = 
     global $ct_table, $ct_query, $ct_list_table, $ct_ajax_list_items_per_page;
 
     $ct_table = ct_setup_table( $table );
-
+    
     if( is_object( $ct_table ) ) {
 
         // Setup this constant to allow from CT_List_Table meet that this render comes from this plugin
@@ -75,6 +75,7 @@ function ct_render_ajax_list_table( $table, $query_args = array(), $view_args = 
                 <?php ct_render_ajax_list_tablenav( $ct_list_table, 'top' ); ?>
 
                 <table class="wp-list-table <?php echo implode( ' ', $ct_list_table->get_table_classes() ); ?>">
+                
                     <thead>
                     <tr>
                         <?php $ct_list_table->print_column_headers(); ?>

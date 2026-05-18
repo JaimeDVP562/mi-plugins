@@ -1,0 +1,252 @@
+# AutomatorWP – Elastic Email Sender Integration
+
+### Requisitos Previos
+- WordPress instalado y funcionando.
+- Plugin AutomatorWP activo (se puede descargar gratuitamente desde el repositorio oficial de WordPress).
+- Plugin Elastic Email Sender activo (descargable desde el repositorio oficial de WordPress).
+- Documentación oficial: https://elasticemail.com/developers/api-documentation/rest-api
+
+++El icono no corresponde con el oficial de la aplicación. Es solo orientativo para las pruebas.++
+
+---
+
+## 1) Instalación del entorno
+1. Subir y activar la carpeta de nuestro plugin de integración recién creado (automatorwp-elastic-email-sender) en la ruta wp-content/plugins/.
+
+## 2) Obtención de la API Key (Panel de Elastic Email)
+Para que WordPress pueda comunicarse con Elastic Email, necesitamos crear una llave de acceso (API Key).
+1. Ir a la página web oficial de Elastic Email (elasticemail.com), crear una cuenta e iniciar sesión.
+2. En el panel principal, ir al menú de la izquierda y hacer clic en Settings (Ajustes).
+3. Hacer clic en la pestaña Manage API Keys (Gestionar claves API).
+4. Hacer clic en el botón Create (Crear) situado en la parte superior derecha.
+5. Asignar un nombre identificativo.
+6. En la sección de permisos, marcar la opción "HTTP API" en los seleccionables. Luego, en los desplegables de permisos, realizar las siguientes configuraciones obligatorias:
+   - "Emails": Marcar como "View & Modify".
+   - "Contacts" (Contactos): Marcar como "View & Modify".
+   - "Templates" (Plantillas): Marcar como "View".
+   - "Campaigns" (Campañas): Marcar como "View & Modify" (Vital para los envíos masivos a Listas).
+   - Dejar todas las demás sin marcar (None).
+7. Copiar la API Key generada (una cadena larga de texto). Nota: Guárdala bien porque no volverá a mostrarse.
+
+## 3) Configuración de Elastic Email Sender (En WordPress)
+Ahora debemos guardar esa API Key en el plugin oficial para que nuestra integración pueda leerla.
+1. En el menú lateral de WordPress, ir a Elastic Email Sender > Settings.
+2. En la pestaña de configuración general, buscar el campo llamado Elastic Email API Key.
+3. Pegar ahí la API Key que copiamos en el paso anterior.
+4. En el campo From Email (Email del remitente), escribir una dirección de correo electrónico que pertenezca a un dominio verificado en tu cuenta. Asegúrate de usar un correo de dominio real, ya que hacer envíos utilizando los dominios de prueba locales generados por programas como XAMPP, WAMP o Local provocará que la API rechace la petición.
+5. Hacer clic en Save Changes (Guardar cambios).
+
+## 4) Creación de una Plantilla y Lista (Panel de Elastic Email)
+Antes de probar las acciones dinámicas, necesitamos tener datos creados en nuestra cuenta.
+1. Para las plantillas: Ir a "Email Marketing" > "Plantillas De Email". Crear y guardar un diseño (ej: mi-plantilla-prueba).
+2. Para las listas: Ir a "Audiencia" o "Contactos" > Pestaña "Listas". Crear una nueva lista de distribución (ej: Compradores VIP).
+
+## 5) --ACTIONS--
+
+### 1 - PRIMER ACTION: action-send-email.php
+Vamos a crear una automatización para comprobar que nuestro plugin es capaz de enviar correos estándar a través de Elastic Email.
+1. Ir a AutomatorWP > Automations > Add New.
+2. Ponerle un título.
+3. Añadir el Disparador (Trigger):
+   - Hacer clic en "Add Trigger".
+   - Seleccionar la integración WordPress y elegir "User logs in" (El usuario inicia sesión).
+4. Añadir la Acción (Action):
+   - Hacer clic en "Add Action".
+   - Seleccionar la integración ElasticEmailSender y elegir "Send an email".
+   - Se desplegarán los campos. Rellenarlos de la siguiente manera:
+     - To (Destinatario): Escribir un correo para comprobar que llega, o usar el botón lateral para añadir la etiqueta {user_email}.
+     - Subject (Asunto): Escribir un asunto de prueba.
+     - Content (Contenido): Escribir un cuerpo de mensaje de prueba.
+   - Hacer clic en "Save".
+5. Cambiar el estado de la automatización a Active.
+6. Ejecución de la prueba:
+   - Abrir una ventana de navegación privada / incógnito.
+   - Ir a la página de inicio de sesión de tu WordPress (/wp-admin o /wp-login.php).
+   - Iniciar sesión con cualquier usuario.
+7. Verificación:
+   - Volver al panel de administrador original (fuera del incógnito).
+   - Ir a AutomatorWP > Logs. Confirmar que aparece el registro de la Acción en verde ("Send email to...").
+   - Revisar el archivo error.log del servidor y confirmar obligatoriamente que aparece el siguiente mensaje: SCC Action Success: Email processed by Elastic Email API. Esto nos garantiza que la petición se completó con éxito.
+
+### 2 - SEGUNDA ACCIÓN: action-send-email-template.php
+Vamos a probar la integración avanzada que carga de forma dinámica las plantillas.
+1. En la misma automatización anterior (o en una nueva), hacer clic en "Add Action".
+2. Seleccionar la integración ElasticEmailSender y elegir "Send an email using a Template".
+3. Rellenar los campos:
+     - To (Destinatario): Usar {user_email}.
+     - Template Name: Al desplegar este campo, seleccionaremos la plantilla deseada (ej. mi-plantilla-prueba).
+4. Hacer clic en "Save" y activar la automatización.
+5. Ejecutar la prueba iniciando sesión en una ventana de incógnito.
+6. Verificación:
+   - Ir a AutomatorWP > Logs y verificar que aparece completada.
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Template email processed by Elastic Email API.
+
+### 3 - TERCERA ACCIÓN: action-add-update-contact.php
+Esta acción permite sincronizar los datos del usuario de WordPress con la base de datos principal de Elastic Email.
+1. En una automatización, hacer clic en "Add Action".
+2. Seleccionar "Add or update a contact".
+3. Rellenar los campos usando las etiquetas dinámicas de AutomatorWP (icono de las tres rayas):
+   - Contact Email: {user_email}
+   - First Name: {user_first_name}
+   - Last Name: {user_last_name}
+4. Hacer clic en "Save" y activar.
+5. Ejecutar la prueba de inicio de sesión (Importante: usar un correo válido y que no esté en la lista de rebotados).
+6. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Contact profile added/updated by Elastic Email API.
+   - Entrar en el panel de Elastic Email (Contactos > Información general), usar el buscador y verificar que el usuario se ha creado como estado "Transactional" y contiene su nombre y apellidos.
+
+### 4 - CUARTA ACCIÓN: action-add-contact-to-list.php
+Esta acción introduce un contacto dentro de una Lista específica.
+IMPORTANTE DE ARQUITECTURA: El endpoint de listas de Elastic Email requiere que el contacto ya exista previamente en su base de datos general. Por lo tanto, en la automatización, esta acción SIEMPRE debe colocarse debajo de la acción "Add or update a contact".
+1. En la automatización (colocándola debajo de la Tercera Acción), hacer clic en "Add Action".
+2. Seleccionar "Add a contact to a List".
+3. Rellenar los campos:
+   - Contact Email: {user_email}
+   - List Name: Desplegar y seleccionar la lista creada previamente (ej. Compradores VIP).
+4. Hacer clic en "Save" y activar.
+5. Ejecutar la prueba.
+6. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Contact explicitly added to list [NombreLista] by Elastic Email API.
+   - Entrar en el panel de Elastic Email, ir a la lista correspondiente y verificar que el contacto está dentro de la audiencia.
+
+### 5 - QUINTA ACCIÓN: action-remove-contact-from-list.php
+Esta acción elimina un usuario de una lista concreta, pero mantiene su perfil en la base de datos general de Elastic Email. Útil cuando un usuario pierde un rol o suscripción en WordPress.
+1. En una automatización, hacer clic en "Add Action".
+2. Seleccionar "Remove a contact from a List".
+3. Rellenar los campos:
+   - Contact Email: {user_email}
+   - List Name: Seleccionar la lista de la que queremos expulsar al usuario.
+4. Hacer clic en "Save" y activar.
+5. Ejecutar la prueba de inicio de sesión con un usuario que ya esté dentro de esa lista.
+6. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Contact removed from list [NombreLista] by Elastic Email API.
+   - Entrar en la lista en Elastic Email y confirmar visualmente que el usuario ya no está en ella.
+
+### 6 - SEXTA ACCIÓN: action-unsubscribe-contact.php
+Esta acción da de baja totalmente a un usuario (RGPD). Útil para cuando un usuario elimina su cuenta de WordPress, evitando que siga recibiendo campañas y protegiendo tu reputación de spam.
+1. En una automatización, hacer clic en "Add Action".
+2. Seleccionar "Unsubscribe a contact".
+3. Rellenar el campo:
+   - Contact Email: {user_email}
+4. Hacer clic en "Save" y activar.
+5. Ejecutar la prueba de inicio de sesión.
+6. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Contact explicitly unsubscribed by Elastic Email API.
+   - Entrar en Elastic Email (Contactos > Información general), buscar el usuario y verificar que su "Estado" ha cambiado de Activo/Transaccional a "Subscripción cancelada" (Unsubscribed).
+
+### 7 - SÉPTIMA ACCIÓN: action-delete-contact.php
+Esta acción elimina un contacto de forma permanente y absoluta de los servidores de Elastic Email (ideal para cumplir de forma estricta con el RGPD y el Derecho al Olvido).
+1. En una automatización, hacer clic en "Add Action".
+2. Seleccionar "Delete a contact permanently (GDPR)".
+3. Rellenar el campo:
+   - Contact Email: {user_email}
+4. Hacer clic en "Save" y activar.
+5. Ejecutar la prueba de inicio de sesión.
+6. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Contact permanently deleted by Elastic Email API.
+   - Entrar en Elastic Email y confirmar que el usuario ha sido destruido y ya no existe en la base de datos.
+
+### 8 - OCTAVA ACCIÓN: action-send-email-attachment.php
+Esta acción envía un correo transaccional que incluye un archivo adjunto descargado dinámicamente desde una URL (ideal para enviar PDFs, diplomas o facturas).
+1. Subir un archivo (ej. un PDF o JPG pequeño) a la Biblioteca de Medios de WordPress. Hacer clic sobre él y copiar su "URL del archivo" (la ruta absoluta, ej: https://tu-dominio.com/wp-content/uploads/...).
+2. En una automatización, hacer clic en "Add Action".
+3. Seleccionar "Send an email with an attachment".
+4. Rellenar los campos:
+   - To (Destinatario): IMPORTANTE PARA PRUEBAS -> Si estás usando una cuenta gratuita de Elastic Email, el sistema bloqueará los correos a terceros. Escribe aquí a mano el correo exacto verificado de tu cuenta (ej: manuel.granero.dev@gmail.com). En producción con cuenta premium, usa {user_email}.
+   - Subject (Asunto): Escribir un asunto de prueba.
+   - Content (Contenido): Escribir el cuerpo del correo.
+   - Attachment URL: Pegar la URL absoluta del archivo que copiamos en el paso 1.
+5. Hacer clic en "Save" y activar.
+6. Ejecutar la prueba iniciando sesión en incógnito.
+7. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Email with attachment processed by Elastic Email API. (Nota: Si aparece un "Warning: Could not download the attachment...", significa que tu entorno local no permite descargas internas o la URL está protegida).
+   - Revisar la bandeja de entrada del correo de destino para confirmar que llegó con el archivo adjunto.
+
+### 9 - NOVENA ACCIÓN: action-update-contact-field.php
+Esta acción permite actualizar o crear un campo personalizado (Custom Field) para un usuario específico en Elastic Email. Útil para guardar datos adicionales que no vienen por defecto (ej. ciudad, nivel de membresía, cargo).
+1. En la web de Elastic Email, asegúrate de tener pensado el nombre del campo que quieres registrar.
+2. En una automatización en WordPress, hacer clic en "Add Action".
+3. Seleccionar "Update a custom field for a contact".
+4. Rellenar los campos:
+   - Contact Email: {user_email}
+   - Field Name: Escribir el nombre exacto del campo (ej: ciudad). SIN LLAVES y en minúsculas preferiblemente.
+   - Field Value: Escribir el valor a guardar o usar una etiqueta dinámica (ej: Valencia).
+5. Hacer clic en "Save" y activar.
+6. Ejecutar la prueba iniciando sesión.
+7. Verificación:
+   - Revisar el archivo error.log y confirmar el mensaje: SCC Action Success: Custom field updated by Elastic Email API.
+   - Entrar en Elastic Email (Contactos), buscar al usuario y confirmar que tiene el nuevo dato registrado.
+
+### 10 - DÉCIMA ACCIÓN: action-send-email-to-list.php
+Esta acción lanza una Campaña Masiva a todos los usuarios de una Lista específica en lugar de a un usuario individual.
+IMPORTANTE DE ARQUITECTURA: Elastic Email utiliza motores distintos para correos individuales y campañas masivas. Para que esta acción funcione de forma real, la cuenta de Elastic Email DEBE tener un Dominio de Remitente Verificado (ej: info@tu-empresa.com). 
+1. En una automatización, hacer clic en "Add Action".
+2. Seleccionar "Send a template email to an entire List".
+3. Rellenar los campos:
+   - List Name: Seleccionar la lista destino (ej: Compradores VIP).
+   - Template Name: Seleccionar la plantilla a enviar.
+   - Subject: Escribir el asunto de la campaña masiva.
+4. Hacer clic en "Save" y activar.
+5. Ejecutar la prueba.
+6. Verificación:
+   - Revisar el archivo error.log.
+   - Si tu cuenta es Premium y tu dominio está verificado, verás: SCC Action Success: Campaign launched to list by Elastic Email API.
+   - NOTA DE DEPURACIÓN (CUENTAS GRATUITAS/PRUEBAS): Si usas un remitente @gmail.com o @hotmail.com, el log arrojará el siguiente error:
+     SCC Action API Rejected (400): {"Error":"Sorry, but the unexpected error occurred... [código largo UUID]"}
+     Significa que el código del plugin funciona a la perfección y la petición llegó bien formateada a los servidores de Elastic Email, pero sus barreras anti-spam han cerrado la conexión al no detectar un dominio corporativo de pago. En un servidor de producción real, este action funcionará sin problemas.
+
+## 6) --TRIGGERS-- 
+
+### A) Configuración General (Solo se hace una vez)
+Para que los disparadores funcionen, Elastic Email necesita saber a qué "puerta" llamar.
+1. En el panel de Elastic Email, ve a Ajustes > Webhooks.
+2. Haz clic en "Añadir Webhook".
+3. En la URL de Destino, debes poner la dirección de tu "Router" de WordPress. 
+   La estructura es: http://tu-dominio.com/wp-json/elasticmailsender/v1/webhook
+   (Nota: Si estás en un entorno local de pruebas, Elastic Email no podrá contactarte, por lo que usaremos Postman para simular estos avisos).
+4. Selecciona todos los eventos que quieras seguir (Opened, Clicked, Unsubscribed, etc.).
+5. Guarda los cambios.
+
+### B) Cómo probar cualquier Trigger con Postman
+Dado que estamos en desarrollo local, simularemos los avisos de la siguiente manera:
+1. Abre Postman y crea una nueva pestaña de tipo POST.
+2. URL: Pon tu dirección local (ej: http://tu-dominio.com/wp-json/elasticmailsender/v1/webhook).
+3. Pestaña Headers: Añade Content-Type -> application/json.
+4. Pestaña Body: Selecciona "raw" y "JSON". 
+5. Código a pegar:
+   {
+       "status": "AQUÍ_VA_EL_ESTADO",
+       "to": "correo-de-tu-usuario-de-pruebas@gmail.com"
+   }
+   (Sustituye AQUÍ_VA_EL_ESTADO por Opened, Clicked, Bounced, etc., según la prueba).
+
+### C) Listado de Disparadores Disponibles
+
+#### 1 - TRIGGER: trigger-email-opened.php
+Detecta cuando un usuario abre un correo enviado.
+- Uso: Ideal para dar puntos en GamiPress por leer boletines.
+- Test Postman: Cambia el status a "Opened".
+
+#### 2 - TRIGGER: trigger-email-clicked.php
+Detecta cuando un usuario hace clic en CUALQUIER enlace del correo.
+- Uso: Útil para identificar usuarios muy interesados en una oferta.
+- Test Postman: Cambia el status a "Clicked".
+
+#### 3 - TRIGGER: trigger-email-unsubscribed.php
+Detecta cuando alguien pulsa "Darse de baja" en el pie del email.
+- Uso: Vital para sincronizar la baja en WordPress y quitar roles VIP automáticamente.
+- Test Postman: Cambia el status a "Unsubscribed".
+
+#### 4 - TRIGGER: trigger-email-bounced.php
+Detecta si el email no ha podido entregarse (buzón lleno o dirección falsa).
+- Uso: Permite limpiar tu base de datos de WordPress borrando usuarios con emails inválidos.
+- Test Postman: Cambia el status a "Bounced".
+
+#### 5 - TRIGGER: trigger-email-spam.php
+Detecta si el usuario te ha marcado como Spam (Queja).
+- Uso: Permite bloquear al usuario en WordPress para proteger la reputación de tu dominio.
+- Test Postman: Cambia el status a "Spam" o "Complained".
+
+---
+VERIFICACIÓN GLOBAL:
+Al darle a "Send" en Postman con cualquiera de estos estados, debes recibir una respuesta 200 OK con {"status": "success"}. Automáticamente, en la sección AutomatorWP > Logs de tu WordPress, aparecerá el registro en verde confirmando que el Trigger se ha disparado correctamente.

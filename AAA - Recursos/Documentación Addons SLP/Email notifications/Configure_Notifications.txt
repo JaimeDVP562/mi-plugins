@@ -1,0 +1,35 @@
+In this guide, you will learn how to configure notifications to receive them via email.
+
+<h2> Configure the Email Notifications </h2>
+
+<b>1</b> - Go to your ShortLinkPro and click <b>Settings</b>.
+
+[Captura: configure1.png]
+
+<b>2</b> - Then go to in the <b>"Click Tracking"</b> section.
+
+[Captura: configure2.png]
+
+<b>3</b> - now scroll down until you reach the email notifications area.
+
+[Captura: configure3.png]
+
+<b>4</b>A field for the<b>Send email to</b> Enter the email or emails separated by comma where you wish to receive notifications..
+
+[Captura: configure4.png]
+
+<b>5</b> - In the next field, enter the <b>Send notification when a link reaches</b> Select the number of clicks you want to reach in order to receive the notification.
+
+[Captura: configure5.png]
+
+<b>6</b> - In the next field, select <b>Clicks or Unique clicks</b>.
+
+[Captura: configure6.png]
+
+<b>7</b> - In the last button, select <b>ADD</b> if you want to add more notification configurations with different number of clicks.
+
+[Captura: configure7.png]
+
+<b>8</b> - Click <b>Save Settings</b> to save your changes or <b>Reset Settings</b> to reset your changes.
+
+[Captura: configure8.png]

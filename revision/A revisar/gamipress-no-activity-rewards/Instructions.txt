@@ -1,0 +1,37 @@
+Dificultad ALTA
+Este es un add-on para GamiPress que busca permitir crear premios en base a 
+NO actividades (no loguearse en X dias, no realizar cursos en X dias, etc)
+GamiPress actualmente tiene una vista para definir los requisitos de un logro
+ademas con limites, este add-on debe extender esas opciones para marcar que sea 
+un "No actividad" (conceptuar la interfaz) y se pueda definir en que intervalo
+Internamente, lo que debe hacer es comprobar la ultima vez que se hizo lo del evento,
+y ver si ha pasado el tiempo suficiente para premiar De inicio, 
+si es muy complicado hacerlo flexible a todos los eventos,
+se puede jugar a meter triggers de no actividad que los mas utiles serian:
+
+
+        
+      No se ha logueado
+
+        
+      No ha visitado el sitio (practicamente igual que el anterior 
+      porque sin logueo no hay forma de trackear)
+
+        
+      No ha ganado ningún logro de cualquier tipo
+
+        
+      No ha ganado ningún logro de X tipo
+
+        
+      Los dos eventos anteriores para rangos y puntos
+
+Esta via de triggers de "No ha" lo que requerira internamente es realizar un 
+check a través del cron de WP (GP ya tienen funciones para registrar 
+de forma ok en cron WP y Action Scheduler) y comprobar, 1 de los triggers que 
+hayan en uso, ver las cantidades y buscar usuarios que cumplan dichas cantidades 
+para lanzar el evento de que "no ha hecho"
+Este add-on sobretodo hay que tener muy en cuenta la optimizacion de esa query, 
+para que se realice 1 vez al dia y no consuma demasiados recursos,
+por eso lo mejor es que la funcion realice 1 sola query para saber que usuarios 
+coinciden con los eventos de NO, pero va a ser un poco complicado

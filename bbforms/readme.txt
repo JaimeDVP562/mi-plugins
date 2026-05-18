@@ -2,8 +2,8 @@
 Contributors: rubengc, eneribs, dioni00, tinocalvo, flabernardez
 Tags: contact form, custom form, forms, shortcode, code
 Requires at least: 4.4
-Tested up to: 6.9
-Stable tag: 1.0.9
+Tested up to: 7.0
+Stable tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -353,6 +353,11 @@ Additionally, there are [premium integrations](https://bbforms.com/add-ons/) wit
 Lastly, you can add a custom Captcha using the Quiz field to create math or question-based captcha for your forms.
 
 == Changelog ==
+
+= 1.1.0 =
+
+* **Improvements**
+* Improved security in some ajax requests.
 
 = 1.0.9 =
 

@@ -1,0 +1,31 @@
+AUTOMATORWP – MISTRAL AI
+Guía de configuración
+
+1. Obtener API Key de Mistral
+
+- Acceder a: https://console.mistral.ai
+- Crear cuenta o iniciar sesión
+- Ir a la sección de API
+- Generar una nueva API Key
+- Copiar la clave generada
+
+2. Configuración en WordPress
+
+- Acceder al panel de administración de WordPress
+- Ir a AutomatorWP → Mistral Settings
+- Pegar la API Key en el campo correspondiente
+- Guardar cambios
+
+3. Probar la integración
+
+- Crear un flujo de prueba en AutomatorWP
+- Añadir la acción de Mistral AI
+- Introducir un prompt de prueba
+- Ejecutar el flujo
+- Verificar que se recibe respuesta correctamente
+
+Notas importantes:
+
+- La API Key debe mantenerse privada.
+- El servidor debe permitir peticiones HTTP salientes.
+- Si la API Key es incorrecta, la integración no funcionará.

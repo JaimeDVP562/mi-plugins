@@ -1,0 +1,107 @@
+# GamiPress - SureCart Partial Payments
+
+## Resumen
+
+Este plugin es una adaptación de **GamiPress - WooCommerce Partial Payments** (v1.2.4) para **SureCart**. Permite a los usuarios pagar parcialmente sus compras en SureCart utilizando puntos de GamiPress.
+
+> [!IMPORTANT]
+> SureCart no admite pasarelas de pago personalizadas ni la manipulación de tarifas del carrito como WooCommerce.
+> El descuento se aplica a nivel de GamiPress (se deducen los puntos), pero el total del pedido en SureCart **no se reduce automáticamente**. Para que el descuento monetario se refleje en el total de SureCart, se necesitaría integrar un mecanismo complementario (cupón manual, descuento mediante API de SureCart o parámetro de URL para cupones). Esta es una limitación actual de la API de SureCart.
+## Estructura del Plugin
+
+```
+gamipress-sc-partial-payments/
+├── gamipress-sc-partial-payments.php     # Archivo principal del plugin (patrón singleton)
+├── readme.txt                             # Léame del plugin
+├── assets/
+│   ├── css/
+│   │   └── gamipress-sc-partial-payments.css           # Estilos del frontend (NUEVO)
+│   └── js/
+│       ├── gamipress-sc-partial-payments-admin.js       # JS del panel de administración
+│       └── gamipress-sc-partial-payments-checkout.js    # JS del frontend para el pago
+├── includes/
+│   ├── admin.php                          # Ajustes y meta boxes
+│   ├── ajax-functions.php                 # AJAX aplicar/eliminar pagos parciales
+│   ├── filters.php                        # Inyección del formulario, hooks de compra
+│   ├── functions.php                      # Conversión, moneda, helpers
+│   ├── scripts.php                        # Encolado de scripts/estilos
+│   └── template-functions.php             # Rutas de plantillas de GamiPress
+├── languages/                             # Archivos de internacionalización (i18n)
+├── libraries/
+│   └── points-rate-field-type.php         # Tipo de campo CMB2 (compartido con WC)
+└── templates/                             # Plantillas que se pueden sobrescribir
+```
+
+## Diferencias Arquitectónicas Clave: WooCommerce vs SureCart
+
+### 1. Inyección del Formulario de Pago
+
+| WooCommerce | SureCart |
+|---|---|
+| Hook de acción `woocommerce_before_checkout_form` | Filtro `render_block` apuntando al bloque `surecart/checkout-form` |
+| Renderizado de plantillas nativo en PHP | Filtro `the_content` para formularios basados en shortcodes |
+| Integración directa de WC con el bloque de pago | Formulario HTML independiente inyectado antes del pago |
+
+### 2. Aplicación del Descuento
+
+| WooCommerce | SureCart |
+|---|---|
+| Sistema de tarifas del carrito de WC (`$cart->fees_api()->add_fee()`) | Puntos deducidos vía AJAX al momento de aplicarlo (igual que WC v1.0.6+) |
+| El descuento se muestra en los totales del carrito como una fila de "tarifa" | El descuento se muestra en una sección personalizada de descuentos aplicados |
+| Manejo de impuestos en las tarifas de WC (imponible/no imponible) | No se necesita integración de impuestos (SureCart maneja los impuestos de manera independiente) |
+
+### 3. Ciclo de Vida del Pedido
+
+| WooCommerce | SureCart |
+|---|---|
+| `woocommerce_payment_complete` | `surecart/purchase_created` |
+| `woocommerce_order_status_changed` | `surecart/purchase_revoked` |
+| `wc_get_order()` + order meta | Modelo de compra (Purchase) + user meta por pedido |
+| Compatibilidad con HPOS | N/A (SureCart utiliza su propia API) |
+
+### 4. Manejo de Monedas
+
+| WooCommerce | SureCart |
+|---|---|
+| `get_woocommerce_currency_symbol()` | Personalizado [gamipress_sc_partial_payments_get_currency_symbol()](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/functions.php#187-214) |
+| `wc_price()`, `wc_get_price_decimals()` | Personalizado [gamipress_sc_partial_payments_format_money()](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/functions.php#274-290) |
+| `get_woocommerce_price_format()` | Simple `$symbol + formatted_number` |
+
+### 5. Frontend en JavaScript
+
+| WooCommerce | SureCart |
+|---|---|
+| Dependencia de jQuery `$.fn.block()`/`$.fn.unblock()` (dependencia de WC) | Enfoque de opacidad por CSS (sin dependencia de WC) |
+| Flujo de actualización del carrito por AJAX en WC | Recarga de página después de aplicar/eliminar |
+| Manipulación del DOM en el bloque de pago | N/A (SureCart utiliza componentes web) |
+
+## Resumen de Archivos Modificados
+
+| Archivo original de WC | Equivalente en SureCart | Cambios |
+|---|---|---|
+| [gamipress-wc-partial-payments.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/gamipress-wc-partial-payments.php) | [gamipress-sc-partial-payments.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/gamipress-sc-partial-payments.php) | Clase renombrada, comprueba por [SureCart](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/gamipress-sc-partial-payments.php#17-220) en lugar de [WooCommerce](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/gamipress-wc-partial-payments.php#19-222) |
+| [includes/admin.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/includes/admin.php) | [includes/admin.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/includes/admin.php) | Eliminada la opción de impuestos específica de WC, helper de moneda para SureCart |
+| [includes/ajax-functions.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/includes/ajax-functions.php) | [includes/ajax-functions.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/includes/ajax-functions.php) | Eliminadas las comprobaciones del total del carrito de WC, devuelve JSON estructurado |
+| [includes/filters.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/filters.php) | [includes/filters.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/filters.php) | **Reescritura importante**: inyección mediante render_block, hooks de compra de SureCart, HTML del formulario integrado localmente |
+| [includes/functions.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/includes/functions.php) | [includes/functions.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/includes/functions.php) | Añadidos helpers de moneda, eliminada compatibilidad con HPOS |
+| [includes/scripts.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/scripts.php) | [includes/scripts.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/scripts.php) | Eliminada comprobación `is_checkout()`, añadido encolado de CSS |
+| [includes/template-functions.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/template-functions.php) | [includes/template-functions.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/includes/template-functions.php) | Actualizadas las rutas para `sc-partial-payments` |
+| [templates/wc-partial-payments-checkout.php](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-wc-partial-payments/templates/wc-partial-payments-checkout.php) | (en línea dentro de filters.php) | HTML del formulario movido dentro del código para usar con `render_block` |
+| N/A | [assets/css/gamipress-sc-partial-payments.css](file:///c:/Users/ashin/Desktop/GitLab/practicas-web/Paula%20Lei%20Gimeno/GamiPress%20-%20Surecart%20Partial%20Payments/gamipress-sc-partial-payments/assets/css/gamipress-sc-partial-payments.css) | **Nuevo**: CSS independiente (la versión de WC dependía de los estilos de WC) |
+
+## Hooks de SureCart Utilizados
+
+- **`render_block`** (filtro): Inyecta el formulario de pagos parciales antes del bloque `surecart/checkout-form`.
+- **`the_content`** (filtro): Inyección de respaldo para formularios basados en shortcodes.
+- **`surecart/purchase_created`** (acción): Registra las ganancias del usuario al completarse la compra.
+- **`surecart/purchase_revoked`** (acción): Reembolsa los puntos al revocarse la compra.
+- **`surecart/checkout/validate`** (filtro): Valida los datos de los pagos parciales durante la compra.
+
+## Cómo Funciona
+
+1. **Configuración de Administración**: El administrador habilita los tipos de puntos para pagos parciales y configura tasas de conversión, montos iniciales/máximos.
+2. **Visualización en el Proceso de Pago**: El formulario se inyecta automáticamente antes del formulario de pago de SureCart mediante el filtro `render_block`.
+3. **Aplicar Descuento**: El usuario selecciona una cantidad de puntos → Una llamada AJAX deduce los puntos inmediatamente → muestra el descuento aplicado.
+4. **Eliminar Descuento**: El usuario hace clic en [Remove/Eliminar] → Una llamada AJAX reembolsa los puntos → elimina la visualización del descuento.
+5. **Compra Completada**: El hook `surecart/purchase_created` registra la ganancia del usuario y limpia la sesión.
+6. **Reembolso**: El hook `surecart/purchase_revoked` reembolsa los puntos al usuario.

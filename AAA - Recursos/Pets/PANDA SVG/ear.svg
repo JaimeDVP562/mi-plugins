@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.73 174.33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #c5d3d0;
+      }
+
+      .cls-3 {
+        fill: #3e484c;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="202.73" height="174.33"/>
+  <g id="OREJA2">
+    <g>
+      <path class="cls-3" d="M98.31,146.3s-54.59-2.73-59.14-51.86S95.58,8.01,129.24,39.85c33.66,31.84,34.57,58.23,34.57,58.23l-65.51,48.22h0Z"/>
+      <path class="cls-2" d="M96.65,127.31s-34.59-1.74-37.47-32.97,35.74-54.94,57.07-34.7c21.33,20.24,21.91,37.01,21.91,37.01l-41.51,30.65h0Z"/>
+    </g>
+  </g>
+</svg>

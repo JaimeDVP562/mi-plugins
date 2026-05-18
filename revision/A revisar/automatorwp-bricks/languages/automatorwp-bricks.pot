@@ -1,0 +1,61 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - Bricks Builder\n"
+"Report-Msgid-Bugs-To: https://tu-web.com/\n"
+"POT-Creation-Date: 2024-05-20 10:00+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Tu Nombre <tu@email.com>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: automatorwp-bricks.php:120
+msgid "AutomatorWP - Bricks requires <a href=\"%s\">AutomatorWP</a> to work."
+msgstr ""
+
+#: includes/triggers/bricks-form-submission.php:18
+msgid "A user submits a form"
+msgstr ""
+
+#: includes/triggers/bricks-form-submission.php:19
+msgid "A user submits <strong>a form</strong>"
+msgstr ""
+
+#: includes/triggers/bricks-form-submission.php:22
+#, php-format
+msgid "A user submits form %1$s"
+msgstr ""
+
+#: includes/triggers/bricks-form-submission.php:32
+msgid "Form ID:"
+msgstr ""
+
+#: includes/actions/bricks-toggle-element.php:23
+msgid "Change visibility of a Bricks element"
+msgstr ""
+
+#: includes/actions/bricks-toggle-element.php:24
+msgid "Change visibility of <strong>a Bricks element</strong>"
+msgstr ""
+
+#: includes/actions/bricks-toggle-element.php:40
+msgid "Element ID:"
+msgstr ""
+
+#: includes/actions/bricks-toggle-element.php:45
+msgid "Status:"
+msgstr ""
+
+#: includes/actions/bricks-toggle-element.php:48
+msgid "Show"
+msgstr ""
+
+#: includes/actions/bricks-toggle-element.php:49
+msgid "Hide"
+msgstr ""

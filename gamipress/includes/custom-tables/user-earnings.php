@@ -707,3 +707,17 @@ function gamipress_user_earnings_row_actions( $row_actions, $object ) {
     return array();
 }
 add_filter( 'gamipress_user_earnings_row_actions', 'gamipress_user_earnings_row_actions', 10, 2 );
+
+// CT Ajax List
+// Override ajax list capability
+add_filter( 'ct_ajax_list_table_gamipress_user_earnings_capability', 'gamipress_get_manager_capability' );
+
+// Parse query args
+function ct_ajax_list_table_gamipress_user_earnings_query_args( $query_args ) {
+
+    $query_args = gamipress_sanitize_query_args( $query_args, gamipress_user_earnings_query_vars_rules() );
+
+    return $query_args;
+
+}
+add_filter( 'ct_ajax_list_table_gamipress_user_earnings_query_args', 'ct_ajax_list_table_gamipress_user_earnings_query_args' );

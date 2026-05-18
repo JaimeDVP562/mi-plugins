@@ -1,0 +1,5 @@
+<b>Email notifications</b> is an add-on for <b>ShortLinks Pro</b> allows you to control via email the clicks when certain quotas are reached, either for clicks, or unique clicks.
+
+<b>To add an email notifications</b>, go to settings, click on tracking and select the desired options. Then, save the settings.
+
+For more detailed instructions, refer to the configuration sections.

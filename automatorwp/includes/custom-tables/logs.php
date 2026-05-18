@@ -720,15 +720,17 @@ function automatorwp_log_array_display( $value, $level = 0 ) {
 
             // Check if not is an associative array
             if( array_keys( $v ) === range( 0, count( $v ) - 1 ) && ! is_array( $v[0] ) ) {
+                $v = array_map( 'esc_html', $v );
+
                 // Implode array values by a comma-separated list
-                $new_value .= $k . ': [ ' . implode( ', ', $v ) . ' ]<br>';
+                $new_value .= esc_html( $k ) . ': [ ' . implode( ', ', $v ) . ' ]<br>';
             } else {
                 // Display all sub arrays
-                $new_value .= $k . ': ' . automatorwp_log_array_display( $v, $level + 1 ) . '<br>';
+                $new_value .= esc_html( $k ) . ': ' . automatorwp_log_array_display( $v, $level + 1 ) . '<br>';
             }
 
         } else {
-            $new_value .= $k . ': ' . $v . '<br>';
+            $new_value .= esc_html( $k ) . ': ' . esc_html( $v ) . '<br>';
         }
 
     }

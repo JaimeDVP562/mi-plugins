@@ -1,0 +1,133 @@
+/**
+ * AutomatorWP Manual Triggers - Admin CSS
+ *
+ * @package AutomatorWP\Manual_Triggers
+ * @since   1.0.0
+ */
+
+/* =============================================
+   Manual Trigger Sections Container
+   ============================================= */
+.automatorwp-manual-trigger-sections {
+    margin: 15px 0 10px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 12px;
+}
+
+/* =============================================
+   Individual Section
+   ============================================= */
+.automatorwp-manual-trigger-section {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.automatorwp-manual-trigger-section h4 {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.automatorwp-manual-trigger-section p {
+    margin: 4px 0 8px;
+    font-size: 12px;
+    color: #646970;
+}
+
+.automatorwp-manual-trigger-section label {
+    display: block;
+    margin: 8px 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #50575e;
+}
+
+/* =============================================
+   Run Now Section
+   ============================================= */
+.automatorwp-manual-trigger-run-now {
+    background: #f0f6fc;
+    border-color: #c3c4c7;
+}
+
+.automatorwp-manual-trigger-field {
+    margin-bottom: 8px;
+}
+
+.automatorwp-manual-trigger-field label {
+    margin-bottom: 4px;
+}
+
+.automatorwp-manual-trigger-user-id {
+    width: 120px;
+    padding: 4px 8px;
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.automatorwp-manual-trigger-run-btn {
+    margin-right: 8px !important;
+}
+
+.automatorwp-manual-trigger-run-status {
+    font-size: 12px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+/* =============================================
+   Toggle (Collapsible) Headers
+   ============================================= */
+.automatorwp-manual-trigger-toggle {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0 !important;
+    padding: 4px 0;
+    transition: color 0.15s;
+}
+
+.automatorwp-manual-trigger-toggle:hover {
+    color: #2271b1;
+}
+
+.automatorwp-manual-trigger-toggle .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    transition: transform 0.2s;
+}
+
+.automatorwp-manual-trigger-toggle-content {
+    margin-top: 8px;
+}
+
+/* =============================================
+   Code Blocks
+   ============================================= */
+.automatorwp-manual-trigger-pre {
+    background: #1d2327;
+    color: #e4e6e8;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 6px 0 10px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    cursor: text;
+    position: relative;
+}
+
+.automatorwp-manual-trigger-pre code {
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+}

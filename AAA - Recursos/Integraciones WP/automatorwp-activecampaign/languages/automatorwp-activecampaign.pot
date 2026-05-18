@@ -1,0 +1,982 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - ActiveCampaign\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2025-09-03 10:40+0200\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://automatorwp.com/)\n"
+"Language-Team: GamiPress <contact@automatorwp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: automatorwp-activecampaign.php:195
+#, php-format
+msgid "AutomatorWP - ActiveCampaign requires %s in order to work. Please install and activate it."
+msgstr ""
+
+#: includes/actions/add-contact-list.php:26
+msgid "Add contact to list"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:27
+msgid "Add <strong>contact<strong> to <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:29
+#: includes/actions/add-contact-list.php:31
+#: includes/actions/add-contact-tag.php:29
+#: includes/actions/add-contact-tag.php:31
+#, php-format
+msgid "Add %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:35
+#: includes/actions/add-user-list.php:35
+#: includes/actions/remove-contact-list.php:35
+#: includes/actions/remove-user-list.php:35
+msgid "Select a list"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:36
+#: includes/actions/add-user-list.php:36
+#: includes/actions/remove-contact-list.php:36
+#: includes/actions/remove-user-list.php:36
+#: includes/triggers/anonymous-contact-list-added.php:40
+#: includes/triggers/user-list-added.php:39
+msgid "List:"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:43
+#: includes/actions/add-contact-tag.php:43 includes/actions/add-contact.php:35
+#: includes/actions/create-contact-tag.php:48
+#: includes/actions/remove-contact-list.php:43
+#: includes/actions/remove-contact-tag.php:43
+#: includes/actions/update-contact-fields.php:35
+#: includes/actions/update-contact.php:35
+msgid "contact"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:46
+#: includes/actions/add-contact-tag.php:46 includes/actions/add-contact.php:38
+#: includes/actions/create-contact-tag.php:51
+#: includes/actions/remove-contact-list.php:46
+#: includes/actions/remove-contact-tag.php:46
+#: includes/actions/update-contact-fields.php:38
+#: includes/actions/update-contact.php:38
+msgid "Email:"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:47 includes/actions/add-contact.php:39
+#: includes/actions/update-contact.php:39
+msgid "The user email address."
+msgstr ""
+
+#: includes/actions/add-contact-list.php:82 includes/actions/add-contact.php:92
+#: includes/actions/update-contact.php:92
+msgid "Email contact field is empty."
+msgstr ""
+
+#: includes/actions/add-contact-list.php:88
+#: includes/actions/add-contact-tag.php:96 includes/actions/add-contact.php:98
+#: includes/actions/add-user-list.php:67 includes/actions/add-user-tag.php:74
+#: includes/actions/add-user.php:53 includes/actions/create-contact-tag.php:99
+#: includes/actions/create-user-tag.php:77
+#: includes/actions/remove-contact-list.php:87
+#: includes/actions/remove-contact-tag.php:93
+#: includes/actions/remove-user-list.php:67
+#: includes/actions/remove-user-tag.php:73
+#: includes/actions/update-contact-fields.php:115
+#: includes/actions/update-contact.php:98
+#: includes/actions/update-user-fields.php:92
+msgid "ActiveCampaign integration not configured in AutomatorWP settings."
+msgstr ""
+
+#: includes/actions/add-contact-list.php:97
+#: includes/actions/add-contact-tag.php:105
+#: includes/actions/add-user-list.php:76 includes/actions/add-user-tag.php:83
+#: includes/actions/create-contact-tag.php:108
+#: includes/actions/create-user-tag.php:86
+#: includes/actions/remove-contact-tag.php:102
+#: includes/actions/remove-user-tag.php:82
+#: includes/actions/update-contact-fields.php:124
+#: includes/actions/update-user-fields.php:101
+#, php-format
+msgid "%s is not a contact in ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:115
+#: includes/actions/add-user-list.php:94
+#, php-format
+msgid "%s is already subscribed to that list"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:128
+msgid "Contact "
+msgstr ""
+
+#: includes/actions/add-contact-list.php:175
+#: includes/actions/add-contact-tag.php:163
+#: includes/actions/add-contact.php:175 includes/actions/add-user-list.php:154
+#: includes/actions/add-user-tag.php:141 includes/actions/add-user.php:122
+#: includes/actions/create-contact-tag.php:191
+#: includes/actions/create-user-tag.php:169
+#: includes/actions/remove-contact-list.php:196
+#: includes/actions/remove-contact-tag.php:185
+#: includes/actions/remove-user-list.php:180
+#: includes/actions/remove-user-tag.php:165
+#: includes/actions/update-contact-fields.php:187
+#: includes/actions/update-contact.php:174
+#: includes/actions/update-user-fields.php:164
+#, php-format
+msgid "You need to configure the <a href=\"%s\" target=\"_blank\">ActiveCampaign settings</a> to get this action to work."
+msgstr ""
+
+#: includes/actions/add-contact-list.php:179
+#: includes/actions/add-contact-tag.php:167
+#: includes/actions/add-contact.php:179 includes/actions/add-user-list.php:158
+#: includes/actions/add-user-tag.php:145 includes/actions/add-user.php:126
+#: includes/actions/create-contact-tag.php:195
+#: includes/actions/create-user-tag.php:173
+#: includes/actions/remove-contact-list.php:200
+#: includes/actions/remove-contact-tag.php:189
+#: includes/actions/remove-user-list.php:184
+#: includes/actions/remove-user-tag.php:169
+#: includes/actions/update-contact-fields.php:191
+#: includes/actions/update-contact.php:178
+#: includes/actions/update-user-fields.php:168 includes/functions.php:117
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Documentation</a>"
+msgstr ""
+
+#: includes/actions/add-contact-list.php:237
+#: includes/actions/add-contact-tag.php:225
+#: includes/actions/add-contact.php:237 includes/actions/add-user-list.php:216
+#: includes/actions/add-user-tag.php:203 includes/actions/add-user.php:184
+#: includes/actions/create-contact-tag.php:253
+#: includes/actions/create-user-tag.php:231
+#: includes/actions/remove-contact-list.php:258
+#: includes/actions/remove-contact-tag.php:247
+#: includes/actions/remove-user-list.php:242
+#: includes/actions/remove-user-tag.php:227
+#: includes/actions/update-contact-fields.php:249
+#: includes/actions/update-contact.php:236
+#: includes/actions/update-user-fields.php:226
+#: includes/triggers/anonymous-contact-added.php:173
+#: includes/triggers/anonymous-contact-list-added.php:235
+#: includes/triggers/anonymous-contact-tag-added.php:224
+#: includes/triggers/anonymous-contact-tag-removed.php:224
+#: includes/triggers/anonymous-contact-unsubscribed.php:173
+#: includes/triggers/user-added.php:174
+#: includes/triggers/user-list-added.php:235
+#: includes/triggers/user-tag-added.php:237
+#: includes/triggers/user-tag-removed.php:225
+#: includes/triggers/user-unsubscribed.php:174
+msgid "Result:"
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:26
+msgid "Add tag to contact"
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:27
+msgid "Add <strong>tag</strong> to <strong>contact</strong>"
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:35 includes/actions/add-user-tag.php:35
+#: includes/actions/remove-contact-tag.php:35
+#: includes/actions/remove-user-tag.php:35
+msgid "Select a tag"
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:36 includes/actions/add-user-tag.php:36
+#: includes/actions/create-contact-tag.php:38
+#: includes/actions/create-user-tag.php:38
+#: includes/actions/remove-contact-tag.php:36
+#: includes/actions/remove-user-tag.php:36
+#: includes/triggers/anonymous-contact-tag-added.php:40
+#: includes/triggers/anonymous-contact-tag-removed.php:40
+#: includes/triggers/user-tag-added.php:39
+#: includes/triggers/user-tag-removed.php:39
+msgid "Tag:"
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:47
+#: includes/actions/create-contact-tag.php:52
+#: includes/actions/remove-contact-list.php:47
+#: includes/actions/remove-contact-tag.php:47
+#: includes/actions/update-contact-fields.php:39
+msgid "The contact email address."
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:89
+#: includes/actions/create-contact-tag.php:93
+#: includes/actions/remove-contact-list.php:79
+#: includes/actions/remove-contact-tag.php:85
+#: includes/actions/update-contact-fields.php:107
+msgid "Email contact field is empty"
+msgstr ""
+
+#: includes/actions/add-contact-tag.php:117
+#: includes/actions/add-user-tag.php:95
+#, php-format
+msgid "Tag added to %s"
+msgstr ""
+
+#: includes/actions/add-contact.php:26
+msgid "Add contact to ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-contact.php:27
+msgid "Add <strong>contact</strong> to ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-contact.php:29 includes/actions/add-contact.php:31
+#, php-format
+msgid "Add %1$s to ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-contact.php:45 includes/actions/update-contact.php:45
+#: includes/triggers/anonymous-contact-added.php:197
+#: includes/triggers/anonymous-contact-list-added.php:259
+#: includes/triggers/anonymous-contact-tag-added.php:248
+#: includes/triggers/anonymous-contact-tag-removed.php:248
+#: includes/triggers/anonymous-contact-unsubscribed.php:197
+#: includes/triggers/user-added.php:198
+#: includes/triggers/user-list-added.php:259
+#: includes/triggers/user-tag-added.php:261
+#: includes/triggers/user-tag-removed.php:249
+#: includes/triggers/user-unsubscribed.php:198
+msgid "First Name:"
+msgstr ""
+
+#: includes/actions/add-contact.php:46 includes/actions/update-contact.php:46
+msgid "The user's first name."
+msgstr ""
+
+#: includes/actions/add-contact.php:51 includes/actions/update-contact.php:51
+msgid "Last Name:"
+msgstr ""
+
+#: includes/actions/add-contact.php:52 includes/actions/update-contact.php:52
+msgid "The user's last name."
+msgstr ""
+
+#: includes/actions/add-contact.php:57 includes/actions/update-contact.php:57
+msgid "Phone:"
+msgstr ""
+
+#: includes/actions/add-contact.php:58 includes/actions/update-contact.php:58
+msgid "The user's phone."
+msgstr ""
+
+#: includes/actions/add-contact.php:120 includes/actions/update-contact.php:120
+#, php-format
+msgid "Contact %s updated"
+msgstr ""
+
+#: includes/actions/add-contact.php:126
+#, php-format
+msgid "Contact %s added to ActiveCampaign."
+msgstr ""
+
+#: includes/actions/add-user-list.php:26
+msgid "Add user to list"
+msgstr ""
+
+#: includes/actions/add-user-list.php:27
+msgid "Add <strong>user</strong> to <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/add-user-list.php:29 includes/actions/add-user-list.php:31
+#, php-format
+msgid "Add user to %1$s"
+msgstr ""
+
+#: includes/actions/add-user-list.php:107
+#, php-format
+msgid "%s added to list"
+msgstr ""
+
+#: includes/actions/add-user-tag.php:26
+msgid "Add tag to user"
+msgstr ""
+
+#: includes/actions/add-user-tag.php:27
+msgid "Add <strong>tag</strong> to <strong>user</strong>"
+msgstr ""
+
+#: includes/actions/add-user-tag.php:29 includes/actions/add-user-tag.php:31
+#, php-format
+msgid "Add %1$s to user"
+msgstr ""
+
+#: includes/actions/add-user.php:26 includes/actions/add-user.php:28
+#: includes/actions/add-user.php:29
+msgid "Add user to ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-user.php:27
+msgid "Add <strong>user</strong> to ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-user.php:62
+#, php-format
+msgid "%s is already a contact in ActiveCampaign"
+msgstr ""
+
+#: includes/actions/add-user.php:75
+#, php-format
+msgid "%s added to ActiveCampaign"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:26
+msgid "Create tag and assign to contact"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:27
+msgid "Create <strong>tag</strong> and assign to <strong>contact</strong>"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:29
+#: includes/actions/create-contact-tag.php:31
+#, php-format
+msgid "Create %1$s and assign to %2$s"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:35
+#: includes/actions/create-user-tag.php:35
+msgid "tag"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:39
+#: includes/actions/create-user-tag.php:39
+msgid "The tag name"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:138
+#: includes/actions/create-user-tag.php:116
+#, php-format
+msgid "Tag %s created and assigned to %s"
+msgstr ""
+
+#: includes/actions/create-contact-tag.php:140
+#: includes/actions/create-user-tag.php:118
+#, php-format
+msgid "Tag %s found and assigned to %s"
+msgstr ""
+
+#: includes/actions/create-user-tag.php:26
+msgid "Create tag and assign to user"
+msgstr ""
+
+#: includes/actions/create-user-tag.php:27
+msgid "Create <strong>tag</strong> and assign to <strong>user</strong>"
+msgstr ""
+
+#: includes/actions/create-user-tag.php:29
+#: includes/actions/create-user-tag.php:31
+#, php-format
+msgid "Create %1$s and assign to user"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:26
+msgid "Remove contact from list"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:27
+msgid "Remove <strong>contact</strong> from <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:29
+#: includes/actions/remove-contact-list.php:31
+#: includes/actions/remove-contact-tag.php:29
+#: includes/actions/remove-contact-tag.php:31
+#, php-format
+msgid "Remove %1$s from %2$s"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:96
+#: includes/actions/remove-user-list.php:76
+#: includes/actions/update-contact.php:124
+#, php-format
+msgid "%s is not registered in ActiveCampaign"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:118
+#: includes/actions/remove-user-list.php:99
+#, php-format
+msgid "%s is already unsubscribed to that list"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:131
+#: includes/actions/remove-user-list.php:115
+#, php-format
+msgid "%s is not subscribed to that list"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:138
+#: includes/actions/remove-user-list.php:122
+#, php-format
+msgid "%s is not subscribed to any list"
+msgstr ""
+
+#: includes/actions/remove-contact-list.php:149
+#, php-format
+msgid "%s removed from list"
+msgstr ""
+
+#: includes/actions/remove-contact-tag.php:26
+msgid "Remove tag from contact"
+msgstr ""
+
+#: includes/actions/remove-contact-tag.php:27
+msgid "Remove <strong>tag</strong> from <strong>contact</strong>"
+msgstr ""
+
+#: includes/actions/remove-contact-tag.php:117
+#: includes/actions/remove-user-tag.php:97
+#, php-format
+msgid "%s does not have any tag associated"
+msgstr ""
+
+#: includes/actions/remove-contact-tag.php:133
+#: includes/actions/remove-user-tag.php:113
+#, php-format
+msgid "Tag is not associated to %s"
+msgstr ""
+
+#: includes/actions/remove-contact-tag.php:139
+#: includes/actions/remove-user-tag.php:119
+#, php-format
+msgid "Tag has been deleted from %s"
+msgstr ""
+
+#: includes/actions/remove-user-list.php:26
+msgid "Remove user from list"
+msgstr ""
+
+#: includes/actions/remove-user-list.php:27
+msgid "Remove <strong>user</strong> from <strong>list</strong>"
+msgstr ""
+
+#: includes/actions/remove-user-list.php:29
+#: includes/actions/remove-user-list.php:31
+#, php-format
+msgid "Remove user from %1$s"
+msgstr ""
+
+#: includes/actions/remove-user-list.php:133
+#, php-format
+msgid "%s removed from the list"
+msgstr ""
+
+#: includes/actions/remove-user-tag.php:26
+msgid "Remove tag from user"
+msgstr ""
+
+#: includes/actions/remove-user-tag.php:27
+msgid "Remove <strong>tag</strong> from <strong>user</strong>"
+msgstr ""
+
+#: includes/actions/remove-user-tag.php:29
+#: includes/actions/remove-user-tag.php:31
+#, php-format
+msgid "Remove %1$s from user"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:26
+msgid "Update contact custom field with a value"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:27
+msgid "Update <strong>contact</strong> custom field with a value"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:29
+#, php-format
+msgid "Update %1$s custom field %2$s with %3$s "
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:31
+#, php-format
+msgid "Update %1$s custom field %2$s"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:48
+#: includes/actions/update-user-fields.php:35
+msgid "field"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:51
+#: includes/actions/update-user-fields.php:38
+msgid "Field:"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:61
+#: includes/actions/update-user-fields.php:48
+msgid "value"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:64
+#: includes/actions/update-user-fields.php:51
+msgid "Value:"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:65
+#: includes/actions/update-user-fields.php:52
+msgid "The field value"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:137
+#: includes/actions/update-user-fields.php:114
+msgid "Field updated"
+msgstr ""
+
+#: includes/actions/update-contact-fields.php:139
+#: includes/actions/update-user-fields.php:116
+msgid "The field could not be updated"
+msgstr ""
+
+#: includes/actions/update-contact.php:26
+msgid "Update contact in ActiveCampaign"
+msgstr ""
+
+#: includes/actions/update-contact.php:27
+msgid "Update <strong>contact</strong> in ActiveCampaign"
+msgstr ""
+
+#: includes/actions/update-contact.php:29
+#: includes/actions/update-contact.php:31
+#, php-format
+msgid "Update %1$s in ActiveCampaign"
+msgstr ""
+
+#: includes/actions/update-user-fields.php:26
+msgid "Update user custom field with a value"
+msgstr ""
+
+#: includes/actions/update-user-fields.php:27
+msgid "Update <strong>user</strong> custom field with a value"
+msgstr ""
+
+#: includes/actions/update-user-fields.php:29
+#, php-format
+msgid "Update user custom field %1$s with %2$s "
+msgstr ""
+
+#: includes/actions/update-user-fields.php:31
+#, php-format
+msgid "Update user custom field %1$s"
+msgstr ""
+
+#: includes/admin.php:39 includes/admin.php:60
+msgid "ActiveCampaign"
+msgstr ""
+
+#: includes/admin.php:63
+msgid "API URL:"
+msgstr ""
+
+#: includes/admin.php:64
+msgid "Your ActiveCampaign url."
+msgstr ""
+
+#: includes/admin.php:68
+msgid "API key:"
+msgstr ""
+
+#: includes/admin.php:69
+msgid "Your ActiveCampaign API key."
+msgstr ""
+
+#: includes/admin.php:103 includes/triggers/anonymous-contact-added.php:178
+#: includes/triggers/anonymous-contact-list-added.php:240
+#: includes/triggers/anonymous-contact-tag-added.php:229
+#: includes/triggers/anonymous-contact-tag-removed.php:229
+#: includes/triggers/anonymous-contact-unsubscribed.php:178
+#: includes/triggers/user-added.php:179
+#: includes/triggers/user-list-added.php:240
+#: includes/triggers/user-tag-added.php:242
+#: includes/triggers/user-tag-removed.php:230
+#: includes/triggers/user-unsubscribed.php:179
+msgid "Webhook URL:"
+msgstr ""
+
+#: includes/admin.php:107
+msgid "Regenerate URL"
+msgstr ""
+
+#: includes/admin.php:108
+msgid "Copy this URL and place it on your ActiveCampaign account."
+msgstr ""
+
+#: includes/admin.php:134
+msgid "Connect with ActiveCampaign:"
+msgstr ""
+
+#: includes/admin.php:137
+msgid "Save credentials"
+msgstr ""
+
+#: includes/admin.php:138
+msgid "Add you ActiveCampaign API key and URL fields and click on \"Authorize\" to connect."
+msgstr ""
+
+#: includes/admin.php:140
+msgid "Site connected with ActiveCampaign successfully."
+msgstr ""
+
+#: includes/ajax-functions.php:22
+msgid "You're not allowed to perform this action."
+msgstr ""
+
+#: includes/ajax-functions.php:32
+msgid "All fields are required to connect with ActiveCampaign"
+msgstr ""
+
+#: includes/ajax-functions.php:48
+msgid "Please, check your credentials"
+msgstr ""
+
+#: includes/ajax-functions.php:63
+msgid "Correct data to connect with ActiveCampaign"
+msgstr ""
+
+#: includes/ajax-functions.php:96
+msgid "Webhook URL refreshed"
+msgstr ""
+
+#: includes/functions.php:113
+msgid "It is required to configure a webhook in your ActiveCampaign account to make this trigger work."
+msgstr ""
+
+#: includes/functions.php:120
+msgid "<a href=\"#\" class=\"automatorwp-activecampaign-view-webhook\">View Webhook</a>"
+msgstr ""
+
+#: includes/functions.php:128
+msgid "URL:"
+msgstr ""
+
+#: includes/functions.php:132
+msgid "Copy this URL in your ActiveCampaign account."
+msgstr ""
+
+#: includes/functions.php:137
+msgid "Hide Webhook"
+msgstr ""
+
+#: includes/functions.php:254
+msgid "any tag"
+msgstr ""
+
+#: includes/functions.php:491
+msgid "any list"
+msgstr ""
+
+#: includes/rest-api.php:43
+msgid "No parameters received"
+msgstr ""
+
+#: includes/tags.php:23 includes/tags.php:104
+msgid "Webhook URL"
+msgstr ""
+
+#: includes/tags.php:28 includes/tags.php:109
+msgid "Action type"
+msgstr ""
+
+#: includes/tags.php:33 includes/tags.php:114
+msgid "Datetime"
+msgstr ""
+
+#: includes/tags.php:38 includes/tags.php:119
+msgid "Email"
+msgstr ""
+
+#: includes/tags.php:43 includes/tags.php:124
+msgid "First name"
+msgstr ""
+
+#: includes/tags.php:48 includes/tags.php:129
+msgid "Last name"
+msgstr ""
+
+#: includes/tags.php:53
+msgid "Tag"
+msgstr ""
+
+#: includes/tags.php:134
+msgid "List"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:27
+#: includes/triggers/anonymous-contact-added.php:29
+#: includes/triggers/anonymous-contact-added.php:30
+msgid "Contact added to ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:28
+msgid "<strong>Contact</strong> added to ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:64
+#, php-format
+msgid "%1$s contact was added to ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:182
+#: includes/triggers/anonymous-contact-list-added.php:244
+#: includes/triggers/anonymous-contact-tag-added.php:233
+#: includes/triggers/anonymous-contact-tag-removed.php:233
+#: includes/triggers/anonymous-contact-unsubscribed.php:182
+#: includes/triggers/user-added.php:183
+#: includes/triggers/user-list-added.php:244
+#: includes/triggers/user-tag-added.php:246
+#: includes/triggers/user-tag-removed.php:234
+#: includes/triggers/user-unsubscribed.php:183
+msgid "Action type:"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:187
+#: includes/triggers/anonymous-contact-list-added.php:249
+#: includes/triggers/anonymous-contact-tag-added.php:238
+#: includes/triggers/anonymous-contact-tag-removed.php:238
+#: includes/triggers/anonymous-contact-unsubscribed.php:187
+#: includes/triggers/user-added.php:188
+#: includes/triggers/user-list-added.php:249
+#: includes/triggers/user-tag-added.php:251
+#: includes/triggers/user-tag-removed.php:239
+#: includes/triggers/user-unsubscribed.php:188
+msgid "Date:"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:192
+#: includes/triggers/anonymous-contact-list-added.php:254
+#: includes/triggers/anonymous-contact-tag-added.php:243
+#: includes/triggers/anonymous-contact-tag-removed.php:243
+#: includes/triggers/anonymous-contact-unsubscribed.php:192
+#: includes/triggers/user-added.php:193
+#: includes/triggers/user-list-added.php:254
+#: includes/triggers/user-tag-added.php:256
+#: includes/triggers/user-tag-removed.php:244
+#: includes/triggers/user-unsubscribed.php:193
+msgid "Email contact:"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-added.php:202
+#: includes/triggers/anonymous-contact-list-added.php:264
+#: includes/triggers/anonymous-contact-tag-added.php:253
+#: includes/triggers/anonymous-contact-tag-removed.php:253
+#: includes/triggers/anonymous-contact-unsubscribed.php:202
+#: includes/triggers/user-added.php:203
+#: includes/triggers/user-list-added.php:264
+#: includes/triggers/user-tag-added.php:266
+#: includes/triggers/user-tag-removed.php:254
+#: includes/triggers/user-unsubscribed.php:203
+msgid "Last_name:"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:27
+msgid "Contact added to list"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:28
+msgid "Contact added to <strong>list</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:30
+#, php-format
+msgid "Contact added to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:32
+#, php-format
+msgid "Contact added to %1$s"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:42
+#: includes/triggers/user-list-added.php:41
+msgid "Any list"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:93
+#: includes/triggers/anonymous-contact-tag-added.php:79
+#: includes/triggers/user-list-added.php:91
+#: includes/triggers/user-tag-added.php:90
+#, php-format
+msgid "%1$s was added to %2$s"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-list-added.php:269
+#: includes/triggers/user-list-added.php:269
+msgid "List added:"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-added.php:27
+msgid "Tag added to a contact"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-added.php:28
+msgid "<strong>Tag</strong> added to a Contact"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-added.php:30
+#, php-format
+msgid "%1$s added to contact %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-added.php:32
+#, php-format
+msgid "%1$s added to contact"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-added.php:42
+#: includes/triggers/anonymous-contact-tag-removed.php:42
+#: includes/triggers/user-tag-added.php:41
+#: includes/triggers/user-tag-removed.php:41
+msgid "Any tag"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-added.php:258
+#: includes/triggers/anonymous-contact-tag-removed.php:258
+#: includes/triggers/user-tag-added.php:271
+msgid "Tag added:"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-removed.php:27
+msgid "Tag removed from contact"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-removed.php:28
+msgid "<strong>Tag</strong> removed from Contact"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-removed.php:30
+#, php-format
+msgid "%1$s removed from contact %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-removed.php:32
+#, php-format
+msgid "%1$s removed from contact"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-tag-removed.php:79
+#: includes/triggers/user-tag-removed.php:78
+#, php-format
+msgid "%1$s was removed from %2$s"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-unsubscribed.php:27
+#: includes/triggers/anonymous-contact-unsubscribed.php:29
+#: includes/triggers/anonymous-contact-unsubscribed.php:30
+msgid "Contact unsubscribed from ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-unsubscribed.php:28
+msgid "<strong>Contact</strong> unsubscribed from ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/anonymous-contact-unsubscribed.php:64
+#, php-format
+msgid "%1$s contact was unsubscribed from ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/user-added.php:26 includes/triggers/user-added.php:28
+#: includes/triggers/user-added.php:29
+msgid "User added to ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/user-added.php:27
+msgid "<strong>User</strong> added to ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/user-added.php:63
+#, php-format
+msgid "%1$s was added to ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/user-list-added.php:26
+msgid "User added to list"
+msgstr ""
+
+#: includes/triggers/user-list-added.php:27
+msgid "User added to <strong>list</strong>"
+msgstr ""
+
+#: includes/triggers/user-list-added.php:29
+#, php-format
+msgid "User added to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/user-list-added.php:31
+#, php-format
+msgid "User added to %1$s"
+msgstr ""
+
+#: includes/triggers/user-tag-added.php:26
+msgid "Tag added to user"
+msgstr ""
+
+#: includes/triggers/user-tag-added.php:27
+msgid "<strong>Tag</strong> added to user"
+msgstr ""
+
+#: includes/triggers/user-tag-added.php:29
+#, php-format
+msgid "%1$s added to user %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/user-tag-added.php:31
+#, php-format
+msgid "%1$s added to user"
+msgstr ""
+
+#: includes/triggers/user-tag-removed.php:26
+msgid "Tag removed from user"
+msgstr ""
+
+#: includes/triggers/user-tag-removed.php:27
+msgid "<strong>Tag</strong> removed from user"
+msgstr ""
+
+#: includes/triggers/user-tag-removed.php:29
+#, php-format
+msgid "%1$s removed from user %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/user-tag-removed.php:31
+#, php-format
+msgid "%1$s removed from user"
+msgstr ""
+
+#: includes/triggers/user-tag-removed.php:259
+msgid "Tag removed:"
+msgstr ""
+
+#: includes/triggers/user-unsubscribed.php:26
+#: includes/triggers/user-unsubscribed.php:28
+#: includes/triggers/user-unsubscribed.php:29
+msgid "User unsubscribed from ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/user-unsubscribed.php:27
+msgid "<strong>User</strong> unsubscribed from ActiveCampaign"
+msgstr ""
+
+#: includes/triggers/user-unsubscribed.php:63
+#, php-format
+msgid "%1$s was unsubscribed from ActiveCampaign"
+msgstr ""

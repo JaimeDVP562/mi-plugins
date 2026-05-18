@@ -1,0 +1,17 @@
+.ctpdf-button-wrapper {
+    margin: 5px 0 10px;
+}
+
+.ctpdf-download-certificate {
+    background: #0073aa;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ctpdf-download-certificate:hover {
+    background: #005f8d;
+    color: #ffffff;
+}

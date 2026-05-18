@@ -1,0 +1,180 @@
+/* --------------------------------------
+	Columns Utility
+   -------------------------------------- */
+
+[class*="gamipress-rewards-calendar-col-"] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+
+    .gamipress-rewards-calendar-rewards[class*="gamipress-rewards-calendar-col-"] > .gamipress-calendar-reward {
+        padding: 1em;
+    }
+
+    .gamipress-rewards-calendar-col-2 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+    .gamipress-rewards-calendar-col-3 > .gamipress-calendar-reward {
+        width: 33%;
+    }
+
+    .gamipress-rewards-calendar-col-4 > .gamipress-calendar-reward {
+        width: 25%;
+    }
+
+    .gamipress-rewards-calendar-col-5 > .gamipress-calendar-reward {
+        width: 20%;
+    }
+
+    .gamipress-rewards-calendar-col-6 > .gamipress-calendar-reward {
+        width: 16.6%;
+    }
+
+    .gamipress-rewards-calendar-col-7 > .gamipress-calendar-reward {
+        width: 14.2%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .gamipress-rewards-calendar-rewards[class*="gamipress-rewards-calendar-col-"] > .gamipress-calendar-reward {
+        padding: 1em;
+    }
+
+    .gamipress-rewards-calendar-col-2 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+    .gamipress-rewards-calendar-col-3 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+    .gamipress-rewards-calendar-col-4 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+    .gamipress-rewards-calendar-col-5 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+    .gamipress-rewards-calendar-col-6 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+    .gamipress-rewards-calendar-col-7 > .gamipress-calendar-reward {
+        width: 50%;
+    }
+
+}
+
+/* Rewards stamp */
+.gamipress-calendar-reward,
+.gamipress-calendar-reward.align-stamp-with-image .gamipress-calendar-reward-thumbnail {
+    position: relative;
+}
+
+.gamipress-calendar-reward.user-has-earned .reward-stamp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: inherit;
+    text-align: center;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    align-items: center;
+}
+
+.gamipress-calendar-reward.user-has-earned .reward-stamp img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.gamipress-calendar-reward.user-has-earned.last-earned .reward-stamp {
+    opacity: 0;
+
+    -webkit-animation-name: gamipress_daily_login_rewards_stamp_animation;
+    animation-name: gamipress_daily_login_rewards_stamp_animation;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes gamipress_daily_login_rewards_stamp_animation {
+    0%{
+        opacity: 0;
+        transform: scale(4);
+        transition: all .2s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    }
+    10%{
+        opacity:.50;
+        transform: scale(2);
+    }
+    100%{
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
+/* Popup */
+.gamipress-daily-login-popup {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    padding: 1em;
+    background: #fff;
+    overflow-y: auto;
+    max-height: 100%;
+
+    z-index: 1050;
+}
+
+.gamipress-daily-login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+
+    z-index: 1000;
+}
+
+.gamipress-calendar-reward.align-stamp-with-image .gamipress-calendar-reward-thumbnail {
+    text-align: center;
+}
+
+.gamipress-daily-login-popup-button-wrapper {
+    text-align: center;
+}
+
+.gamipress-rewards-calendar-current-day{
+    justify-content: center;
+}

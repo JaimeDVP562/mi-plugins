@@ -302,7 +302,54 @@ function gamipress_logs_shortcode_query( $args ) {
     $ct_table = ct_setup_table( 'gamipress_logs' );
 
     // Sanitize query args
-    $query_args = gamipress_sanitize_query_args( $query_args, array(
+    $query_args = gamipress_sanitize_query_args( $query_args, gamipress_logs_query_vars_rules() );
+
+    return new CT_Query( $query_args );
+
+}
+
+// CMB2 detects 'default' => 'date' as invalid callback because php has the date() function
+function gamipress_logs_order_by_default_cb() {
+    return 'date';
+}
+
+/**
+ * Logs shortcode defaults attributes values
+ *
+ * @since 7.1.6
+ *
+ * @return array
+ */
+function gamipress_logs_shortcode_defaults() {
+
+	return apply_filters( 'gamipress_logs_shortcode_defaults', array(
+		'type'          => 'all',
+        'current_user'  => 'no',
+        'user_id'       => '0',
+        'access'        => 'any',
+        'limit'         => '10',
+        'pagination'    => 'yes',
+        'orderby'       => 'date',
+        'order'         => 'ASC',
+        'include'       => '',
+        'exclude'       => '',
+	) );
+
+}
+
+/**
+ * Logs query vars rules
+ *
+ * @since 7.8.8
+ *
+ * @return array
+ */
+function gamipress_logs_query_vars_rules() {
+
+    // Setup table
+    $ct_table = ct_setup_table( 'gamipress_logs' );
+
+    $rules = apply_filters( 'gamipress_logs_query_vars_rules', array(
         // Query fields
         'orderby' => array(
             'type' => 'string',
@@ -344,35 +391,8 @@ function gamipress_logs_shortcode_query( $args ) {
         ),
     ) );
 
-    return new CT_Query( $query_args );
+    ct_reset_setup_table();
 
-}
-
-// CMB2 detects 'default' => 'date' as invalid callback because php has the date() function
-function gamipress_logs_order_by_default_cb() {
-    return 'date';
-}
-
-/**
- * Logs shortcode defaults attributes values
- *
- * @since 7.1.6
- *
- * @return array
- */
-function gamipress_logs_shortcode_defaults() {
-
-	return apply_filters( 'gamipress_logs_shortcode_defaults', array(
-		'type'          => 'all',
-        'current_user'  => 'no',
-        'user_id'       => '0',
-        'access'        => 'any',
-        'limit'         => '10',
-        'pagination'    => 'yes',
-        'orderby'       => 'date',
-        'order'         => 'ASC',
-        'include'       => '',
-        'exclude'       => '',
-	) );
+    return $rules;
 
 }

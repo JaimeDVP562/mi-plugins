@@ -1,0 +1,98 @@
+# Copyright (C) AutomatorWP
+# This file is distributed under the GNU AGPL v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - WP Options 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-04 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: automatorwp-wp-options.php
+msgid "AutomatorWP - WP Options requires %s in order to work. Please install and activate it."
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Update a WordPress option"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Update a WordPress <strong>option</strong>"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Update option %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Updated option %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Option name:"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "The name of the WordPress option to update (e.g. blogname, blogdescription, my_custom_option). You can use tags."
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Option value:"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "The new value for the option. You can use tags like {user_email}, {user_id}, etc."
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Autoload:"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Whether to autoload this option on every page load. Use \"No\" for rarely used options."
+msgstr ""
+
+#: includes/actions/delete-option.php
+msgid "Delete a WordPress option"
+msgstr ""
+
+#: includes/actions/delete-option.php
+msgid "Delete a WordPress <strong>option</strong>"
+msgstr ""
+
+#: includes/actions/delete-option.php
+msgid "Delete option %1$s"
+msgstr ""
+
+#: includes/actions/delete-option.php
+msgid "Deleted option %1$s"
+msgstr ""
+
+#: includes/actions/delete-option.php
+msgid "The name of the WordPress option to delete. You can use tags."
+msgstr ""
+
+#: includes/tags.php
+msgid "WP Option"
+msgstr ""
+
+#: includes/tags.php
+msgid "Value of a WordPress option. Replace {option_name} with the option name (e.g. blogname, blogdescription)"
+msgstr ""
+
+#: includes/actions/update-option.php includes/actions/delete-option.php
+msgid "Option name"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Option value"
+msgstr ""
+
+#: includes/actions/update-option.php
+msgid "Autoload"
+msgstr ""

@@ -1,0 +1,553 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - Slack\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2024-05-23 13:17+0200\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://automatorwp.com/)\n"
+"Language-Team: GamiPress <contact@automatorwp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: automatorwp-slack.php:175
+#, php-format
+msgid "AutomatorWP - Slack requires %s in order to work. Please install and activate it."
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:26
+msgid "Add users to channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:27
+msgid "Add users to <strong>channel</strong>"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:29
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:31
+#, php-format
+msgid "Add users to  %1$s"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:35
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:35
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:35
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:35
+#: includes/actions/add-comment-channel.php:35
+#: includes/actions/add-user-to-channel.php:35
+#: includes/actions/remove-user-from-channel.php:35
+msgid "channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:38
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:38
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:38
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:38
+#: includes/actions/add-comment-channel.php:38
+#: includes/actions/add-comment-thread-list.php:38
+#: includes/actions/add-comment-thread.php:38
+#: includes/actions/add-reaction-message.php:38
+#: includes/actions/add-user-to-channel.php:38
+#: includes/actions/remove-user-from-channel.php:38
+msgid "Channel:"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:45
+msgid "Users:"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:46
+msgid "The users to add to the channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:86
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:87
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:76
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:84
+#: includes/actions/add-channel.php:77
+#: includes/actions/add-comment-channel.php:92
+#: includes/actions/add-comment-thread-list.php:95
+#: includes/actions/add-comment-thread.php:99
+#: includes/actions/add-comment-user.php:93
+#: includes/actions/add-reaction-message.php:106
+#: includes/actions/add-user-to-channel.php:109
+#: includes/actions/remove-user-from-channel.php:110
+msgid "Slack integration not configured in AutomatorWP settings."
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:95
+msgid "Added user in channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:97
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:95
+#: includes/actions/add-user-to-channel.php:135
+msgid "The user could not be added"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:145
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:146
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:135
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:143
+#: includes/actions/add-channel.php:138
+#: includes/actions/add-comment-channel.php:156
+#: includes/actions/add-comment-thread-list.php:166
+#: includes/actions/add-comment-thread.php:167
+#: includes/actions/add-comment-user.php:159
+#: includes/actions/add-reaction-message.php:185
+#: includes/actions/add-user-to-channel.php:182
+#: includes/actions/remove-user-from-channel.php:184
+#, php-format
+msgid "You need to configure the <a href=\"%s\" target=\"_blank\">Slack settings</a> to get this action to work."
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:149
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:150
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:139
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:147
+#: includes/actions/add-channel.php:142
+#: includes/actions/add-comment-channel.php:160
+#: includes/actions/add-comment-thread-list.php:170
+#: includes/actions/add-comment-thread.php:171
+#: includes/actions/add-comment-user.php:163
+#: includes/actions/add-reaction-message.php:189
+#: includes/actions/add-user-to-channel.php:186
+#: includes/actions/remove-user-from-channel.php:188
+#, php-format
+msgid "<a href=\"%s\" target=\"_blank\">Documentation</a>"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/add-user-to-channel.php⁩:207
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:208
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:197
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:205
+#: includes/actions/add-channel.php:200
+#: includes/actions/add-comment-channel.php:218
+#: includes/actions/add-comment-thread-list.php:228
+#: includes/actions/add-comment-thread.php:229
+#: includes/actions/add-comment-user.php:221
+#: includes/actions/add-reaction-message.php:247
+#: includes/actions/add-user-to-channel.php:244
+#: includes/actions/remove-user-from-channel.php:246
+msgid "Result:"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:26
+msgid "Invite user to channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:27
+msgid "Invite user to <strong>channel</strong>"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:29
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:31
+#, php-format
+msgid "Invite user to  %1$s"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:45
+msgid "User email:"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:96
+msgid "User invited to channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/invite-user-to-channel-from-list.php⁩:98
+msgid "The user could not be invited"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:26
+msgid "Remove channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:27
+msgid "Remove <strong>channel</strong>"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:29
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:31
+#, php-format
+msgid "Remove  %1$s"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:85
+msgid "Rremoved channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-channel.php⁩:87
+msgid "The channel could not be removed"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:26
+#: includes/actions/remove-user-from-channel.php:26
+msgid "Remove user from channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:27
+msgid "Remove user from <strong>channel</strong>"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:29
+#, php-format
+msgid "Remove user from  %1$s"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:31
+#, php-format
+msgid "remove user from  %1$s"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:45
+#: includes/actions/add-comment-user.php:38
+#: includes/actions/add-user-to-channel.php:57
+#: includes/actions/remove-user-from-channel.php:57
+msgid "User:"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:46
+msgid "The user to remove from the channel"
+msgstr ""
+
+#: ⁨includes/actions/add in the future - maybe needs payment/remove-user-from-channel.php⁩:93
+msgid "Removed user in channel"
+msgstr ""
+
+#: includes/actions/add-channel.php:26
+msgid "Add new channel"
+msgstr ""
+
+#: includes/actions/add-channel.php:27
+msgid "Add new <strong>channel</strong>"
+msgstr ""
+
+#: includes/actions/add-channel.php:29 includes/actions/add-channel.php:31
+#, php-format
+msgid "Add new channel %1$s"
+msgstr ""
+
+#: includes/actions/add-channel.php:35
+msgid "name"
+msgstr ""
+
+#: includes/actions/add-channel.php:38
+msgid "Channel name:"
+msgstr ""
+
+#: includes/actions/add-channel.php:39
+msgid "The channel name to create"
+msgstr ""
+
+#: includes/actions/add-channel.php:86
+msgid "Added channel"
+msgstr ""
+
+#: includes/actions/add-channel.php:90
+msgid "The channel could not be added"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:26
+msgid "Add comment to channel"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:27
+msgid "Add comment to <strong>channel</strong>"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:29
+#, php-format
+msgid "Add comment to channel %1$s"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:31
+#, php-format
+msgid "Add comment to channel  %1$s"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:44
+#: includes/actions/add-reaction-message.php:66
+#: includes/actions/add-user-to-channel.php:63
+#: includes/actions/remove-user-from-channel.php:44
+#: includes/actions/remove-user-from-channel.php:63
+msgid "Email or user ID"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:47
+msgid "Id or name of the channel"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:50
+#: includes/actions/add-comment-thread-list.php:54
+#: includes/actions/add-comment-thread.php:54
+#: includes/actions/add-comment-user.php:50
+msgid "Comment:"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:51
+msgid "The comment to add to the channel"
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:104
+msgid "Created comment in channel "
+msgstr ""
+
+#: includes/actions/add-comment-channel.php:108
+#: includes/actions/add-comment-thread-list.php:118
+#: includes/actions/add-comment-thread.php:119
+#: includes/actions/add-comment-user.php:111
+msgid "The comment could not be created"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:26
+msgid "Add comment to a thread list"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:27
+msgid "Add comment to a <strong>thread</strong> list"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:29
+#: includes/actions/add-comment-thread-list.php:31
+#, php-format
+msgid "Add comment to a  %1$s"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:35
+#: includes/actions/add-reaction-message.php:35
+msgid "thread"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:46
+#: includes/actions/add-reaction-message.php:45
+msgid "Thread:"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:55
+#: includes/actions/add-comment-thread.php:55
+msgid "The comment to add to the thread"
+msgstr ""
+
+#: includes/actions/add-comment-thread-list.php:107
+msgid "Created comment in task"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:26
+msgid "Add comment to a thread"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:27
+msgid "Add comment to a <strong>thread</strong>"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:29
+#: includes/actions/add-comment-thread.php:31
+#, php-format
+msgid "Add comment  %1$s to thread"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:35
+msgid "comment"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:39
+msgid "The channel name or channel id"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:46
+msgid "Thread id:"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:47
+msgid "The thread id"
+msgstr ""
+
+#: includes/actions/add-comment-thread.php:108
+msgid "Created comment in thread"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:26
+msgid "Add comment to user"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:27
+msgid "Add comment to <strong>user</strong>"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:29
+#: includes/actions/add-comment-user.php:31
+#, php-format
+msgid "Add comment to user %1$s"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:35
+#: includes/actions/add-user-to-channel.php:54
+#: includes/actions/remove-user-from-channel.php:54
+msgid "user"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:44
+msgid "Name or user ID"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:47
+msgid "The user id, name or email"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:51
+msgid "The comment to add to the user"
+msgstr ""
+
+#: includes/actions/add-comment-user.php:102
+msgid "Created comment to user "
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:26
+msgid "Add reaction to a thread"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:27
+msgid "Add reaction to a <strong>thread</strong>"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:29
+#, php-format
+msgid "Add reaction  %2$s to a  %1$s"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:31
+#, php-format
+msgid "Add reaction %2$s to a  %1$s"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:57
+msgid "reaction"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:60
+msgid "Reaction:"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:69
+msgid "Name of emoji"
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:115
+msgid "Created reaction in message "
+msgstr ""
+
+#: includes/actions/add-reaction-message.php:137
+msgid "The reaction could not be created"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:26
+msgid "Add from user to channel"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:27
+msgid "Add from user to <strong>channel</strong>"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:29
+#: includes/actions/add-user-to-channel.php:31
+#, php-format
+msgid "Add user %2$s to channel %1$s"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:44
+msgid "The channel name or channel ID"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:47
+#: includes/actions/remove-user-from-channel.php:47
+msgid "Name or channel ID"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:66
+#: includes/actions/remove-user-from-channel.php:66
+msgid "Name, email or user ID"
+msgstr ""
+
+#: includes/actions/add-user-to-channel.php:118
+msgid "Added user in channel "
+msgstr ""
+
+#: includes/actions/remove-user-from-channel.php:27
+msgid "Remove user from  <strong>channel</strong>"
+msgstr ""
+
+#: includes/actions/remove-user-from-channel.php:29
+#: includes/actions/remove-user-from-channel.php:31
+#, php-format
+msgid "Remove user %2$s from %1$s"
+msgstr ""
+
+#: includes/actions/remove-user-from-channel.php:119
+msgid "Removed user in channel "
+msgstr ""
+
+#: includes/actions/remove-user-from-channel.php:136
+msgid "The user could not be removed"
+msgstr ""
+
+#: includes/admin.php:40 includes/admin.php:62
+msgid "Slack"
+msgstr ""
+
+#: includes/admin.php:65
+msgid "API token:"
+msgstr ""
+
+#: includes/admin.php:66
+msgid "Your Slack API token."
+msgstr ""
+
+#: includes/admin.php:99
+msgid "Connect with Slack:"
+msgstr ""
+
+#: includes/admin.php:102
+msgid "Save credentials"
+msgstr ""
+
+#: includes/admin.php:103
+msgid "Add you Slack API Token and click on \"Authorize\" to connect."
+msgstr ""
+
+#: includes/admin.php:105
+msgid "Site connected with Slack successfully."
+msgstr ""
+
+#: includes/ajax-functions.php:28
+msgid "API Token is required to connect with Slack"
+msgstr ""
+
+#: includes/ajax-functions.php:43
+msgid "Please, check your credentials"
+msgstr ""
+
+#: includes/ajax-functions.php:57
+msgid "Correct data to connect with Slack"
+msgstr ""
+
+#: includes/functions.php:112 includes/functions.php:714
+msgid "any channel"
+msgstr ""
+
+#: includes/functions.php:369
+msgid "any user"
+msgstr ""
+
+#: includes/functions.php:545
+msgid "any team"
+msgstr ""

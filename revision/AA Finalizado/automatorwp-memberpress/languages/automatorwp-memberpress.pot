@@ -1,0 +1,594 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - MemberPress\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2024-12-13 14:48+0100\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://automatorwp.com/)\n"
+"Language-Team: GamiPress <contact@automatorwp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: automatorwp-memberpress.php:212
+#, php-format
+msgid "AutomatorWP - MemberPress requires %s and %s in order to work. Please install and activate them."
+msgstr ""
+
+#: includes/actions/add-membership.php:26
+msgid "Add membership to user"
+msgstr ""
+
+#: includes/actions/add-membership.php:27
+msgid "Add <strong>membership</strong> to user"
+msgstr ""
+
+#: includes/actions/add-membership.php:29
+#: includes/actions/add-membership.php:31
+#, php-format
+msgid "Add %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/add-membership.php:34
+msgid "membership"
+msgstr ""
+
+#: includes/actions/add-membership.php:37
+#: includes/actions/cancel-membership.php:43
+#: includes/actions/remove-membership.php:34
+#: includes/filters/user-is-active.php:34
+#: includes/filters/user-is-not-active.php:34
+#: includes/triggers/cancel-membership.php:38
+#: includes/triggers/expire-membership.php:38
+#: includes/triggers/purchase-lifetime-membership.php:39
+#: includes/triggers/purchase-membership.php:41
+#: includes/triggers/purchase-recurring-membership.php:39
+#: includes/triggers/suspend-membership.php:38
+#: includes/triggers/view-membership.php:38
+msgid "Membership:"
+msgstr ""
+
+#: includes/actions/add-membership.php:40
+#: includes/actions/add-membership.php:45
+#: includes/actions/cancel-membership.php:46
+#: includes/actions/remove-membership.php:37 includes/tags.php:45
+msgid "Membership ID"
+msgstr ""
+
+#: includes/actions/add-membership.php:41
+msgid "Select a membership"
+msgstr ""
+
+#: includes/actions/add-membership.php:48
+msgid "Subtotal:"
+msgstr ""
+
+#: includes/actions/add-membership.php:56
+msgid "Tax amount:"
+msgstr ""
+
+#: includes/actions/add-membership.php:64
+msgid "Tax rate:"
+msgstr ""
+
+#: includes/actions/add-membership.php:72
+msgid "Status:"
+msgstr ""
+
+#: includes/actions/add-membership.php:75
+msgid "Complete"
+msgstr ""
+
+#: includes/actions/add-membership.php:76
+msgid "Pending"
+msgstr ""
+
+#: includes/actions/add-membership.php:77
+msgid "Failed"
+msgstr ""
+
+#: includes/actions/add-membership.php:78
+msgid "Refunded"
+msgstr ""
+
+#: includes/actions/add-membership.php:83
+msgid "Gateway:"
+msgstr ""
+
+#: includes/actions/add-membership.php:89
+msgid "Expiration Date:"
+msgstr ""
+
+#: includes/actions/add-membership.php:90
+msgid "Enter the membership expiration date in format YYYY-MM-DD. Leave empty for lifetime."
+msgstr ""
+
+#: includes/actions/add-membership.php:98
+#: includes/actions/cancel-membership.php:51
+#: includes/actions/remove-membership.php:42
+msgid "user"
+msgstr ""
+
+#: includes/actions/add-membership.php:101
+#: includes/actions/cancel-membership.php:54
+#: includes/actions/remove-membership.php:45
+msgid "User ID:"
+msgstr ""
+
+#: includes/actions/add-membership.php:102
+msgid "User ID that will get added to the membership. Leave blank to add the membership to the user that completes the automation."
+msgstr ""
+
+#: includes/actions/add-membership.php:121
+msgid "Manual"
+msgstr ""
+
+#: includes/actions/cancel-membership.php:35
+msgid "Cancel membership to user"
+msgstr ""
+
+#: includes/actions/cancel-membership.php:36
+msgid "Cancel <strong>membership</strong> to user"
+msgstr ""
+
+#: includes/actions/cancel-membership.php:38
+#: includes/actions/cancel-membership.php:40
+#, php-format
+msgid "Cancel %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/cancel-membership.php:44
+#: includes/actions/remove-membership.php:35
+msgid "all memberships"
+msgstr ""
+
+#: includes/actions/cancel-membership.php:55
+msgid "User ID that will get the membership cancelled. Leave blank to cancel the membership to the user that completes the automation."
+msgstr ""
+
+#: includes/actions/cancel-membership.php:125
+#, php-format
+msgid "Subscription #%d: cancelled successfully."
+msgstr ""
+
+#: includes/actions/cancel-membership.php:127
+#, php-format
+msgid "Subscription #%d: %s."
+msgstr ""
+
+#: includes/actions/cancel-membership.php:209
+msgid "Result:"
+msgstr ""
+
+#: includes/actions/remove-membership.php:26
+msgid "Remove membership to user"
+msgstr ""
+
+#: includes/actions/remove-membership.php:27
+msgid "Remove <strong>membership</strong> to user"
+msgstr ""
+
+#: includes/actions/remove-membership.php:29
+#: includes/actions/remove-membership.php:31
+#, php-format
+msgid "Remove %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/remove-membership.php:46
+msgid "User ID that will get removed to the membership. Leave blank to remove the membership to the user that completes the automation."
+msgstr ""
+
+#: includes/filters/user-is-active.php:26
+msgid "User is active in membership"
+msgstr ""
+
+#: includes/filters/user-is-active.php:27
+msgid "User <strong>is active</strong> in membership"
+msgstr ""
+
+#: includes/filters/user-is-active.php:29
+#: includes/filters/user-is-active.php:31
+#: includes/filters/user-is-not-active.php:29
+#: includes/filters/user-is-not-active.php:31
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: includes/filters/user-is-active.php:35
+#: includes/filters/user-is-not-active.php:35
+#: includes/triggers/cancel-membership.php:39
+#: includes/triggers/expire-membership.php:39
+#: includes/triggers/purchase-membership.php:42
+#: includes/triggers/suspend-membership.php:39
+#: includes/triggers/view-membership.php:39
+msgid "any membership"
+msgstr ""
+
+#: includes/filters/user-is-active.php:70
+#: includes/filters/user-is-not-active.php:70
+msgid "Filter not passed. Group option has not been configured."
+msgstr ""
+
+#: includes/filters/user-is-active.php:81
+#: includes/filters/user-is-active.php:89
+#, php-format
+msgid "Filter not passed. User is not active in membership \"%1$s\"."
+msgstr ""
+
+#: includes/filters/user-is-active.php:96
+#, php-format
+msgid "Filter passed. User is active in membership \"%1$s\"."
+msgstr ""
+
+#: includes/filters/user-is-not-active.php:26
+msgid "User is not active in membership"
+msgstr ""
+
+#: includes/filters/user-is-not-active.php:27
+msgid "User <strong>is not active</strong> in membership"
+msgstr ""
+
+#: includes/filters/user-is-not-active.php:81
+#: includes/filters/user-is-not-active.php:89
+#, php-format
+msgid "Filter not passed. User is active in membership \"%1$s\"."
+msgstr ""
+
+#: includes/filters/user-is-not-active.php:96
+#, php-format
+msgid "Filter passed. User is not active in membership \"%1$s\"."
+msgstr ""
+
+#: includes/functions.php:42
+msgid "ID"
+msgstr ""
+
+#: includes/functions.php:43
+msgid "Email"
+msgstr ""
+
+#: includes/functions.php:44
+msgid "First name"
+msgstr ""
+
+#: includes/functions.php:45
+msgid "Last name"
+msgstr ""
+
+#: includes/functions.php:64
+msgid "123"
+msgstr ""
+
+#: includes/functions.php:65
+msgid "contact@automatorwp.com"
+msgstr ""
+
+#: includes/functions.php:66
+msgid "AutomatorWP"
+msgstr ""
+
+#: includes/functions.php:67
+msgid "Plugin"
+msgstr ""
+
+#: includes/tags.php:26
+#, php-format
+msgid "Subaccount %s"
+msgstr ""
+
+#: includes/tags.php:36
+#, php-format
+msgid "Parent account %s"
+msgstr ""
+
+#: includes/tags.php:50
+msgid "Membership title"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:26
+msgid "A sub account is added to a parent account"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:27
+msgid "A <strong>sub account</strong> is added to a parent account"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:29
+#, php-format
+msgid "A sub account is added to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:31
+#, php-format
+msgid "A sub account is added to %1$s"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:39
+msgid "parent"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:42
+msgid "Parent ID:"
+msgstr ""
+
+#: includes/triggers/add-subaccount.php:43
+msgid "The parent account ID."
+msgstr ""
+
+#: includes/triggers/cancel-membership.php:26
+msgid "User cancels a membership"
+msgstr ""
+
+#: includes/triggers/cancel-membership.php:27
+msgid "User cancels <strong>a membership</strong>"
+msgstr ""
+
+#: includes/triggers/cancel-membership.php:29
+#, php-format
+msgid "User cancels %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/cancel-membership.php:31
+#, php-format
+msgid "User cancels %1$s"
+msgstr ""
+
+#: includes/triggers/complete-course.php:26
+msgid "User completes a course"
+msgstr ""
+
+#: includes/triggers/complete-course.php:27
+msgid "User completes <strong>a course</strong>"
+msgstr ""
+
+#: includes/triggers/complete-course.php:29
+#, php-format
+msgid "User completes %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/complete-course.php:31
+#, php-format
+msgid "User completes %1$s"
+msgstr ""
+
+#: includes/triggers/complete-course.php:38
+#: includes/triggers/complete-course.php:47
+#: includes/triggers/complete-lesson.php:47
+#: includes/triggers/start-course.php:38 includes/triggers/start-course.php:47
+#: includes/triggers/view-course.php:38
+msgid "Course:"
+msgstr ""
+
+#: includes/triggers/complete-course.php:39
+#: includes/triggers/complete-course.php:48
+#: includes/triggers/complete-lesson.php:48
+#: includes/triggers/start-course.php:39 includes/triggers/start-course.php:48
+#: includes/triggers/view-course.php:39
+msgid "any course"
+msgstr ""
+
+#: includes/triggers/complete-lesson.php:26
+msgid "User completes a lesson"
+msgstr ""
+
+#: includes/triggers/complete-lesson.php:27
+msgid "User completes <strong>a lesson</strong>"
+msgstr ""
+
+#: includes/triggers/complete-lesson.php:29
+#, php-format
+msgid "User completes %1$s of %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/complete-lesson.php:31
+#, php-format
+msgid "User completes %1$s of %2$s"
+msgstr ""
+
+#: includes/triggers/complete-lesson.php:38
+msgid "Lesson:"
+msgstr ""
+
+#: includes/triggers/complete-lesson.php:39
+msgid "any lesson"
+msgstr ""
+
+#: includes/triggers/expire-membership.php:26
+msgid "User's membership expires"
+msgstr ""
+
+#: includes/triggers/expire-membership.php:27
+msgid "User's membership <strong>expires</strong>"
+msgstr ""
+
+#: includes/triggers/expire-membership.php:29
+#, php-format
+msgid "User's membership %1$s expires %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/expire-membership.php:31
+#, php-format
+msgid "User's membership %1$s expires"
+msgstr ""
+
+#: includes/triggers/purchase-lifetime-membership.php:26
+msgid "User purchases a one-time membership"
+msgstr ""
+
+#: includes/triggers/purchase-lifetime-membership.php:27
+msgid "User purchases <strong>a one-time membership</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-lifetime-membership.php:29
+#: includes/triggers/purchase-membership.php:29
+#: includes/triggers/purchase-recurring-membership.php:29
+#, php-format
+msgid "User purchases %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-lifetime-membership.php:31
+#: includes/triggers/purchase-membership.php:31
+#: includes/triggers/purchase-recurring-membership.php:31
+#, php-format
+msgid "User purchases %1$s"
+msgstr ""
+
+#: includes/triggers/purchase-lifetime-membership.php:41
+msgid "any one-time membership"
+msgstr ""
+
+#: includes/triggers/purchase-membership.php:26
+msgid "User purchases a membership"
+msgstr ""
+
+#: includes/triggers/purchase-membership.php:27
+msgid "User purchases <strong>a membership</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-recurring-membership.php:26
+msgid "User purchases a recurring membership"
+msgstr ""
+
+#: includes/triggers/purchase-recurring-membership.php:27
+msgid "User purchases <strong>a recurring membership</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-recurring-membership.php:41
+msgid "any recurring membership"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:26
+msgid "User registers with a specific field value"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:27
+msgid "User registers with a <strong>specific field value</strong>"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:29
+#, php-format
+msgid "User registers with the %1$s on the field %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:31
+#, php-format
+msgid "User registers with the %1$s on the field %2$s"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:39
+msgid "field value"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:42
+msgid "Field value:"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:50
+msgid "field name"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:53
+msgid "Field slug:"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:54
+msgid "The field slug. Field slug can be found on the MemberPress settings, under the \"Fields\" tab."
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:218
+msgid "Field slug"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:219
+msgid "The field slug handled on registration."
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:224
+msgid "Field value"
+msgstr ""
+
+#: includes/triggers/register-specific-field-value.php:225
+msgid "The field value handled on registration."
+msgstr ""
+
+#: includes/triggers/start-course.php:26
+msgid "User starts a course"
+msgstr ""
+
+#: includes/triggers/start-course.php:27
+msgid "User starts <strong>a course</strong>"
+msgstr ""
+
+#: includes/triggers/start-course.php:29
+#, php-format
+msgid "User starts %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/start-course.php:31
+#, php-format
+msgid "User starts %1$s"
+msgstr ""
+
+#: includes/triggers/suspend-membership.php:26
+msgid "User suspends a membership"
+msgstr ""
+
+#: includes/triggers/suspend-membership.php:27
+msgid "User suspends <strong>a membership</strong>"
+msgstr ""
+
+#: includes/triggers/suspend-membership.php:29
+#, php-format
+msgid "User suspends %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/suspend-membership.php:31
+#, php-format
+msgid "User suspends %1$s"
+msgstr ""
+
+#: includes/triggers/view-course.php:26
+msgid "User views a course"
+msgstr ""
+
+#: includes/triggers/view-course.php:27
+msgid "User views <strong>a course</strong>"
+msgstr ""
+
+#: includes/triggers/view-course.php:29
+#: includes/triggers/view-membership.php:29
+#, php-format
+msgid "User views %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/view-course.php:31
+#: includes/triggers/view-membership.php:31
+#, php-format
+msgid "User views %1$s"
+msgstr ""
+
+#: includes/triggers/view-course.php:45
+msgid "Course"
+msgstr ""
+
+#: includes/triggers/view-membership.php:26
+msgid "User views a membership"
+msgstr ""
+
+#: includes/triggers/view-membership.php:27
+msgid "User views <strong>a membership</strong>"
+msgstr ""
+
+#: includes/triggers/view-membership.php:45
+msgid "Membership"
+msgstr ""

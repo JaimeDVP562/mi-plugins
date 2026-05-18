@@ -1,0 +1,9 @@
+Cómo obtener el Token de awork:
+
+Acceder a awork con cuenta de administrador.
+
+Ir a Ajustes > Integraciones > API Clients.
+
+Crear un nuevo cliente y generar una API Key.
+
+Pegar la clave en la variable $api_key del código (línea 83)

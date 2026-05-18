@@ -5,7 +5,7 @@ Tags: email automation, email marketing, newsletter, crm, woocommerce emails
 Requires at least: 5.8
 Tested up to: 6.9.4
 Requires PHP: 7.4
-Stable tag:  1.21.3
+Stable tag:  1.21.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -209,7 +209,7 @@ Whether it’s creating the **onboarding process**, running **drip campaigns**, 
 
 = 💥 Custom Lead Forms To Capture Emails 💥 =
 
-Mail Mint has its own lead form builder to let you collect targeted leads from anywhere on your website. You can then use segmentation to be able to send out targeted email campaigns or newsletters to get more results.
+Mail Mint has its own lead form builder to let you collect leads from anywhere on your website. You can then use segmentation to be able to send out targeted email campaigns or newsletters to get more results.
 
 ✅ Visual Form Builder (using Gutenberg)
 ✅ Tons Of Lead Form Templates
@@ -219,7 +219,7 @@ Mail Mint has its own lead form builder to let you collect targeted leads from a
 ✅ Design Control & Animations
 ✅ Appearance Time Delay
 
-This is very convenient if you are collecting leads as a digital creator or maybe an affiliate marketer looking to create an email list to promote more products later.
+It's very convenient for collecting leads to promote more products or to build customer rapport for repeat purchases.
 
 Watch how Mail Mint's Lead Form Builder Works:
 [youtube https://youtu.be/S87GivTps8Q?feature=shared]
@@ -242,13 +242,13 @@ Probably the most unique feature you will see today is a direct integration betw
 
 **You will be able to set up email automation workflows for your funnels based on user actions in different stages of your funnel journey!**
 
-So, you create a funnel in WPFunnels and then define conditions in the same visual funnel building platform to run email automation workflows!
+You create a funnel in WPFunnels and then define conditions in the same visual funnel building platform to run email automation workflows!
 
 [youtube https://youtu.be/y2X4bDZzmsU]
 
-This is a feature that has never existed in WordPress until now!
+It is a feature that has never existed in WordPress until now!
 
-As a funnel creator, this will make your job smoother and more efficient, allowing you to focus on growing your business with powerful funnels and automated emails.
+This will help you improve efficiency and actively growing your business with powerful funnels and automated emails.
 
 Use Mail Mint to create email marketing automation for your 
 ✅ Lead generation funnels,
@@ -262,7 +262,7 @@ or any other funnel of your choice.
 
 = 💥 WooCommerce Abandoned Cart Recovery [Pro] 💥 =
 
-Apart from all the core features, Mail Mint is also a powerful plugin for WooCommerce cart abandonment recovery to help you win back lost sales on autopilot.
+Mail Mint is a powerful plugin for WooCommerce cart abandonment recovery to help you win back lost sales on autopilot.
 
 ✅ Automatic abandoned cart tracking
 ✅ Recorded cart details for abandoned customers
@@ -275,13 +275,13 @@ Apart from all the core features, Mail Mint is also a powerful plugin for WooCom
 
 = 💥 Recurring Email Campaign [Pro] 💥 =
 
-If you are a digital creator, then one of the most important features you will need is recurring email campaigns or newsletter automation.
+Another great feature you will get is to set up recurring email campaigns or newsletter automation.
 
-Since you collect leads on a regular basis, it is important to keep them nurtured and engaged through regular emails.
+If you collect leads on a regular basis, it is important to keep them nurtured and engaged via emails.
 
 With Mail Mint, you can set up automatic recurring email campaigns to be sent every week, month, or specific days of the week.
 
-In such emails, you can display your latest posts, offer courses, send newsletters, or simply send monthly digests to your subscribers automatically.
+In such emails, you can send the latest posts, offer courses, send newsletters, or simply send monthly digests to your subscribers automatically.
 
 [youtube https://youtu.be/yly2w6CtGPU?feature=shared]
 
@@ -289,9 +289,7 @@ So, besides being a great email marketing tool, Mail Mint is also a reliable Wor
 
 = 💥 Detailed Email Analytics 💥 =
 
-For every activity you have within Mail Mint, you will get real-time analytics so that you can make data-driven decisions and optimize your email campaigns.
-
-This will include:
+For every activity you have within Mail Mint, you will get real-time analytics so that you can make data-driven decisions to optimize your email campaigns.
 
 – Leads Growth Rate
 – Email Open Rate
@@ -300,15 +298,21 @@ This will include:
 – Unsubscribe Rate
 – Form Entries
 – Performance over time
-– Individual lead engagement
+– Lead engagement
 
 You will get more insight to fine-tune your strategy.
 
 = 💥 ChatGPT Integration For AI Email Writing [Pro] 💥 =
 
-You can easily connect ChatGPT to Mail Mint and use AI directly to craft highly effective emails when preparing your campaigns 
+You can easily connect ChatGPT to Mail Mint and use AI to write highly effective emails when preparing your campaigns.
 
-Whether you need subject lines, preview texts, or the entire email copy, just give simple instructions, and ChatGPT will generate everything you need—right from your Mail Mint window!
+Simply give instructions on what to write, and the AI email writer will get things ready.
+
+✅ Generate subject line variations and preview texts to get higher open rate.
+✅ Write persuasive email copies for campaigns or automated follow-ups.
+✅ Re-write what you already wrote using AI for a better email copy.
+
+And you can do it all while you are creating your emails within Mail Mint. (No need to work on a separate window.)
 
 > Learn more about <a href="https://getwpfunnels.com/ai-email-writing/?utm_source=repo-cta&utm_medium=wp-repo&utm_campaign=mm-ai-email-writing" target="_blank">AI Email Writing in Mail Mint</a>
 
@@ -523,6 +527,19 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 10. Visual Automation Workflow
 
 == Changelog ==
+
+= 1.21.5 (2026-05-11) =
+* New: Revamp the Dashboard Analytics
+* New: Form Submission Automation Trigger for Elementor Form
+* New: Rule-based Automation Triggers for all Supported Form Builders
+* Compatibility: Mail Mint Custom Fields with Latest Elementor Pro
+* Bugfix: PHP Warnings for Coupon Generation
+
+= 1.21.4 (2026-05-05) =
+* Improvement: Campaign Performance on Email Scheduling and Sending
+* Improvement: Improve Query Performance
+* Improvement: User Experience on the Form Editor
+* Improvement: User Experience on the Automation Editor
 
 = 1.21.3 (2026-04-29) =
 * New: Auto-deletes Expired Coupons Generated by Mail Mint (Pro)

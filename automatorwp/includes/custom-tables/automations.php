@@ -440,7 +440,6 @@ function automatorwp_manage_automations_custom_column(  $column_name, $object_id
             // Expiration
             $now        = current_time( 'timestamp' );
             $expiration = strtotime( $automation->expiration );
-            $date       = strtotime( $automation->date );
 
             if( $expiration > 0 ) {
                 $expires_text = $expiration > $now ? __( 'Expires on', 'automatorwp' ) : __( 'Expired on', 'automatorwp' );
@@ -455,9 +454,9 @@ function automatorwp_manage_automations_custom_column(  $column_name, $object_id
 
             break;
         case 'date':
-            ?>
+            $date = strtotime( $automation->date ); ?>
 
-            <abbr title="<?php echo date( 'Y/m/d g:i:s a', strtotime( $automation->date ) ); ?>"><?php echo date( 'Y/m/d', strtotime( $automation->date ) ); ?></abbr>
+            <abbr title="<?php echo date( 'Y/m/d g:i:s a', $date ); ?>"><?php echo date( 'Y/m/d', $date ); ?></abbr>
 
             <?php
             break;
@@ -686,20 +685,25 @@ function automatorwp_automations_insert_automation_data( $object_data, $original
     }
 
     // Fix expiration format
-    if( isset( $object_data['expiration'] ) && ! empty( $object_data['expiration'] ) ) {
+    if( isset( $object_data['expiration'] ) ) {
         // Covers CMB2 format with array( 'date' => '', 'time' => '' )
         if( is_array( $object_data['expiration'] ) ) {
-            $object_data['expiration'] = implode( ' ', $object_data['expiration'] );
+            $object_data['expiration'] = trim( implode( ' ', $object_data['expiration'] ) );
         }
 
-        $now = current_time( 'timestamp' );
-        $expiration = strtotime( $object_data['expiration'] );
+        if( ! empty( $object_data['expiration'] ) ) {
+            $now = current_time( 'timestamp' );
+            $expiration = strtotime( $object_data['expiration'] );
 
-        if( $object_data['status'] === 'active' && $expiration < $now ) {
-            // Prevent to have an older expiration (which will deactivate constantly the automation)
-            $object_data['expiration'] = '0000-00-00 00:00:00';
+            if( $object_data['status'] === 'active' && $expiration < $now ) {
+                // Prevent to have an older expiration (which will deactivate constantly the automation)
+                $object_data['expiration'] = '0000-00-00 00:00:00';
+            } else {
+                $object_data['expiration'] = date( 'Y-m-d H:i:s', $expiration );
+            }
         } else {
-            $object_data['expiration'] = date( 'Y-m-d H:i:s', $expiration );
+            // Never expires expiration
+            $object_data['expiration'] = '0000-00-00 00:00:00';
         }
 
     }

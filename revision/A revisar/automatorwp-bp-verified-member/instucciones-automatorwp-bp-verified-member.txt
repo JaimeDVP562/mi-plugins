@@ -1,0 +1,68 @@
+# AutomatorWP – BP Verified Member Integration
+
+### Requisitos Previos
+- WordPress instalado y funcionando.
+- Plugin AutomatorWP activo.
+- Plugin BuddyPress activo (¡Obligatorio! Es la red social sobre la que funciona la insignia).
+- Plugin Verified Member for BuddyPress activo.
+
+++ NOTA VISUAL: El icono que aparece en AutomatorWP para esta integración no corresponde con el oficial de la aplicación. Es solo un icono genérico orientativo para las pruebas en desarrollo. ++
+
+---
+
+## 1) Instalación del entorno
+1. Sube y activa la carpeta de nuestro plugin de integración (automatorwp-bp-verified-member) en la ruta `wp-content/plugins/`.
+2. Si no tienes BuddyPress instalado, te mostrará un aviso pidiendo que lo instales. Asegúrate de tener los 3 plugins base activos.
+
+## 2) Configuración de BuddyPress
+Para poder probar todas las automatizaciones correctamente, necesitamos activar un botón oculto en los ajustes de BuddyPress.
+1. En el menú lateral de WordPress, ve a Ajustes > BuddyPress.
+2. Haz clic en la pestaña superior llamada "Verified Member".
+3. En la sección "Verification Settings", busca la opción "Enable Verification Requests" y MARCA esa casilla.
+4. Guarda los cambios.
+
+---
+
+## 3) -- ACTIONS (Acciones) --
+
+### ACCIÓN 1: Verify a user (Poner la insignia)
+Vamos a comprobar que AutomatorWP puede otorgar la insignia automáticamente.
+1. Ve a AutomatorWP > Automations > Add New.
+2. Añade el Trigger: Por ejemplo: WordPress -> "User logs in".
+3. Añade la Action: BP Verified Member -> "Verify a user".
+4. Guarda y Activa la automatización.
+5. Ejecución: Abre una ventana de incógnito e inicia sesión en WordPress con un usuario de pruebas (que no tenga la insignia todavía).
+6. Verificación (Backend): Vuelve a tu ventana de administrador. Ve a Usuarios > Todos los usuarios. Edita a ese usuario y comprueba que la casilla "Mark this member as verified" está marcada.
+7. Verificación (Frontend): Ve a la página de Miembros de BuddyPress. El usuario debe tener una insignia azul junto a su nombre.
+
+### ACCIÓN 2: Unverify a user (Quitar la insignia)
+Comprobaremos que podemos retirar la insignia correctamente.
+1. Antes de empezar: Asegúrate de que tu usuario de pruebas TIENE la insignia puesta.
+2. Añade el Trigger: Por ejemplo: WordPress -> "User logs in".
+3. Añade la Action: BP Verified Member ->  "Unverify a user".
+4. Guarda los cambios.
+5. Ejecución: Abre incógnito e inicia sesión con el usuario de pruebas.
+6. Verificación: Revisa el perfil del usuario. La insignia debería haber desaparecido.
+
+---
+
+## 4) -- TRIGGERS (Disparadores) --
+
+### TRIGGER 1: A user is verified (Avisar cuando se verifica a alguien)
+Comprobaremos si AutomatorWP detecta cuándo un administrador da la insignia manualmente.
+1. Crea una automatización nueva.
+2. Añade el Trigger: BP Verified Member -> "A user is verified".
+3. Añade un Action quede registro: Por ejemplo: WordPress -> "Create a post" (Con el titulo que quieras.).
+4. Guarda y Activa la automatización.
+5. Ejecución: En el menú de WordPress, ve a Usuarios > Todos los usuarios. Edita a un usuario que NO tenga la insignia. Baja hasta la caja "Verify Member", marca la casilla y dale a "Actualizar usuario".
+6. Verificación: Ve a AutomatorWP > Logs. Debes ver el registro en verde confirmando el Trigger. Además, se habrá creado el Post de prueba.
+
+### TRIGGER 2: A user requests verification (Avisar cuando alguien pide la insignia)
+1. Crea una automatización nueva.
+2. Añade el Trigger: BP Verified Member -> "A user requests verification".
+3. Añade un Action quede registro: Por ejemplo: WordPress -> "Create a post" (Con el titulo que quieras.).
+4. Guarda y Activa la automatización.
+5. Ejecución: Abre una ventana de incógnito e inicia sesión con un usuario que NO tenga la insignia.
+6. Navega hasta su perfil público de BuddyPress.
+7. Tienes que tener activado "Enable Verificaction Requests" del paso 2.4. Entonces verás un botón que dice "Request Verification". Pulsalo.
+8. Verificación: Ve a AutomatorWP > Logs. Debes ver el registro en verde confirmando el Trigger. Además, se habrá creado el Post de prueba.

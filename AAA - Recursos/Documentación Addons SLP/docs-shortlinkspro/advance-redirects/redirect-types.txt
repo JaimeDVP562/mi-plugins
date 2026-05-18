@@ -1,0 +1,146 @@
+<h1>Redirect Types</h1>
+
+The Advanced Redirects add-on extends ShortLinks Pro with three powerful redirect methods beyond the standard HTTP redirects. Here's how to use each type and their specific advantages.
+
+<h2>Accessing Redirect Types</h2>
+
+When editing a link in ShortLinks Pro with the Advanced Redirects add-on activated, you'll find additional redirect type options in the "Redirect Type" dropdown menu:
+
+<img src="/wp-content/uploads/docs/advanced-redirects/redirect-type-selection.jpg" alt="Redirect Type Selection" />
+
+<h2>Cloaked Redirects</h2>
+
+Cloaked redirects display the destination page within an iframe on your domain, keeping your domain visible in the user's browser address bar.
+
+<h3>How It Works</h3>
+
+When a visitor clicks a cloaked link:
+<ol>
+<li>They remain on your domain visually</li>
+<li>The destination content appears within a frame</li>
+<li>The URL in their browser remains your shortened URL</li>
+</ol>
+
+<h3>Use Cases</h3>
+
+<ul>
+<li>Affiliate marketing (maintain your branding while showing affiliate content)</li>
+<li>Traffic retention (visitors technically stay on your site)</li>
+<li>Link branding (keep your domain visible)</li>
+</ul>
+
+<h3>Configuration</h3>
+
+When selecting "Cloaked" as your redirect type, you can customize:
+
+<img src="/wp-content/uploads/docs/advanced-redirects/cloaked-options.jpg" alt="Cloaked Redirect Options" />
+
+<ul>
+<li><strong>Title</strong> - The title that appears in the browser tab</li>
+<li><strong>Custom CSS</strong> - Optional CSS to apply to the cloaking page</li>
+</ul>
+
+<h2>Meta Refresh Redirects</h2>
+
+Meta refresh redirects use HTML meta tags to redirect users after a specified delay.
+
+<h3>How It Works</h3>
+
+<ul>
+<li>Creates a temporary page with an HTML meta refresh tag</li>
+<li>Redirects after a configurable delay (in seconds)</li>
+<li>Displays optional message during the delay</li>
+</ul>
+
+<h3>Use Cases</h3>
+
+<ul>
+<li>When you want users to see a message before redirection</li>
+<li>For compatibility with systems that don't handle HTTP redirects well</li>
+<li>To create a brief visibility of an intermediate page</li>
+</ul>
+
+<h3>Configuration</h3>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/meta-refresh-options.jpg" alt="Meta Refresh Options" />
+
+<ul>
+<li><strong>Delay</strong> - Time in seconds before redirect occurs (default: 0)</li>
+<li><strong>Message</strong> - Optional text to display during the delay</li>
+</ul>
+
+<h2>JavaScript Redirects</h2>
+
+JavaScript redirects use client-side JavaScript to redirect users to the destination URL.
+
+<h3>How It Works</h3>
+
+<ul>
+<li>Executes JavaScript window.location to change the browser location</li>
+<li>Can be set with a configurable delay</li>
+<li>Allows for custom messages or branding during the delay</li>
+</ul>
+
+<h3>Use Cases</h3>
+
+<ul>
+<li>When you need to execute JavaScript before redirection</li>
+<li>For compatibility with certain tracking systems</li>
+<li>To create advanced transition effects between pages</li>
+</ul>
+
+<h3>Configuration</h3>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/javascript-options.jpg" alt="JavaScript Redirect Options" />
+
+<ul>
+<li><strong>Delay</strong> - Time in milliseconds before redirect occurs</li>
+<li><strong>Custom HTML</strong> - Optional HTML content to display before redirect</li>
+</ul>
+
+<h2>Comparison of Redirect Types</h2>
+
+<table>
+<tr>
+  <th>Redirect Type</th>
+  <th>SEO Transfer</th>
+  <th>Speed</th>
+  <th>Use Case</th>
+</tr>
+<tr>
+  <td>307 (Temporary)</td>
+  <td>Minimal SEO transfer</td>
+  <td>Instant, seamless</td>
+  <td>Temporary redirects</td>
+</tr>
+<tr>
+  <td>301 (Permanent)</td>
+  <td>Transfers SEO value</td>
+  <td>Instant, seamless</td>
+  <td>Permanent redirects, SEO preservation</td>
+</tr>
+<tr>
+  <td>302 (Temporary)</td>
+  <td>Minimal SEO transfer</td>
+  <td>Instant, seamless</td>
+  <td>Temporary redirects</td>
+</tr>
+<tr>
+  <td>Cloaked</td>
+  <td>No SEO transfer</td>
+  <td>Content framed, your URL remains</td>
+  <td>Affiliate marketing, branding</td>
+</tr>
+<tr>
+  <td>Meta Refresh</td>
+  <td>Limited SEO value</td>
+  <td>Visible transition, can be delayed</td>
+  <td>Interstitial pages, notices</td>
+</tr>
+<tr>
+  <td>JavaScript</td>
+  <td>Limited SEO value</td>
+  <td>Customizable transition</td>
+  <td>Advanced tracking, custom experiences</td>
+</tr>
+</table>

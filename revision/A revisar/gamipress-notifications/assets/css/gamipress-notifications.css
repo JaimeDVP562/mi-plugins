@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'GamiPress Notifications';
+    src:  url('../fonts/gamipress-notifications.eot?liv3ui');
+    src:  url('../fonts/gamipress-notifications.eot?liv3ui#iefix') format('embedded-opentype'),
+    url('../fonts/gamipress-notifications.ttf?liv3ui') format('truetype'),
+    url('../fonts/gamipress-notifications.woff?liv3ui') format('woff'),
+    url('../fonts/gamipress-notifications.svg?liv3ui#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.gamipress-notification {
+    background-color: #fff;
+
+    padding: 1rem;
+    margin: 0.5rem 0;
+
+    -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+}
+
+/* Notifications Page Styles */
+.gamipress-notifications-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.gamipress-notifications-list {
+    margin-top: 20px;
+}
+
+.gamipress-notifications-top-actions {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.gamipress-notifications-top-actions .button {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.gamipress-notification-item {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.gamipress-notification-item.gamipress-notification-unread {
+    border-left: 4px solid #007cba;
+    background: #f0f8ff;
+}
+
+.gamipress-notification-item.gamipress-notification-read {
+    opacity: 0.8;
+}
+
+.gamipress-notification-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.gamipress-notification-message {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.gamipress-notification-content {
+    margin-bottom: 8px;
+}
+
+.gamipress-notification-date {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    font-style: italic;
+}
+
+.gamipress-notification .gamipress-notification-close {
+    font-family: 'GamiPress Notifications' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 18px;
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+.gamipress-notification .gamipress-notification-close:before {
+    content: "\e900";
+}
+
+.gamipress-notification .gamipress-notification-content {
+
+}
+
+@media (max-width: 782px) {
+    .gamipress_notifyjs-corner {
+        width: 100%;
+        margin: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    .gamipress_notifyjs-corner .gamipress_notifyjs-wrapper,
+    .gamipress_notifyjs-corner .gamipress_notifyjs-container {
+        margin: 0 !important;
+    }
+
+    .gamipress-notification {
+        width: 100% !important;
+    }
+
+}

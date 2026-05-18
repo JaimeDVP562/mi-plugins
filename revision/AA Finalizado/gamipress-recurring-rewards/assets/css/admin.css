@@ -1,0 +1,16 @@
+/**
+ * GamiPress Recurring Rewards - Admin CSS
+ *
+ * Styles for the CT edit screen conditional cycle fields.
+ * The JS toggles display/disabled; this provides the initial hidden state
+ * using the CMB2 row_classes added in admin.php (Bug 1).
+ *
+ * @package GamiPress\Recurring_Rewards
+ * @since   1.0.0
+ */
+
+/* Hide cycle sub-field rows by default on the CMB2 edit screen */
+.grr-cycle-day-row,
+.grr-cycle-month-day-row {
+    display: none;
+}

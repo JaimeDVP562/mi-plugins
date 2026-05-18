@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0073aa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00a0d2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#bg)" />
+  <!-- Gear icon representing options/settings -->
+  <g transform="translate(128,128)" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer gear shape -->
+    <path d="M0,-60 L10,-55 L15,-65 L25,-60 L20,-48 L32,-42 L30,-30 L42,-28 L38,-15 L50,-10 L44,0 L50,10 L38,15 L42,28 L30,30 L32,42 L20,48 L25,60 L15,65 L10,55 L0,60 L-10,55 L-15,65 L-25,60 L-20,48 L-32,42 L-30,30 L-42,28 L-38,15 L-50,10 L-44,0 L-50,-10 L-38,-15 L-42,-28 L-30,-30 L-32,-42 L-20,-48 L-25,-60 L-15,-65 L-10,-55 Z" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-width="4"/>
+    <!-- Inner circle -->
+    <circle cx="0" cy="0" r="22" fill="#ffffff" fill-opacity="0.3" stroke="#ffffff" stroke-width="4"/>
+    <!-- WP "W" letter -->
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" stroke="none">W</text>
+  </g>
+</svg>

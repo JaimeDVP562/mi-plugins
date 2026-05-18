@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress - LifterLMS Points Gateway\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-17 10:06+0000\n"
+"PO-Revision-Date: 2026-03-17 10:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"Language: es-ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.12\n"
+"X-Domain: gamipress-llms-points-gateway"
+
+#: classes/class-gamipress-llms-points-gateway.php:57
+msgid " points to buy this course."
+msgstr " puntos para comprar este curso."
+
+#: classes/class-gamipress-llms-points-gateway.php:44
+msgid "Conversion Rate"
+msgstr "Tasa de conversión"
+
+#: classes/class-gamipress-llms-points-gateway.php:37
+msgid "Enable Gateway"
+msgstr "Habilitar pasarela de pago"
+
+#: classes/class-gamipress-llms-points-gateway.php:38
+msgid "Enable payment with these points."
+msgstr "Habilitar el pago con estos puntos."
+
+#. Author of the plugin
+msgid "GamiPress"
+msgstr ""
+
+#. Name of the plugin
+msgid "GamiPress - LifterLMS Points Gateway"
+msgstr ""
+
+#: classes/class-gamipress-llms-points-gateway.php:45
+msgid "How many points are equal to 1 currency unit."
+msgstr "Cuántos puntos equivalen a 1 unidad monetaria."
+
+#: classes/class-gamipress-llms-points-gateway.php:57
+msgid "Insufficient points. You need "
+msgstr "Puntos insuficientes. Necesitas "
+
+#: classes/class-gamipress-llms-points-gateway.php:21
+msgid "Pay with "
+msgstr "Pagar con "
+
+#: classes/class-gamipress-llms-points-gateway.php:62
+msgid "Purchase LifterLMS Order "
+msgstr "Comprar pedido de LifterLMS "
+
+#: classes/class-gamipress-llms-points-gateway.php:90
+msgid "Refund for LifterLMS Order "
+msgstr "Reembolso del pedido de LifterLMS "
+
+#. Description of the plugin
+msgid "Use GamiPress points types as a payment gateway for LifterLMS."
+msgstr ""
+"Utilice los tipos de puntos de GamiPress como pasarela de pago para "
+"LifterLMS."

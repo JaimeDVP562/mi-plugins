@@ -1,0 +1,10 @@
+Actualmente el add-on de GamiPress referrals almacena los referrals en la tabla de logs de GamiPress, la idea es hacer uso de nuestra libreria Custom Tables (CT) que ya esta en GamiPress, y pasar a utilizar una tabla personalizada para registrar todos esos referrals
+Por hacer:        
+      Crear la tabla gamipress_referrals_referrals y su estructura (ejemplo de custom tables en AutomatorWP, que para las automatizaciones usa nuestro CT, ejemplo de como extender las vistas en includes/custom-tables)
+      Crear las vistas de listado (permitiendo eliminar) y edicion (la de edicion será solo para ver la informacion, no es modificable, solo un boton para eliminar referral)
+      Migrar todas las funciones que añadan logs a que usen esta nueva tabla
+      Migrar todas las funciones que hagan queries a los logs buscando referrals a que ahora busquen en las tablas
+      Proceso de upgrade (en GamiPress hay de estos procesos) en el que se le notifique al usuario del cambio y permitirle empezar un proceso de migracion de los logs antiguos a los nuevos (hay que eliminar los antiguos una vez terminado)
+      En todos los remplazos de las queries o funciones, hay que revisar si el usuario migró, para seguir usando las tablas de los logs o usar las nuevas (GamiPress tambien tiene checks asi)
+EXTRA:
+Añadir shortcode [gamipress_referrals_list] para mostrar los referidos al usuario en el frontend que lo que hace es hacer una query de los referrals del usuario logueado para mostrarle los detalles

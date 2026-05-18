@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress - No Activity Rewards\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-02 11:39+0000\n"
+"PO-Revision-Date: 2026-04-02 11:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.12\n"
+"X-Domain: gamipress-no-activity-rewards"
+
+#: includes/requirements.php:42
+msgid "Achievement Type"
+msgstr ""
+
+#: includes/requirements.php:10 includes/requirements.php:23
+#: includes/requirements.php:36 includes/requirements.php:53
+#: includes/requirements.php:66 includes/requirements.php:83
+#: includes/requirements.php:96
+msgid "Days of inactivity"
+msgstr "Días de inactividad"
+
+#. Author of the plugin
+msgid "GamiPress"
+msgstr ""
+
+#. Name of the plugin
+msgid "GamiPress - No Activity Rewards"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://gamipress.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://gamipress.com/add-ons/No-Activity-Rewards/"
+msgstr ""
+
+#: includes/triggers.php:16
+msgid "No Activity"
+msgstr "No Actividad"
+
+#: includes/requirements.php:72
+msgid "Points Type"
+msgstr "Tipo de Punto"
+
+#: includes/requirements.php:102
+msgid "Rank Type"
+msgstr "Tipo de Rango"
+
+#: includes/requirements.php:33 includes/triggers.php:22
+#: includes/triggers.php:71
+msgid "User has not earned achievements of a specific type in X days"
+msgstr ""
+
+#: includes/requirements.php:20 includes/triggers.php:20
+#: includes/triggers.php:65
+msgid "User has not earned any achievement in X days"
+msgstr ""
+
+#: includes/requirements.php:80 includes/triggers.php:28
+#: includes/triggers.php:89
+msgid "User has not earned any rank in X days"
+msgstr ""
+
+#: includes/requirements.php:50 includes/triggers.php:24
+#: includes/triggers.php:77
+msgid "User has not earned points in X days"
+msgstr ""
+
+#: includes/requirements.php:63 includes/triggers.php:26
+#: includes/triggers.php:83
+msgid "User has not earned points of a specific type in X days"
+msgstr ""
+
+#: includes/requirements.php:93 includes/triggers.php:30
+#: includes/triggers.php:95
+msgid "User has not earned ranks of a specific type in X days"
+msgstr ""
+
+#: includes/triggers.php:60
+msgid "User has not logged in"
+msgstr ""
+
+#: includes/requirements.php:7
+msgid "User has not logged in for X days"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress - No Activity Rewards\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-02 11:39+0000\n"
+"PO-Revision-Date: 2026-04-02 11:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.12\n"
+"X-Domain: gamipress-no-activity-rewards"
+
+#: includes/requirements.php:42
+msgid "Achievement Type"
+msgstr ""
+
+#: includes/requirements.php:10 includes/requirements.php:23
+#: includes/requirements.php:36 includes/requirements.php:53
+#: includes/requirements.php:66 includes/requirements.php:83
+#: includes/requirements.php:96
+msgid "Days of inactivity"
+msgstr "Días de inactividad"
+
+#. Author of the plugin
+msgid "GamiPress"
+msgstr ""
+
+#. Name of the plugin
+msgid "GamiPress - No Activity Rewards"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://gamipress.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://gamipress.com/add-ons/No-Activity-Rewards/"
+msgstr ""
+
+#: includes/triggers.php:16
+msgid "No Activity"
+msgstr "No Actividad"
+
+#: includes/requirements.php:72
+msgid "Points Type"
+msgstr "Tipo de Punto"
+
+#: includes/requirements.php:102
+msgid "Rank Type"
+msgstr "Tipo de Rango"
+
+#: includes/requirements.php:33 includes/triggers.php:22
+#: includes/triggers.php:71
+msgid "User has not earned achievements of a specific type in X days"
+msgstr ""
+
+#: includes/requirements.php:20 includes/triggers.php:20
+#: includes/triggers.php:65
+msgid "User has not earned any achievement in X days"
+msgstr ""
+
+#: includes/requirements.php:80 includes/triggers.php:28
+#: includes/triggers.php:89
+msgid "User has not earned any rank in X days"
+msgstr ""
+
+#: includes/requirements.php:50 includes/triggers.php:24
+#: includes/triggers.php:77
+msgid "User has not earned points in X days"
+msgstr ""
+
+#: includes/requirements.php:63 includes/triggers.php:26
+#: includes/triggers.php:83
+msgid "User has not earned points of a specific type in X days"
+msgstr ""
+
+#: includes/requirements.php:93 includes/triggers.php:30
+#: includes/triggers.php:95
+msgid "User has not earned ranks of a specific type in X days"
+msgstr ""
+
+#: includes/triggers.php:60
+msgid "User has not logged in"
+msgstr ""
+
+#: includes/requirements.php:7
+msgid "User has not logged in for X days"
+msgstr ""

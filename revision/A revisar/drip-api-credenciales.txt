@@ -1,0 +1,92 @@
+=====================================================================
+  DRIP - CÓMO OBTENER LAS CREDENCIALES DE LA API
+  Tutorial para la integración con AutomatorWP
+=====================================================================
+
+Las credenciales necesarias para conectar Drip con AutomatorWP son:
+
+  1. Account ID (ID de cuenta)
+  2. API Token (Token de API)
+
+A continuación se explica cómo localizar cada una de ellas.
+
+---------------------------------------------------------------------
+1. ACCOUNT ID
+---------------------------------------------------------------------
+
+El Account ID es el identificador numérico único de tu cuenta en Drip.
+Se puede obtener directamente desde la URL del navegador.
+
+Pasos:
+  1. Inicia sesión en tu cuenta de Drip en https://www.getdrip.com
+  2. Una vez dentro del panel principal (dashboard), fíjate en la
+     URL del navegador. Tendrá un formato similar a este:
+
+       https://www.getdrip.com/123456789/dashboard
+
+  3. El número que aparece entre la barra después de "getdrip.com/"
+     y "/dashboard" es tu Account ID.
+
+     Ejemplo:
+       URL:        https://www.getdrip.com/123456789/dashboard
+       Account ID: 123456789
+
+  4. Copia ese número y guárdalo, lo necesitarás para configurar
+     la integración.
+
+
+---------------------------------------------------------------------
+2. API TOKEN
+---------------------------------------------------------------------
+
+El API Token es una cadena alfanumérica única por usuario que permite
+autenticar las llamadas a la API de Drip.
+
+Pasos:
+  1. Inicia sesión en tu cuenta de Drip en https://www.getdrip.com
+  2. Haz clic en el avatar o icono de perfil ubicado en la esquina
+     superior derecha de la pantalla. Se abrirá un panel lateral.
+  3. En ese panel, selecciona la opción "User Settings"
+     (Configuración de usuario).
+  4. Se abrirá la página de "User Info". Desplázate hacia abajo
+     hasta encontrar el apartado "API Token".
+  5. Verás tu token actual (cadena de caracteres). Cópialo.
+
+     NOTA: Si necesitas generar un nuevo token, haz clic en el botón
+     "Generate a New API Token". Ten en cuenta que al generar uno
+     nuevo, el token anterior dejará de ser válido y cualquier
+     integración existente que lo use deberá actualizarse.
+
+  Ruta resumida:
+    Settings > User Settings > (sección) API Token
+
+
+---------------------------------------------------------------------
+RESUMEN DE CREDENCIALES
+---------------------------------------------------------------------
+
+  - Account ID:  Número en la URL del dashboard
+                 (ej: https://www.getdrip.com/[ACCOUNT_ID]/dashboard)
+
+  - API Token:   Settings > User Settings > API Token
+
+
+---------------------------------------------------------------------
+NOTAS ADICIONALES
+---------------------------------------------------------------------
+
+  - Cada usuario de Drip tiene su propio API Token. Asegúrate de
+    usar el token del usuario que tenga los permisos adecuados
+    sobre la cuenta.
+
+  - Si el acceso a la API no está habilitado en tu plan, ponte en
+    contacto con el soporte de Drip en support@drip.com para
+    solicitarlo.
+
+  - Guarda ambas credenciales en un lugar seguro. No las compartas
+    ni las incluyas en repositorios públicos de código.
+
+=====================================================================
+  Más información: https://developer.drip.com/
+  Soporte Drip:    https://help.drip.com/
+=====================================================================

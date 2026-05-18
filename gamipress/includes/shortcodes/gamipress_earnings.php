@@ -514,7 +514,58 @@ function gamipress_earnings_shortcode_query( $args = array () ) {
     $ct_table = ct_setup_table( 'gamipress_user_earnings' );
 
     // Sanitize query args
-    $query_args = gamipress_sanitize_query_args( $query_args, array(
+    $query_args = gamipress_sanitize_query_args( $query_args, gamipress_user_earnings_query_vars_rules() );
+
+    return new CT_Query( $query_args );
+
+}
+
+/**
+ * Earnings shortcode defaults attributes values
+ *
+ * @since 7.1.6
+ *
+ * @return array
+ */
+function gamipress_earnings_shortcode_defaults() {
+
+	return apply_filters( 'gamipress_earnings_shortcode_defaults', array(
+		'current_user'                  => 'yes',
+        'user_id'                       => '0',
+        'force_responsive'              => '',
+        'limit'                         => '10',
+        'pagination'                    => 'yes',
+        'order'                         => 'DESC',
+        'include'                       => '',
+        'exclude'                       => '',
+        'points'                        => 'yes',
+        'points_types'                  => 'all',
+        'awards'                        => 'yes',
+        'deducts'                       => 'yes',
+        'achievements'                  => 'yes',
+        'achievement_types'             => 'all',
+        'steps'                         => 'yes',
+        'achievements_without_points'   => 'yes',
+        'ranks'                         => 'yes',
+        'rank_types'                    => 'all',
+        'rank_requirements'             => 'yes',
+	) );
+
+}
+
+/**
+ * User Earnings query vars rules
+ *
+ * @since 7.8.8
+ *
+ * @return array
+ */
+function gamipress_user_earnings_query_vars_rules() {
+
+    // Setup table
+    $ct_table = ct_setup_table( 'gamipress_user_earnings' );
+
+    $rules = apply_filters( 'gamipress_user_earnings_query_vars_rules', array(
         // Query fields
         'orderby' => array(
             'type' => 'string',
@@ -565,39 +616,8 @@ function gamipress_earnings_shortcode_query( $args = array () ) {
         ),
     ) );
 
-    return new CT_Query( $query_args );
+    ct_reset_setup_table();
 
-}
-
-/**
- * Earnings shortcode defaults attributes values
- *
- * @since 7.1.6
- *
- * @return array
- */
-function gamipress_earnings_shortcode_defaults() {
-
-	return apply_filters( 'gamipress_earnings_shortcode_defaults', array(
-		'current_user'                  => 'yes',
-        'user_id'                       => '0',
-        'force_responsive'              => '',
-        'limit'                         => '10',
-        'pagination'                    => 'yes',
-        'order'                         => 'DESC',
-        'include'                       => '',
-        'exclude'                       => '',
-        'points'                        => 'yes',
-        'points_types'                  => 'all',
-        'awards'                        => 'yes',
-        'deducts'                       => 'yes',
-        'achievements'                  => 'yes',
-        'achievement_types'             => 'all',
-        'steps'                         => 'yes',
-        'achievements_without_points'   => 'yes',
-        'ranks'                         => 'yes',
-        'rank_types'                    => 'all',
-        'rank_requirements'             => 'yes',
-	) );
+    return $rules;
 
 }

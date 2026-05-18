@@ -1,0 +1,233 @@
+== Changelog ==
+
+= 1.3.9 =
+
+* **Bug Fixes**
+* Fixed typo in settings texts.
+
+= 1.3.8 =
+
+* **Bug Fixes**
+* Fixed "Attempts to cancel" setting display.
+
+= 1.3.7 =
+
+* **Improvements**
+* Updated deprecated jQuery functions.
+
+= 1.3.6 =
+
+* **Improvements**
+* Catch errors triggered from new Chrome Privacy policies.
+* **Notes**
+* Since Chrome 87, won't be possible anymore to autoplay audio without user direct interaction with the website, it means that until user "plays" with the website (click or tap anywhere), audios can't get autoplayed.
+
+= 1.3.5 =
+
+* **Improvements**
+* Apply points format on templates.
+
+= 1.3.4 =
+
+* **Improvements**
+* Improved the way notifications are getting marked as read.
+
+= 1.3.3 =
+
+* **New Features**
+* Added the setting "Attempts to cancel live checks" to disable live checks when a user stays a long time without receive any notification.
+* **Improvements**
+* Performance improvements reducing the live check calls to the half.
+* Added check to ensure the user has seen the notifications when live checks are disabled.
+* **Bug Fixes**
+* Fixed notification patterns autoload on first install.
+
+= 1.3.2 =
+
+* **Improvements**
+* Make notifications script run only on the active browser tab.
+* Improve notifications ids to better determine when a notification has been duplicated or not.
+
+= 1.3.1 =
+
+* **Improvements**
+* Added extra checks to prevent duplicated notifications if plugin scripts gets loaded multiples times by others plugins.
+
+= 1.3.0 =
+
+* **Bug Fixes**
+* Prevent blank notifications if notification text patterns hasn't been setup yet.
+
+= 1.2.9 =
+
+* **Improvements**
+* Improved notifications display on mobile devices.
+
+= 1.2.8 =
+
+* **Bug Fixes**
+* Fixed undefined notices on Javascript.
+* **Improvements**
+* Prevent large amount of notifications caused if there is a great amount of user earnings before the last check.
+* **Developer Notes**
+* Added a hook to customize the new notifications limit, by default 10.
+
+= 1.2.7 =
+
+* **Bug Fixes**
+* Correctly setup the notification id attribute.
+
+= 1.2.6 =
+
+* **New Features**
+* Added support to GamiPress 1.8.0.
+* **Improvements**
+* Make use of WordPress security functions for ajax requests.
+
+= 1.2.5 =
+
+* **New Features**
+* New setting to customize the notification width on big screens.
+* Support to responsive notifications on small screens.
+
+= 1.2.4 =
+
+* **Improvements**
+* Added extra checks to determine if notification sound files are correctly set.
+* **Bug Fixes**
+* Fixed errors caused by empty or wrong sound files sources.
+
+= 1.2.3 =
+
+* **Improvements**
+* Improved sound effect compatibility with newer browsers.
+* Avoid Notify.js conflicts by renaming plugin notify() function to gamipress_notify().
+
+= 1.2.2 =
+
+* **New Features**
+* Added support to GamiPress 1.7.0.
+
+= 1.2.1 =
+
+* **Bug Fixes**
+* Fixed mark already displayed notifications with a small live check delay setup.
+* **Developer Notes**
+* Added new hooks to make add-on more extensible.
+
+= 1.2.0 =
+
+**Improvements**
+* Prevent empty notifications.
+* Improved sound effect compatibility with older browsers.
+* Reset public changelog (moved old changelog to changelog.txt file).
+* **Developer Notes**
+* Added new hooks to make add-on more extensible.
+
+= 1.1.9 =
+
+* **New Features**
+* Added customizable sound effects when showing and hiding the notification.
+
+= 1.1.8 =
+
+**Bug Fixes**
+* Fixed sub-site's notifications wrong post data on multisite installs.
+
+= 1.1.7 =
+
+**Bug Fixes**
+* Fixed default notifications settings in order to allow empty patterns.
+
+= 1.1.6 =
+
+**New Features**
+* Added {user_first} and {user_last} pattern tags.
+
+= 1.1.5 =
+
+**Bug Fixes**
+* Fixed user's last check mark that makes on ajax notifications enter on a infinite loop.
+
+= 1.1.4 =
+
+**Bug Fixes**
+* Fixed wrong elements strip on page load notifications.
+
+= 1.1.3 =
+
+**New Features**
+* Added support for page load notifications (instead of just live notifications).
+* Added the "Disable notifications checks" setting to disable live notifications checks.
+**Developer Notes**
+* Added the Javascript method gamipress_notifications_notify( content ), to manually trigger a notification.
+
+= 1.1.2 =
+
+**New Features**
+* Added the "Notifications check delay" setting to make new notifications checks delay customizable.
+
+= 1.1.1 =
+
+**Developer Notes**
+* Added template tags to render the user ID, achievement ID and rank ID mainly to be used on shortcodes.
+
+= 1.1.0 =
+
+**Bug Fixes**
+* Fixed wrong positioning when notifications has been positioned at middle.
+**Improvements**
+* Reset public changelog (moved old changelog to changelog.txt file).
+
+= 1.0.9 =
+
+* Added new notification template tags for points awards and deducts content patterns to render different points labels based on earned or deducted points and user current balance.
+
+= 1.0.8 =
+
+* Improvements to live update of current user points to match just the current user logged in points amounts.
+
+= 1.0.7 =
+
+* Added new notification template tags for achievements and ranks content patterns: {url}, {link} and {congratulations}.
+* Added new notification template tags for step content patterns: {achievement_url}, {achievement_link} and {achievement_congratulations}.
+* Added new notification template tags for rank requirements content patterns: {rank_url}, {rank_link} and {rank_congratulations}.
+* Fixed wrong priority when overwriting a template.
+* Fixed a Javascript undefined variable notice.
+
+= 1.0.6 =
+
+* Added WordPress text formatting and shortcode support to notifications content pattern.
+
+= 1.0.5 =
+
+* Added live update of current user points on pages where the shortcode [gamipress_points] and/or the widget GamiPress: User Points Balance are placed.
+
+= 1.0.4 =
+
+* New feature: Color settings to customize the background and text colors of notifications.
+* Added the tag {image} on points awards and deductions notifications patterns.
+* Added classes to each notification to allow define CSS rules by each type.
+
+= 1.0.3 =
+
+* Added support to GamiPress points deducts.
+* Added standard classes to allow set common style rules to all notifications.
+* Added filters on notifications to allow override anything.
+* Improved admin javascript functions.
+* Fixed wrong class on achievement and rank notifications.
+
+= 1.0.2 =
+
+* Added support to GamiPress ranks.
+* Fixed issue with sequential steps on "Step Completed" notification
+
+= 1.0.1 =
+
+* Added new options to completely customize the content of each notification.
+* Added more tags to every pattern.
+* Added more hooks on all templates to allow add custom content.
+
+= 1.0.0 =
+
+* Initial release.

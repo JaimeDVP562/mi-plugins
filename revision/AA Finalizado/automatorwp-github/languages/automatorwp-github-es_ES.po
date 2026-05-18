@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - GitHub\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-30 07:13+0000\n"
+"PO-Revision-Date: 2026-03-30 07:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"Language: es-ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.3; wp-6.9.4; php-8.2.12\n"
+"X-Domain: automatorwp-github"
+
+#. Author of the plugin
+msgid "AutomatorWP"
+msgstr ""
+
+#. Name of the plugin
+msgid "AutomatorWP - GitHub"
+msgstr ""
+
+#. Description of the plugin
+msgid "Connect AutomatorWP with Github."
+msgstr "Conecta AutomatorWP con Github."
+
+#: automatorwp-github.php:157
+msgid "GitHub"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://automatorwp.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://automatorwp.com/add-ons/github/"
+msgstr ""

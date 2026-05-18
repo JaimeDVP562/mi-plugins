@@ -1,0 +1,93 @@
+/* -------------------------------------------
+	Licensing Settings
+   ------------------------------------------- */
+
+.cmb2-licenses-page {
+    max-width: 100% !important;
+}
+
+.cmb2-licenses-page .cmb2-metabox > .cmb-row {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.cmb2-licenses-page .meta-box-sortables {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.cmb2-licenses-page .handlediv,
+body[class*="_licenses"] #screen-options-link-wrap {
+    display: none !important;
+}
+
+.cmb2-licenses-page .postbox.closed .inside {
+    display: block !important;
+}
+
+.cmb2-licenses-page .postbox {
+    width: 100%;
+    margin: 0 8px 16px;
+}
+
+.cmb2-licenses-page .cmb2-licenses-page-license-thumbnail {
+    margin: -6px -12px 0;
+}
+
+.cmb2-licenses-page .cmb2-licenses-page-license-thumbnail img {
+    width: 100%;
+}
+
+.cmb2-licenses-page .cmb-row {
+    border: none;
+    padding-bottom: 0;
+}
+
+.cmb2-licenses-page .cmb2-metabox > .cmb-row:not(:first-of-type) {
+    border: none !important;
+}
+
+.cmb2-licenses-page .cmb-th,
+.cmb2-licenses-page .cmb-td {
+    width: 100%;
+    padding: 6px 0 !important;
+    margin-left: 0 !important;
+}
+
+.cmb2-licenses-page .cmb-td input {
+    width: 100%;
+}
+
+.cmb2-licenses-page .license-expiration-notice,
+.cmb2-licenses-page .renew-license-notice {
+    display: inline;
+}
+
+.cmb2-licenses-page .license-error {
+    color: #a00;
+}
+
+.cmb2-licenses-page .renew-license-notice:before {
+    content: ' '; /* Add a space between expiration and renew notices */
+}
+
+@media screen and (min-width: 1600px) {
+
+    .cmb2-licenses-page .postbox {
+        width: 23%;
+    }
+
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    .cmb2-licenses-page .postbox {
+        width: 23%;
+    }
+}

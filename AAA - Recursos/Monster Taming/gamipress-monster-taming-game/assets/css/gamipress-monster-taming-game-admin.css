@@ -1,0 +1,131 @@
+.gamipress-monster-taming-game-column-options .cmb2-list {
+    display: flex;
+}
+.gamipress-monster-taming-game-column-options .cmb2-list li {
+    width: 33%;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li input {
+    display: none;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li label {
+    display: block;
+    cursor: pointer;
+    border: 2px solid #eee;
+    padding: 6px 12px;
+    margin: 0 6px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li input:checked + label {
+    border-color: #2271b1;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li:hover input:not(:checked) + label {
+    border-color: #bed9ec;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li label span {
+    display: block;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li label span.cmb-desc {
+    opacity: 0.8;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li label span.col-2 {
+    float: left;
+    width: 33%;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li label small {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+.gamipress-monster-taming-game-column-options .cmb2-list li label span img {
+    display: inline-block;
+    width: 20px;
+    vertical-align: middle;
+    margin: 1px 4px 3px 0px;
+}
+
+.gamipress-monster-taming-game-row {
+    float: left;
+}
+
+.gamipress-monster-taming-game-row + .gamipress-monster-taming-game-row .cmb2-metabox-description {
+    margin-left: 64px !important;
+}
+
+.gamipress-monster-taming-game-row-first {
+    clear: both;
+}
+
+.gamipress-monster-taming-game-row-first label img {
+    display: inline-block;
+    width: 20px;
+    vertical-align: middle;
+    margin: 0px 4px 4px 0px;
+}
+
+.gamipress-monster-taming-game-row:not(.gamipress-monster-taming-game-row-first) .cmb-th {
+    width: 100px;
+}
+
+.gamipress-monster-taming-game-row:not(.gamipress-monster-taming-game-row-first) .cmb-th + .cmb-td {
+    margin-left: 100px !important;
+}
+
+#cmb2-metabox-monster-taming-game .cmb2-id-achievement-type,
+#cmb2-metabox-monster-taming-game .cmb2-id-monster-taming-game-actions {
+    clear: both;
+}
+
+.gamipress-monster-taming-game-preview {
+    display: flex;
+}
+
+.gamipress-monster-taming-game-preview-item {
+    width: 33%;
+}
+
+.gamipress-monster-taming-game-preview-item-content {
+    display: block;
+    border: 2px solid #eee;
+    padding: 6px 12px;
+    margin: 0 6px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.gamipress-monster-taming-game-preview-item-content > img {
+    float: left;
+    width: 50px;
+    margin-right: 10px;
+    margin-left: -5px;
+}
+
+.gamipress-monster-taming-game-preview-item-content strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.gamipress-monster-taming-game-preview-item-content p {
+    margin: 0;
+}
+.gamipress-monster-taming-game-preview-item-content p span img {
+    width: 20px;
+    vertical-align: bottom;
+}
+
+#monster-taming-game-response {
+    line-height: 30px;
+}

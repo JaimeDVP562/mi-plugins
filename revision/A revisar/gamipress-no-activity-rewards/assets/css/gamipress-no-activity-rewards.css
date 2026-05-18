@@ -1,0 +1,21 @@
+/**
+ * Admin styles for GamiPress - No Activity Rewards
+ */
+
+/* Add a nice icon (clock) to the "No Activity" group in the GamiPress selector */
+.gamipress-trigger-group-no_activity i::before,
+.gamipress-requirement-group-no_activity i::before {
+    content: "\f469";
+    /* Dashicons clock-archived icon */
+    font-family: dashicons;
+    font-style: normal;
+}
+
+/* Subtle styling for the "X days" replacement to make it stand out in the admin */
+.gamipress-requirement-label strong {
+    color: #0073aa;
+    background: #f0f6fb;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}

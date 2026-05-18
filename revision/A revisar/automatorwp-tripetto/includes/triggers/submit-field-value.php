@@ -1,0 +1,210 @@
+<?php
+/**
+ * Submit Field Value
+ *
+ * @package     AutomatorWP\Integrations\Tripetto\Triggers\Submit_Field_Value
+ * @author      AutomatorWP <contact@automatorwp.com>, Ruben Garcia <rubengcdev@gmail.com>
+ * @since       1.0.0
+ */
+// Exit if accessed directly
+if( !defined( 'ABSPATH' ) ) exit;
+
+class AutomatorWP_Tripetto_Submit_Field_Value extends AutomatorWP_Integration_Trigger {
+
+    public $integration = 'tripetto';
+    public $trigger = 'tripetto_submit_field_value';
+
+    /**
+     * Register the trigger
+     *
+     * @since 1.0.0
+     */
+    public function register() {
+
+        automatorwp_register_trigger( $this->trigger, array(
+            'integration'       => $this->integration,
+            'label'             => __( 'User submits a specific field value on a form', 'automatorwp-tripetto' ),
+            'select_option'     => __( 'User submits <strong>a specific field value</strong> on a form', 'automatorwp-tripetto' ),
+            /* translators: %1$s: Field name. %2$s: Field value. %3$s: Post title. %4$s: Number of times. */
+            'edit_label'        => sprintf( __( 'User submits the %1$s field with the value %2$s on %3$s %4$s time(s)', 'automatorwp-tripetto' ), '{field_name}', '{field_value}', '{post}', '{times}' ),
+            /* translators: %1$s: Field name. %2$s: Field value. %3$s: Post title. */
+            'log_label'         => sprintf( __( 'User submits the %1$s field with the value %2$s on %3$s', 'automatorwp-tripetto' ), '{field_name}', '{field_value}', '{post}' ),
+            'action'            => 'tripetto_submit',
+            'function'          => array( $this, 'listener' ),
+            'priority'          => 10,
+            'accepted_args'     => 2,
+            'options'           => array(
+                'field_name' => array(
+                    'from' => 'field_name',
+                    'default' => __( 'field name', 'automatorwp' ),
+                    'fields' => array(
+                        'field_name' => array(
+                            'name' => __( 'Field name:', 'automatorwp' ),
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                'field_value' => array(
+                    'from' => 'field_value',
+                    'default' => __( 'field value', 'automatorwp' ),
+                    'fields' => array(
+                        'field_value' => array(
+                            'name' => __( 'Field value:', 'automatorwp' ),
+                            'type' => 'text',
+                            'default' => ''
+                        )
+                    )
+                ),
+                'post' => automatorwp_utilities_ajax_selector_option( array(
+                    'field'             => 'post',
+                    'name'              => __( 'Form:', 'automatorwp-tripetto' ),
+                    'option_none_value' => 'any',
+                    'option_none_label' => __( 'any form', 'automatorwp-tripetto' ),
+                    'action_cb'         => 'automatorwp_tripetto_get_forms',
+                    'options_cb'        => 'automatorwp_tripetto_options_cb_form',
+                    'default'           => 'any'
+                ) ),
+                'times' => automatorwp_utilities_times_option(),
+            ),
+            'tags' => array_merge(
+                array(
+                    'form_field:FIELD_NAME' => array(
+                        'label'     => __( 'Form field value', 'automatorwp-tripetto' ),
+                        'type'      => 'text',
+                        'preview'   => __( 'Form field value, replace "FIELD_NAME" by the field name', 'automatorwp-tripetto' ),
+                    ),
+                ),
+                automatorwp_utilities_times_tag()
+            )
+        ) );
+    }
+
+    /**
+     * Trigger listener
+     *
+     * @since 1.0.0
+     *
+     * @param array $dataset
+     * @param \Tripetto\App\Modules\Form\Form $form
+     */
+    public function listener( $dataset, $form ) {
+
+        $form_id = $form->id;
+        $user_id = get_current_user_id();
+
+        // Login is required
+        if ( $user_id === 0 ) {
+            return;
+        }
+
+        $form_fields = automatorwp_tripetto_get_form_fields_values( $dataset );
+
+        // Loop all fields to trigger events per field value
+        foreach ( $form_fields as $field_name => $field_value ) {
+
+            // Used for hook
+            $field = array( $field_name => $field_value );
+
+            /**
+             * Excluded fields event by filter
+             *
+             * @since 1.0.0
+             *
+             * @param bool      $exclude        Whatever to exclude or not, by default false
+             * @param string    $field_name     Field name
+             * @param mixed     $field_value    Field value
+             * @param array     $field          Field setup array
+             */
+            if( apply_filters( 'automatorwp_tripetto_exclude_field', false, $field_name, $field_value, $field ) ) {
+                continue;
+            }
+
+            // Trigger submit form field value event
+            automatorwp_trigger_event( array(
+                'trigger'       => $this->trigger,
+                'user_id'       => $user_id,
+                'form_id'       => $form_id,
+                'field_name'    => $field_name,
+                'field_value'   => $field_value,
+                'form_fields'   => $form_fields,
+            ) );
+        }
+    }
+
+    /**
+     * User deserves check
+     */
+    public function user_deserves_trigger( $deserves_trigger, $trigger, $user_id, $event, $trigger_options, $automation ) {
+
+        // Don't deserve if post, field name and value are not received
+        if( ! isset( $event['form_id'] ) && ! isset( $event['field_name'] ) && ! isset( $event['field_value'] ) ) {
+            return false;
+        }
+
+        // Bail if post doesn't match with the trigger option
+        if( $trigger_options['post'] !== 'any' && absint( $event['form_id'] ) !== absint( $trigger_options['post'] ) ) {
+            return false;
+        }
+
+        // Don't deserve if field name doesn't match with the trigger option
+        if( $event['field_name'] !== $trigger_options['field_name'] ) {
+            return false;
+        }
+
+        // Check if field value matches the required one (with support for arrays)
+        if( is_array( $event['field_value'] ) ) {
+            if( ! in_array( $trigger_options['field_value'], $event['field_value'] ) ) {
+                return false;
+            }
+        } else {
+            if( $event['field_value'] !== $trigger_options['field_value'] ) {
+                return false;
+            }
+        }
+
+        return $deserves_trigger;
+    }
+
+    /**
+     * Register the required hooks
+     */
+    public function hooks() {
+        // Log meta data
+        add_filter( 'automatorwp_user_completed_trigger_log_meta', array( $this, 'log_meta' ), 10, 6 );
+        // Log fields
+        add_filter( 'automatorwp_log_fields', array( $this, 'log_fields' ), 10, 5 );
+        parent::hooks();
+    }
+
+    /**
+     * Trigger custom log meta
+     */
+    function log_meta( $log_meta, $trigger, $user_id, $event, $trigger_options, $automation ) {
+        if( $trigger->type !== $this->trigger ) {
+            return $log_meta;
+        }
+        $log_meta['form_fields'] = ( isset( $event['form_fields'] ) ? $event['form_fields'] : array() );
+        return $log_meta;
+    }
+
+    /**
+     * Action custom log fields
+     */
+    public function log_fields( $log_fields, $log, $object ) {
+        if( $log->type !== 'trigger' ) {
+            return $log_fields;
+        }
+        if( $object->type !== $this->trigger ) {
+            return $log_fields;
+        }
+        $log_fields['form_fields'] = array(
+            'name' => __( 'Fields Submitted', 'automatorwp-tripetto' ),
+            'desc' => __( 'Information about the fields values sent on this form submission.', 'automatorwp-tripetto' ),
+            'type' => 'text',
+        );
+        return $log_fields;
+    }
+}
+
+new AutomatorWP_Tripetto_Submit_Field_Value();

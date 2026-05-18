@@ -1,0 +1,85 @@
+.automatorwp-option[data-option="schedule_action"] {
+    margin-top: 5px;
+}
+
+.automatorwp-option[data-option="schedule_action"]:before {
+    content: "\f469";
+    font-family: dashicons;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    vertical-align: top;
+    text-align: center;
+    transition: color .1s ease-in;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 30px;
+    margin-left: -4px;
+    margin-right: 4px;
+    opacity: 0.6;
+}
+
+.cmb2-id-schedule-action .cmb-th,
+.cmb2-id-delay-action .cmb-th {
+    display: none;
+}
+
+.cmb2-id-schedule-action .cmb2-metabox-description,
+.cmb2-id-delay-action .cmb2-metabox-description {
+    color: #222222;
+    font-weight: 600;
+}
+
+.cmb2-id-delay-action-amount .cmb-th,
+.cmb2-id-delay-action-period .cmb-th,
+.cmb2-id-schedule-action-datetime .cmb-th {
+    font-weight: 400;
+}
+
+.cmb2-id-delay-action-amount,
+.cmb2-id-delay-action-period {
+    display: inline-block;
+    width: 170px;
+}
+
+.cmb2-id-delay-action-period {
+    margin-left: 6px !important;
+}
+
+.cmb2-id-delay-action-period:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cmb2-id-delay-action-amount .automatorwp-tags-select2 {
+    display: none !important;
+}
+
+.cmb2-id-delay-action-amount input[type="number"] {
+    min-width: 100% !important;
+}
+
+.cmb2-id-schedule-action-datetime .cmb-td input:first-child {
+    max-width: 110px;
+}
+
+.cmb2-id-schedule-action-datetime .cmb-td input:nth-child(2) {
+    max-width: 90px;
+    margin-left: 2px;
+}
+
+.cmb2-id-schedule-action-datetime .cmb-td .cmb2-metabox-description {
+    display: block !important;
+    padding-top: 5px;
+    color: #666;
+    font-style: italic;
+}

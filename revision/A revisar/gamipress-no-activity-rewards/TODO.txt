@@ -1,0 +1,6 @@
+Lo que funciona -> Registro de triggers, el archivo principal, Requeriment 'inactive days', js guarda el requirement
+------------------------------------------------------------------------------
+** TODO LIST ( GamiPress - No Activity Rewards )**
+------------------------------------------------------------------------------
+· Verificar que funcionen los triggers
+· Conseguir que los requirements no salgan duplicados

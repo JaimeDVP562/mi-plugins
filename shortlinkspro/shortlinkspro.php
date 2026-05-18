@@ -3,14 +3,14 @@
  * Plugin Name:     	ShortLinks Pro
  * Plugin URI:      	https://shortlinkspro.com
  * Description:     	Shorten, track, manage and share any URL using your own domain name!
- * Version:         	1.2.1
+ * Version:         	1.2.2
  * Author:          	ShortLinks Pro
  * Author URI:      	https://shortlinkspro.com/
  * Text Domain:     	shortlinkspro
  * Domain Path: 		/languages/
  * Requires PHP:        7.0
  * Requires at least: 	4.4
- * Tested up to: 		6.9
+ * Tested up to: 		7.0
  * License:         	GPLv3
  *
  * @package         	ShortLinksPro
@@ -80,7 +80,7 @@ final class ShortLinksPro {
     private function constants() {
 
         // Plugin version
-        define( 'SHORTLINKSPRO_VER', '1.2.1' );
+        define( 'SHORTLINKSPRO_VER', '1.2.2' );
 
         // Plugin file
         define( 'SHORTLINKSPRO_FILE', __FILE__ );

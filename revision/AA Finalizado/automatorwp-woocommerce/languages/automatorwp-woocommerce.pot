@@ -1,0 +1,1874 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - WooCommerce\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2024-09-24 15:15+0200\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://automatorwp.com/)\n"
+"Language-Team: GamiPress <contact@automatorwp.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: automatorwp-woocommerce.php:259
+#, php-format
+msgid "AutomatorWP - WooCommerce requires %s and %s in order to work. Please install and activate them."
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:26
+msgid "Add email(s) to a coupon"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:27
+msgid "Add email(s) to a <strong>coupon</strong>"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:29
+#: includes/actions/add-email-to-coupon.php:31
+#, php-format
+msgid "Add %1$s to %2$s"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:35
+msgid "email(s)"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:38
+msgid "Email address(es):"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:39
+msgid "Single or comma-separated list of email addresses. You can also use an asterisk (*) to match parts of an email. For example \"*@gmail.com\" would match all gmail addresses."
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:45
+#: includes/actions/add-user-to-coupon.php:34
+#: includes/actions/remove-user-from-coupon.php:34
+msgid "Coupon:"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:46
+#: includes/actions/add-user-to-coupon.php:35
+#: includes/actions/remove-user-from-coupon.php:35
+msgid "Choose a coupon"
+msgstr ""
+
+#: includes/actions/add-email-to-coupon.php:48
+#: includes/actions/add-user-to-coupon.php:37
+#: includes/actions/remove-user-from-coupon.php:37
+msgid "Coupon ID"
+msgstr ""
+
+#: includes/actions/add-membership.php:26
+msgid "Add user to membership"
+msgstr ""
+
+#: includes/actions/add-membership.php:27
+msgid "Add user to <strong>membership</strong>"
+msgstr ""
+
+#: includes/actions/add-membership.php:29
+#: includes/actions/add-membership.php:31
+#: includes/actions/add-user-to-coupon.php:29
+#: includes/actions/add-user-to-coupon.php:31
+#, php-format
+msgid "Add user to %1$s"
+msgstr ""
+
+#: includes/actions/add-membership.php:34
+#: includes/actions/remove-membership.php:34
+#: includes/triggers/membership-cancelled.php:38
+#: includes/triggers/membership-created.php:38
+#: includes/triggers/membership-expired.php:38
+#: includes/triggers/membership-status.php:38
+msgid "Membership:"
+msgstr ""
+
+#: includes/actions/add-membership.php:35
+#: includes/actions/remove-membership.php:35
+msgid "membership"
+msgstr ""
+
+#: includes/actions/add-membership.php:36
+#: includes/actions/remove-membership.php:36
+msgid "Select a membership"
+msgstr ""
+
+#: includes/actions/add-membership.php:39
+#: includes/actions/remove-membership.php:40
+msgid "Membership ID"
+msgstr ""
+
+#: includes/actions/add-user-to-coupon.php:26
+msgid "Add user to a coupon"
+msgstr ""
+
+#: includes/actions/add-user-to-coupon.php:27
+msgid "Add user to a <strong>coupon</strong>"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:35
+msgid "Cancel the user's subscription to product"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:36
+msgid "Cancel the user's <strong>subscription</strong> to product"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:38
+#: includes/actions/cancel-user-subscription.php:40
+#, php-format
+msgid "Cancel the user's subscription to %1$s"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:43
+#: includes/filters/user-not-purchased-product.php:34
+#: includes/filters/user-purchased-product.php:34
+#: includes/filters/user-subscription-status.php:34
+#: includes/triggers/add-product-to-cart.php:38
+#: includes/triggers/add-product-variation-to-cart.php:39
+#: includes/triggers/anonymous-order-status-product.php:39
+#: includes/triggers/anonymous-purchase-product-variation.php:40
+#: includes/triggers/anonymous-purchase-product.php:39
+#: includes/triggers/cancel-subscription.php:38
+#: includes/triggers/order-contains-specific-products.php:50
+#: includes/triggers/order-specific-products.php:50
+#: includes/triggers/order-status-product.php:38
+#: includes/triggers/purchase-product-variation.php:39
+#: includes/triggers/purchase-product.php:38
+#: includes/triggers/purchase-subscription.php:38
+#: includes/triggers/remove-product-from-cart.php:38
+#: includes/triggers/remove-product-variation-from-cart.php:39
+#: includes/triggers/review-product-rating.php:38
+#: includes/triggers/review-product.php:38
+#: includes/triggers/subscription-expired.php:38
+#: includes/triggers/subscription-renewal-variation.php:39
+#: includes/triggers/subscription-renewal.php:38
+#: includes/triggers/subscription-status.php:38
+#: includes/triggers/vendor-sale.php:38 includes/triggers/view-product.php:38
+msgid "Product:"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:44
+msgid "all products"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:46
+msgid "Product ID"
+msgstr ""
+
+#: includes/actions/cancel-user-subscription.php:108
+msgid "Subscription cancelled through AutomatorWP."
+msgstr ""
+
+#: includes/actions/change-status-order.php:26
+msgid "Set status to order"
+msgstr ""
+
+#: includes/actions/change-status-order.php:27
+msgid "Set status to <strong>order</strong>"
+msgstr ""
+
+#: includes/actions/change-status-order.php:29
+#: includes/actions/change-status-order.php:31
+#, php-format
+msgid "Set %1$s status to %2$s"
+msgstr ""
+
+#: includes/actions/change-status-order.php:37
+#: includes/filters/user-subscription-status.php:43
+#: includes/filters/user-subscription-variation-status.php:53
+#: includes/triggers/anonymous-order-status-product-category.php:45
+#: includes/triggers/anonymous-order-status-product-tag.php:47
+#: includes/triggers/anonymous-order-status-product.php:47
+#: includes/triggers/anonymous-order-status.php:42
+#: includes/triggers/membership-status.php:46
+#: includes/triggers/order-status-product-category.php:44
+#: includes/triggers/order-status-product-tag.php:46
+#: includes/triggers/order-status-product.php:46
+#: includes/triggers/order-status.php:41
+#: includes/triggers/payment-retry-status.php:41
+#: includes/triggers/subscription-status.php:46
+msgid "Status:"
+msgstr ""
+
+#: includes/actions/change-status-order.php:45
+msgid "an order"
+msgstr ""
+
+#: includes/actions/change-status-order.php:49
+#: includes/actions/retry-subscription-payment.php:47
+msgid "Order ID:"
+msgstr ""
+
+#: includes/actions/change-status-order.php:50
+msgid "The order ID."
+msgstr ""
+
+#: includes/actions/create-coupon.php:44
+msgid "Create a coupon"
+msgstr ""
+
+#: includes/actions/create-coupon.php:45
+msgid "Create a <strong>coupon</strong>"
+msgstr ""
+
+#: includes/actions/create-coupon.php:47 includes/actions/create-coupon.php:49
+#, php-format
+msgid "Create a %1$s"
+msgstr ""
+
+#: includes/actions/create-coupon.php:52
+msgid "coupon"
+msgstr ""
+
+#: includes/actions/create-coupon.php:55
+msgid "Code:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:59
+msgid "Description:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:66
+msgid "Discount type:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:69
+msgid "Percentage discount"
+msgstr ""
+
+#: includes/actions/create-coupon.php:70
+msgid "Fixed cart discount"
+msgstr ""
+
+#: includes/actions/create-coupon.php:71
+msgid "Fixed product discount"
+msgstr ""
+
+#: includes/actions/create-coupon.php:75
+msgid "Coupon amount:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:76
+msgid "Value of the coupon."
+msgstr ""
+
+#: includes/actions/create-coupon.php:81
+msgid "Allow free shipping:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:82
+#, php-format
+msgid "Check this option if the coupon grants free shipping. A <a href=\"%s\" target=\"_blank\">free shipping method</a> must be enabled in your shipping zone and be set to require \"a valid free shipping coupon\" (see the \"Free Shipping Requires\" setting)."
+msgstr ""
+
+#: includes/actions/create-coupon.php:87
+msgid "Coupon expiry date:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:88
+msgid "The coupon will expire at 00:00:00 of this date."
+msgstr ""
+
+#: includes/actions/create-coupon.php:98
+msgid "Minimum spend:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:99
+msgid "This field allows you to set the minimum spend (subtotal) allowed to use the coupon."
+msgstr ""
+
+#: includes/actions/create-coupon.php:102
+msgid "No minimum"
+msgstr ""
+
+#: includes/actions/create-coupon.php:106
+msgid "Maximum spend:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:107
+msgid "This field allows you to set the maximum spend (subtotal) allowed when using the coupon."
+msgstr ""
+
+#: includes/actions/create-coupon.php:110
+msgid "No maximum"
+msgstr ""
+
+#: includes/actions/create-coupon.php:114
+msgid "Individual use only:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:115
+msgid "Check this option if the coupon cannot be used in conjunction with other coupons."
+msgstr ""
+
+#: includes/actions/create-coupon.php:120
+msgid "Exclude sale items:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:121
+msgid "Check this option if the coupon should not apply to items on sale. Per-item coupons will only work if the item is not on sale. Per-cart coupons will only work if there are items in the cart that are not on sale."
+msgstr ""
+
+#: includes/actions/create-coupon.php:126
+#: includes/triggers/order-contains-specific-products.php:40
+#: includes/triggers/order-specific-products.php:40
+msgid "Products:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:127
+msgid "Products that the coupon will be applied to, or that need to be in the cart in order for the \"Fixed cart discount\" to be applied."
+msgstr ""
+
+#: includes/actions/create-coupon.php:131
+#: includes/actions/create-coupon.php:139
+msgid "Search for products..."
+msgstr ""
+
+#: includes/actions/create-coupon.php:134
+msgid "Exclude products:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:135
+msgid "Products that the coupon will not be applied to, or that cannot be in the cart in order for the \"Fixed cart discount\" to be applied."
+msgstr ""
+
+#: includes/actions/create-coupon.php:142
+msgid "Product categories:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:143
+msgid "Product categories that the coupon will be applied to, or that need to be in the cart in order for the \"Fixed cart discount\" to be applied."
+msgstr ""
+
+#: includes/actions/create-coupon.php:147
+#: includes/actions/create-coupon.php:155
+msgid "Search for categories..."
+msgstr ""
+
+#: includes/actions/create-coupon.php:150
+msgid "Exclude categories:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:151
+msgid "Product categories that the coupon will not be applied to, or that cannot be in the cart in order for the \"Fixed cart discount\" to be applied."
+msgstr ""
+
+#: includes/actions/create-coupon.php:158
+msgid "Allowed emails:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:159
+msgid "List of allowed billing emails to check against when an order is placed. Separate email addresses with commas. You can also use an asterisk (*) to match parts of an email. For example \"*@gmail.com\" would match all gmail addresses."
+msgstr ""
+
+#: includes/actions/create-coupon.php:162
+msgid "No restrictions"
+msgstr ""
+
+#: includes/actions/create-coupon.php:169
+msgid "Usage limit per coupon:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:170
+msgid "How many times this coupon can be used before it is void."
+msgstr ""
+
+#: includes/actions/create-coupon.php:173
+#: includes/actions/create-coupon.php:195
+msgid "Unlimited usage"
+msgstr ""
+
+#: includes/actions/create-coupon.php:180
+msgid "Limit usage to X items:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:181
+msgid "The maximum number of individual items this coupon can apply to when using product discounts. Leave blank to apply to all qualifying items in cart."
+msgstr ""
+
+#: includes/actions/create-coupon.php:184
+msgid "Apply to all qualifying items in cart"
+msgstr ""
+
+#: includes/actions/create-coupon.php:191
+msgid "Usage limit per user:"
+msgstr ""
+
+#: includes/actions/create-coupon.php:192
+msgid "How many times this coupon can be used by an individual user. Uses billing email for guests, and user ID for logged in users."
+msgstr ""
+
+#: includes/actions/create-coupon.php:241
+#, php-format
+msgid "Could not create the coupon, the server returned: %s"
+msgstr ""
+
+#: includes/actions/create-coupon.php:243
+msgid "Could not create the coupon"
+msgstr ""
+
+#: includes/actions/create-coupon.php:250
+msgid "Coupon created successfully"
+msgstr ""
+
+#: includes/actions/create-coupon.php:416
+msgid "Result:"
+msgstr ""
+
+#: includes/actions/remove-membership.php:26
+msgid "Remove user from membership"
+msgstr ""
+
+#: includes/actions/remove-membership.php:27
+msgid "Remove user from <strong>membership</strong>"
+msgstr ""
+
+#: includes/actions/remove-membership.php:29
+#: includes/actions/remove-membership.php:31
+#: includes/actions/remove-user-from-coupon.php:29
+#: includes/actions/remove-user-from-coupon.php:31
+#, php-format
+msgid "Remove user from %1$s"
+msgstr ""
+
+#: includes/actions/remove-membership.php:38
+msgid "all memberships"
+msgstr ""
+
+#: includes/actions/remove-user-from-coupon.php:26
+msgid "Remove user from a coupon"
+msgstr ""
+
+#: includes/actions/remove-user-from-coupon.php:27
+msgid "Remove user from a <strong>coupon</strong>"
+msgstr ""
+
+#: includes/actions/retry-subscription-payment.php:35
+msgid "Retry user's subscription payment"
+msgstr ""
+
+#: includes/actions/retry-subscription-payment.php:36
+msgid "Retry user's subscription <strong>payment</strong>"
+msgstr ""
+
+#: includes/actions/retry-subscription-payment.php:38
+#: includes/actions/retry-subscription-payment.php:40
+#, php-format
+msgid "Retry user's subscription for %1$s"
+msgstr ""
+
+#: includes/actions/retry-subscription-payment.php:44
+msgid "order ID"
+msgstr ""
+
+#: includes/actions/retry-subscription-payment.php:48
+msgid "The order ID to retry payment. Leave blank to get the last failed payment order."
+msgstr ""
+
+#: includes/ajax-functions.php:109
+msgid "Please, choose a variable product first."
+msgstr ""
+
+#: includes/ajax-functions.php:130
+msgid "No variations found for this product."
+msgstr ""
+
+#: includes/filters.php:64
+#, php-format
+msgid "Order #%s"
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:26
+msgid "User lifetime value"
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:27
+msgid "User <strong>lifetime value</strong>"
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:29
+#: includes/filters/user-lifetime-value-filter.php:31
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:38
+#: includes/triggers/user-lifetime-value.php:42
+msgid "Value:"
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:39
+#: includes/triggers/user-lifetime-value.php:43
+msgid "The lifetime value required. Support decimals."
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:79
+#, php-format
+msgid "Filter not passed. User lifetime value is \"%1$s\" and does not meets the condition %2$s \"%3$s\"."
+msgstr ""
+
+#: includes/filters/user-lifetime-value-filter.php:88
+#, php-format
+msgid "Filter passed. User lifetime value is \"%1$s\" and meets the condition %2$s \"%3$s\"."
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:26
+msgid "User has not purchased"
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:27
+msgid "User has not <strong>purchased</strong>"
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:29
+#: includes/filters/user-not-purchased-product.php:31
+#: includes/filters/user-purchased-product.php:29
+#: includes/filters/user-purchased-product.php:31
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:35
+#: includes/filters/user-purchased-product.php:35
+#: includes/filters/user-subscription-status.php:35
+#: includes/triggers/add-product-to-cart.php:39
+#: includes/triggers/anonymous-order-status-product.php:40
+#: includes/triggers/anonymous-purchase-product.php:40
+#: includes/triggers/cancel-subscription.php:39
+#: includes/triggers/order-contains-specific-products.php:51
+#: includes/triggers/order-specific-products.php:51
+#: includes/triggers/order-status-product.php:39
+#: includes/triggers/purchase-product.php:39
+#: includes/triggers/purchase-subscription.php:39
+#: includes/triggers/remove-product-from-cart.php:39
+#: includes/triggers/review-product-rating.php:39
+#: includes/triggers/review-product.php:39
+#: includes/triggers/subscription-expired.php:39
+#: includes/triggers/subscription-renewal-variation.php:40
+#: includes/triggers/subscription-renewal.php:39
+#: includes/triggers/subscription-status.php:39
+#: includes/triggers/vendor-sale.php:39 includes/triggers/view-product.php:39
+msgid "any product"
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:65
+#: includes/filters/user-purchased-product.php:65
+#: includes/filters/user-subscription-status.php:80
+#: includes/filters/user-subscription-variation-status.php:91
+msgid "Filter not passed. Product option has not been configured."
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:93
+msgid "Filter not passed. User has purchased the product."
+msgstr ""
+
+#: includes/filters/user-not-purchased-product.php:98
+msgid "Filter passed. User has not purchased the product."
+msgstr ""
+
+#: includes/filters/user-purchased-product.php:26
+msgid "User has purchased"
+msgstr ""
+
+#: includes/filters/user-purchased-product.php:27
+msgid "User has <strong>purchased</strong>"
+msgstr ""
+
+#: includes/filters/user-purchased-product.php:95
+msgid "Filter not passed. User has not purchased the product."
+msgstr ""
+
+#: includes/filters/user-purchased-product.php:100
+msgid "Filter passed. User has purchased the product."
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:26
+msgid "User subscription"
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:27
+msgid "User <strong>subscription</strong>"
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:29
+#: includes/filters/user-subscription-status.php:31
+#, php-format
+msgid "for %1$s is %2$s"
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:46
+#: includes/filters/user-subscription-variation-status.php:56
+msgid "active"
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:47
+#: includes/filters/user-subscription-variation-status.php:57
+msgid "inactive"
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:114
+msgid "Filter not passed. User subscription for a product does not meets the condition."
+msgstr ""
+
+#: includes/filters/user-subscription-status.php:119
+msgid "Filter passed. User subscription for a product meets the condition."
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:26
+msgid "User subscription variation "
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:27
+msgid "User <strong>subscription variation</strong>"
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:29
+#: includes/filters/user-subscription-variation-status.php:31
+#, php-format
+msgid "for %1$s with %2$s selected is %3$s"
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:35
+#: includes/triggers/purchase-subscription-variation.php:39
+#: includes/triggers/subscription-variation-switch.php:39
+msgid "Subscription:"
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:36
+#: includes/triggers/purchase-subscription-variation.php:40
+#: includes/triggers/subscription-variation-switch.php:40
+msgid "any variable subscription"
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:43
+#: includes/triggers/add-product-variation-to-cart.php:47
+#: includes/triggers/anonymous-purchase-product-variation.php:48
+#: includes/triggers/purchase-product-variation.php:47
+#: includes/triggers/purchase-subscription-variation.php:47
+#: includes/triggers/remove-product-variation-from-cart.php:47
+#: includes/triggers/subscription-renewal-variation.php:47
+#: includes/triggers/subscription-variation-switch.php:47
+#: includes/triggers/subscription-variation-switch.php:55
+msgid "Variation:"
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:44
+#: includes/triggers/purchase-subscription-variation.php:48
+#: includes/triggers/subscription-variation-switch.php:48
+#: includes/triggers/subscription-variation-switch.php:56
+msgid "any subscription variation"
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:97
+msgid "Filter not passed. Variation option has not been configured."
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:131
+msgid "Filter not passed. User subscription for a product variation does not meets the condition."
+msgstr ""
+
+#: includes/filters/user-subscription-variation-status.php:136
+msgid "Filter passed. User subscription for a product variation meets the condition."
+msgstr ""
+
+#: includes/functions.php:49
+msgid "First name"
+msgstr ""
+
+#: includes/functions.php:50
+msgid "Last name"
+msgstr ""
+
+#: includes/functions.php:51
+msgid "Company"
+msgstr ""
+
+#: includes/functions.php:52
+msgid "Address line 1"
+msgstr ""
+
+#: includes/functions.php:53
+msgid "Address line 2"
+msgstr ""
+
+#: includes/functions.php:54
+msgid "City"
+msgstr ""
+
+#: includes/functions.php:55
+msgid "Postcode / ZIP"
+msgstr ""
+
+#: includes/functions.php:56
+msgid "Country / Region"
+msgstr ""
+
+#: includes/functions.php:57
+msgid "State / County"
+msgstr ""
+
+#: includes/functions.php:58
+msgid "Phone"
+msgstr ""
+
+#: includes/functions.php:59
+msgid "Email"
+msgstr ""
+
+#: includes/functions.php:78
+msgid "AutomatorWP"
+msgstr ""
+
+#: includes/functions.php:79
+msgid "Plugin"
+msgstr ""
+
+#: includes/functions.php:80
+msgid "AutomatorWP Ltd."
+msgstr ""
+
+#: includes/functions.php:81
+msgid "False Street, 123"
+msgstr ""
+
+#: includes/functions.php:82
+msgid "First floor, door 2"
+msgstr ""
+
+#: includes/functions.php:83
+msgid "Brooklyn"
+msgstr ""
+
+#: includes/functions.php:84
+msgid "12345"
+msgstr ""
+
+#: includes/functions.php:85
+msgid "United States"
+msgstr ""
+
+#: includes/functions.php:86
+msgid "New York"
+msgstr ""
+
+#: includes/functions.php:87
+msgid "202-555-1234"
+msgstr ""
+
+#: includes/functions.php:88
+msgid "contact@automatorwp.com"
+msgstr ""
+
+#: includes/tags.php:25
+msgid "Customer Billing Address"
+msgstr ""
+
+#: includes/tags.php:41
+msgid "Customer Shipping Address"
+msgstr ""
+
+#: includes/tags.php:158
+msgid "Order ID"
+msgstr ""
+
+#: includes/tags.php:163
+msgid "Order Number"
+msgstr ""
+
+#: includes/tags.php:168
+msgid "Order Status"
+msgstr ""
+
+#: includes/tags.php:170 includes/triggers/payment-retry-status.php:48
+msgid "Completed"
+msgstr ""
+
+#: includes/tags.php:173
+msgid "Order Date Created"
+msgstr ""
+
+#: includes/tags.php:178
+msgid "Order Date Paid"
+msgstr ""
+
+#: includes/tags.php:183
+msgid "Order Customer IP Address"
+msgstr ""
+
+#: includes/tags.php:188
+msgid "Order Customer Note"
+msgstr ""
+
+#: includes/tags.php:190
+msgid "The customer note entered at checkout"
+msgstr ""
+
+#: includes/tags.php:193
+msgid "Order Coupon Codes"
+msgstr ""
+
+#: includes/tags.php:198
+msgid "Order Currency"
+msgstr ""
+
+#: includes/tags.php:203
+msgid "Order Currency Symbol"
+msgstr ""
+
+#: includes/tags.php:208
+msgid "Order Subtotal"
+msgstr ""
+
+#: includes/tags.php:213
+msgid "Order Discount"
+msgstr ""
+
+#: includes/tags.php:218
+msgid "Order Tax"
+msgstr ""
+
+#: includes/tags.php:223
+msgid "Order Total"
+msgstr ""
+
+#: includes/tags.php:228
+msgid "Order Meta"
+msgstr ""
+
+#: includes/tags.php:230
+msgid "Order meta value, replace \"META_KEY\" by the order meta key"
+msgstr ""
+
+#: includes/tags.php:237
+#, php-format
+msgid "Billing %s"
+msgstr ""
+
+#: includes/tags.php:247
+#, php-format
+msgid "Shipping %s"
+msgstr ""
+
+#: includes/triggers/add-product-to-cart.php:26
+msgid "User adds a product to cart"
+msgstr ""
+
+#: includes/triggers/add-product-to-cart.php:27
+msgid "User adds a product <strong>to cart</strong>"
+msgstr ""
+
+#: includes/triggers/add-product-to-cart.php:29
+#, php-format
+msgid "User adds %1$s to cart %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/add-product-to-cart.php:31
+#, php-format
+msgid "User adds %1$s to cart"
+msgstr ""
+
+#: includes/triggers/add-product-to-cart.php:45
+#: includes/triggers/add-product-variation-to-cart.php:56
+#: includes/triggers/anonymous-order-status-product-category.php:55
+#: includes/triggers/anonymous-order-status-product-tag.php:57
+#: includes/triggers/anonymous-order-status-product.php:57
+#: includes/triggers/anonymous-purchase-product-category.php:44
+#: includes/triggers/anonymous-purchase-product-tag.php:46
+#: includes/triggers/anonymous-purchase-product-variation.php:57
+#: includes/triggers/anonymous-purchase-product.php:46
+#: includes/triggers/cancel-subscription-category.php:43
+#: includes/triggers/cancel-subscription.php:45
+#: includes/triggers/order-status-product-category.php:54
+#: includes/triggers/order-status-product-tag.php:56
+#: includes/triggers/order-status-product.php:56
+#: includes/triggers/purchase-product-category.php:43
+#: includes/triggers/purchase-product-tag.php:45
+#: includes/triggers/purchase-product-variation.php:56
+#: includes/triggers/purchase-product.php:45
+#: includes/triggers/purchase-subscription-variation.php:56
+#: includes/triggers/purchase-subscription.php:45
+#: includes/triggers/remove-product-from-cart.php:45
+#: includes/triggers/remove-product-variation-from-cart.php:56
+#: includes/triggers/review-product-rating.php:60
+#: includes/triggers/review-product.php:45
+#: includes/triggers/subscription-expired-category.php:43
+#: includes/triggers/subscription-expired.php:45
+#: includes/triggers/subscription-renewal-category.php:43
+#: includes/triggers/subscription-renewal-variation.php:56
+#: includes/triggers/subscription-renewal.php:45
+#: includes/triggers/subscription-status.php:65
+#: includes/triggers/subscription-variation-switch.php:65
+#: includes/triggers/user-lifetime-value.php:56
+#: includes/triggers/vendor-sale.php:45 includes/triggers/view-product.php:45
+msgid "Product"
+msgstr ""
+
+#: includes/triggers/add-product-variation-to-cart.php:26
+msgid "User adds a product variation to cart"
+msgstr ""
+
+#: includes/triggers/add-product-variation-to-cart.php:27
+msgid "User adds a product variation <strong>to cart</strong>"
+msgstr ""
+
+#: includes/triggers/add-product-variation-to-cart.php:29
+#, php-format
+msgid "User adds %1$s with %2$s selected to the %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/add-product-variation-to-cart.php:31
+#, php-format
+msgid "User adds %1$s with %2$s selected to the"
+msgstr ""
+
+#: includes/triggers/add-product-variation-to-cart.php:40
+#: includes/triggers/anonymous-purchase-product-variation.php:41
+#: includes/triggers/purchase-product-variation.php:40
+#: includes/triggers/remove-product-variation-from-cart.php:40
+msgid "any variable product"
+msgstr ""
+
+#: includes/triggers/add-product-variation-to-cart.php:48
+#: includes/triggers/anonymous-purchase-product-variation.php:49
+#: includes/triggers/purchase-product-variation.php:48
+#: includes/triggers/remove-product-variation-from-cart.php:48
+#: includes/triggers/subscription-renewal-variation.php:48
+msgid "any variation"
+msgstr ""
+
+#: includes/triggers/anonymous-complete-purchase.php:27
+#: includes/triggers/anonymous-complete-purchase.php:31
+msgid "Guest completes a purchase"
+msgstr ""
+
+#: includes/triggers/anonymous-complete-purchase.php:28
+msgid "Guest completes <strong>a purchase</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-complete-purchase.php:30
+#, php-format
+msgid "Guest completes a purchase %1$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-category.php:27
+msgid "Guest's order with a product of a category changes its status"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-category.php:28
+msgid "Guest's order with a product of <strong>a category</strong> changes its <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-category.php:30
+#: includes/triggers/anonymous-order-status-product-tag.php:30
+#, php-format
+msgid "Guest's order with a product of %1$s changes its status to %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-category.php:32
+#: includes/triggers/anonymous-order-status-product-tag.php:32
+#, php-format
+msgid "Guest's order with a product of %1$s changes its status to %2$s"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-tag.php:27
+msgid "Guest's order with a product of a tag changes its status"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-tag.php:28
+msgid "Guest's order with a product of <strong>a tag</strong> changes its <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-tag.php:39
+#: includes/triggers/anonymous-purchase-product-tag.php:39
+#: includes/triggers/order-status-product-tag.php:38
+#: includes/triggers/purchase-product-tag.php:38
+msgid "Tag:"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product-tag.php:40
+#: includes/triggers/anonymous-purchase-product-tag.php:40
+#: includes/triggers/order-status-product-tag.php:39
+#: includes/triggers/purchase-product-tag.php:39
+msgid "any tag"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product.php:27
+msgid "Guest's order with a product changes its status"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product.php:28
+msgid "Guest's order with <strong>a product</strong> changes its <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product.php:30
+#, php-format
+msgid "Guest's order with %1$s changes its status to %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status-product.php:32
+#, php-format
+msgid "Guest's order with %1$s changes its status to %2$s"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status.php:27
+msgid "Guest's order status changes"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status.php:28
+msgid "Guest's <strong>order status</strong> changes"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status.php:30
+#, php-format
+msgid "Guest's order status changes to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-order-status.php:32
+#, php-format
+msgid "Guest's order status changes to %1$s"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:27
+msgid "Guest completes a purchase with a payment method"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:28
+msgid "Guest completes a purchase with a <strong>payment method</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:30
+#, php-format
+msgid "Guest completes a purchase with %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:32
+#, php-format
+msgid "Guest completes a purchase with %1$s"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:42
+#: includes/triggers/purchase-payment-method.php:41
+msgid "Payment Method:"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:43
+#: includes/triggers/purchase-payment-method.php:42
+msgid "The payment method required."
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:71
+#: includes/triggers/purchase-payment-method.php:70
+msgid "any payment method"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-payment-method.php:77
+#: includes/triggers/purchase-payment-method.php:76
+#, php-format
+msgid "Payment method #%s"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-category.php:27
+msgid "Guest purchases a product of a category"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-category.php:28
+msgid "Guest purchases a product of <strong>a category</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-category.php:30
+#: includes/triggers/anonymous-purchase-product-tag.php:30
+#, php-format
+msgid "Guest purchases a product of %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-category.php:32
+#: includes/triggers/anonymous-purchase-product-tag.php:32
+#, php-format
+msgid "Guest purchases a product of %1$s"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-tag.php:27
+msgid "Guest purchases a product of a tag"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-tag.php:28
+msgid "Guest purchases a product of <strong>a tag</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-variation.php:27
+msgid "Guest purchases a product variation"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-variation.php:28
+msgid "Guest purchases a product <strong>variation</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-variation.php:30
+#, php-format
+msgid "Guest purchases %1$s with %2$s selected %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product-variation.php:32
+#, php-format
+msgid "Guest purchases %1$s with %2$s selected"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product.php:27
+msgid "Guest purchases a product"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product.php:28
+msgid "Guest purchases <strong>a product</strong>"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product.php:30
+#, php-format
+msgid "Guest purchases %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-product.php:32
+#, php-format
+msgid "Guest purchases %1$s"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-total.php:27
+msgid "Guest completes a purchase with a total greater than, less than or equal to a specific amount"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-total.php:28
+msgid "Guest completes a purchase with a total <strong>greater than, less than or equal</strong> to a specific amount"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-total.php:30
+#, php-format
+msgid "Guest completes a purchase with a total %1$s %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-total.php:32
+#, php-format
+msgid "Guest completes a purchase with a total %1$s %2$s"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-total.php:43
+#: includes/triggers/purchase-total.php:42
+msgid "Amount:"
+msgstr ""
+
+#: includes/triggers/anonymous-purchase-total.php:44
+#: includes/triggers/purchase-total.php:43
+msgid "The order total required. Support decimals."
+msgstr ""
+
+#: includes/triggers/cancel-subscription-category.php:26
+msgid "User cancels subscription of a category"
+msgstr ""
+
+#: includes/triggers/cancel-subscription-category.php:27
+msgid "User cancels subscription of <strong>a category</strong>"
+msgstr ""
+
+#: includes/triggers/cancel-subscription-category.php:29
+#: includes/triggers/cancel-subscription.php:29
+#, php-format
+msgid "User cancels subscription of %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/cancel-subscription-category.php:31
+#: includes/triggers/cancel-subscription.php:31
+#, php-format
+msgid "User cancels subscription of %1$s"
+msgstr ""
+
+#: includes/triggers/cancel-subscription.php:26
+msgid "User cancels subscription of a product"
+msgstr ""
+
+#: includes/triggers/cancel-subscription.php:27
+msgid "User <strong>cancels</strong> subscription of a product"
+msgstr ""
+
+#: includes/triggers/complete-purchase-number.php:26
+msgid "User completes a number of total purchases"
+msgstr ""
+
+#: includes/triggers/complete-purchase-number.php:27
+msgid "User completes a number of total <strong>purchases</strong>"
+msgstr ""
+
+#: includes/triggers/complete-purchase-number.php:29
+#: includes/triggers/complete-purchase-number.php:30
+#, php-format
+msgid "User completes a total of %1$s purchase(s)"
+msgstr ""
+
+#: includes/triggers/complete-purchase-number.php:40
+msgid "Number of orders:"
+msgstr ""
+
+#: includes/triggers/complete-purchase-number.php:41
+msgid "1 for first order, 2 for second order..."
+msgstr ""
+
+#: includes/triggers/complete-purchase.php:26
+#: includes/triggers/complete-purchase.php:30
+msgid "User completes a purchase"
+msgstr ""
+
+#: includes/triggers/complete-purchase.php:27
+msgid "User completes <strong>a purchase</strong>"
+msgstr ""
+
+#: includes/triggers/complete-purchase.php:29
+#, php-format
+msgid "User completes a purchase %1$s time(s)"
+msgstr ""
+
+#: includes/triggers/membership-cancelled.php:26
+msgid "User's access to membership gets cancelled"
+msgstr ""
+
+#: includes/triggers/membership-cancelled.php:27
+msgid "User's access to <strong>membership</strong> gets <strong>cancelled</strong>"
+msgstr ""
+
+#: includes/triggers/membership-cancelled.php:29
+#, php-format
+msgid "User's access to %1$s gets cancelled %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/membership-cancelled.php:31
+#, php-format
+msgid "User's access to %1$s gets cancelled"
+msgstr ""
+
+#: includes/triggers/membership-cancelled.php:39
+#: includes/triggers/membership-created.php:39
+#: includes/triggers/membership-expired.php:39
+#: includes/triggers/membership-status.php:39
+msgid "any membership"
+msgstr ""
+
+#: includes/triggers/membership-cancelled.php:45
+#: includes/triggers/membership-created.php:45
+#: includes/triggers/membership-expired.php:45
+#: includes/triggers/membership-status.php:65
+msgid "Membership"
+msgstr ""
+
+#: includes/triggers/membership-created.php:26
+msgid "User is added to a membership"
+msgstr ""
+
+#: includes/triggers/membership-created.php:27
+msgid "User is <strong>added</strong> to a <strong>membership</strong>"
+msgstr ""
+
+#: includes/triggers/membership-created.php:29
+#, php-format
+msgid "User is added to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/membership-created.php:31
+#, php-format
+msgid "User is added to %1$s"
+msgstr ""
+
+#: includes/triggers/membership-expired.php:26
+msgid "User's access to membership expires"
+msgstr ""
+
+#: includes/triggers/membership-expired.php:27
+msgid "User's access to <strong>membership expires</strong>"
+msgstr ""
+
+#: includes/triggers/membership-expired.php:29
+#, php-format
+msgid "User's access to %1$s expires %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/membership-expired.php:31
+#, php-format
+msgid "User's access to %1$s expires"
+msgstr ""
+
+#: includes/triggers/membership-status.php:26
+msgid "User's access to membership changes to a status"
+msgstr ""
+
+#: includes/triggers/membership-status.php:27
+msgid "User's access to <strong>membership</strong> changes to a status"
+msgstr ""
+
+#: includes/triggers/membership-status.php:29
+#, php-format
+msgid "User's access to %1$s changes to %2$s status %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/membership-status.php:31
+#, php-format
+msgid "User's access to %1$s changes to %2$s status"
+msgstr ""
+
+#: includes/triggers/membership-status.php:49
+#: includes/triggers/subscription-status.php:49
+msgid "any status"
+msgstr ""
+
+#: includes/triggers/membership-status.php:50
+#: includes/triggers/subscription-status.php:51
+msgid "Active"
+msgstr ""
+
+#: includes/triggers/membership-status.php:51
+msgid "Delayed"
+msgstr ""
+
+#: includes/triggers/membership-status.php:52
+msgid "Complimentary"
+msgstr ""
+
+#: includes/triggers/membership-status.php:53
+#: includes/triggers/subscription-status.php:56
+msgid "Pending Cancellation"
+msgstr ""
+
+#: includes/triggers/membership-status.php:54
+msgid "Paused"
+msgstr ""
+
+#: includes/triggers/membership-status.php:55
+#: includes/triggers/subscription-status.php:55
+msgid "Expired"
+msgstr ""
+
+#: includes/triggers/membership-status.php:56
+#: includes/triggers/payment-retry-status.php:47
+#: includes/triggers/subscription-status.php:53
+msgid "Cancelled"
+msgstr ""
+
+#: includes/triggers/order-contains-specific-products.php:26
+#: includes/triggers/order-contains-specific-products.php:30
+msgid "User completes an order containing specific products"
+msgstr ""
+
+#: includes/triggers/order-contains-specific-products.php:27
+msgid "User completes an order containing specific <strong>products</strong>"
+msgstr ""
+
+#: includes/triggers/order-contains-specific-products.php:29
+#, php-format
+msgid "User completes an order containing specific %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/order-contains-specific-products.php:37
+#: includes/triggers/order-specific-products.php:37
+msgid "products"
+msgstr ""
+
+#: includes/triggers/order-contains-specific-products.php:41
+#: includes/triggers/order-specific-products.php:41
+msgid "Set products to check in the order."
+msgstr ""
+
+#: includes/triggers/order-contains-specific-products.php:45
+#: includes/triggers/order-specific-products.php:45
+msgid "Add condition"
+msgstr ""
+
+#: includes/triggers/order-specific-products.php:26
+#: includes/triggers/order-specific-products.php:30
+msgid "User completes an order with specific products"
+msgstr ""
+
+#: includes/triggers/order-specific-products.php:27
+msgid "User completes an order with specific <strong>products</strong>"
+msgstr ""
+
+#: includes/triggers/order-specific-products.php:29
+#, php-format
+msgid "User completes an order with specific %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/order-status-product-category.php:26
+msgid "User's order with a product of a category changes its status"
+msgstr ""
+
+#: includes/triggers/order-status-product-category.php:27
+msgid "User's order with a product of <strong>a category</strong> changes its <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/order-status-product-category.php:29
+#: includes/triggers/order-status-product-tag.php:29
+#, php-format
+msgid "User's order with a product of %1$s changes its status to %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/order-status-product-category.php:31
+#: includes/triggers/order-status-product-tag.php:31
+#, php-format
+msgid "User's order with a product of %1$s changes its status to %2$s"
+msgstr ""
+
+#: includes/triggers/order-status-product-tag.php:26
+msgid "User's order with a product of a tag changes its status"
+msgstr ""
+
+#: includes/triggers/order-status-product-tag.php:27
+msgid "User's order with a product of <strong>a tag</strong> changes its <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/order-status-product.php:26
+msgid "User's order with a product changes its status"
+msgstr ""
+
+#: includes/triggers/order-status-product.php:27
+msgid "User's order with <strong>a product</strong> changes its <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/order-status-product.php:29
+#, php-format
+msgid "User's order with %1$s changes its status to %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/order-status-product.php:31
+#, php-format
+msgid "User's order with %1$s changes its status to %2$s"
+msgstr ""
+
+#: includes/triggers/order-status.php:26
+msgid "User's order status changes"
+msgstr ""
+
+#: includes/triggers/order-status.php:27
+msgid "User's <strong>order status</strong> changes"
+msgstr ""
+
+#: includes/triggers/order-status.php:29
+#, php-format
+msgid "User's order status changes to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/order-status.php:31
+#, php-format
+msgid "User's order status changes to %1$s"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:26
+msgid "User's subscription payment retry status changes"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:27
+msgid "User's subscription <strong>payment retry status</strong> changes"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:29
+#, php-format
+msgid "User's subscription payment retry status changes to %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:31
+#, php-format
+msgid "User's subscription payment retry status changes to %1$s"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:44
+#: includes/triggers/subscription-status.php:50
+msgid "Pending"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:45
+msgid "Processing"
+msgstr ""
+
+#: includes/triggers/payment-retry-status.php:46
+msgid "Failed"
+msgstr ""
+
+#: includes/triggers/purchase-payment-method.php:26
+msgid "User completes a purchase with a payment method"
+msgstr ""
+
+#: includes/triggers/purchase-payment-method.php:27
+msgid "User completes a purchase with a <strong>payment method</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-payment-method.php:29
+#, php-format
+msgid "User completes a purchase with %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-payment-method.php:31
+#, php-format
+msgid "User completes a purchase with %1$s"
+msgstr ""
+
+#: includes/triggers/purchase-product-category.php:26
+msgid "User purchases a product of a category"
+msgstr ""
+
+#: includes/triggers/purchase-product-category.php:27
+msgid "User purchases a product of <strong>a category</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-product-category.php:29
+#: includes/triggers/purchase-product-tag.php:29
+#, php-format
+msgid "User purchases a product of %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-product-category.php:31
+#: includes/triggers/purchase-product-tag.php:31
+#, php-format
+msgid "User purchases a product of %1$s"
+msgstr ""
+
+#: includes/triggers/purchase-product-tag.php:26
+msgid "User purchases a product of a tag"
+msgstr ""
+
+#: includes/triggers/purchase-product-tag.php:27
+msgid "User purchases a product of <strong>a tag</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-product-variation.php:26
+msgid "User purchases a product variation"
+msgstr ""
+
+#: includes/triggers/purchase-product-variation.php:27
+msgid "User purchases a product <strong>variation</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-product-variation.php:29
+#: includes/triggers/purchase-subscription-variation.php:29
+#, php-format
+msgid "User purchases %1$s with %2$s selected %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-product-variation.php:31
+#: includes/triggers/purchase-subscription-variation.php:31
+#, php-format
+msgid "User purchases %1$s with %2$s selected"
+msgstr ""
+
+#: includes/triggers/purchase-product.php:26
+msgid "User purchases a product"
+msgstr ""
+
+#: includes/triggers/purchase-product.php:27
+msgid "User purchases <strong>a product</strong>"
+msgstr ""
+
+#: includes/triggers/purchase-product.php:29
+#, php-format
+msgid "User purchases %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-product.php:31
+#, php-format
+msgid "User purchases %1$s"
+msgstr ""
+
+#: includes/triggers/purchase-subscription-variation.php:26
+msgid "User purchases a subscription variation of a product"
+msgstr ""
+
+#: includes/triggers/purchase-subscription-variation.php:27
+msgid "User purchases a <strong>subscription variation</strong> of a product"
+msgstr ""
+
+#: includes/triggers/purchase-subscription.php:26
+msgid "User purchases subscription of a product"
+msgstr ""
+
+#: includes/triggers/purchase-subscription.php:27
+msgid "User <strong>purchases</strong> subscription of a product"
+msgstr ""
+
+#: includes/triggers/purchase-subscription.php:29
+#, php-format
+msgid "User purchases subscription of %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-subscription.php:31
+#, php-format
+msgid "User purchases subscription of %1$s"
+msgstr ""
+
+#: includes/triggers/purchase-total.php:26
+msgid "User completes a purchase with a total greater than, less than or equal to a specific amount"
+msgstr ""
+
+#: includes/triggers/purchase-total.php:27
+msgid "User completes a purchase with a total <strong>greater than, less than or equal</strong> to a specific amount"
+msgstr ""
+
+#: includes/triggers/purchase-total.php:29
+#, php-format
+msgid "User completes a purchase with a total %1$s %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/purchase-total.php:31
+#, php-format
+msgid "User completes a purchase with a total %1$s %2$s"
+msgstr ""
+
+#: includes/triggers/remove-product-from-cart.php:26
+msgid "User removes a product from cart"
+msgstr ""
+
+#: includes/triggers/remove-product-from-cart.php:27
+msgid "User removes a product <strong>from cart</strong>"
+msgstr ""
+
+#: includes/triggers/remove-product-from-cart.php:29
+#, php-format
+msgid "User removes %1$s from cart %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/remove-product-from-cart.php:31
+#, php-format
+msgid "User removes %1$s from cart"
+msgstr ""
+
+#: includes/triggers/remove-product-variation-from-cart.php:26
+msgid "User removes a product variation from cart"
+msgstr ""
+
+#: includes/triggers/remove-product-variation-from-cart.php:27
+msgid "User removes a product variation <strong>from cart</strong>"
+msgstr ""
+
+#: includes/triggers/remove-product-variation-from-cart.php:29
+#, php-format
+msgid "User removes %1$s with %2$s selected from cart %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/remove-product-variation-from-cart.php:31
+#, php-format
+msgid "User removes %1$s with %2$s selected from cart"
+msgstr ""
+
+#: includes/triggers/review-product-rating.php:26
+msgid "User reviews a product with a rating greater than, less than or equal to a specific amount"
+msgstr ""
+
+#: includes/triggers/review-product-rating.php:27
+msgid "User reviews a product with a rating <strong>greater than, less than or equal</strong> to a specific amount"
+msgstr ""
+
+#: includes/triggers/review-product-rating.php:29
+#, php-format
+msgid "User reviews %1$s with a rating %2$s %3$s %4$s time(s)"
+msgstr ""
+
+#: includes/triggers/review-product-rating.php:31
+#, php-format
+msgid "User reviews %1$s with a rating %2$s %3$s"
+msgstr ""
+
+#: includes/triggers/review-product-rating.php:47
+msgid "Rating:"
+msgstr ""
+
+#: includes/triggers/review-product.php:26
+msgid "User reviews a product"
+msgstr ""
+
+#: includes/triggers/review-product.php:27
+msgid "User reviews <strong>a product</strong>"
+msgstr ""
+
+#: includes/triggers/review-product.php:29
+#, php-format
+msgid "User reviews %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/review-product.php:31
+#, php-format
+msgid "User reviews %1$s"
+msgstr ""
+
+#: includes/triggers/subscription-expired-category.php:26
+msgid "User subscription of a category expires"
+msgstr ""
+
+#: includes/triggers/subscription-expired-category.php:27
+msgid "User subscription of <strong>a category</strong> expires"
+msgstr ""
+
+#: includes/triggers/subscription-expired-category.php:29
+#: includes/triggers/subscription-expired.php:29
+#, php-format
+msgid "User subscription of %1$s expires %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/subscription-expired-category.php:31
+#: includes/triggers/subscription-expired.php:31
+#, php-format
+msgid "User subscription of %1$s expires"
+msgstr ""
+
+#: includes/triggers/subscription-expired.php:26
+msgid "User subscription of a product expires"
+msgstr ""
+
+#: includes/triggers/subscription-expired.php:27
+msgid "User subscription of a product <strong>expires</strong>"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-category.php:26
+msgid "User renews subscription of a category"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-category.php:27
+msgid "User renews subscription of <strong>a category</strong>"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-category.php:29
+#: includes/triggers/subscription-renewal.php:29
+#, php-format
+msgid "User renews subscription of %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-category.php:31
+#: includes/triggers/subscription-renewal.php:31
+#, php-format
+msgid "User renews subscription of %1$s"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-variation.php:26
+msgid "User renews subscription of a product variation"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-variation.php:27
+msgid "User <strong>renews</strong> subscription of a product variation"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-variation.php:29
+#, php-format
+msgid "User renews subscription of %1$s with %2$s selected %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/subscription-renewal-variation.php:31
+#, php-format
+msgid "User renews subscription of %1$s with %2$s selected"
+msgstr ""
+
+#: includes/triggers/subscription-renewal.php:26
+msgid "User renews subscription of a product"
+msgstr ""
+
+#: includes/triggers/subscription-renewal.php:27
+msgid "User <strong>renews</strong> subscription of a product"
+msgstr ""
+
+#: includes/triggers/subscription-status.php:26
+msgid "User subscription of a product changes to a status"
+msgstr ""
+
+#: includes/triggers/subscription-status.php:27
+msgid "User subscription of a product changes to a <strong>status</strong>"
+msgstr ""
+
+#: includes/triggers/subscription-status.php:29
+#, php-format
+msgid "User subscription of %1$s changes to %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/subscription-status.php:31
+#, php-format
+msgid "User subscription of %1$s changes to %2$s"
+msgstr ""
+
+#: includes/triggers/subscription-status.php:52
+msgid "On hold"
+msgstr ""
+
+#: includes/triggers/subscription-status.php:54
+msgid "Switched"
+msgstr ""
+
+#: includes/triggers/subscription-variation-switch.php:26
+msgid "User switches a subscription variation of a product"
+msgstr ""
+
+#: includes/triggers/subscription-variation-switch.php:27
+msgid "User switches a <strong>subscription variation</strong> of a product"
+msgstr ""
+
+#: includes/triggers/subscription-variation-switch.php:29
+#, php-format
+msgid "User switches %1$s from %2$s to %3$s %4$s time(s)"
+msgstr ""
+
+#: includes/triggers/subscription-variation-switch.php:31
+#, php-format
+msgid "User switches %1$s from %2$s to %3$s"
+msgstr ""
+
+#: includes/triggers/user-lifetime-value.php:26
+msgid "User lifetime value is equal, less or greater than a value"
+msgstr ""
+
+#: includes/triggers/user-lifetime-value.php:27
+msgid "User lifetime value is <strong>equal, less or greater than</strong> a value"
+msgstr ""
+
+#: includes/triggers/user-lifetime-value.php:29
+#, php-format
+msgid "User lifetime value %1$s %2$s %3$s time(s)"
+msgstr ""
+
+#: includes/triggers/user-lifetime-value.php:31
+#, php-format
+msgid "User lifetime value %1$s %2$s"
+msgstr ""
+
+#: includes/triggers/vendor-sale.php:26
+msgid "Vendor gets a sale on a product"
+msgstr ""
+
+#: includes/triggers/vendor-sale.php:27
+msgid "Vendor gets a sale on <strong>a product</strong>"
+msgstr ""
+
+#: includes/triggers/vendor-sale.php:29
+#, php-format
+msgid "Vendor gets a sale on %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/vendor-sale.php:31
+#, php-format
+msgid "Vendor gets a sale on %1$s"
+msgstr ""
+
+#: includes/triggers/view-product.php:26
+msgid "User views a product"
+msgstr ""
+
+#: includes/triggers/view-product.php:27
+msgid "User views <strong>a product</strong>"
+msgstr ""
+
+#: includes/triggers/view-product.php:29
+#, php-format
+msgid "User views %1$s %2$s time(s)"
+msgstr ""
+
+#: includes/triggers/view-product.php:31
+#, php-format
+msgid "User views %1$s"
+msgstr ""

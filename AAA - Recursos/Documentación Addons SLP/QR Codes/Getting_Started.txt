@@ -1,0 +1,55 @@
+<h1>QR Codes</h1>
+
+The QR Code add-on in ShortLinks Pro allows you to attach QR codes to your links and customize their appearance.
+All options are available under the <strong>QR Codes</strong> tab on settings.
+
+[Captura: configure_qr1.png]
+
+To see these options, you must have the PHP library <strong>Imagick</strong> or <strong>GD</strong> installed. However, GD only supports QR code sizing.
+
+
+<h2>QR Codes Configuration</h2>
+
+<ul>
+<li><strong>Size</strong> – Enter the desired pixel size for your QR code. Default value is 500px.
+
+[Captura: configure_qr2.png]
+
+<li><strong>Error Correction Level</strong> – Choose between Low, Medium, Quartile, or High. Higher levels increase the chance of successful scanning, 
+even with damage or distortion, but also make the code more dense.
+
+[Captura: configure_qr3.png]
+
+<li><strong>Color Mode</strong> – You can choose between two visual styles:
+    <ul>
+        <li>Solid – One single foreground color.</li>
+        <li>Gradient – Two colors blended together for a gradient effect.</li>
+    </ul>
+</li>
+
+[Captura: configure_qr4.png]
+
+<li><strong>Foreground Color</strong> – This is the primary color of the QR code.
+
+[Captura: configure_qr5.png]
+
+<li><strong>Foreground Color 2</strong> – Only visible when using Gradient mode. Select the second color to complete the gradient.
+
+[Captura: configure_qr6.png]
+
+<li><strong>Custom Eye Colors</strong> – Toggle this switch ON to manually pick colors for the corner "eyes" of the QR code.
+
+[Captura: configure_qr7.png]
+
+<li><strong>Background Color</strong> – Pick a background color that fits your brand or design.</li>
+
+[Captura: configure_qr8.png]
+</ul>
+
+<li><strong>Configured Example</strong> – You can save it and see the ending result when you edit a link or by pressing "QR Codes" in manage links. 
+You also have the option to download them!.
+
+[Captura: configure_qr9.png][Captura: configure_qr9_2.png]
+
+
+All these settings are global and will apply to QR codes created for future links!.

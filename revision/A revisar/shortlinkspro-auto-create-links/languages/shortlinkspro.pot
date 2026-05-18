@@ -1,0 +1,3192 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ShortLinksPro\n"
+"Report-Msgid-Bugs-To: https://shortlinkspro.com/\n"
+"POT-Creation-Date: 2025-06-18 10:53+0200\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: ShortLinksPro (https://shortlinkspro.com/)\n"
+"Language-Team: ShortLinksPro <contact@shortlinkspro.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries;vendor\n"
+
+#: includes/admin.php:80 includes/admin.php:174
+msgid "Add-ons"
+msgstr ""
+
+#: includes/admin.php:114 includes/custom-tables/links.php:25
+msgid "Manage Links"
+msgstr ""
+
+#: includes/admin.php:122 includes/custom-tables/links.php:26
+msgid "Add New Link"
+msgstr ""
+
+#: includes/admin.php:130 includes/admin/tools/import-from-plugin.php:67
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:92
+#: includes/ajax-functions.php:202 includes/custom-tables/clicks.php:23
+#: includes/custom-tables/clicks.php:25 includes/custom-tables/links.php:155
+msgid "Clicks"
+msgstr ""
+
+#: includes/admin.php:158 includes/admin/pages/tools.php:115
+#: includes/admin/pages/tools.php:121
+msgid "Tools"
+msgstr ""
+
+#: includes/admin.php:166 includes/admin/pages/settings.php:164
+#: includes/admin/pages/settings.php:170 includes/admin/pages/settings.php:195
+msgid "Settings"
+msgstr ""
+
+#: includes/admin.php:330
+#, php-format
+msgid "Thank you for using <a href=\"%1$s\" target=\"_blank\">ShortLinks Pro</a>! Please leave us a <a href=\"%2$s\" target=\"_blank\">%3$s</a> rating on WordPress.org"
+msgstr ""
+
+#: includes/admin/notices.php:45
+msgid "Awesome! You've been using <strong>ShortLinks Pro</strong> for a while."
+msgstr ""
+
+#: includes/admin/notices.php:46
+msgid "May I ask you to give it a <strong>5-star rating</strong> on WordPress?"
+msgstr ""
+
+#: includes/admin/notices.php:47
+msgid "This will help to spread its popularity and to make this plugin a better one."
+msgstr ""
+
+#: includes/admin/notices.php:49
+msgid "Your help is much appreciated. Thank you very much,"
+msgstr ""
+
+#: includes/admin/notices.php:53
+msgid "Yes, I want to rate it!"
+msgstr ""
+
+#: includes/admin/notices.php:54
+msgid "I already did"
+msgstr ""
+
+#: includes/admin/notices.php:55
+msgid "No, I don't want to rate it"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:32
+msgid "ShortLinks Pro Add-ons"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:35
+msgid "Add-ons to extend and expand the functionality of ShortLinks Pro."
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:127
+#, php-format
+msgid "Install %s now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:127
+msgid "Install Now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:133
+#, php-format
+msgid "Update %s now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:133
+msgid "Update Now"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:140
+msgctxt "plugin"
+msgid "Active"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:142 includes/admin/pages/add-ons.php:214
+msgid "Activate"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:143 includes/admin/pages/add-ons.php:215
+#, php-format
+msgctxt "plugin"
+msgid "Activate %s"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:151 includes/admin/pages/add-ons.php:223
+msgid "Network Activate"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:152 includes/admin/pages/add-ons.php:224
+#, php-format
+msgctxt "plugin"
+msgid "Network Activate %s"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:163
+msgctxt "plugin"
+msgid "Installed"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:199
+msgid "Activate License"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:202
+msgid "Active and License Registered"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:208
+msgid "Active"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:239
+msgid "Get this pass"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:244
+msgid "Get this add-on"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:251
+#, php-format
+msgid "More information about %s"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:251
+msgid "More Details"
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:320 includes/admin/pages/add-ons.php:332
+#, php-format
+msgid "An unexpected error occurred. Something may be wrong with shortlinkspro.com or this server&#8217;s configuration. If you continue to have problems, please try to <a href=\"%s\">contact us</a>."
+msgstr ""
+
+#: includes/admin/pages/add-ons.php:322
+msgid "(WordPress could not establish a secure connection to shortlinkspro.com. Please contact your server administrator.)"
+msgstr ""
+
+#: includes/admin/pages/settings.php:174
+msgid "Save Settings"
+msgstr ""
+
+#: includes/admin/pages/settings.php:175
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/admin/pages/settings.php:199
+msgid "Click Tracking"
+msgstr ""
+
+#: includes/admin/pages/tools.php:146
+msgid "General"
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:24
+msgid "Automatic Clicks Cleanup"
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:27
+msgid "Clicks Auto-Cleanup"
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:30
+msgid "Check this option to automatically delete old click hits. You will be able to enter the number of days you want to keep the click hits stored."
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:34
+msgid "Days Keeping Clicks"
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:37
+msgid "Enter the number of days you want to keep click hits stored. This will remove click hits older than the number of days entered."
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:45
+msgid "the tools page"
+msgstr ""
+
+#: includes/admin/settings/clicks-cleanup.php:47
+#, php-format
+msgid "You can cleanup old clicks manually from %s."
+msgstr ""
+
+#: includes/admin/settings/clicks-rules.php:24
+msgid "Rules"
+msgstr ""
+
+#: includes/admin/settings/clicks-rules.php:27
+msgid "Excluded IP Addresses"
+msgstr ""
+
+#: includes/admin/settings/clicks-rules.php:29
+msgid "Enter a comma-separated list of IP addresses or IP ranges you want to exclude from click tracking. Example: 192.168.0.1, 192.168.2.1, 192.168.*.*"
+msgstr ""
+
+#: includes/admin/settings/clicks-rules.php:33
+msgid "Exclude Robots"
+msgstr ""
+
+#: includes/admin/settings/clicks-rules.php:36
+msgid "Check this option to exclude known robots from click tracking."
+msgstr ""
+
+#: includes/admin/settings/general.php:24
+msgid "General Settings"
+msgstr ""
+
+#: includes/admin/settings/general.php:27
+msgid "Minimum Access Role"
+msgstr ""
+
+#: includes/admin/settings/general.php:30
+msgid "Minimum role a user needs to access to ShortLinks Pro management areas."
+msgstr ""
+
+#: includes/admin/settings/general.php:34
+msgid "Disable Top Bar"
+msgstr ""
+
+#: includes/admin/settings/general.php:37
+msgid "Check this option to disable the ShortLinks Pro top bar menu."
+msgstr ""
+
+#: includes/admin/settings/general.php:90
+msgid "Administrator"
+msgstr ""
+
+#: includes/admin/settings/general.php:91
+msgid "Editor"
+msgstr ""
+
+#: includes/admin/settings/general.php:92
+msgid "Author"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:24
+msgid "Default Link Options"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:27
+#: includes/custom-tables/clicks.php:604 includes/custom-tables/links.php:636
+msgid "Redirect Type"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:30
+msgid "Set the default redirect type to new links."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:34
+#: includes/custom-tables/clicks.php:529 includes/custom-tables/links.php:678
+msgid "Link Options"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:38
+#: includes/custom-tables/clicks.php:533 includes/custom-tables/links.php:682
+msgid "No Follow"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:38
+msgid "Enable \"No Follow\" by default to new links. This will add the nofollow and noindex parameters in the HTTP response headers when enabled."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:39
+#: includes/custom-tables/clicks.php:543 includes/custom-tables/links.php:692
+msgid "Sponsored"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:39
+msgid "Enable \"Sponsored\" by default to new links. This will add the sponsored parameter in the HTTP response headers when enabled."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:40
+#: includes/custom-tables/clicks.php:553 includes/custom-tables/links.php:702
+msgid "Parameter Forwarding"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:40
+msgid "Enable \"Parameter Forwarding\" by default to new links. This will forward parameters passed to links when enabled."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:41
+#: includes/custom-tables/clicks.php:563 includes/custom-tables/links.php:712
+msgid "Tracking"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:41
+msgid "Enable \"Tracking\" by default to new links. This will enable clicks tracking when enabled."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:45
+msgid "Set the default link options to new links."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:49
+msgid "Slug Prefix"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:50
+#: includes/admin/settings/link-defaults.php:58
+msgid "Preview:"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:53
+msgid "Set a default slug prefix to new links. Optional."
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:57
+msgid "Slug Length"
+msgstr ""
+
+#: includes/admin/settings/link-defaults.php:61
+msgid "Set a default slug length."
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:24
+msgid "Clicks Cleanup"
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:27
+msgid "Delete clicks older than 30 days"
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:28
+msgid "This will delete all clicks entries that are older than 30 days."
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:33
+msgid "Delete clicks older than 90 days"
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:34
+msgid "This will delete all clicks entries that are older than 90 days."
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:39
+msgid "Delete all clicks"
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:40
+msgid "This will delete all clicks entries."
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:74
+#: includes/admin/tools/clicks-cleanup.php:131
+msgid "Clicks deleted successfully!"
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:92
+#: includes/admin/tools/import-from-plugin.php:122
+#: includes/ajax-functions.php:23 includes/ajax-functions.php:61
+msgid "You're not allowed to perform this action."
+msgstr ""
+
+#: includes/admin/tools/clicks-cleanup.php:100
+msgid "Invalid clicks cleanup option."
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:47
+msgid "Migrate From Plugin"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:50
+msgid "Import From"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:51
+msgid "It is not necessary for the plugin to be active, ShortLinks Pro will import the data from the database directly."
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:55
+msgid "Choose the plugin you want to import from. "
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:61
+msgid "Data To Import"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:64
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:89
+#: includes/custom-tables/links.php:23
+msgid "Links"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:65
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:90
+#: includes/custom-tables/link-categories.php:23
+#: includes/custom-tables/link-categories.php:25
+msgid "Categories"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:66
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:91
+#: includes/custom-tables/link-tags.php:23
+#: includes/custom-tables/link-tags.php:25 includes/custom-tables/links.php:153
+#: includes/custom-tables/links.php:755
+msgid "Tags"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:69
+msgid "Check the data you want to import. "
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:76
+msgid "Start Import"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:77
+msgid "You can run this tool as many times as you wish, it will always update the already imported data and will not create duplicates."
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin.php:149
+msgid "Import failed."
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:166
+#, php-format
+msgid "No %s found."
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:169
+#, php-format
+msgid "%s import done!"
+msgstr ""
+
+#: includes/admin/tools/import-from-plugin/plugin-importer.php:172
+#, php-format
+msgid "Importing %1$s: %2$d/%3$d"
+msgstr ""
+
+#: includes/ajax-functions.php:31
+msgid "Empty slug."
+msgstr ""
+
+#: includes/ajax-functions.php:38
+msgid "Link found!"
+msgstr ""
+
+#: includes/ajax-functions.php:42
+msgid "Link not found."
+msgstr ""
+
+#: includes/ajax-functions.php:71
+msgid "No period provided."
+msgstr ""
+
+#: includes/ajax-functions.php:75
+msgid "No custom period provided."
+msgstr ""
+
+#: includes/ajax-functions.php:88
+msgid "Invalid period range."
+msgstr ""
+
+#: includes/ajax-functions.php:206
+msgid "Unique Clicks"
+msgstr ""
+
+#: includes/cron.php:27
+msgid "Every five minutes"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:22
+msgid "Click"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:118
+msgid "IP"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:119
+msgid "Date"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:120
+msgid "URI"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:121 includes/custom-tables/clicks.php:586
+#: includes/custom-tables/links.php:151 includes/custom-tables/links.php:643
+msgid "Target URL"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:122
+msgid "Redirect"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:123
+msgid "Referrer"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:124
+msgid "Parameters"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:125
+msgid "Country"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:126
+msgid "Browser"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:127
+msgid "OS"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:128
+msgid "Device"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:130
+msgid "Bot"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:132 includes/custom-tables/clicks.php:596
+#: includes/custom-tables/links.php:156 includes/custom-tables/links.php:653
+msgid "ShortLink"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:220
+msgid "Filtered by"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:250
+msgid "Back to Links"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:255
+msgid "Back to Clicks"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:265
+msgid "From"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:267
+msgid "to"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:334 includes/custom-tables/links.php:515
+msgid "Redirect:"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:357
+msgid "Unknown"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:488
+#, php-format
+msgid "Filter by %s"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:510 includes/custom-tables/links.php:613
+msgid "Link Title"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:514 includes/custom-tables/links.php:150
+#: includes/custom-tables/links.php:617
+msgid "Title"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:517 includes/custom-tables/links.php:620
+msgid "Enter title here"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:538 includes/custom-tables/links.php:687
+msgid "Adds the nofollow and noindex parameters in the HTTP response headers. Recommended."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:548 includes/custom-tables/links.php:697
+msgid "Adds the sponsored parameter in the HTTP response headers. Recommended if this an affiliate link."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:558 includes/custom-tables/links.php:707
+msgid "Forward parameters passed to this link onto the target URL."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:568 includes/custom-tables/links.php:717
+msgid "Enable clicks tracking."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:582 includes/custom-tables/links.php:632
+msgid "Link Settings"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:591 includes/custom-tables/links.php:648
+msgid "The URL that your link will redirect to."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:598 includes/custom-tables/links.php:655
+msgid "How your link will appear."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:607 includes/custom-tables/links.php:639
+msgid "Redirect type of this link."
+msgstr ""
+
+#: includes/custom-tables/clicks.php:611 includes/custom-tables/links.php:661
+msgid "Notes"
+msgstr ""
+
+#: includes/custom-tables/clicks.php:616 includes/custom-tables/links.php:666
+msgid "Add internal notes to your link for your own needs. Those notes are not displayed anywhere."
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:22
+#: includes/custom-tables/links.php:152 includes/custom-tables/links.php:735
+msgid "Category"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:97
+#: includes/custom-tables/link-categories.php:211
+#: includes/custom-tables/link-categories.php:262
+#: includes/custom-tables/link-tags.php:97
+#: includes/custom-tables/link-tags.php:211
+#: includes/custom-tables/link-tags.php:262
+msgid "Name"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:98
+#: includes/custom-tables/link-categories.php:219
+#: includes/custom-tables/link-categories.php:273
+#: includes/custom-tables/link-tags.php:98
+#: includes/custom-tables/link-tags.php:219
+#: includes/custom-tables/link-tags.php:273
+msgid "Slug"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:99
+#: includes/custom-tables/link-categories.php:227
+#: includes/custom-tables/link-categories.php:284
+#: includes/custom-tables/link-tags.php:99
+#: includes/custom-tables/link-tags.php:227
+#: includes/custom-tables/link-tags.php:284
+#: libraries/cmb2/example-functions.php:544
+msgid "Description"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:100
+#: includes/custom-tables/link-tags.php:100
+msgid "Count"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:143
+#: includes/custom-tables/link-tags.php:143 includes/links.php:233
+#: includes/links.php:272 includes/links.php:301 includes/links.php:340
+msgid "(no name)"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:162
+#: includes/custom-tables/links.php:456
+msgid "View links with this category"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:207
+#: includes/custom-tables/link-tags.php:207
+msgid "Link Category"
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:212
+#: includes/custom-tables/link-categories.php:263
+msgid "The category name."
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:220
+#: includes/custom-tables/link-categories.php:274
+#: includes/custom-tables/link-tags.php:220
+#: includes/custom-tables/link-tags.php:274
+msgid "The URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens."
+msgstr ""
+
+#: includes/custom-tables/link-categories.php:228
+#: includes/custom-tables/link-categories.php:285
+msgid "Internal description for this category."
+msgstr ""
+
+#: includes/custom-tables/link-tags.php:22
+msgid "Tag"
+msgstr ""
+
+#: includes/custom-tables/link-tags.php:162
+#: includes/custom-tables/links.php:481
+msgid "View links with this tag"
+msgstr ""
+
+#: includes/custom-tables/link-tags.php:212
+#: includes/custom-tables/link-tags.php:263
+msgid "The tag name."
+msgstr ""
+
+#: includes/custom-tables/link-tags.php:228
+#: includes/custom-tables/link-tags.php:285
+msgid "Internal description for this tag."
+msgstr ""
+
+#: includes/custom-tables/links.php:22
+msgid "Link"
+msgstr ""
+
+#: includes/custom-tables/links.php:154
+msgid "Options"
+msgstr ""
+
+#: includes/custom-tables/links.php:209 includes/custom-tables/links.php:210
+msgid "Duplicate"
+msgstr ""
+
+#: includes/custom-tables/links.php:239
+msgid "Are you sure you want to reset clicks for this link?\\n\\nClick \\'Cancel\\' to go back, \\'OK\\' to confirm the reset."
+msgstr ""
+
+#: includes/custom-tables/links.php:241 includes/custom-tables/links.php:242
+msgid "Reset Clicks"
+msgstr ""
+
+#: includes/custom-tables/links.php:255
+msgid "Are you sure you want to delete this link?\\n\\nClick \\'Cancel\\' to go back, \\'OK\\' to confirm deletion."
+msgstr ""
+
+#: includes/custom-tables/links.php:257 includes/custom-tables/links.php:258
+msgid "Delete"
+msgstr ""
+
+#: includes/custom-tables/links.php:386
+#, php-format
+msgid "Filtered by category %s"
+msgstr ""
+
+#: includes/custom-tables/links.php:389
+#, php-format
+msgid "Filtered by tag %s"
+msgstr ""
+
+#: includes/custom-tables/links.php:397
+msgid "Remove filter"
+msgstr ""
+
+#: includes/custom-tables/links.php:402
+msgid "Back to Categories"
+msgstr ""
+
+#: includes/custom-tables/links.php:407
+msgid "Back to Tags"
+msgstr ""
+
+#: includes/custom-tables/links.php:438 includes/links.php:99
+#: includes/links.php:117 includes/links.php:204 includes/links.php:251
+#: includes/links.php:319
+msgid "(no title)"
+msgstr ""
+
+#: includes/custom-tables/links.php:449 includes/custom-tables/links.php:554
+#, php-format
+msgid "Visit %s"
+msgstr ""
+
+#: includes/custom-tables/links.php:519
+msgid "No Follow enabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:519
+msgid "No Follow disabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:523
+msgid "Sponsored enabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:523
+msgid "Sponsored disabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:527
+msgid "Parameter Forwarding enabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:527
+msgid "Parameter Forwarding disabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:539
+#, php-format
+msgid "%1$d Clicks / %2$d Unique"
+msgstr ""
+
+#: includes/custom-tables/links.php:549
+msgid "Tracking disabled"
+msgstr ""
+
+#: includes/custom-tables/links.php:731
+msgid "Category & Tags"
+msgstr ""
+
+#: includes/custom-tables/links.php:739
+msgid "Set the category of your choice to this link."
+msgstr ""
+
+#: includes/custom-tables/links.php:743
+msgid "Select a category"
+msgstr ""
+
+#: includes/custom-tables/links.php:759
+msgid "Set the tags of your choice to this link."
+msgstr ""
+
+#: includes/custom-tables/links.php:763
+msgid "Select the tags"
+msgstr ""
+
+#: includes/date.php:31
+msgid "Current Week"
+msgstr ""
+
+#: includes/date.php:32
+msgid "Past Week"
+msgstr ""
+
+#: includes/date.php:33
+msgid "Current Month"
+msgstr ""
+
+#: includes/date.php:34
+msgid "Past Month"
+msgstr ""
+
+#: includes/date.php:35
+msgid "Current Year"
+msgstr ""
+
+#: includes/date.php:36
+msgid "Past Year"
+msgstr ""
+
+#: includes/date.php:37
+msgid "Custom"
+msgstr ""
+
+#: includes/functions.php:63
+msgid "Campaign"
+msgstr ""
+
+#: includes/functions.php:65
+msgid "eg: campaign-name"
+msgstr ""
+
+#: includes/functions.php:71
+msgid "Medium"
+msgstr ""
+
+#: includes/functions.php:73
+msgid "eg: email"
+msgstr ""
+
+#: includes/functions.php:79
+msgid "Source"
+msgstr ""
+
+#: includes/functions.php:81
+msgid "eg: website"
+msgstr ""
+
+#: includes/functions.php:87
+msgid "Term"
+msgstr ""
+
+#: includes/functions.php:89
+msgid "eg: keyword"
+msgstr ""
+
+#: includes/functions.php:95
+msgid "Content"
+msgstr ""
+
+#: includes/functions.php:98
+msgid "eg: text"
+msgstr ""
+
+#: includes/functions.php:114
+msgid "UTM"
+msgstr ""
+
+#: includes/functions.php:118
+msgid "UTM Builder"
+msgstr ""
+
+#: includes/functions.php:119
+msgid "Helper tool to add campaign parameters for tracking."
+msgstr ""
+
+#: includes/functions.php:124 libraries/ct/includes/class-ct-edit-view.php:434
+msgid "Save Changes"
+msgstr ""
+
+#: includes/functions.php:125 libraries/ct/includes/functions.php:1596
+msgid "Cancel"
+msgstr ""
+
+#: includes/functions.php:143 includes/scripts.php:100
+msgid "Copy to clipboard"
+msgstr ""
+
+#: includes/functions.php:183
+msgid "Afghanistan"
+msgstr ""
+
+#: includes/functions.php:184
+msgid "&#197;land Islands"
+msgstr ""
+
+#: includes/functions.php:185
+msgid "Albania"
+msgstr ""
+
+#: includes/functions.php:186
+msgid "Algeria"
+msgstr ""
+
+#: includes/functions.php:187
+msgid "American Samoa"
+msgstr ""
+
+#: includes/functions.php:188
+msgid "Andorra"
+msgstr ""
+
+#: includes/functions.php:189
+msgid "Angola"
+msgstr ""
+
+#: includes/functions.php:190
+msgid "Anguilla"
+msgstr ""
+
+#: includes/functions.php:191
+msgid "Antarctica"
+msgstr ""
+
+#: includes/functions.php:192
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: includes/functions.php:193
+msgid "Argentina"
+msgstr ""
+
+#: includes/functions.php:194
+msgid "Armenia"
+msgstr ""
+
+#: includes/functions.php:195
+msgid "Aruba"
+msgstr ""
+
+#: includes/functions.php:196
+msgid "Australia"
+msgstr ""
+
+#: includes/functions.php:197
+msgid "Austria"
+msgstr ""
+
+#: includes/functions.php:198
+msgid "Azerbaijan"
+msgstr ""
+
+#: includes/functions.php:199
+msgid "Bahamas"
+msgstr ""
+
+#: includes/functions.php:200
+msgid "Bahrain"
+msgstr ""
+
+#: includes/functions.php:201
+msgid "Bangladesh"
+msgstr ""
+
+#: includes/functions.php:202
+msgid "Barbados"
+msgstr ""
+
+#: includes/functions.php:203
+msgid "Belarus"
+msgstr ""
+
+#: includes/functions.php:204
+msgid "Belgium"
+msgstr ""
+
+#: includes/functions.php:205
+msgid "Belau"
+msgstr ""
+
+#: includes/functions.php:206
+msgid "Belize"
+msgstr ""
+
+#: includes/functions.php:207
+msgid "Benin"
+msgstr ""
+
+#: includes/functions.php:208
+msgid "Bermuda"
+msgstr ""
+
+#: includes/functions.php:209
+msgid "Bhutan"
+msgstr ""
+
+#: includes/functions.php:210
+msgid "Bolivia"
+msgstr ""
+
+#: includes/functions.php:211
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr ""
+
+#: includes/functions.php:212
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: includes/functions.php:213
+msgid "Botswana"
+msgstr ""
+
+#: includes/functions.php:214
+msgid "Bouvet Island"
+msgstr ""
+
+#: includes/functions.php:215
+msgid "Brazil"
+msgstr ""
+
+#: includes/functions.php:216
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: includes/functions.php:217
+msgid "British Virgin Islands"
+msgstr ""
+
+#: includes/functions.php:218
+msgid "Brunei"
+msgstr ""
+
+#: includes/functions.php:219
+msgid "Bulgaria"
+msgstr ""
+
+#: includes/functions.php:220
+msgid "Burkina Faso"
+msgstr ""
+
+#: includes/functions.php:221
+msgid "Burundi"
+msgstr ""
+
+#: includes/functions.php:222
+msgid "Cambodia"
+msgstr ""
+
+#: includes/functions.php:223
+msgid "Cameroon"
+msgstr ""
+
+#: includes/functions.php:224
+msgid "Canada"
+msgstr ""
+
+#: includes/functions.php:225
+msgid "Cape Verde"
+msgstr ""
+
+#: includes/functions.php:226
+msgid "Cayman Islands"
+msgstr ""
+
+#: includes/functions.php:227
+msgid "Central African Republic"
+msgstr ""
+
+#: includes/functions.php:228
+msgid "Chad"
+msgstr ""
+
+#: includes/functions.php:229
+msgid "Chile"
+msgstr ""
+
+#: includes/functions.php:230
+msgid "China"
+msgstr ""
+
+#: includes/functions.php:231
+msgid "Christmas Island"
+msgstr ""
+
+#: includes/functions.php:232
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: includes/functions.php:233
+msgid "Colombia"
+msgstr ""
+
+#: includes/functions.php:234
+msgid "Comoros"
+msgstr ""
+
+#: includes/functions.php:235
+msgid "Congo (Brazzaville)"
+msgstr ""
+
+#: includes/functions.php:236
+msgid "Congo (Kinshasa)"
+msgstr ""
+
+#: includes/functions.php:237
+msgid "Cook Islands"
+msgstr ""
+
+#: includes/functions.php:238
+msgid "Costa Rica"
+msgstr ""
+
+#: includes/functions.php:239
+msgid "Croatia"
+msgstr ""
+
+#: includes/functions.php:240
+msgid "Cuba"
+msgstr ""
+
+#: includes/functions.php:241
+msgid "Cura&ccedil;ao"
+msgstr ""
+
+#: includes/functions.php:242
+msgid "Cyprus"
+msgstr ""
+
+#: includes/functions.php:243
+msgid "Czech Republic"
+msgstr ""
+
+#: includes/functions.php:244
+msgid "Denmark"
+msgstr ""
+
+#: includes/functions.php:245
+msgid "Djibouti"
+msgstr ""
+
+#: includes/functions.php:246
+msgid "Dominica"
+msgstr ""
+
+#: includes/functions.php:247
+msgid "Dominican Republic"
+msgstr ""
+
+#: includes/functions.php:248
+msgid "Ecuador"
+msgstr ""
+
+#: includes/functions.php:249
+msgid "Egypt"
+msgstr ""
+
+#: includes/functions.php:250
+msgid "El Salvador"
+msgstr ""
+
+#: includes/functions.php:251
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: includes/functions.php:252
+msgid "Eritrea"
+msgstr ""
+
+#: includes/functions.php:253
+msgid "Estonia"
+msgstr ""
+
+#: includes/functions.php:254
+msgid "Ethiopia"
+msgstr ""
+
+#: includes/functions.php:255
+msgid "Falkland Islands"
+msgstr ""
+
+#: includes/functions.php:256
+msgid "Faroe Islands"
+msgstr ""
+
+#: includes/functions.php:257
+msgid "Fiji"
+msgstr ""
+
+#: includes/functions.php:258
+msgid "Finland"
+msgstr ""
+
+#: includes/functions.php:259
+msgid "France"
+msgstr ""
+
+#: includes/functions.php:260
+msgid "French Guiana"
+msgstr ""
+
+#: includes/functions.php:261
+msgid "French Polynesia"
+msgstr ""
+
+#: includes/functions.php:262
+msgid "French Southern Territories"
+msgstr ""
+
+#: includes/functions.php:263
+msgid "Gabon"
+msgstr ""
+
+#: includes/functions.php:264
+msgid "Gambia"
+msgstr ""
+
+#: includes/functions.php:265
+msgid "Georgia"
+msgstr ""
+
+#: includes/functions.php:266
+msgid "Germany"
+msgstr ""
+
+#: includes/functions.php:267
+msgid "Ghana"
+msgstr ""
+
+#: includes/functions.php:268
+msgid "Gibraltar"
+msgstr ""
+
+#: includes/functions.php:269
+msgid "Greece"
+msgstr ""
+
+#: includes/functions.php:270
+msgid "Greenland"
+msgstr ""
+
+#: includes/functions.php:271
+msgid "Grenada"
+msgstr ""
+
+#: includes/functions.php:272
+msgid "Guadeloupe"
+msgstr ""
+
+#: includes/functions.php:273
+msgid "Guam"
+msgstr ""
+
+#: includes/functions.php:274
+msgid "Guatemala"
+msgstr ""
+
+#: includes/functions.php:275
+msgid "Guernsey"
+msgstr ""
+
+#: includes/functions.php:276
+msgid "Guinea"
+msgstr ""
+
+#: includes/functions.php:277
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: includes/functions.php:278
+msgid "Guyana"
+msgstr ""
+
+#: includes/functions.php:279
+msgid "Haiti"
+msgstr ""
+
+#: includes/functions.php:280
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: includes/functions.php:281
+msgid "Honduras"
+msgstr ""
+
+#: includes/functions.php:282
+msgid "Hong Kong"
+msgstr ""
+
+#: includes/functions.php:283
+msgid "Hungary"
+msgstr ""
+
+#: includes/functions.php:284
+msgid "Iceland"
+msgstr ""
+
+#: includes/functions.php:285
+msgid "India"
+msgstr ""
+
+#: includes/functions.php:286
+msgid "Indonesia"
+msgstr ""
+
+#: includes/functions.php:287
+msgid "Iran"
+msgstr ""
+
+#: includes/functions.php:288
+msgid "Iraq"
+msgstr ""
+
+#: includes/functions.php:289
+msgid "Ireland"
+msgstr ""
+
+#: includes/functions.php:290
+msgid "Isle of Man"
+msgstr ""
+
+#: includes/functions.php:291
+msgid "Israel"
+msgstr ""
+
+#: includes/functions.php:292
+msgid "Italy"
+msgstr ""
+
+#: includes/functions.php:293
+msgid "Ivory Coast"
+msgstr ""
+
+#: includes/functions.php:294
+msgid "Jamaica"
+msgstr ""
+
+#: includes/functions.php:295
+msgid "Japan"
+msgstr ""
+
+#: includes/functions.php:296
+msgid "Jersey"
+msgstr ""
+
+#: includes/functions.php:297
+msgid "Jordan"
+msgstr ""
+
+#: includes/functions.php:298
+msgid "Kazakhstan"
+msgstr ""
+
+#: includes/functions.php:299
+msgid "Kenya"
+msgstr ""
+
+#: includes/functions.php:300
+msgid "Kiribati"
+msgstr ""
+
+#: includes/functions.php:301
+msgid "Kuwait"
+msgstr ""
+
+#: includes/functions.php:302
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: includes/functions.php:303
+msgid "Laos"
+msgstr ""
+
+#: includes/functions.php:304
+msgid "Latvia"
+msgstr ""
+
+#: includes/functions.php:305
+msgid "Lebanon"
+msgstr ""
+
+#: includes/functions.php:306
+msgid "Lesotho"
+msgstr ""
+
+#: includes/functions.php:307
+msgid "Liberia"
+msgstr ""
+
+#: includes/functions.php:308
+msgid "Libya"
+msgstr ""
+
+#: includes/functions.php:309
+msgid "Liechtenstein"
+msgstr ""
+
+#: includes/functions.php:310
+msgid "Lithuania"
+msgstr ""
+
+#: includes/functions.php:311
+msgid "Luxembourg"
+msgstr ""
+
+#: includes/functions.php:312
+msgid "Macao S.A.R., China"
+msgstr ""
+
+#: includes/functions.php:313
+msgid "Macedonia"
+msgstr ""
+
+#: includes/functions.php:314
+msgid "Madagascar"
+msgstr ""
+
+#: includes/functions.php:315
+msgid "Malawi"
+msgstr ""
+
+#: includes/functions.php:316
+msgid "Malaysia"
+msgstr ""
+
+#: includes/functions.php:317
+msgid "Maldives"
+msgstr ""
+
+#: includes/functions.php:318
+msgid "Mali"
+msgstr ""
+
+#: includes/functions.php:319
+msgid "Malta"
+msgstr ""
+
+#: includes/functions.php:320
+msgid "Marshall Islands"
+msgstr ""
+
+#: includes/functions.php:321
+msgid "Martinique"
+msgstr ""
+
+#: includes/functions.php:322
+msgid "Mauritania"
+msgstr ""
+
+#: includes/functions.php:323
+msgid "Mauritius"
+msgstr ""
+
+#: includes/functions.php:324
+msgid "Mayotte"
+msgstr ""
+
+#: includes/functions.php:325
+msgid "Mexico"
+msgstr ""
+
+#: includes/functions.php:326
+msgid "Micronesia"
+msgstr ""
+
+#: includes/functions.php:327
+msgid "Moldova"
+msgstr ""
+
+#: includes/functions.php:328
+msgid "Monaco"
+msgstr ""
+
+#: includes/functions.php:329
+msgid "Mongolia"
+msgstr ""
+
+#: includes/functions.php:330
+msgid "Montenegro"
+msgstr ""
+
+#: includes/functions.php:331
+msgid "Montserrat"
+msgstr ""
+
+#: includes/functions.php:332
+msgid "Morocco"
+msgstr ""
+
+#: includes/functions.php:333
+msgid "Mozambique"
+msgstr ""
+
+#: includes/functions.php:334
+msgid "Myanmar"
+msgstr ""
+
+#: includes/functions.php:335
+msgid "Namibia"
+msgstr ""
+
+#: includes/functions.php:336
+msgid "Nauru"
+msgstr ""
+
+#: includes/functions.php:337
+msgid "Nepal"
+msgstr ""
+
+#: includes/functions.php:338
+msgid "Netherlands"
+msgstr ""
+
+#: includes/functions.php:339
+msgid "New Caledonia"
+msgstr ""
+
+#: includes/functions.php:340
+msgid "New Zealand"
+msgstr ""
+
+#: includes/functions.php:341
+msgid "Nicaragua"
+msgstr ""
+
+#: includes/functions.php:342
+msgid "Niger"
+msgstr ""
+
+#: includes/functions.php:343
+msgid "Nigeria"
+msgstr ""
+
+#: includes/functions.php:344
+msgid "Niue"
+msgstr ""
+
+#: includes/functions.php:345
+msgid "Norfolk Island"
+msgstr ""
+
+#: includes/functions.php:346
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: includes/functions.php:347
+msgid "North Korea"
+msgstr ""
+
+#: includes/functions.php:348
+msgid "Norway"
+msgstr ""
+
+#: includes/functions.php:349
+msgid "Oman"
+msgstr ""
+
+#: includes/functions.php:350
+msgid "Pakistan"
+msgstr ""
+
+#: includes/functions.php:351
+msgid "Palestinian Territory"
+msgstr ""
+
+#: includes/functions.php:352
+msgid "Panama"
+msgstr ""
+
+#: includes/functions.php:353
+msgid "Papua New Guinea"
+msgstr ""
+
+#: includes/functions.php:354
+msgid "Paraguay"
+msgstr ""
+
+#: includes/functions.php:355
+msgid "Peru"
+msgstr ""
+
+#: includes/functions.php:356
+msgid "Philippines"
+msgstr ""
+
+#: includes/functions.php:357
+msgid "Pitcairn"
+msgstr ""
+
+#: includes/functions.php:358
+msgid "Poland"
+msgstr ""
+
+#: includes/functions.php:359
+msgid "Portugal"
+msgstr ""
+
+#: includes/functions.php:360
+msgid "Puerto Rico"
+msgstr ""
+
+#: includes/functions.php:361
+msgid "Qatar"
+msgstr ""
+
+#: includes/functions.php:362
+msgid "Reunion"
+msgstr ""
+
+#: includes/functions.php:363
+msgid "Romania"
+msgstr ""
+
+#: includes/functions.php:364
+msgid "Russia"
+msgstr ""
+
+#: includes/functions.php:365
+msgid "Rwanda"
+msgstr ""
+
+#: includes/functions.php:366
+msgid "Saint Barth&eacute;lemy"
+msgstr ""
+
+#: includes/functions.php:367
+msgid "Saint Helena"
+msgstr ""
+
+#: includes/functions.php:368
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: includes/functions.php:369
+msgid "Saint Lucia"
+msgstr ""
+
+#: includes/functions.php:370
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: includes/functions.php:371
+msgid "Saint Martin (Dutch part)"
+msgstr ""
+
+#: includes/functions.php:372
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: includes/functions.php:373
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: includes/functions.php:374
+msgid "San Marino"
+msgstr ""
+
+#: includes/functions.php:375
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr ""
+
+#: includes/functions.php:376
+msgid "Saudi Arabia"
+msgstr ""
+
+#: includes/functions.php:377
+msgid "Senegal"
+msgstr ""
+
+#: includes/functions.php:378
+msgid "Serbia"
+msgstr ""
+
+#: includes/functions.php:379
+msgid "Seychelles"
+msgstr ""
+
+#: includes/functions.php:380
+msgid "Sierra Leone"
+msgstr ""
+
+#: includes/functions.php:381
+msgid "Singapore"
+msgstr ""
+
+#: includes/functions.php:382
+msgid "Slovakia"
+msgstr ""
+
+#: includes/functions.php:383
+msgid "Slovenia"
+msgstr ""
+
+#: includes/functions.php:384
+msgid "Solomon Islands"
+msgstr ""
+
+#: includes/functions.php:385
+msgid "Somalia"
+msgstr ""
+
+#: includes/functions.php:386
+msgid "South Africa"
+msgstr ""
+
+#: includes/functions.php:387
+msgid "South Georgia/Sandwich Islands"
+msgstr ""
+
+#: includes/functions.php:388
+msgid "South Korea"
+msgstr ""
+
+#: includes/functions.php:389
+msgid "South Sudan"
+msgstr ""
+
+#: includes/functions.php:390
+msgid "Spain"
+msgstr ""
+
+#: includes/functions.php:391
+msgid "Sri Lanka"
+msgstr ""
+
+#: includes/functions.php:392
+msgid "Sudan"
+msgstr ""
+
+#: includes/functions.php:393
+msgid "Suriname"
+msgstr ""
+
+#: includes/functions.php:394
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: includes/functions.php:395
+msgid "Swaziland"
+msgstr ""
+
+#: includes/functions.php:396
+msgid "Sweden"
+msgstr ""
+
+#: includes/functions.php:397
+msgid "Switzerland"
+msgstr ""
+
+#: includes/functions.php:398
+msgid "Syria"
+msgstr ""
+
+#: includes/functions.php:399
+msgid "Taiwan"
+msgstr ""
+
+#: includes/functions.php:400
+msgid "Tajikistan"
+msgstr ""
+
+#: includes/functions.php:401
+msgid "Tanzania"
+msgstr ""
+
+#: includes/functions.php:402
+msgid "Thailand"
+msgstr ""
+
+#: includes/functions.php:403
+msgid "Timor-Leste"
+msgstr ""
+
+#: includes/functions.php:404
+msgid "Togo"
+msgstr ""
+
+#: includes/functions.php:405
+msgid "Tokelau"
+msgstr ""
+
+#: includes/functions.php:406
+msgid "Tonga"
+msgstr ""
+
+#: includes/functions.php:407
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: includes/functions.php:408
+msgid "Tunisia"
+msgstr ""
+
+#: includes/functions.php:409
+msgid "Turkey"
+msgstr ""
+
+#: includes/functions.php:410
+msgid "Turkmenistan"
+msgstr ""
+
+#: includes/functions.php:411
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: includes/functions.php:412
+msgid "Tuvalu"
+msgstr ""
+
+#: includes/functions.php:413
+msgid "Uganda"
+msgstr ""
+
+#: includes/functions.php:414
+msgid "Ukraine"
+msgstr ""
+
+#: includes/functions.php:415
+msgid "United Arab Emirates"
+msgstr ""
+
+#: includes/functions.php:416
+msgid "United Kingdom (UK)"
+msgstr ""
+
+#: includes/functions.php:417
+msgid "United States (US)"
+msgstr ""
+
+#: includes/functions.php:418
+msgid "United States (US) Minor Outlying Islands"
+msgstr ""
+
+#: includes/functions.php:419
+msgid "United States (US) Virgin Islands"
+msgstr ""
+
+#: includes/functions.php:420
+msgid "Uruguay"
+msgstr ""
+
+#: includes/functions.php:421
+msgid "Uzbekistan"
+msgstr ""
+
+#: includes/functions.php:422
+msgid "Vanuatu"
+msgstr ""
+
+#: includes/functions.php:423
+msgid "Vatican"
+msgstr ""
+
+#: includes/functions.php:424
+msgid "Venezuela"
+msgstr ""
+
+#: includes/functions.php:425
+msgid "Vietnam"
+msgstr ""
+
+#: includes/functions.php:426
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: includes/functions.php:427
+msgid "Western Sahara"
+msgstr ""
+
+#: includes/functions.php:428
+msgid "Samoa"
+msgstr ""
+
+#: includes/functions.php:429
+msgid "Yemen"
+msgstr ""
+
+#: includes/functions.php:430
+msgid "Zambia"
+msgstr ""
+
+#: includes/functions.php:431
+msgid "Zimbabwe"
+msgstr ""
+
+#: includes/links.php:209 includes/links.php:277 includes/links.php:345
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/links.php:213 includes/links.php:281 includes/links.php:349
+#, php-format
+msgid "<a href=\"%1$s\" title=\"%2$s\">%3$s</a>"
+msgstr ""
+
+#: includes/scripts.php:101
+msgid "Copied!"
+msgstr ""
+
+#: includes/scripts.php:102
+msgid "Please, insert a valid URL."
+msgstr ""
+
+#: includes/scripts.php:103
+msgid "There is a link already using this slug! Please, enter a different slug."
+msgstr ""
+
+#: includes/scripts.php:132
+msgid "Please, choose at least one plugin to import from."
+msgstr ""
+
+#: includes/scripts.php:133
+msgid "Please, choose at least one data option to import from."
+msgstr ""
+
+#: includes/scripts.php:134
+msgid "Fetching data..."
+msgstr ""
+
+#: includes/scripts.php:135
+msgid "Data imported successfully!"
+msgstr ""
+
+#: libraries/cmb2-field-select2/cmb2-field-select2.php:84
+msgid "No results found."
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/code/cmb2_metatabs_options.php:1067
+#: libraries/cmb2/includes/CMB2_Options_Hookup.php:146
+msgid "Settings updated."
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:93
+msgid "Internet Doggies"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:97
+msgid "That's a Good Dog!"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:98
+msgid "What do you say when you see a dog on the internet?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:103
+#: libraries/cmb2-metatabs-options/example.php:124
+msgid "Repeated How Many Times?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:104
+#: libraries/cmb2-metatabs-options/example.php:125
+msgid "To the nearest multiple 3, how many times do you say it?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:114
+msgid "Internet Kitties"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:118
+msgid "Nice kitty!"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:119
+msgid "What do you say when you see a cat on the internet?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:135
+msgid "Eating for Good Health"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:139
+msgid "What is a healthy food?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:140
+msgid "Examples: Apple, Ding Dong"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:145
+msgid "How Many Servings?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:146
+msgid "How many times per day should you eat this?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:156
+msgid "Foods to Avoid"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:160
+msgid "What is an unhealthy food?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:161
+msgid "Examples: Apple, not Ding Dong"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:166
+msgid "How Many Pushups?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:167
+msgid "To the nearest 1, how many pushups do you need to counter your bad decision?"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:177
+msgid "Judging"
+msgstr ""
+
+#: libraries/cmb2-metatabs-options/example.php:183
+msgid "This example page offers no judgment on your choices."
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:115
+msgid "Test Metabox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:148
+#: libraries/cmb2/example-functions.php:492
+msgid "Test Text"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:149
+#: libraries/cmb2/example-functions.php:162
+#: libraries/cmb2/example-functions.php:175
+#: libraries/cmb2/example-functions.php:182
+#: libraries/cmb2/example-functions.php:195
+#: libraries/cmb2/example-functions.php:203
+#: libraries/cmb2/example-functions.php:212
+#: libraries/cmb2/example-functions.php:220
+#: libraries/cmb2/example-functions.php:235
+#: libraries/cmb2/example-functions.php:243
+#: libraries/cmb2/example-functions.php:251
+#: libraries/cmb2/example-functions.php:268
+#: libraries/cmb2/example-functions.php:277
+#: libraries/cmb2/example-functions.php:293
+#: libraries/cmb2/example-functions.php:300
+#: libraries/cmb2/example-functions.php:307
+#: libraries/cmb2/example-functions.php:332
+#: libraries/cmb2/example-functions.php:345
+#: libraries/cmb2/example-functions.php:358
+#: libraries/cmb2/example-functions.php:370
+#: libraries/cmb2/example-functions.php:384
+#: libraries/cmb2/example-functions.php:392
+#: libraries/cmb2/example-functions.php:401
+#: libraries/cmb2/example-functions.php:408
+#: libraries/cmb2/example-functions.php:422
+#: libraries/cmb2/example-functions.php:493
+#: libraries/cmb2/example-functions.php:583
+#: libraries/cmb2/example-functions.php:591
+#: libraries/cmb2/example-functions.php:598
+#: libraries/cmb2/example-functions.php:605
+#: libraries/cmb2/example-functions.php:612
+#: libraries/cmb2/example-functions.php:619
+#: libraries/cmb2/example-functions.php:626
+#: libraries/cmb2/example-functions.php:652
+#: libraries/cmb2/example-functions.php:660
+#: libraries/cmb2/example-functions.php:667
+#: libraries/cmb2/example-functions.php:717
+msgid "field description (optional)"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:161
+msgid "Test Text Small"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:174
+msgid "Test Text Medium"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:181
+msgid "Read-only Disabled Field"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:185
+msgid "Hey there, I'm a read-only field"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:194
+msgid "Custom Rendered Field"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:202
+msgid "Website URL"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:211
+msgid "Test Text Email"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:219
+msgid "Test Time"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:227
+#: libraries/cmb2/example-functions.php:228
+msgid "Time zone"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:234
+msgid "Test Date Picker"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:242
+msgid "Test Date Picker (UNIX timestamp)"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:250
+msgid "Test Date/Time Picker Combo (UNIX timestamp)"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:267
+msgid "Test Money"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:276
+msgid "Test Color Picker"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:292
+msgid "Test Text Area"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:299
+msgid "Test Text Area Small"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:306
+msgid "Test Text Area for Code"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:324
+msgid "Test Title Weeeee"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:325
+msgid "This is a title description"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:331
+msgid "Test Select"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:337
+#: libraries/cmb2/example-functions.php:350
+#: libraries/cmb2/example-functions.php:362
+msgid "Option One"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:338
+#: libraries/cmb2/example-functions.php:351
+#: libraries/cmb2/example-functions.php:363
+msgid "Option Two"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:339
+#: libraries/cmb2/example-functions.php:352
+#: libraries/cmb2/example-functions.php:364
+msgid "Option Three"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:344
+msgid "Test Radio inline"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:357
+msgid "Test Radio"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:369
+msgid "Test Taxonomy Radio"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:383
+msgid "Test Taxonomy Select"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:391
+msgid "Test Taxonomy Multi Checkbox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:400
+msgid "Test Checkbox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:407
+msgid "Test Multi Checkbox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:413
+msgid "Check One"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:414
+msgid "Check Two"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:415
+msgid "Check Three"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:421
+msgid "Test wysiwyg"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:431
+msgid "Test Image"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:432
+msgid "Upload an image or enter a URL."
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:438
+msgid "Multiple Files"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:439
+msgid "Upload or add multiple images/attachments."
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:446
+msgid "oEmbed"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:449
+#, php-format
+msgid "Enter a youtube, twitter, or instagram URL. Supports services listed at %s."
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:481
+msgid "About Page Metabox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:511
+msgid "Repeating Field Group"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:519
+msgid "Generates reusable form entries"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:521
+msgid "Entry {#}"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:522
+msgid "Add Another Entry"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:523
+msgid "Remove Entry"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:537
+msgid "Entry Title"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:545
+msgid "Write a short description for this entry"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:551
+msgid "Entry Image"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:557
+msgid "Image Caption"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:575
+msgid "User Profile Metabox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:582
+#: libraries/cmb2/example-functions.php:651
+msgid "Extra Info"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:590
+msgid "Avatar"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:597
+msgid "Facebook URL"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:604
+msgid "Twitter URL"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:611
+msgid "Google+ URL"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:618
+msgid "Linkedin URL"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:625
+msgid "User Field"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:644
+msgid "Category Metabox"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:659
+msgid "Term Image"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:666
+msgid "Arbitrary Term Field"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:685
+msgid "Theme Options"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:716
+msgid "Site Background Color"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:753
+#, php-format
+msgid "%s &mdash; Updated!"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:785
+msgid "REST Test Box"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:794
+msgid "REST Test Text"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:795
+msgid "Will show in the REST API for this box and for pages."
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:801
+msgid "REST Editable Test Text"
+msgstr ""
+
+#: libraries/cmb2/example-functions.php:802
+msgid "Will show in REST API \"editable\" contexts only (`POST` requests)."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2.php:199
+msgid "Metabox configuration is required to have an ID parameter."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2.php:618
+msgid "Click to toggle"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Ajax.php:75
+msgid "Please Try Again"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Ajax.php:181
+msgid "Remove Embed"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Ajax.php:189
+#: libraries/cmb2/includes/helper-functions.php:107
+#, php-format
+msgid "No oEmbed Results Found for %1$s. View more info at %2$s."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Base.php:423
+#, php-format
+msgid "The \"%1$s\" field parameter has been deprecated in favor of the \"%2$s\" parameter."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Base.php:427
+#, php-format
+msgid "Using the \"%1$s\" field parameter as a callback has been deprecated in favor of the \"%2$s\" parameter."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Base.php:457
+#, php-format
+msgid "%1$s was called with a parameter that is <strong>deprecated</strong> since version %2$s! %3$s"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Base.php:459
+#, php-format
+msgid "%1$s was called with a parameter that is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Base.php:492
+#: libraries/cmb2/includes/CMB2_Hookup_Base.php:102
+#: libraries/cmb2/includes/CMB2_Options.php:247
+#: libraries/cmb2/includes/CMB2_Options_Hookup.php:372
+#: libraries/cmb2/includes/types/CMB2_Type_Base.php:173
+#, php-format
+msgid "Invalid %1$s property: %2$s"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Base.php:510
+#: libraries/cmb2/includes/types/CMB2_Type_Base.php:157
+#, php-format
+msgid "Invalid %1$s method: %2$s"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Field.php:1443
+msgid "Add Group"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Field.php:1444
+msgid "Remove Group"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Field.php:1476
+#: libraries/cmb2/includes/CMB2_Field.php:1480
+msgid "None"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Field.php:1594
+msgid "Sorry, this field does not have a cmb_id specified."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Field_Display.php:453
+#: libraries/cmb2/includes/CMB2_JS.php:242
+#: libraries/cmb2/includes/types/CMB2_Type_File_Base.php:90
+msgid "File:"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Hookup.php:188
+msgid "Term Metadata is a WordPress 4.4+ feature. Please upgrade your WordPress install."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Hookup.php:192
+msgid "Term metaboxes configuration requires a \"taxonomies\" parameter."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Hookup.php:560
+#, php-format
+msgid "Toggle panel: %s"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Hookup_Base.php:44
+#, php-format
+msgid "%1$s should be implemented by the extended class."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:177
+#: libraries/cmb2/includes/CMB2_JS.php:222
+msgid "Clear"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:178
+msgid "Default"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:179
+msgid "Select Color"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:180
+msgid "Current Color"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:212
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:213
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:214
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:215
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:216
+msgid "January, February, March, April, May, June, July, August, September, October, November, December"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:217
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:218
+msgid "Next"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:219
+msgid "Prev"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:220
+msgid "Today"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:221
+#: libraries/cmb2/includes/CMB2_JS.php:231
+msgid "Done"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:225
+msgid "Choose Time"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:226
+msgid "Time"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:227
+msgid "Hour"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:228
+msgid "Minute"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:229
+msgid "Second"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:230
+msgid "Now"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:232
+msgctxt "Valid formatting string, as per http://trentrichardson.com/examples/timepicker/"
+msgid "hh:mm TT"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:238
+msgid "Use this file"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:239
+msgid "Use these files"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:240
+#: libraries/cmb2/includes/types/CMB2_Type_File_Base.php:75
+msgid "Remove Image"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:241
+#: libraries/cmb2/includes/CMB2_Types.php:408
+#: libraries/cmb2/includes/types/CMB2_Type_File_Base.php:95
+msgid "Remove"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:243
+#: libraries/cmb2/includes/types/CMB2_Type_File_Base.php:93
+msgid "Download"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_JS.php:244
+msgid "Select / Deselect All"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Options_Hookup.php:142
+msgid "Nothing to update."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Types.php:226
+msgid "Custom CMB2 field type classes must extend CMB2_Type_Base."
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Types.php:344
+msgid "Add Row"
+msgstr ""
+
+#: libraries/cmb2/includes/CMB2_Types.php:408
+msgid "Remove Row"
+msgstr ""
+
+#: libraries/cmb2/includes/helper-functions.php:308
+msgid "Save"
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller.php:257
+msgid "This box does not have read permissions."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller.php:277
+msgid "This box does not have write permissions."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller.php:300
+msgid "No box found by that id. A box needs to be registered with the \"show_in_rest\" parameter configured."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller.php:378
+msgid "A human-readable description of the object."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller.php:385
+msgid "The id for the object."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller.php:392
+msgid "The title for the object."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php:51
+msgid "Includes the registered fields for the box in the response."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php:72
+msgid "Includes the fully rendered attributes, 'form_open', 'form_close', as well as the enqueued 'js_dependencies' script handles, and 'css_dependencies' stylesheet handles."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Boxes.php:122
+msgid "No boxes found."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:27
+msgid "Includes the box object which the fields are registered to in the response."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:30
+msgid "When the '_rendered' argument is passed, the renderable field attributes will be returned fully rendered. By default, the names of the callback handers for the renderable attributes will be returned."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:33
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:36
+msgid "To view or modify the field's value, the 'object_id' and 'object_type' arguments are required."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:236
+msgid "CMB2 Field value cannot be updated without the value parameter specified."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:297
+msgid "CMB2 Field value cannot be modified without the object_id and object_type parameters specified."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:312
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:341
+msgid "No field found by that id."
+msgstr ""
+
+#: libraries/cmb2/includes/rest-api/CMB2_REST_Controller_Fields.php:415
+#, php-format
+msgid "Value Error for %s"
+msgstr ""
+
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:25
+#, php-format
+msgid "Method '%s' must be overridden."
+msgstr ""
+
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:35
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:47
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:59
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:71
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:83
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:95
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:107
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:119
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:131
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:143
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:155
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:168
+#, php-format
+msgid "Method '%s' not implemented. Must be overridden in subclass."
+msgstr ""
+
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:273
+msgid "Current page of the collection."
+msgstr ""
+
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:281
+msgid "Maximum number of items to be returned in result set."
+msgstr ""
+
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:290
+msgid "Limit results to those matching a string."
+msgstr ""
+
+#: libraries/cmb2/includes/shim/WP_REST_Controller.php:308
+msgid "Scope under which the request is made; determines fields present in response."
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_Counter_Base.php:50
+msgid "Words left"
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_Counter_Base.php:51
+msgid "Words"
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_Counter_Base.php:56
+msgid "Characters left"
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_Counter_Base.php:57
+msgid "Characters"
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_Counter_Base.php:62
+msgid "Your text may be truncated."
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_File.php:76
+msgid "Add or Upload File"
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_File_List.php:41
+msgid "Add or Upload Files"
+msgstr ""
+
+#: libraries/cmb2/includes/types/CMB2_Type_Taxonomy_Base.php:115
+msgid "No terms"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:35
+#: libraries/ct/includes/class-ct-edit-view.php:43
+#: libraries/ct/includes/class-ct-list-view.php:284
+#: libraries/ct/includes/class-ct-list-view.php:317
+#: libraries/ct/includes/class-ct-list-view.php:334
+#: libraries/ct/includes/class-ct-list-view.php:366
+#: libraries/ct/includes/class-ct-list-view.php:381
+msgid "Sorry, you are not allowed to perform this action."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:93
+msgid "Unable to create the draft item."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:152
+msgid "Boxes"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:180
+msgid "Layout"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:186
+#, php-format
+msgid "%s column"
+msgid_plural "%s columns"
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:210
+msgid "Add"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:213
+msgid "Update"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:304
+#: libraries/ct/includes/class-ct-list-table.php:373
+msgid "Delete permanently"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:305
+#: libraries/ct/includes/class-ct-list-table.php:176
+#: libraries/ct/includes/class-ct-list-table.php:374
+msgid "Delete Permanently"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:357
+#: libraries/ct/includes/class-ct-edit-view.php:367
+msgid "Invalid item type."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:361
+#: libraries/ct/includes/class-ct-rest-controller.php:140
+msgid "Sorry, you are not allowed to edit items of this type."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:374
+#: libraries/ct/includes/class-ct-edit-view.php:378
+#: libraries/ct/includes/class-ct-rest-controller.php:338
+#: libraries/ct/includes/class-ct-rest-controller.php:497
+msgid "Sorry, you are not allowed to edit this item."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:405
+#, php-format
+msgid "%s could not be updated."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-edit-view.php:406
+#, php-format
+msgid "%s updated successfully."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-table.php:134
+msgid "All"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-table.php:323
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-table.php:328
+msgid "Show more details"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-table.php:361
+#: libraries/ct/includes/class-ct-list-table.php:362
+msgid "Edit"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-table.php:409
+#, php-format
+msgid "Select Item #%d"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-table.php:417
+#, php-format
+msgid "&#8220;Item #%d&#8221; is locked"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-view.php:165
+msgid "Columns"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-view.php:202
+msgid "Number of items per page:"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-view.php:218
+msgid "Pagination"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-view.php:443
+#, php-format
+msgid "%s item added."
+msgid_plural "%s items added."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-list-view.php:444
+#, php-format
+msgid "%s item updated."
+msgid_plural "%s items updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-list-view.php:445
+msgid "1 item not updated, somebody is editing it."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-list-view.php:446
+#, php-format
+msgid "%s item not updated, somebody is editing it."
+msgid_plural "%s items not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-list-view.php:447
+#, php-format
+msgid "%s item permanently deleted."
+msgid_plural "%s items permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-list-view.php:448
+#, php-format
+msgid "%s item moved to the Trash."
+msgid_plural "%s items moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-list-view.php:449
+#, php-format
+msgid "%s item restored from the Trash."
+msgid_plural "%s items restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: libraries/ct/includes/class-ct-query.php:960
+msgctxt "Comma-separated list of search stopwords in your language"
+msgid "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,was,what,when,where,who,will,with,www"
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:94
+#: libraries/ct/includes/class-ct-rest-controller.php:1006
+msgid "Unique identifier for the object."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:158
+msgid "You need to define a search term to order by relevance."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:163
+msgid "You need to define an include parameter to order by include."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:262
+msgid "The page number requested is larger than the number of pages available."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:304
+msgid "Invalid item ID."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:378
+#: libraries/ct/includes/class-ct-rest-controller.php:398
+msgid "Cannot create existing item."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:382
+msgid "Sorry, you are not allowed to create items as this user."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:608
+msgid "Sorry, you are not allowed to delete this item."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:648
+msgid "Sorry, you are not allowed to delete this post."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:666
+#, php-format
+msgid "The post does not support trashing. Set '%s' to delete."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:681
+msgid "The item cannot be deleted."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:1049
+msgid "Offset the result set by a specific number of items."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:1055
+msgid "Order sort attribute ascending or descending."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-controller.php:1063
+msgid "Sort collection by object attribute."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-meta-fields.php:141
+#, php-format
+msgid "Sorry, you are not allowed to edit the %s custom field."
+msgstr ""
+
+#: libraries/ct/includes/class-ct-rest-meta-fields.php:159
+msgid "Could not update meta value in database."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:125
+#: libraries/ct/includes/functions.php:150
+#: libraries/ct/includes/functions.php:151
+msgid "Add New"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:126
+#, php-format
+msgid "Add New %1$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:127
+#: libraries/ct/includes/functions.php:152
+#: libraries/ct/includes/functions.php:153
+#, php-format
+msgid "Edit %1$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:128
+#, php-format
+msgid "New %1$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:129
+#, php-format
+msgid "View %1$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:130
+#, php-format
+msgid "View %2$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:131
+#, php-format
+msgid "Search %2$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:132
+#, php-format
+msgid "No %2$s found."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:133
+#, php-format
+msgid "No %2$s found in Trash."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:134
+#, php-format
+msgid "Parent %1$s:"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:135
+#: libraries/ct/includes/functions.php:149
+#, php-format
+msgid "All %2$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:136
+#, php-format
+msgid "%1$s Archives"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:137
+#, php-format
+msgid "%1$s Attributes"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:138
+#, php-format
+msgid "Insert into %1$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:139
+#, php-format
+msgid "Uploaded to this %1$s"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:140
+msgid "Featured Image"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:141
+msgid "Set featured image"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:142
+msgid "Remove featured image"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:143
+msgid "Use as featured image"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:144
+#, php-format
+msgid "Filter %2$s list"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:145
+#, php-format
+msgid "%2$s list navigation"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:146
+#, php-format
+msgid "%2$s list"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:155
+#, php-format
+msgid "Sorry, you are not allowed to add new %2$s."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:156
+#, php-format
+msgid "Sorry, you are not allowed to edit this %1$s."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:157
+#, php-format
+msgid "Sorry, you are not allowed to edit %2$s."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:158
+#, php-format
+msgid "You attempted to edit a %1$s that doesn&#8217;t exist. Perhaps it was deleted?"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:159
+#, php-format
+msgid "Sorry, you are not allowed to delete this %1$s."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:160
+#, php-format
+msgid "Sorry, you are not allowed to delete %2$s."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:161
+#, php-format
+msgid "Are you sure you want to delete this %s?\\n\\nClick \\'Cancel\\' to go back, \\'OK\\' to confirm the delete."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:522
+#: libraries/ct/includes/functions.php:587
+msgid "Invalid object ID."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:554
+#: libraries/ct/includes/functions.php:753
+msgid "Invalid CT Table object."
+msgstr ""
+
+#: libraries/ct/includes/functions.php:622
+msgid "Could not update object in the database"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:643
+msgid "Could not insert object into the database"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:1569
+msgid "Add New Custom Field:"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:1573
+msgctxt "meta name"
+msgid "Name"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:1574
+msgid "Value"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:1583
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:1595
+msgid "Enter new"
+msgstr ""
+
+#: libraries/ct/includes/functions.php:1606
+msgid "Add Custom Field"
+msgstr ""

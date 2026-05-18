@@ -2,8 +2,8 @@
 Contributors: rubengc, eneribs, dioni00, tinocalvo, flabernardez
 Tags: affiliate links, link shortener, click tracking, link tracking, url shortener
 Requires at least: 4.4
-Tested up to: 6.9
-Stable tag: 1.2.1
+Tested up to: 7.0
+Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -154,6 +154,11 @@ Yes, ShortLinks Pro is stored in the official WordPress plugins repository where
 Yes. You can use ShortLinks Pro on a WordPress multisite network.
 
 == Changelog ==
+
+= 1.2.2 =
+
+* **Improvements**
+* Improved security in some ajax requests.
 
 = 1.2.1 =
 

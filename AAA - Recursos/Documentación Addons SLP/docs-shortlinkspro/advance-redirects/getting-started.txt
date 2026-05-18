@@ -1,0 +1,32 @@
+<h1>Advanced Redirects</h1>
+
+The Advanced Redirects add-on for ShortLinks Pro enhances your link management capabilities by providing additional redirect types beyond the standard 302, 301 and 307 redirects.
+
+<h2>What This Add-on Does</h2>
+
+Advanced Redirects adds the following redirect methods to your ShortLinks Pro toolkit:
+
+<ul>
+<li><strong>Cloaked</strong> - Mask the destination URL by displaying it within a frame on your domain</li>
+<li><strong>Meta Refresh</strong> - Redirect using HTML meta refresh tags</li>
+<li><strong>JavaScript</strong> - Redirect using JavaScript window.location method</li>
+</ul>
+
+These additional redirect types give you more flexibility in how your links behave and appear to users and search engines.
+
+<h2>Key Features</h2>
+
+<ul>
+<li>Choose from 3 additional redirect types beyond standard HTTP redirects</li>
+<li>Set default redirect types in the plugin settings</li>
+<li>Customize redirect settings for individual links</li>
+<li>Maintain detailed click tracking with all redirect types</li>
+</ul>
+
+<h2>Documentation</h2>
+
+<ul>
+<li><a href="/docs/add-ons/advanced-redirects/redirect-types/">Redirect Types</a> - Learn about each redirect type and how to use them</li>
+<li><a href="/docs/add-ons/advanced-redirects/what-is-cloaking/">What is Cloaking?</a> - Understand the benefits and use cases for URL cloaking</li>
+<li><a href="/docs/add-ons/advanced-redirects/settings/">Settings</a> - Configure default redirect settings for new links</li>
+</ul>

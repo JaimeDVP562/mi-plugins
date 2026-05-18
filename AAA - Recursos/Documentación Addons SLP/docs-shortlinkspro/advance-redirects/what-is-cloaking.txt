@@ -1,0 +1,103 @@
+<h1>What is URL Cloaking?</h1>
+
+URL cloaking (also known as link masking or link framing) is a technique that allows you to display content from another website while keeping your own domain visible in the visitor's browser address bar.
+
+<h2>How URL Cloaking Works</h2>
+
+When you create a cloaked link with ShortLinks Pro:
+
+<ol>
+<li>Your server loads an HTML page from your domain</li>
+<li>This page contains a full-size iframe that displays the destination website</li>  
+<li>The visitor's browser continues to display your domain in the address bar</li>
+<li>The content they see comes from the destination website</li>
+</ol>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/cloaking-diagram.jpg" alt="How URL Cloaking Works" />
+
+<h2>Benefits of URL Cloaking</h2>
+
+<h3>Brand Protection</h3>
+
+Maintain your brand presence throughout the user experience by keeping your domain visible.
+
+<h3>Affiliate Marketing</h3>
+
+Present affiliate offers while maintaining your domain as the visible URL, creating a more seamless experience and potentially improving conversion rates.
+
+<h3>Traffic Control</h3>
+
+Technically, visitors remain on your domain, which can:
+<ul>
+<li>Reduce bounce rates in analytics</li>
+<li>Allow for easier return to your content</li>
+<li>Enable additional tracking opportunities</li>
+</ul>
+
+<h3>Link Continuity</h3>
+
+If a destination URL changes, you can update the cloaked link without changing the URL your audience uses.
+
+<h2>Cloaking vs. Standard Redirects</h2>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Cloaked Links</th>
+<th>Standard Redirects</th>
+</tr>
+<tr>
+<td>URL in browser</td>
+<td>Your domain remains visible</td>
+<td>Changes to destination URL</td>
+</tr>
+<tr>
+<td>User awareness</td>
+<td>Less obvious transition</td>
+<td>Clear site change</td>
+</tr>
+<tr>
+<td>SEO impact</td>
+<td>No SEO value transfer</td>
+<td>Can pass SEO value (especially 301s)</td>
+</tr>
+<tr>
+<td>Tracking</td>
+<td>Full control over analytics</td>
+<td>May lose tracking after redirect</td>
+</tr>
+<tr>
+<td>Browser behavior</td>
+<td>Back button may behave differently</td>
+<td>Standard browser behavior</td>
+</tr>
+</table>
+
+<h2>Important Considerations</h2>
+
+<h3>Compatibility</h3>
+
+Some websites block being displayed in iframes for security reasons, which can prevent cloaking from working properly.
+
+<h3>Transparency</h3>
+
+While cloaking is useful for many legitimate purposes, it's important to maintain transparency with your audience about where links lead.
+
+<h3>Mobile Experience</h3>
+
+On mobile devices, the framed experience may not always display optimally depending on the target site's mobile responsiveness.
+
+<h2>Setting Up Cloaked Redirects</h2>
+
+To create a cloaked redirect with the Advanced Redirects add-on:
+
+<ol>
+<li>Edit or create a link in ShortLinks Pro</li>
+<li>Select "Cloaked" from the Redirect Type dropdown</li>
+<li>Configure the title and optional custom CSS</li>
+<li>Save your link</li>
+</ol>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/cloaking-setup.jpg" alt="Setting up a cloaked redirect" />
+
+For more details on configuring cloaked redirects, see the <a href="/docs/add-ons/advanced-redirects/redirect-types/#cloaked-redirects">Redirect Types</a> documentation.

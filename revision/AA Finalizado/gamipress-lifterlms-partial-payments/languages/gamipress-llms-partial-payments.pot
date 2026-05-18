@@ -1,0 +1,267 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress WooCommerce Partial Payments\n"
+"Report-Msgid-Bugs-To: https://gamipress.com/\n"
+"POT-Creation-Date: 2023-04-21 18:35+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://gamipress.com/)\n"
+"Language-Team: GamiPress <contact@gamipress.com>\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: gamipress-wc-partial-payments.php:157
+#, php-format
+msgid "GamiPress - WooCommerce Partial Payments requires %s (%s or higher) and %s in order to work. Please install and activate them."
+msgstr ""
+
+#: includes/admin.php:42 includes/admin.php:123 includes/admin.php:179
+#: includes/admin.php:206
+msgid "WooCommerce Partial Payments"
+msgstr ""
+
+#: includes/admin.php:45
+msgid "Amount Field Type"
+msgstr ""
+
+#: includes/admin.php:46
+msgid "The points amount field type. Available options:"
+msgstr ""
+
+#: includes/admin.php:47
+msgid "<strong>Input:</strong> A numeric input field where users can type the desired amount."
+msgstr ""
+
+#: includes/admin.php:48
+msgid "<strong>Slider:</strong> A slider field where users can choose the desired amount."
+msgstr ""
+
+#: includes/admin.php:49
+msgid "<strong>Fixed:</strong> A fixed amount that users won't be able to change. The points amount will be the points type's \"Initial Amount\" field value."
+msgstr ""
+
+#: includes/admin.php:52
+msgid "Input"
+msgstr ""
+
+#: includes/admin.php:53
+msgid "Slider"
+msgstr ""
+
+#: includes/admin.php:54
+msgid "Fixed"
+msgstr ""
+
+#: includes/admin.php:59
+msgid "Amount Field Step"
+msgstr ""
+
+#: includes/admin.php:60
+msgid "The points amount field step. It's used to adjust the granularity of the amount field. Examples:"
+msgstr ""
+
+#: includes/admin.php:61
+msgid "A step of <strong>5</strong> will allow values multiple of 5: 5, 10, 15, etc."
+msgstr ""
+
+#: includes/admin.php:62
+msgid "A step of <strong>10</strong> will allow values multiple of 10: 10, 20, 30, etc."
+msgstr ""
+
+#: includes/admin.php:63
+msgid "A step of <strong>1</strong> will allow any value."
+msgstr ""
+
+#: includes/admin.php:74
+msgid "Maximum discount per cart"
+msgstr ""
+
+#: includes/admin.php:75
+msgid "The maximum discount allowed in a single purchase."
+msgstr ""
+
+#: includes/admin.php:85
+msgid "Type of maximum discount per cart"
+msgstr ""
+
+#: includes/admin.php:86
+msgid "The type of maximum discount allowed in a single purchase. Available options:"
+msgstr ""
+
+#: includes/admin.php:87
+#, php-format
+msgid "<strong>Flat:</strong> The maximum discount allowed will be limited by a flat amount. If you enter 10 then the maximum discount will be %s."
+msgstr ""
+
+#: includes/admin.php:88
+#, php-format
+msgid "<strong>Percentage:</strong> The maximum discount allowed will be limited by a percentage of the purchase subtotal. If you enter 10 then the maximum discount will be 10% of the purchase subtotal."
+msgstr ""
+
+#: includes/admin.php:91
+msgid "Flat"
+msgstr ""
+
+#: includes/admin.php:92
+msgid "Percentage"
+msgstr ""
+
+#: includes/admin.php:97
+msgid "Disable tax exclusion"
+msgstr ""
+
+#: includes/admin.php:98
+msgid "Check this option to disable the default tax exclusion applied for the partial payment discount."
+msgstr ""
+
+#: includes/admin.php:127
+msgid "Enable Partial Payments"
+msgstr ""
+
+#: includes/admin.php:128
+msgid "Check this option to enable this points type to be used as partial payment."
+msgstr ""
+
+#: includes/admin.php:133
+msgid "Exchange Conversion"
+msgstr ""
+
+#: includes/admin.php:134
+msgid "Points to money conversion rate."
+msgstr ""
+
+#: includes/admin.php:139
+msgid "Initial Amount"
+msgstr ""
+
+#: includes/admin.php:140
+msgid "Set the initial amount for the points amount input."
+msgstr ""
+
+#: includes/admin.php:150
+msgid "Maximum Amount"
+msgstr ""
+
+#: includes/admin.php:151
+msgid "Set the maximum amount allowed for the points amount input. Leave it to 0 for no maximum."
+msgstr ""
+
+#: includes/admin.php:182
+msgid "License"
+msgstr ""
+
+#: includes/ajax-functions.php:24 includes/ajax-functions.php:156
+msgid "You are not allowed to perform this action."
+msgstr ""
+
+#: includes/ajax-functions.php:35 includes/ajax-functions.php:43
+#: includes/ajax-functions.php:49 includes/ajax-functions.php:166
+msgid "Invalid points type."
+msgstr ""
+
+#: includes/ajax-functions.php:39
+msgid "You already got a discount through this points type. Remove the discount if you want to change it."
+msgstr ""
+
+#: includes/ajax-functions.php:55
+#, php-format
+msgid "Invalid %s amount."
+msgstr ""
+
+#: includes/ajax-functions.php:62
+#, php-format
+msgid "The minimum amount of %s allowed are %d."
+msgstr ""
+
+#: includes/ajax-functions.php:66
+#, php-format
+msgid "You can't exceed the %d %s amount."
+msgstr ""
+
+#: includes/ajax-functions.php:73
+msgid "Insufficient funds."
+msgstr ""
+
+#: includes/ajax-functions.php:80
+msgid "Invalid discount amount."
+msgstr ""
+
+#: includes/ajax-functions.php:87
+msgid "The discount amount can't exceed the cart total."
+msgstr ""
+
+#: includes/ajax-functions.php:101
+msgid "You have exceeded the maximum discount allowed."
+msgstr ""
+
+#: includes/ajax-functions.php:139
+msgid "Discount applied successfully."
+msgstr ""
+
+#: includes/ajax-functions.php:171
+msgid "You did't got a discount through this points type."
+msgstr ""
+
+#: includes/ajax-functions.php:185
+msgid "Discount removed successfully."
+msgstr ""
+
+#: includes/filters.php:174 includes/filters.php:272
+#, php-format
+msgid "Discount using %s"
+msgstr ""
+
+#: includes/filters.php:247 includes/scripts.php:68
+msgid "[Remove]"
+msgstr ""
+
+#: includes/filters.php:349
+#, php-format
+msgid "-%s %s used for a discount on order #%s"
+msgstr ""
+
+#: includes/filters.php:411
+#, php-format
+msgid "%s %s for the refund of order #%s"
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:14
+msgid "points"
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:33
+#, php-format
+msgid "Use %s for a discount? <a href=\"#\">Click here</a>"
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:57
+msgid "Amount:"
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:84
+#, php-format
+msgid "You have a current balance of %s."
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:104
+msgid "Type:"
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:139
+#, php-format
+msgid "You will use %s for a %s discount."
+msgstr ""
+
+#: templates/wc-partial-payments-checkout.php:155
+msgid "Apply discount"
+msgstr ""

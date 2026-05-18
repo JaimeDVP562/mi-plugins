@@ -1,0 +1,33 @@
+In this guide, you'll learn how to configure a link to expire on a specific date.
+
+If you want to configure the expiration condition based on clicks or unique clicks refer to the other configuration section.
+
+<h2> Configure the link expiration date </h2>
+
+<b>1</b> - Go to your prefered link and click <b>Edit</b>.
+
+[Captura: configure1.png]
+
+<b>2</b> - Then go to in the <b>"Expiration"</b> section, click on "No" and select "Date".
+
+[Captura: configure_date1.png]
+
+<b>3</b> - <b>Two date fields</b> and one for the <b>expired URL</b> will now appear. In the first one, enter the <b>year, month, and day</b>.
+
+[Captura: configure_date2.png]
+
+<b>4</b> - In the next field, enter the <b>hour and minute</b> you want the link to expire, you can even put the hour you are in.
+
+[Captura: configure_date3.png]
+
+<b>5</b> - In the last field, enter the <b>URL</b> that the original link will <b>redirect to</b> once it expires.
+
+[Captura: configure_date4.png]
+
+<b>6</b> - Click <b>Update</b> to save your changes.
+
+[Captura: configure2.png]
+
+And that's it! Your link will now expire on the specified date and redirect to the new URL — if you provided one.
+
+

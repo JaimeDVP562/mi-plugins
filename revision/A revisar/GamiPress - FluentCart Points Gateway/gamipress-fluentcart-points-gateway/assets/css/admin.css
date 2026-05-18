@@ -1,0 +1,57 @@
+/**
+ * GamiPress FluentCart Points Gateway - Admin Styles
+ *
+ * @package GamiPress\FluentCart\Points_Gateway
+ * @since 1.0.0
+ */
+
+/* Gateway settings in FluentCart admin */
+.gamipress-fc-gateway-settings {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.gamipress-fc-gateway-settings .form-field {
+    margin-bottom: 12px;
+}
+
+.gamipress-fc-gateway-settings .form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.gamipress-fc-gateway-settings .form-field input[type="text"],
+.gamipress-fc-gateway-settings .form-field input[type="number"],
+.gamipress-fc-gateway-settings .form-field textarea {
+    width: 100%;
+    max-width: 400px;
+}
+
+.gamipress-fc-gateway-settings .form-field .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+/* Points info in order details */
+.gamipress-fc-order-points-info {
+    background: #f0f6fc;
+    border: 1px solid #c3daf5;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 10px 0;
+}
+
+.gamipress-fc-order-points-info .points-label {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.gamipress-fc-order-points-info .points-value {
+    color: #2271b1;
+    font-weight: 700;
+}

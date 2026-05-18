@@ -44,7 +44,7 @@ if ( ! class_exists( 'CT_Ajax_List_Table' ) ) :
         private function constants() {
 
             // Plugin version
-            define( 'CT_AJAX_LIST_TABLE_VER', '1.0.1' );
+            define( 'CT_AJAX_LIST_TABLE_VER', '1.0.2' );
 
             // Plugin file
             define( 'CT_AJAX_LIST_TABLE_FILE', __FILE__ );

@@ -1,0 +1,35 @@
+# AutomatorWP – Asgaros Forum Integration
+
+### Requisitos Previos
+- WordPress instalado y funcionando.
+- Plugin AutomatorWP activo.
+- Plugin Asgaros Forum activo.
+
+---
+
+## 1) Instalación del entorno 
+1. Subir y activar la carpeta de nuestro plugin de integración (`automatorwp-asgaros-forum`) en la ruta `wp-content/plugins/`.
+
+## 2) Preparación del Foro (Asgaros)
+1. En el menú lateral de WordPress, ir a Forum → Usergroups.
+2. Hacer clic en "Add New" para crear un grupo de prueba.
+3. Asignarle un nombre (ej: "Alumnos Vip") y guardarlo.
+
+## 3) Configuración de la Automatización (AutomatorWP)
+1. Ir a AutomatorWP → Automations → Add New.
+2. Añadir un Trigger (Disparador) sencillo, por ejemplo, de la integración de WordPress: "User logs in" (El usuario inicia sesión).
+3. Añadir una Action (Acción) de la integración de Asgaros Forum: "Add user to a group".
+4. Hacer clic en la acción para desplegar sus opciones y, en el campo "Group", seleccionar el grupo creado en el paso anterior ("Alumnos Vip").
+5. Guardar la automatización y cambiar su estado a "Active".
+
+## 4) Preparación del Usuario de Prueba
+1. Crear un usuario nuevo con rol de "Suscriptor" (Subscriber) desde el menú Usuarios → Añadir nuevo.
+
+## 5) Ejecución de la Prueba (Frontend) 
+1. Abrir una ventana de incógnito e iniciar sesión con el usuario de prueba creado en el paso 4.
+
+## 6) Verificación de Resultados 
+1. Volver al panel de administrador original (fuera del incógnito).
+2. Ir a AutomatorWP → Logs. Confirmar que aparece el registro en verde indicando que la acción se ha completado.
+3. Ir a Forum → Usergroups en el menú de Asgaros.
+4. Confirmar que el usuario de prueba aparece ahora listado dentro del grupo "Alumnos Vip" seleccionado en la automatización.

@@ -1,0 +1,23 @@
+ul[id^="select2-reaction"] {
+	display:grid;
+	grid-template-columns:  repeat( auto-fit, minmax( 70px, 1fr) );
+}
+
+ul[id^="select2-reaction"] > li {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul[id^="select2-reaction"] > li:first-child {
+	grid-column: 1 / -1;
+}
+
+
+ul[id^="select2-reaction"] > li > img {
+	font-size: 2em;
+}
+
+ul[id^="select2-reaction"] > li > span.result-description {
+	display: none  !important;
+}

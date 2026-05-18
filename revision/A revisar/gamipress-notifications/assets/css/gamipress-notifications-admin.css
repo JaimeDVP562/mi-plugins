@@ -1,0 +1,74 @@
+.cmb2-id-gamipress-notifications-position ul {
+    max-width: 243px;
+    padding: 1px 0 !important;
+    background-color: #efefef;
+}
+
+.cmb2-id-gamipress-notifications-position li {
+    padding-right: 2px !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    line-height: 0 !important;
+}
+
+.cmb2-id-gamipress-notifications-position li label {
+    display: inline-block;
+    width: 75px;
+    text-align: center;
+}
+
+
+.cmb2-id-gamipress-notifications-position li label:before {
+    content: "";
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+
+    border: 3px solid #efefef;
+
+    background-size: 100%;
+}
+
+.cmb2-id-gamipress-notifications-position li input:checked + label:before {
+    border-color: #1e8cbe;
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="right middle"] + label {
+    margin-left: 81px;
+}
+
+.cmb2-id-gamipress-notifications-position li input {
+    display: none;
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="top left"] + label:before {
+    background-image: url('../img/icon-top-left.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="top center"] + label:before {
+    background-image: url('../img/icon-top-center.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="top right"] + label:before {
+    background-image: url('../img/icon-top-right.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="left middle"] + label:before {
+    background-image: url('../img/icon-middle-left.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="right middle"] + label:before {
+    background-image: url('../img/icon-middle-right.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="bottom left"] + label:before {
+    background-image: url('../img/icon-bottom-left.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="bottom center"] + label:before {
+    background-image: url('../img/icon-bottom-center.svg');
+}
+
+.cmb2-id-gamipress-notifications-position li input[value="bottom right"] + label:before {
+    background-image: url('../img/icon-bottom-right.svg');
+}

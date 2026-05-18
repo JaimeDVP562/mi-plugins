@@ -1,0 +1,71 @@
+<h1>Advanced Redirects Settings</h1>
+
+The Advanced Redirects add-on includes plugin-wide settings that let you configure default redirect behaviors for new links in ShortLinks Pro.
+
+<h2>Accessing the Settings</h2>
+
+To access the Advanced Redirects settings:
+
+<ol>
+<li>Go to ShortLinks Pro > Settings in your WordPress admin</li>
+<li>Click the "Advanced Redirects" tab</li>
+</ol>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/settings-access.jpg" alt="Accessing Advanced Redirects Settings" />
+
+<h2>Available Settings</h2>
+
+<h3>Default Redirect Type</h3>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/default-redirect-type.jpg" alt="Default Redirect Type Setting" />
+
+This setting allows you to select which redirect type will be pre-selected when creating new links. Options include:
+
+<ul>
+<li><strong>301 Permanent</strong> - Standard permanent HTTP redirect (default)</li>
+<li><strong>302 Temporary</strong> - Standard temporary HTTP redirect</li>
+<li><strong>Cloaked</strong> - Frame the target URL while showing your domain</li>
+<li><strong>Meta Refresh</strong> - Use HTML meta refresh tags for redirection</li>
+<li><strong>JavaScript</strong> - Use JavaScript for client-side redirection</li>
+</ul>
+
+<h3>Default Cloaking Options</h3>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/default-cloaking-options.jpg" alt="Default Cloaking Options" />
+
+Configure the default settings for cloaked redirects:
+
+<ul>
+<li><strong>Default Title</strong> - The default HTML title for cloaked pages</li>
+<li><strong>Default CSS</strong> - Custom CSS to apply to all cloaked pages by default</li>
+</ul>
+
+<h3>Default Meta Refresh Options</h3>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/default-meta-refresh.jpg" alt="Default Meta Refresh Options" />
+
+Set defaults for meta refresh redirects:
+
+<ul>
+<li><strong>Default Delay</strong> - The default number of seconds to wait before redirecting (0 for immediate)</li>
+<li><strong>Default Message</strong> - Text to display during the delay</li>
+</ul>
+
+<h3>Default JavaScript Options</h3>
+
+<img src="/wp-content/uploads/docs/advanced-redirects/default-javascript.jpg" alt="Default JavaScript Options" />
+
+Configure the default behavior for JavaScript redirects:
+
+<ul>
+<li><strong>Default Delay</strong> - The default number of milliseconds to wait before redirecting</li>
+<li><strong>Default HTML</strong> - Custom HTML to display during the JavaScript redirect</li>
+</ul>
+
+<h2>Link-Level Overrides</h2>
+
+All settings configured at the plugin level can be overridden for individual links when editing them:
+
+<img src="/wp-content/uploads/docs/advanced-redirects/link-level-override.jpg" alt="Link-Level Override Example" />
+
+These global settings only affect the default values presented when creating new links - they don't change the behavior of existing links.

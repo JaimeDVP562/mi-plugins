@@ -1,0 +1,146 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: AutomatorWP - Easy Appointments\n"
+"Report-Msgid-Bugs-To: https://automatorwp.com/\n"
+"POT-Creation-Date: 2025-06-05 00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2025-06-05 00:00+0000\n"
+"Last-Translator: AutomatorWP <contact@automatorwp.com>\n"
+"Language-Team: AutomatorWP <contact@automatorwp.com>\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: automatorwp-easyappointments.php:158
+#, php-format
+msgid "AutomatorWP - Easy Appointments requires %s and %s in order to work. Please install and activate them."
+msgstr ""
+
+#: includes/triggers/appointment-created.php:27
+msgid "User books an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:28
+msgid "User books <strong>an appointment</strong>"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:30
+msgid "User books an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:31
+msgid "User books an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:39
+msgid "Service:"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:41
+msgid "any service"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:49
+msgid "Worker:"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:51
+msgid "any worker"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:59
+msgid "Status:"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:61
+msgid "any status"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:62
+msgid "Pending"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:63
+msgid "Confirmed"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:64
+msgid "Canceled"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:65
+msgid "Reservation"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:80
+msgid "Appointment ID"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:84
+msgid "Service ID"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:88
+msgid "Worker ID"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:92
+msgid "Status"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:96
+msgid "Date"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:100
+msgid "Start Time"
+msgstr ""
+
+#: includes/triggers/appointment-created.php:104
+msgid "End Time"
+msgstr ""
+
+#: includes/triggers/appointment-confirmed.php:17
+msgid "User confirms <strong>an appointment</strong>"
+msgstr ""
+
+#: includes/triggers/appointment-confirmed.php:18
+msgid "User confirms an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-confirmed.php:19
+msgid "User confirms an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-canceled.php:17
+msgid "User cancels <strong>an appointment</strong>"
+msgstr ""
+
+#: includes/triggers/appointment-canceled.php:18
+msgid "User cancels an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-canceled.php:19
+msgid "User cancels an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-updated.php:17
+msgid "User updates <strong>an appointment</strong>"
+msgstr ""
+
+#: includes/triggers/appointment-updated.php:18
+msgid "User updates an appointment"
+msgstr ""
+
+#: includes/triggers/appointment-updated.php:19
+msgid "User updates an appointment"
+msgstr ""

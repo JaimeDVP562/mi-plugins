@@ -1,0 +1,31 @@
+    HECHO -> ✅ | Pendiente -> 🎯
+/-- TODO - (AutomatorWP - Dailybot) --/
+|============Archivo============|==Estado==|
+ automatorwp-dailybot.php      ->    ✅       
+
+includes\
+ admin.php                     ->    ✅
+ ajax-functions.php            ->    ✅
+ functions.php                 ->    🎯
+ scripts.php                   ->    ✅
+ tags.php                      ->    🎯
+
+includes\triggers
+invitation-accepted.php        ->    ✅
+invitation-created.php         ->    ✅
+
+includes\actions
+open-conversation.php          ->    ✅
+send-email.php                 ->    ✅
+send-message.php               ->    ✅
+
+assets\css
+ automatorwp-dailybot.css      ->    ✅  
+ automatorwp-dailybot.min.css  ->    ✅ 
+assets\js
+ automatorwp-dailybot.js       ->    ✅
+ automatorwp-dailybot.min.js   ->    ✅
+
+          ==========================
+          ==== IMPLEMENTACIONES ====
+          ==========================

@@ -1,0 +1,174 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress LearnDash Points Gateway\n"
+"Report-Msgid-Bugs-To: https://gamipress.com/\n"
+"POT-Creation-Date: 2022-12-21 15:19+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://gamipress.com/)\n"
+"Language-Team: GamiPress <contact@gamipress.com>\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: classes/class-gamipress-wc-points-blocks-support.php:43
+#: classes/class-gamipress-learndash-points-gateway.php:91
+#, php-format
+msgid "Pay using %s."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:46
+#, php-format
+msgid "Let users pay using %s."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:74
+msgid "Enable/Disable"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:76
+#, php-format
+msgid "Enable GamiPress: %s Gateway"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:80
+msgid "Title"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:82
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:87
+msgid "Description"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:90
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:94
+msgid "Exchange Conversion"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:97
+#, php-format
+msgid "%1$s to %2$s conversion rate, used when user exchange %1$s as %2$s. This controls define how much is 1 %2$s worth in %1$s."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:119
+#, php-format
+msgid "You must be logged in to pay with %s."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:134
+#, php-format
+msgid "Insufficient %s."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:141
+#, php-format
+msgid "{user} expended {points} {points_type} to complete the order #%s for a new total of {total_points} {points_type}"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:146
+#, php-format
+msgid "-%s points used on order #%s"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:187
+#, php-format
+msgid "{user} earned {points} {points_type} for sell %s through {points_type} for a new total of {total_points} {points_type}"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:192
+#, php-format
+msgid "+%s points for selling product %s"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:210
+#, php-format
+msgid "Payment completed: %d %s deducted to user."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:244
+#, php-format
+msgid "Order refunded: %d %s refunded to user."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:248
+#, php-format
+msgid "Order partially refunded: %d %s refunded to user."
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:263
+#, php-format
+msgid "{user} awarded {points} {points_type} for the order #%s refund for a new total of {total_points} {points_type}"
+msgstr ""
+
+#: classes/class-gamipress-learndash-points-gateway.php:281
+#, php-format
+msgid "{user} deducted {points} {points_type} for the order #%s refund that has the product %s for a new total of {total_points} {points_type}"
+msgstr ""
+
+#: gamipress-learndash-points-gateway.php:156
+#, php-format
+msgid "GamiPress - LearnDash Points Gateway requires %s (%s or higher) and %s in order to work. Please install and activate them."
+msgstr ""
+
+#: includes/admin.php:23 includes/admin.php:50
+msgid "LearnDash Points Gateway"
+msgstr ""
+
+#: includes/admin.php:26
+msgid "License"
+msgstr ""
+
+#: templates/wc-points-checkout-block.php:16
+#: templates/wc-points-checkout.php:16
+msgid "Point"
+msgstr ""
+
+#: templates/wc-points-checkout-block.php:17
+#: templates/wc-points-checkout.php:17
+msgid "Points"
+msgstr ""
+
+#: templates/wc-points-checkout-block.php:26
+#, php-format
+msgid "Current %s"
+msgstr ""
+
+#: templates/wc-points-checkout-block.php:54
+#, php-format
+msgid "Required %s"
+msgstr ""
+
+#: templates/wc-points-checkout-block.php:82
+#, php-format
+msgid "%s after purchase"
+msgstr ""
+
+#: templates/wc-points-checkout.php:26
+#, php-format
+msgid "Current %s:"
+msgstr ""
+
+#: templates/wc-points-checkout.php:54
+#, php-format
+msgid "Required %s:"
+msgstr ""
+
+#: templates/wc-points-checkout.php:82
+#, php-format
+msgid "%s after purchase:"
+msgstr ""

@@ -1,0 +1,8 @@
+.automatorwp-integration-icon[data-integration="smoove"],
+.automatorwp-integration-icon i[class*="trello"] {
+    background-image: none !important;
+}
+
+.automatorwp-integration-icon img {
+    background-color: transparent !important;
+}

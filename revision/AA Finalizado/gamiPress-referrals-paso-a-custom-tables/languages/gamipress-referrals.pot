@@ -1,0 +1,481 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GamiPress Referrals\n"
+"Report-Msgid-Bugs-To: https://gamipress.com/\n"
+"POT-Creation-Date: 2024-02-21 15:37+0100\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: GamiPress (https://gamipress.com/)\n"
+"Language-Team: GamiPress <contact@gamipress.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: gamipress-referrals.php:152
+#, php-format
+msgid "GamiPress - Referrals requires %s (%s or higher) in order to work. Please install and activate it."
+msgstr ""
+
+#: includes/admin.php:44 includes/admin.php:88 includes/admin.php:115
+#: includes/triggers.php:22
+msgid "Referrals"
+msgstr ""
+
+#: includes/admin.php:48
+msgid "URL Parameter"
+msgstr ""
+
+#: includes/admin.php:49
+msgid "Set the URL parameter to be used on affiliate links. By default, ref."
+msgstr ""
+
+#: includes/admin.php:51
+#, php-format
+msgid "<strong>Important:</strong> This parameter shouldn't match any of the <a href=\"%s\" target=\"_blank\">WordPress URL parameters</a>."
+msgstr ""
+
+#: includes/admin.php:56
+msgid "Affiliate Links"
+msgstr ""
+
+#: includes/admin.php:59
+msgid "Assign the user ID."
+msgstr ""
+
+#: includes/admin.php:61 includes/admin.php:64
+msgid "Example:"
+msgstr ""
+
+#: includes/admin.php:62
+msgid "Assign the username."
+msgstr ""
+
+#: includes/admin.php:91
+msgid "License"
+msgstr ""
+
+#: includes/logs.php:22
+msgid "Referral Visit"
+msgstr ""
+
+#: includes/logs.php:23
+msgid "Referral Sign Up"
+msgstr ""
+
+#: includes/logs.php:26
+msgid "Referral Sale"
+msgstr ""
+
+#: includes/logs.php:27
+msgid "Referral Sale Refund"
+msgstr ""
+
+#: includes/logs.php:53
+msgid "Referral visit from {user}"
+msgstr ""
+
+#: includes/logs.php:81
+msgid "Referral sign up from {user}"
+msgstr ""
+
+#: includes/logs.php:106
+msgid "Referral sale from {user}"
+msgstr ""
+
+#: includes/logs.php:133
+msgid "Referral sale refunded for {user}"
+msgstr ""
+
+#: includes/logs.php:170 includes/logs.php:208 includes/logs.php:234
+msgid "Referral"
+msgstr ""
+
+#: includes/logs.php:171
+msgid "User referred (just if user was logged in)."
+msgstr ""
+
+#: includes/logs.php:180 includes/logs.php:218 includes/logs.php:244
+msgid "IP"
+msgstr ""
+
+#: includes/logs.php:181 includes/logs.php:219 includes/logs.php:245
+msgid "IP of referred user."
+msgstr ""
+
+#: includes/logs.php:187 includes/shortcodes/gamipress_referral_url.php:26
+#: includes/shortcodes/gamipress_referral_url_generator.php:26
+msgid "URL"
+msgstr ""
+
+#: includes/logs.php:188
+msgid "URL visited by the referred user."
+msgstr ""
+
+#: includes/logs.php:194
+msgid "Referring URL"
+msgstr ""
+
+#: includes/logs.php:195
+msgid "URL from referral comes."
+msgstr ""
+
+#: includes/logs.php:209 includes/logs.php:235
+msgid "User referred."
+msgstr ""
+
+#: includes/sale-functions.php:23
+#, php-format
+msgid "Referrals - %s Sale Commission"
+msgstr ""
+
+#: includes/sale-functions.php:27
+msgid "Commission"
+msgstr ""
+
+#: includes/sale-functions.php:28
+msgid "Set the commission's percent to award to the affiliate for referred sales."
+msgstr ""
+
+#: includes/sale-functions.php:29
+msgid "A 100% will award the same purchase total as commission (e.g. $40 = 40 points)."
+msgstr ""
+
+#: includes/sale-functions.php:30
+msgid "A 200% will award the double of the purchase total as commission (e.g. $40 = 80 points)."
+msgstr ""
+
+#: includes/sale-functions.php:31
+msgid "A 50% will award the half of the purchase total as commission (e.g. $40 = 20 points)."
+msgstr ""
+
+#: includes/sale-functions.php:32
+msgid "Set it to 0 to disable sale commissions."
+msgstr ""
+
+#: includes/sale-functions.php:91
+#, php-format
+msgid "%s as commission for refer a purchase of %s"
+msgstr ""
+
+#: includes/sale-functions.php:155
+#, php-format
+msgid "-%s for the refund of a referral purchase of %s"
+msgstr ""
+
+#: includes/scripts.php:40
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:19
+msgid "Affiliate ID"
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:20
+#: includes/widgets/affiliate-id-widget.php:24
+msgid "Render user's affiliate ID."
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:26
+#: includes/shortcodes/gamipress_referral_url.php:32
+#: includes/shortcodes/gamipress_referrals_count.php:33
+msgid "Current User"
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:27
+msgid "Show affiliate ID of the current logged in user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:33
+#: includes/shortcodes/gamipress_referral_url.php:39
+#: includes/shortcodes/gamipress_referrals_count.php:40
+msgid "User"
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:34
+msgid "Show affiliate ID of a specific user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:73
+#: includes/shortcodes/gamipress_referral_url.php:80
+#: includes/shortcodes/gamipress_referrals_count.php:112
+msgid "Please, provide the user id."
+msgstr ""
+
+#: includes/shortcodes/gamipress_affiliate_id.php:78
+#: includes/shortcodes/gamipress_referral_url.php:85
+#: includes/shortcodes/gamipress_referrals_count.php:117
+msgid "Please, provide a valid user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url.php:19
+#: templates/referral-url-generator.php:46
+msgid "Referral URL"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url.php:20
+#: includes/widgets/referral-url-widget.php:24
+msgid "Render a referral URL of current page or from the given URL."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url.php:27
+msgid "URL to append the referral code. If empty, will render the URL of the current page."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url.php:33
+msgid "Append referral code of the current logged in user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url.php:40
+msgid "Append referral code of a specific user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url_generator.php:19
+msgid "Referral URL Generator"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url_generator.php:20
+#: includes/widgets/referral-url-generator-widget.php:24
+msgid "Render a referral URL generator form."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url_generator.php:27
+msgid "URL to initialize the URL field of the generator. If empty, will use the URL of the current page."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url_generator.php:32
+msgid "Button Text"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url_generator.php:33
+msgid "Generate URL button text."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referral_url_generator.php:35
+#: includes/shortcodes/gamipress_referral_url_generator.php:57
+msgid "Generate URL"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:19
+msgid "Referrals count"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:20
+#: includes/widgets/referrals-count-widget.php:24
+msgid "Render user's referrals count."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:26
+msgid "Type"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:27
+msgid "Referrals to count."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:34
+msgid "Referrals count of the current logged in user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:41
+msgid "Referrals count of a specific user."
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:65
+msgid "Referral visits"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:66
+msgid "Referral sign ups"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:70
+msgid "Referral sales"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:71
+msgid "Referral sales refunded"
+msgstr ""
+
+#: includes/shortcodes/gamipress_referrals_count.php:108
+msgid "Please, provide a valid type."
+msgstr ""
+
+#: includes/triggers.php:23
+msgid "Get a referral visit"
+msgstr ""
+
+#: includes/triggers.php:24
+msgid "Get a specific referral visit"
+msgstr ""
+
+#: includes/triggers.php:25
+msgid "Get a referral sign up"
+msgstr ""
+
+#: includes/triggers.php:26
+msgid "Register to website through a referral"
+msgstr ""
+
+#: includes/triggers.php:27
+msgid "Reach a referral visits amount"
+msgstr ""
+
+#: includes/triggers.php:28
+msgid "Reach a referral sign ups amount"
+msgstr ""
+
+#: includes/triggers.php:32
+msgid "Referrals - WooCommerce integration"
+msgstr ""
+
+#: includes/triggers.php:33 includes/triggers.php:46
+msgid "Get a referral sale"
+msgstr ""
+
+#: includes/triggers.php:34 includes/triggers.php:47
+msgid "Complete a purchase through a referral"
+msgstr ""
+
+#: includes/triggers.php:35
+msgid "Get a referral sale of a product"
+msgstr ""
+
+#: includes/triggers.php:36
+msgid "Purchase a product through a referral"
+msgstr ""
+
+#: includes/triggers.php:37 includes/triggers.php:50
+msgid "Get a referral sale refunded"
+msgstr ""
+
+#: includes/triggers.php:38 includes/triggers.php:51
+msgid "Refund product purchased through a referral"
+msgstr ""
+
+#: includes/triggers.php:39 includes/triggers.php:52
+msgid "Reach a referral sales amount"
+msgstr ""
+
+#: includes/triggers.php:40 includes/triggers.php:53
+msgid "Reach a referral sales refunded amount"
+msgstr ""
+
+#: includes/triggers.php:45
+msgid "Referrals - Easy Digital Downloads integration"
+msgstr ""
+
+#: includes/triggers.php:48
+msgid "Get a referral sale of a download"
+msgstr ""
+
+#: includes/triggers.php:49
+msgid "Purchase a download through a referral"
+msgstr ""
+
+#: includes/triggers.php:124
+#, php-format
+msgid "Reach %d referral visits"
+msgstr ""
+
+#: includes/triggers.php:127
+#, php-format
+msgid "Reach %d referral sign ups"
+msgstr ""
+
+#: includes/triggers.php:131
+#, php-format
+msgid "Reach %d referral sales"
+msgstr ""
+
+#: includes/triggers.php:135
+#, php-format
+msgid "Reach %d referral sales refunded"
+msgstr ""
+
+#: includes/triggers.php:154
+#, php-format
+msgid "Get a referral visit on %s"
+msgstr ""
+
+#: includes/triggers.php:157 includes/triggers.php:161
+#, php-format
+msgid "Get a referral sale of %s"
+msgstr ""
+
+#: includes/triggers.php:158 includes/triggers.php:162
+#, php-format
+msgid "Purchase %s through a referral"
+msgstr ""
+
+#: includes/users.php:32
+msgid "GamiPress - Referrals"
+msgstr ""
+
+#: includes/users.php:38
+msgid "Referred by:"
+msgstr ""
+
+#: includes/users.php:53
+msgid "Affiliate URL:"
+msgstr ""
+
+#: includes/users.php:61
+msgid "Visits:"
+msgstr ""
+
+#: includes/users.php:69
+msgid "Signups:"
+msgstr ""
+
+#: includes/users.php:78
+msgid "Sales:"
+msgstr ""
+
+#: includes/users.php:86
+msgid "Sales Refunded:"
+msgstr ""
+
+#: includes/widgets/affiliate-id-widget.php:23
+msgid "GamiPress: Affiliate ID"
+msgstr ""
+
+#: includes/widgets/referral-url-generator-widget.php:23
+msgid "GamiPress: Referral URL Generator"
+msgstr ""
+
+#: includes/widgets/referral-url-widget.php:23
+msgid "GamiPress: Referral URL"
+msgstr ""
+
+#: includes/widgets/referrals-count-widget.php:23
+msgid "GamiPress: Referrals Count"
+msgstr ""
+
+#: templates/referral-url-generator.php:26
+msgid "Page URL"
+msgstr ""
+
+#: templates/referral-url-generator.php:28
+msgid "Enter any URL from this website to generate a referral link."
+msgstr ""
+
+#: templates/referral-url-generator.php:48
+msgid "Copy this URL and share it anywhere."
+msgstr ""
+
+#: templates/referral-url-generator.php:67
+msgid "Copy to clipboard"
+msgstr ""
+
+#: templates/referral-url-generator.php:68
+msgid "URL copied"
+msgstr ""

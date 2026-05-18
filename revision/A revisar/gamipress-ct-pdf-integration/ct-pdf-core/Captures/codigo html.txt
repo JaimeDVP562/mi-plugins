@@ -1,0 +1,30 @@
+//Codigo Pdf Templates
+
+<div class="ctpdf-certificate">
+<div class="ctpdf-header">
+<div class="ctpdf-logo">
+<div class="mceTemp">CERTIFICATE</div>
+</div>
+<div class="ctpdf-subtitle">OF ACHIEVEMENT</div>
+</div>
+<div class="ctpdf-body">
+<div class="ctpdf-presented">Proudly Presented To</div>
+<div class="ctpdf-name">{user.display_name}</div>
+<div class="ctpdf-text">has successfully completed the program entitled:</div>
+<div class="ctpdf-course">Leadership and Motivation</div>
+</div>
+<div class="ctpdf-footer">
+<div class="ctpdf-signatures">
+<div class="ctpdf-sig">
+<div class="ctpdf-sig-img ctpdf-sig-1"></div>
+<div class="ctpdf-sig-line"></div>
+<div class="ctpdf-sig-label">Signature</div>
+</div>
+<div class="ctpdf-sig">
+<div class="ctpdf-sig-img ctpdf-sig-2"></div>
+<div class="ctpdf-sig-line"></div>
+<div class="ctpdf-sig-label">Date: {date}</div>
+</div>
+</div>
+</div>
+</div>

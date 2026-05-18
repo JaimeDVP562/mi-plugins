@@ -1,0 +1,39 @@
+# GamiPress – LearnDash Points Gateway
+
+### Requisitos Previos
+- WordPress instalado y funcionando.
+- Plugin GamiPress activo.
+- Plugin LearnDash LMS activo.
+
+---
+
+## 1) Instalación del entorno
+1. Para instalar LearnDash son necesarios los siguientes archivos adicionales: `sfwd-lms.zip` que se encuentra en la carpeta "AAA - Recursos".
+2. Subir y activar la carpeta de nuestro plugin de pasarela (`gamipress-learndash-points-gateway`) en la ruta `wp-content/plugins/`.
+
+## 2) Configuración de la Pasarela (Backend)
+1. En el menú lateral de WordPress, ir a GamiPress → Ajustes LearnDash.
+2. En "Tipo de Moneda", introducir el slug exacto de la moneda a utilizar.
+3. En "Multiplicador", establecer el valor de conversión.
+4. Guardar los ajustes y confirmar que aparece el mensaje verde de éxito nativo de WordPress.
+
+## 3) Preparación del Curso (LearnDash)
+1. Ir a LearnDash LMS → Cursos → Añadir nuevo (o editar uno existente).
+2. Asignarle un título y publicar.
+3. En la pestaña de ajustes del curso, establecer el 'Modo de acceso' a "Comprar ahora" (Buy Now) o "Cerrado" y asignarle un precio numérico en euros.
+
+## 4) Preparación del Usuario de Prueba (GamiPress)
+1. Crear un usuario nuevo con rol de "Suscriptor" (Subscriber).
+2. Ir a Usuarios → Todos los usuarios → Editar el perfil del usuario de prueba.
+3. Bajar hasta la sección de GamiPress y añadirle saldo manual suficiente en el tipo de moneda configurado en el paso 2.
+4. Actualizar el usuario.
+
+## 5) Ejecución de la Prueba (Frontend)
+1. Abrir una ventana de incógnito e iniciar sesión con el usuario de prueba.
+2. Navegar a la URL del curso creado en el paso 3.
+3. Confirmar que aparece el botón de compra integrado con el diseño de LearnDash, indicando el precio correcto en puntos (ej: si el curso vale 50 y el multiplicador es 100, debe pedir 5000 puntos).
+4. Hacer clic en el botón de compra.
+
+## 6) Verificación de Resultados
+- Confirmar que la página se recarga y el usuario tiene acceso inmediato al contenido del curso (el botón de compra desaparece).
+- Volver al panel de administrador y comprobar el perfil del usuario de prueba. Confirmar que se han deducido exactamente los puntos correspondientes de su saldo.

@@ -1,0 +1,186 @@
+<?php
+/**
+ * Subscription Renewal
+ *
+ * @package     AutomatorWP\Integrations\WooCommerce\Triggers\Subscription_Renewal
+ * @author      AutomatorWP <contact@automatorwp.com>, Ruben Garcia <rubengcdev@gmail.com>
+ * @since       1.0.0
+ */
+// Exit if accessed directly
+if( !defined( 'ABSPATH' ) ) exit;
+
+class AutomatorWP_WooCommerce_Subscription_Renewal extends AutomatorWP_Integration_Trigger {
+
+    public $integration = 'woocommerce';
+    public $trigger = 'woocommerce_subscription_renewal';
+
+    /**
+     * Register the trigger
+     *
+     * @since 1.0.0
+     */
+    public function register() {
+
+        automatorwp_register_trigger( $this->trigger, array(
+            'integration'       => $this->integration,
+            'label'             => __( 'User renews subscription of a product', 'automatorwp-woocommerce' ),
+            'select_option'     => __( 'User <strong>renews</strong> subscription of a product', 'automatorwp-woocommerce' ),
+            /* translators: %1$s: Post title. %2$s: Number of times. */
+            'edit_label'        => sprintf( __( 'User renews subscription of %1$s %2$s time(s)', 'automatorwp-woocommerce' ), '{post}', '{times}' ),
+            /* translators: %1$s: Post title. */
+            'log_label'         => sprintf( __( 'User renews subscription of %1$s', 'automatorwp-woocommerce' ), '{post}' ),
+            'action'            => 'woocommerce_renewal_order_payment_complete',
+            'function'          => array( $this, 'listener' ),
+            'priority'          => 10,
+            'accepted_args'     => 1,
+            'options'           => array(
+                'post' => automatorwp_utilities_post_option( array(
+                    'name' => __( 'Product:', 'automatorwp-woocommerce' ),
+                    'option_none_label' => __( 'any product', 'automatorwp-woocommerce' ),
+                    'post_type' => 'product'
+                ) ),
+                'times' => automatorwp_utilities_times_option(),
+            ),
+            'tags' => array_merge(
+                automatorwp_utilities_post_tags( __( 'Product', 'automatorwp-woocommerce' ) ),
+                automatorwp_woocommerce_order_tags(),
+                automatorwp_utilities_times_tag()
+            )
+        ) );
+
+    }
+
+    /**
+     * Trigger listener
+     *
+     * @since 1.0.0
+     *
+     * @param int $order_id Order ID
+     */
+    public function listener( $order_id ) {
+
+        $order = wc_get_order( $order_id );
+        $items = $order->get_items();
+
+        // Bail if no items purchased
+        if ( ! is_array( $items ) ) {
+            return;
+        }
+
+        $order_total = $order->get_total();
+        $user_id = $order->get_user_id();
+
+        // To get the subscription ID
+        $subscriptions = wcs_get_subscriptions_for_order( $order_id, ['order_type' => 'any'] );
+
+        foreach ($subscriptions as $subscriptionID => $subscriptionObj) {
+
+            $subscription_id = $subscriptionObj->get_id();
+
+        }
+
+        // Loop all items to trigger events on each one purchased
+        foreach ( $items as $item ) {
+
+            $product_id     = $item->get_product_id();
+            $quantity       = $item->get_quantity();
+
+            // Skip items not assigned to a product
+            if( $product_id === 0 ) {
+                continue;
+            }
+
+
+            // Trigger events same times as item quantity
+            for ( $i = 0; $i < $quantity; $i++ ) {
+
+                // Trigger the product subscription renewal
+                automatorwp_trigger_event( array(
+                    'trigger'           => $this->trigger,
+                    'user_id'           => $user_id,
+                    'post_id'           => $product_id,
+                    'order_id'          => $order->get_id(),
+                    'subscription_id'   => $subscription_id,
+                    'order_total'       => $order_total,
+                ) );
+
+            } // End for of quantities
+
+        } // End foreach of items
+
+    }
+
+    /**
+     * User deserves check
+     *
+     * @since 1.0.0
+     *
+     * @param bool      $deserves_trigger   True if user deserves trigger, false otherwise
+     * @param stdClass  $trigger            The trigger object
+     * @param int       $user_id            The user ID
+     * @param array     $event              Event information
+     * @param array     $trigger_options    The trigger's stored options
+     * @param stdClass  $automation         The trigger's automation object
+     *
+     * @return bool                          True if user deserves trigger, false otherwise
+     */
+    public function user_deserves_trigger( $deserves_trigger, $trigger, $user_id, $event, $trigger_options, $automation ) {
+
+        // Don't deserve if post is not received
+        if( ! isset( $event['post_id'] ) ) {
+            return false;
+        }
+
+        // Don't deserve if post doesn't match with the trigger option
+        if( ! automatorwp_posts_matches( $event['post_id'], $trigger_options['post'] ) ) {
+            return false;
+        }
+
+        return $deserves_trigger;
+
+    }
+
+    /**
+     * Register the required hooks
+     *
+     * @since 1.0.0
+     */
+    public function hooks() {
+
+        // Log meta data
+        add_filter( 'automatorwp_user_completed_trigger_log_meta', array( $this, 'log_meta' ), 10, 6 );
+
+        parent::hooks();
+    }
+
+    /**
+     * Trigger custom log meta
+     *
+     * @since 1.0.0
+     *
+     * @param array     $log_meta           Log meta data
+     * @param stdClass  $trigger            The trigger object
+     * @param int       $user_id            The user ID
+     * @param array     $event              Event information
+     * @param array     $trigger_options    The trigger's stored options
+     * @param stdClass  $automation         The trigger's automation object
+     *
+     * @return array
+     */
+    function log_meta( $log_meta, $trigger, $user_id, $event, $trigger_options, $automation ) {
+
+        // Bail if action type don't match this action
+        if( $trigger->type !== $this->trigger ) {
+            return $log_meta;
+        }
+
+        $log_meta['order_id'] = ( isset( $event['order_id'] ) ? $event['order_id'] : 0 );
+        $log_meta['subscription_id'] = ( isset( $event['subscription_id'] ) ? $event['subscription_id'] : 0 );
+
+        return $log_meta;
+
+    }
+
+}
+
+new AutomatorWP_WooCommerce_Subscription_Renewal();

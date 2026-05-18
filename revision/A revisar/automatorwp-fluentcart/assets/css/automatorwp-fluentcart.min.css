@@ -1,0 +1,17 @@
+/* AutomatorWP - FluentCart | Admin Styles */
+.automatorwp-notice-success {
+    padding: 8px 12px;
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+    color: #155724;
+    margin-top: 8px;
+    display: inline-block;
+}
+.automatorwp-notice-error {
+    padding: 8px 12px;
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+    margin-top: 8px;
+    display: inline-block;
+}

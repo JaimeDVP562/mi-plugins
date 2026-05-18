@@ -415,3 +415,17 @@ function gamipress_add_logs_meta_boxes() {
     remove_meta_box( 'submitdiv', 'gamipress_logs', 'side' );
 }
 add_action( 'add_meta_boxes', 'gamipress_add_logs_meta_boxes' );
+
+// CT Ajax List
+// Override ajax list capability
+add_filter( 'ct_ajax_list_table_gamipress_logs_capability', 'gamipress_get_manager_capability' );
+
+// Parse query args
+function ct_ajax_list_table_gamipress_logs_query_args( $query_args ) {
+
+    $query_args = gamipress_sanitize_query_args( $query_args, gamipress_logs_query_vars_rules() );
+
+    return $query_args;
+
+}
+add_filter( 'ct_ajax_list_table_gamipress_logs_query_args', 'ct_ajax_list_table_gamipress_logs_query_args' );

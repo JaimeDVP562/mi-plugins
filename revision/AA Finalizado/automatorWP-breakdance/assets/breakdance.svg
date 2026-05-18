@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="#1F2937"/>
+  <!-- Breakdance Logo -->
+  <g transform="translate(50, 50)">
+    <!-- Main shape -->
+    <path d="M 50 0 C 77.6 0 100 22.4 100 50 C 100 77.6 77.6 100 50 100 C 22.4 100 0 77.6 0 50 C 0 22.4 22.4 0 50 0" fill="#3B82F6"/>
+    <path d="M 50 20 L 70 40 L 50 60 L 30 40 Z" fill="#1F2937"/>
+    <path d="M 50 60 L 70 80 L 50 100 L 30 80 Z" fill="#60A5FA"/>
+  </g>
+</svg>

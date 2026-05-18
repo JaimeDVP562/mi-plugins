@@ -1,0 +1,49 @@
+.dashicons-zoho {
+    background-image: url(../zoho.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+#automatorwp_zoho_delete_credentials {
+    margin-left: 10px;
+    color: #d63638;
+    border-color: #d63638;
+    vertical-align: middle
+}
+
+#automatorwp_zoho_delete_credentials:hover {
+    background: #fcf0f1;
+    border-color: #d63638;
+    color: #d63638
+}
+
+#automatorwp_zoho_delete_credentials:focus {
+    box-shadow: 0 0 0 1px #d63638
+}
+
+.cmb-td .spinner.is-active {
+    float: none;
+    margin: 4px 10px;
+    vertical-align: middle
+}
+
+#automatorwp_zoho_response {
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    font-weight: 500;
+    border-left: 4px solid
+}
+
+.automatorwp-notice-success {
+    background-color: #f0f6f1;
+    border-color: #46b450;
+    color: #1d2327
+}
+
+.automatorwp-notice-error {
+    background-color: #fcf0f1;
+    border-color: #d63638;
+    color: #1d2327
+}
